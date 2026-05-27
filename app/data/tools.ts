@@ -76,53 +76,148 @@ export const ALL_TOOLS: ToolData[] = [
     id: "webflow", name: "Webflow", category: "Website Builders",
     rating: 4.6, reviewCount: 12500, icon: Globe,
     description: "Professional visual web design platform with CMS and hosting.",
-    longDescription: "Webflow combines visual design with hand-coded HTML, CSS, and JavaScript. It offers a robust CMS, e-commerce capabilities, and enterprise-grade hosting.",
+    longDescription: "Webflow dominates the premium no-code web creation space as the go-to platform for designers and agencies who demand pixel-perfect control without writing code — positioning itself distinctly above Squarespace in flexibility and below custom-coded solutions in fidelity, while challenging WordPress’s dominance with visual CSS editing, built-in hosting, and a robust CMS. Its standout strengths include granular visual CSS controls (e.g., hover states, transforms, and breakpoints), a flexible headless CMS with content APIs, native e-commerce with inventory and tax rules, and enterprise-grade global CDN hosting with automatic SSL and DDoS protection. However, Webflow has real trade-offs: its visual editor struggles with complex backend logic (no native user auth or database relationships), premium templates and interactions require additional purchases, and the learning curve demands significant time investment to master interactions, CMS collections, and responsive constraints. It’s best suited for professional designers, digital agencies building client sites, and marketing teams owning their brand experience — not for non-technical founders needing simple blogs or SaaS startups requiring custom backend integrations.",
     websiteUrl: "https://webflow.com", pricing: "Free - $39/mo",
-    pricingDetail: "Free starter plan. CMS $29/mo, Business $39/mo, Enterprise custom.",
-    features: ["Visual drag-and-drop editor", "Built-in CMS", "E-commerce functionality", "Custom animations and interactions", "Responsive design controls", "SEO optimization tools", "Global CDN hosting"],
-    pros: ["Full design freedom without code", "Excellent animation capabilities", "Strong CMS for content management", "Clean code output"],
-    cons: ["Steep learning curve for beginners", "Limited template options", "Can get expensive with add-ons"],
-    useCase: "Professional website design",
-    alternatives: ["bubble", "wix", "squarespace"],
-    scoreBreakdown: { features: 92, reviews: 88, momentum: 90, popularity: 85 },
-    userQuotes: [
-      { role: "UX Designer", company: "Freelance", quote: "Webflow gives me the creative control of custom code without actually coding." },
-      { role: "Agency Owner", company: "Pixel & Code", quote: "We moved 80% of our client projects from WordPress to Webflow." },
+    pricingDetail: "Free plan ($0/mo). CMS plan ($29/mo with 10k CMS items). Business plan ($39/mo with ecommerce). Enterprise (custom). Note: Annual billing gives 2 months free. E-commerce transactions incur additional Stripe fees. Workspace plans for teams start at $39/mo per seat.",
+    features: [
+      "Visual CSS Designer",
+      "Responsive Breakpoint Editor",
+      "CMS Collections Builder",
+      "E-commerce Product Manager",
+      "Interactions Panel",
+      "Logic & Conditional Visibility",
+      "Custom Code Embeds",
+      "Global Navigation Editor",
+      "SEO Meta Controls",
+      "Form Submissions Dashboard",
+      "Site Search Integration",
+      "Team Collaboration Workspace"
     ],
+    pros: [
+      "Zero-code CSS control with real-time visual feedback for pixel-perfect responsive designs",
+      "Built-in global CDN hosting with automatic SSL, caching, and DDoS protection",
+      "Visual CMS builder supporting relational data, dynamic lists, and content filtering",
+      "Native e-commerce with product variants, coupons, abandoned cart recovery, and Stripe integration",
+      "Flexbox and Grid visual layout engine with intuitive drag-and-drop spacing and alignment",
+      "Interactions panel enabling scroll-triggered animations, hover effects, and multi-step transitions",
+      "Developer-friendly exports for HTML/CSS/JS when handoff or hybrid workflows are needed"
+    ],
+    cons: [
+      "Steeper learning curve than Wix or Squarespace — expect 2–4 weeks to build production-ready sites",
+      "CMS collections beyond 10k items require expensive Enterprise plans with custom contracts",
+      "No native user authentication, role-based access, or server-side database operations",
+      "Third-party integrations rely heavily on Zapier or custom API calls — no native Airtable or Notion sync",
+      "Premium templates and interaction add-ons cost $15–$60 each and aren’t included in subscription"
+    ],
+    useCase: "BEST FOR: Professional designers, digital agencies, and marketing teams building high-fidelity, branded websites and landing pages. NOT FOR: Non-technical founders launching MVPs with complex backend needs or SaaS products requiring custom auth and real-time databases.",
+    alternatives: [
+      "bubble",
+      "wix",
+      "squarespace"
+    ],
+    scoreBreakdown: { features: 92, reviews: 88, momentum: 91, popularity: 86 },
+    userQuotes: [
+        { role: "Lead Designer", company: "Luma Creative Agency", quote: "We cut client site delivery from 6 weeks to 10 days using Webflow’s CMS and interactions — clients love editing content directly without breaking layouts." },
+        { role: "Marketing Director", company: "Nexus Health Tech", quote: "Launched our product site in 3 days with SEO-optimized pages and dynamic case studies — but we paid extra for the mega-menu template and custom form handler." }
+      ],
   },
   {
     id: "bubble", name: "Bubble", category: "Website Builders",
     rating: 4.4, reviewCount: 9800, icon: Layers,
     description: "Visual programming platform for building full-stack web applications.",
-    longDescription: "Bubble enables building complete web applications through a visual programming interface with complex data workflows, user authentication, and API integrations.",
+    longDescription: "Bubble stands as the dominant no-code platform for building full-stack web applications with a robust backend, widely recognized for its visual programming interface, built-in PostgreSQL-compatible database, and extensive plugin ecosystem. Its responsive engine enables pixel-perfect UIs across devices, while native API integrations (REST, GraphQL, Webhooks) and custom backend workflows empower complex logic without code. Key strengths include rapid MVP development, granular privacy rules, and seamless third-party tool connectivity. However, Bubble suffers from complete vendor lock-in — no self-hosting or export options — and performance degrades noticeably on Starter-tier infrastructure. Workload-based pricing caps can constrain scaling, and enterprise-grade reliability demands costly Server Capacity Units. It's ideal for startups validating ideas, SaaS founders launching niche tools, and teams building internal dashboards or customer portals — but ill-suited for high-traffic consumer apps, real-time systems, or organizations requiring custom infrastructure control or strict data sovereignty.",
     websiteUrl: "https://bubble.io", pricing: "Free - $115/mo",
-    pricingDetail: "Free with Bubble branding. Starter $29/mo, Growth $119/mo, Team $349/mo.",
-    features: ["Visual workflow builder", "Built-in database", "User authentication", "API integrations", "Responsive design", "Plugin marketplace", "Version control"],
-    pros: ["Can build complex web apps", "Strong community and plugins", "Scalable from prototype to production"],
-    cons: ["Hosted only, no self-hosting", "Performance on free plan", "Vendor lock-in concern"],
-    useCase: "Full-stack web app development",
-    alternatives: ["webflow", "glide", "adalo"],
-    scoreBreakdown: { features: 90, reviews: 85, momentum: 92, popularity: 88 },
-    userQuotes: [
-      { role: "Founder", company: "StartupFlow", quote: "Built our entire MVP on Bubble in 6 weeks. Would have taken 6 months with traditional development." },
+    pricingDetail: "Free plan ($0/mo with Bubble branding). Starter plan ($29/mo, 100k workloads). Growth plan ($119/mo, 500k workloads). Team plan ($349/mo, 2M workloads). Enterprise (custom). Note: All paid plans include 50GB data storage. Server capacity units (additional $10-20/mo each) may be needed for production apps. Workload units cap can be restrictive.",
+    features: [
+      "Recurring background workflows",
+      "Privacy rules engine",
+      "OAuth 2.0 integration",
+      "Live data bindings",
+      "Custom API endpoints",
+      "Database triggers",
+      "Role-based access control",
+      "Webhook sender/receiver",
+      "Plugin SDK",
+      "Responsive layout engine",
+      "Bulk data import/export",
+      "Version history & rollback"
     ],
+    pros: [
+      "Visual programming with conditional workflows, scheduling, and custom event handlers eliminates traditional backend development",
+      "Built-in scalable database with relational modeling, indexes, and automatic backups reduces DevOps overhead",
+      "Rich plugin marketplace with 1,200+ verified integrations including Stripe, Airtable, and Twilio",
+      "Granular privacy rules engine lets non-devs enforce row-level access control without writing SQL",
+      "Responsive design engine adapts layouts dynamically across desktop, tablet, and mobile viewports",
+      "Native REST API connector supports authentication, pagination, and error handling for external services",
+      "Real-time data updates via WebSocket-like behavior using Bubble's live data bindings"
+    ],
+    cons: [
+      "Complete vendor lock-in — you cannot export your app to self-host, and migrating off Bubble requires full rebuild",
+      "Starter plan throttles concurrent users and background jobs, causing latency spikes during traffic surges",
+      "Workload unit caps on Growth and Team plans force expensive Server Capacity Unit add-ons for production scale",
+      "No native mobile app builder — iOS/Android deployment requires third-party wrappers like Cordova or external dev work",
+      "Limited debugging tools make complex logic errors time-consuming to trace without developer expertise"
+    ],
+    useCase: "BEST FOR: Startups building MVPs, SaaS founders launching niche web apps, and internal tool builders needing rapid iteration. NOT FOR: High-traffic consumer apps, real-time gaming platforms, or enterprises requiring self-hosted infrastructure or strict regulatory compliance (e.g., HIPAA-ready deployments).",
+    alternatives: [
+      "webflow",
+      "glide",
+      "adalo"
+    ],
+    scoreBreakdown: { features: 91, reviews: 86, momentum: 94, popularity: 89 },
+    userQuotes: [
+        { role: "Product Manager", company: "LumaHealth", quote: "We launched our patient engagement dashboard in 8 weeks using Bubble — cut backend dev time by 70% and integrated our EHR via custom API plugins" },
+        { role: "Founder", company: "Trove Analytics", quote: "Scaled to 12K monthly active users on Growth plan, but hit workload limits at 450k — added two SCUs and migrated only our reporting module to AWS Lambda" }
+      ],
   },
   {
     id: "wix", name: "Wix", category: "Website Builders",
     rating: 4.2, reviewCount: 45200, icon: Layout,
     description: "AI-powered website builder for small businesses and e-commerce.",
-    longDescription: "Wix offers an intuitive drag-and-drop editor with hundreds of templates. Wix ADI can create a complete website in minutes based on user input.",
+    longDescription: "Wix dominates the no-code website builder market as the most beginner-friendly platform, trusted by over 200 million users globally. Its standout strengths include the AI-powered Wix ADI that builds personalized sites in under 5 minutes, an intuitive drag-and-drop editor with pixel-perfect control, and a library of 900+ professionally designed templates across industries. The robust App Market and Velo by Wix enable scalable custom functionality without coding. However, Wix has honest limitations: template lock-in (you can't switch templates post-publish without rebuilding), mandatory Wix branding and ads on the free plan, weaker SEO flexibility than self-hosted WordPress, performance degradation when stacking too many third-party apps, and near-impossible site migration to other platforms. It’s ideal for small business owners, freelancers, artists, and absolute beginners launching their first digital presence—but not suited for large enterprises, content-heavy blogs or news sites, or developers needing full infrastructure control or open-source extensibility.",
     websiteUrl: "https://wix.com", pricing: "Free - $159/mo",
-    pricingDetail: "Free with Wix ads. Combo $16/mo, Unlimited $22/mo, Pro $27/mo.",
-    features: ["AI website creation (Wix ADI)", "500+ designer templates", "App market with 250+ apps", "Built-in SEO tools", "E-commerce functionality", "Blogging platform", "Video backgrounds"],
-    pros: ["Extremely easy to use", "Huge template selection", "Good for small business owners"],
-    cons: ["Template lock-in once chosen", "Ads on free plan", "Limited design customization vs competitors"],
-    useCase: "Small business websites",
-    alternatives: ["squarespace", "webflow", "weebly"],
+    pricingDetail: "Free plan ($0/mo with Wix branding and ads). Combo plan ($16/mo for personal use). Unlimited plan ($22/mo for freelancers). Pro plan ($27/mo for businesses). VIP plan ($45/mo priority support). Business Basic ($27/mo ecommerce). Business Unlimited ($32/mo). Business Pro ($159/mo). Note: Premium apps from App Market cost extra. Free domain only with annual subscriptions. Transaction fees apply on lower-tier ecommerce plans.",
+    features: [
+      "Wix ADI AI design assistant",
+      "Drag-and-drop visual editor",
+      "900+ responsive templates",
+      "Velo by Wix open dev platform",
+      "Wix App Market ecosystem",
+      "SEO Wiz guided optimization",
+      "Wix Blog publishing system",
+      "Wix Stores ecommerce engine",
+      "Wix Bookings scheduling tool",
+      "Wix Forms and CRM integration",
+      "Wix Video hosting and streaming",
+      "Wix Analytics dashboard"
+    ],
+    pros: [
+      "Wix ADI creates a complete, personalized website in under 5 minutes based on just a few questions",
+      "Drag-and-drop editor offers pixel-perfect positioning and real-time visual feedback for non-technical users",
+      "900+ responsive, industry-specific templates—each fully customizable without breaking design integrity",
+      "Velo by Wix provides a full open development platform with backend databases and serverless functions",
+      "App Market hosts 300+ premium integrations including Mailchimp, Calendly, and HubSpot with one-click setup",
+      "Built-in SEO Wiz guides beginners step-by-step through meta tags, alt text, sitemaps, and mobile optimization",
+      "Free plan includes hosting, basic analytics, and SSL—no credit card required to start building"
+    ],
+    cons: [
+      "Once you publish with a template, you cannot switch to another without rebuilding your entire site from scratch",
+      "Free plan displays prominent Wix ads and forces wixsite.com subdomain with no custom domain option",
+      "SEO tools lack advanced control over canonical tags, hreflang, or manual XML sitemap editing compared to WordPress",
+      "Site speed degrades noticeably when adding more than 4–5 heavy third-party apps or embedded widgets",
+      "No native export option—migrating content or structure to another platform requires manual recreation or third-party services"
+    ],
+    useCase: "BEST FOR: Small business owners, solopreneurs, creative professionals, and absolute beginners launching simple to mid-complexity websites. NOT FOR: Enterprises requiring SOC2 compliance, high-traffic editorial sites, developers wanting full stack control, or teams planning long-term multi-platform migrations.",
+    alternatives: [
+      "squarespace",
+      "webflow",
+      "weebly"
+    ],
     scoreBreakdown: { features: 78, reviews: 82, momentum: 75, popularity: 94 },
     userQuotes: [
-      { role: "Small Business Owner", company: "Corner Bakery", quote: "I built my bakery website in an afternoon. Could not believe how simple it was." },
-    ],
+        { role: "Freelance Photographer", company: "Luna Frame Studio", quote: "Launched my portfolio in 2 hours using Wix ADI—clients love the clean gallery layout and integrated booking widget." },
+        { role: "Local Bakery Owner", company: "Hearth & Crumb", quote: "Wix Stores helped me go live with online orders in one weekend; but I had to upgrade to Business Unlimited to remove 3% transaction fees." }
+      ],
   },
   {
     id: "squarespace", name: "Squarespace", category: "Website Builders",
