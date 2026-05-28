@@ -8,21 +8,21 @@ module.exports = {
     extend: {
       colors: {
         deep: {
-          DEFAULT: '#052014',
-          100: '#0A2E1A',
-          200: '#0f3d22',
-          300: '#14532D',
-          400: '#166534',
-          500: '#059669',
+          DEFAULT: '#0f0a1e',
+          100: '#1a1233',
+          200: '#2a1a4e',
+          300: '#3b2566',
+          400: '#4c2d82',
+          500: '#6d3aff',
         },
         muted: {
-          DEFAULT: '#34D399',
-          light: '#6EE7B7',
+          DEFAULT: '#a78bfa',
+          light: '#c4b5fd',
         },
-        surface: '#D1FAE5',
+        surface: '#e8e0f7',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },

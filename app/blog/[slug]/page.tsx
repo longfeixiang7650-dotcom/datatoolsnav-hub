@@ -37,7 +37,7 @@ function renderContent(content: string) {
     // Heading (## or ###)
     if (trimmed.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="text-xl md:text-2xl font-bold text-[#D1FAE5] mt-10 mb-4 tracking-tight">
+        <h2 key={i} className="text-xl md:text-2xl font-bold text-[#e8e0f7] mt-10 mb-4 tracking-tight">
           {trimmed.replace(/^##\s+/, "")}
         </h2>
       );
@@ -46,7 +46,7 @@ function renderContent(content: string) {
     }
     if (trimmed.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="text-lg font-bold text-[#D1FAE5] mt-8 mb-3">
+        <h3 key={i} className="text-lg font-bold text-[#e8e0f7] mt-8 mb-3">
           {trimmed.replace(/^###\s+/, "")}
         </h3>
       );
@@ -67,7 +67,7 @@ function renderContent(content: string) {
 
     // Horizontal rule (--- separator)
     if (trimmed === "---") {
-      elements.push(<hr key={i} className="border-[#14532D] my-8" />);
+      elements.push(<hr key={i} className="border-[#3b2566] my-8" />);
       i++;
       continue;
     }
@@ -80,7 +80,7 @@ function renderContent(content: string) {
 
     // Regular paragraph
     elements.push(
-      <p key={i} className="text-[#6EE7B7] leading-relaxed mb-4 text-base">
+      <p key={i} className="text-[#c4b5fd] leading-relaxed mb-4 text-base">
         {formatInline(trimmed)}
       </p>
     );
@@ -107,11 +107,11 @@ function renderTable(rows: string[], key: string) {
     <div key={key} className="overflow-x-auto mb-6">
       <table className="w-full text-sm border-collapse">
         <thead>
-          <tr className="bg-[#0f3d22]">
+          <tr className="bg-[#2a1a4e]">
             {headerRow.map((h, idx) => (
               <th
                 key={idx}
-                className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-[#059669] border-b border-[#14532D]"
+                className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-[#6d3aff] border-b border-[#3b2566]"
               >
                 {h}
               </th>
@@ -120,9 +120,9 @@ function renderTable(rows: string[], key: string) {
         </thead>
         <tbody>
           {dataRows.map((row, rIdx) => (
-            <tr key={rIdx} className="border-b border-[#14532D]/50 hover:bg-[#0f3d22]/50 transition-colors">
+            <tr key={rIdx} className="border-b border-[#3b2566]/50 hover:bg-[#2a1a4e]/50 transition-colors">
               {row.map((cell, cIdx) => (
-                <td key={cIdx} className="px-4 py-3 text-[#6EE7B7]">
+                <td key={cIdx} className="px-4 py-3 text-[#c4b5fd]">
                   {cell}
                 </td>
               ))}
@@ -140,7 +140,7 @@ function formatInline(text: string): React.ReactNode {
   return parts.map((part, idx) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={idx} className="font-bold text-[#D1FAE5]">
+        <strong key={idx} className="font-bold text-[#e8e0f7]">
           {part.slice(2, -2)}
         </strong>
       );
@@ -199,7 +199,7 @@ export default async function BlogPostPage({
         {/* Back Link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-[#6EE7B7] hover:text-[#059669] transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sm text-[#c4b5fd] hover:text-[#6d3aff] transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Blog
@@ -211,14 +211,14 @@ export default async function BlogPostPage({
             {/* Header */}
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#059669] bg-[#0f3d22] px-3 py-1.5 rounded-md">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#6d3aff] bg-[#2a1a4e] px-3 py-1.5 rounded-md">
                   {post.category}
                 </span>
-                <div className="flex items-center gap-2 text-xs text-[#34D399]">
+                <div className="flex items-center gap-2 text-xs text-[#a78bfa]">
                   <User className="w-3.5 h-3.5" />
                   {post.author}
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#34D399]">
+                <div className="flex items-center gap-2 text-xs text-[#a78bfa]">
                   <Calendar className="w-3.5 h-3.5" />
                   {new Date(post.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -226,17 +226,17 @@ export default async function BlogPostPage({
                     year: "numeric",
                   })}
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-[#34D399]">
+                <div className="flex items-center gap-1.5 text-xs text-[#a78bfa]">
                   <Clock className="w-3.5 h-3.5" />
                   {post.readTime} min read
                 </div>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#D1FAE5] tracking-tight leading-[1.1] mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#e8e0f7] tracking-tight leading-[1.1] mb-4">
                 {post.title}
               </h1>
 
-              <p className="text-lg text-[#6EE7B7] leading-relaxed max-w-3xl">
+              <p className="text-lg text-[#c4b5fd] leading-relaxed max-w-3xl">
                 {post.excerpt}
               </p>
 
@@ -246,7 +246,7 @@ export default async function BlogPostPage({
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="flex items-center gap-1.5 px-3 py-1 bg-[#0A2E1A] border border-[#14532D] rounded-full text-xs text-[#34D399]"
+                      className="flex items-center gap-1.5 px-3 py-1 bg-[#1a1233] border border-[#3b2566] rounded-full text-xs text-[#a78bfa]"
                     >
                       <Tag className="w-3 h-3" />
                       {tag}
@@ -262,16 +262,16 @@ export default async function BlogPostPage({
             </div>
 
             {/* Article Footer */}
-            <div className="mt-12 pt-8 border-t border-[#14532D]">
-              <div className="bg-[#0A2E1A] border border-[#14532D] rounded-xl p-6">
+            <div className="mt-12 pt-8 border-t border-[#3b2566]">
+              <div className="bg-[#1a1233] border border-[#3b2566] rounded-xl p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#059669] to-[#34D399] flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6d3aff] to-[#a78bfa] flex items-center justify-center text-white font-bold text-lg">
                     {post.author.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-bold text-[#D1FAE5]">{post.author}</p>
-                    <p className="text-sm text-[#6EE7B7]">{post.authorRole}</p>
-                    <p className="text-xs text-[#34D399] mt-2">
+                    <p className="font-bold text-[#e8e0f7]">{post.author}</p>
+                    <p className="text-sm text-[#c4b5fd]">{post.authorRole}</p>
+                    <p className="text-xs text-[#a78bfa] mt-2">
                       All reviews and comparisons are based on verified data from G2, Capterra, TrustRadius, and other trusted sources.
                     </p>
                   </div>
@@ -282,18 +282,18 @@ export default async function BlogPostPage({
             {/* Related Posts (mobile) */}
             {relatedPosts.length > 0 && (
               <div className="mt-12 lg:hidden">
-                <h3 className="text-lg font-bold text-[#D1FAE5] mb-4">Related Articles</h3>
+                <h3 className="text-lg font-bold text-[#e8e0f7] mb-4">Related Articles</h3>
                 <div className="grid gap-4">
                   {relatedPosts.map((rp) => (
                     <Link
                       key={rp.slug}
                       href={`/blog/${rp.slug}`}
-                      className="block bg-[#0A2E1A] border border-[#14532D] rounded-xl p-4 hover:border-[#166534] transition-all"
+                      className="block bg-[#1a1233] border border-[#3b2566] rounded-xl p-4 hover:border-[#4c2d82] transition-all"
                     >
-                      <h4 className="font-bold text-[#D1FAE5] hover:text-[#059669] transition-colors text-sm">
+                      <h4 className="font-bold text-[#e8e0f7] hover:text-[#6d3aff] transition-colors text-sm">
                         {rp.title}
                       </h4>
-                      <p className="text-xs text-[#34D399] mt-1">
+                      <p className="text-xs text-[#a78bfa] mt-1">
                         {rp.readTime} min read · {new Date(rp.date).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -311,8 +311,8 @@ export default async function BlogPostPage({
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
               {/* Table of Contents */}
-              <div className="bg-[#0A2E1A] border border-[#14532D] rounded-xl p-5">
-                <h3 className="text-sm font-bold text-[#D1FAE5] mb-3 uppercase tracking-wider">
+              <div className="bg-[#1a1233] border border-[#3b2566] rounded-xl p-5">
+                <h3 className="text-sm font-bold text-[#e8e0f7] mb-3 uppercase tracking-wider">
                   In This Article
                 </h3>
                 <nav className="space-y-2">
@@ -324,7 +324,7 @@ export default async function BlogPostPage({
                       <a
                         key={idx}
                         href={`#`}
-                        className="block text-xs text-[#6EE7B7] hover:text-[#059669] transition-colors"
+                        className="block text-xs text-[#c4b5fd] hover:text-[#6d3aff] transition-colors"
                       >
                         {heading.replace(/^##\s+/, "")}
                       </a>
@@ -334,8 +334,8 @@ export default async function BlogPostPage({
 
               {/* Related Posts */}
               {relatedPosts.length > 0 && (
-                <div className="bg-[#0A2E1A] border border-[#14532D] rounded-xl p-5">
-                  <h3 className="text-sm font-bold text-[#D1FAE5] mb-3 uppercase tracking-wider">
+                <div className="bg-[#1a1233] border border-[#3b2566] rounded-xl p-5">
+                  <h3 className="text-sm font-bold text-[#e8e0f7] mb-3 uppercase tracking-wider">
                     Related Articles
                   </h3>
                   <div className="space-y-3">
@@ -345,10 +345,10 @@ export default async function BlogPostPage({
                         href={`/blog/${rp.slug}`}
                         className="block group"
                       >
-                        <h4 className="text-sm font-bold text-[#6EE7B7] group-hover:text-[#059669] transition-colors leading-snug">
+                        <h4 className="text-sm font-bold text-[#c4b5fd] group-hover:text-[#6d3aff] transition-colors leading-snug">
                           {rp.title}
                         </h4>
-                        <p className="text-xs text-[#34D399] mt-1">
+                        <p className="text-xs text-[#a78bfa] mt-1">
                           {rp.readTime} min read
                         </p>
                       </Link>
@@ -358,17 +358,17 @@ export default async function BlogPostPage({
               )}
 
               {/* CTA */}
-              <div className="bg-gradient-to-br from-[#0f3d22] to-[#0A2E1A] border border-[#14532D] rounded-xl p-5 text-center">
-                <div className="w-10 h-10 rounded-full bg-[#059669]/20 flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-5 h-5 text-[#059669]" />
+              <div className="bg-gradient-to-br from-[#2a1a4e] to-[#1a1233] border border-[#3b2566] rounded-xl p-5 text-center">
+                <div className="w-10 h-10 rounded-full bg-[#6d3aff]/20 flex items-center justify-center mx-auto mb-3">
+                  <Star className="w-5 h-5 text-[#6d3aff]" />
                 </div>
-                <h3 className="text-sm font-bold text-[#D1FAE5] mb-2">Find the Right Tool</h3>
-                <p className="text-xs text-[#6EE7B7] mb-4">
+                <h3 className="text-sm font-bold text-[#e8e0f7] mb-2">Find the Right Tool</h3>
+                <p className="text-xs text-[#c4b5fd] mb-4">
                   Browse 79+ enterprise software reviews
                 </p>
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-1 px-4 py-2 bg-[#059669] hover:bg-[#059669] text-white text-xs font-bold rounded-lg transition-colors"
+                  className="inline-flex items-center gap-1 px-4 py-2 bg-[#6d3aff] hover:bg-[#6d3aff] text-white text-xs font-bold rounded-lg transition-colors"
                 >
                   Browse Tools <ArrowRight className="w-3 h-3" />
                 </Link>

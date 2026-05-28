@@ -29,18 +29,18 @@ export default function Header() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#052014]/90 backdrop-blur-xl border-b border-[#14532D]/50'
+          ? 'bg-[#0f0a1e]/90 backdrop-blur-xl border-b border-[#3b2566]/50'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#059669] to-[#34D399] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6d3aff] to-[#a78bfa] flex items-center justify-center">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
-          <span className="text-lg font-bold text-[#D1FAE5] group-hover:text-[#059669] transition-colors">
-            B2B SaaS Hub
+          <span className="text-lg font-bold text-[#e8e0f7] group-hover:text-[#6d3aff] transition-colors">
+            NoCode Hub
           </span>
         </Link>
 
@@ -50,7 +50,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="px-4 py-2 text-sm font-medium text-[#6EE7B7] hover:text-[#D1FAE5] rounded-lg hover:bg-[#0f3d22] transition-all"
+              className="px-4 py-2 text-sm font-medium text-[#c4b5fd] hover:text-[#e8e0f7] rounded-lg hover:bg-[#2a1a4e] transition-all"
             >
               {item.label}
             </Link>
@@ -61,19 +61,19 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-1.5 px-4 py-2 text-sm text-[#6EE7B7] hover:text-[#D1FAE5] rounded-lg hover:bg-[#0f3d22] transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 text-sm text-[#c4b5fd] hover:text-[#e8e0f7] rounded-lg hover:bg-[#2a1a4e] transition-all"
           >
             <Search className="w-4 h-4" />
             Search
           </Link>
-          <button className="px-5 py-2 text-sm font-medium text-white bg-[#059669] hover:bg-[#059669] rounded-lg transition-colors shadow-glow-sm">
+          <button className="px-5 py-2 text-sm font-medium text-white bg-[#6d3aff] hover:bg-[#6d3aff] rounded-lg transition-colors shadow-glow-sm">
             Submit Tool
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-[#6EE7B7] hover:text-[#D1FAE5]"
+          className="md:hidden p-2 text-[#c4b5fd] hover:text-[#e8e0f7]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -85,20 +85,20 @@ export default function Header() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-[#0A2E1A]/95 backdrop-blur-xl border-b border-[#14532D]"
+          className="md:hidden bg-[#1a1233]/95 backdrop-blur-xl border-b border-[#3b2566]"
         >
           <nav className="px-6 py-4 flex flex-col gap-1">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="px-4 py-3 text-sm font-medium text-[#6EE7B7] hover:text-[#D1FAE5] hover:bg-[#0f3d22] rounded-lg transition-all"
+                className="px-4 py-3 text-sm font-medium text-[#c4b5fd] hover:text-[#e8e0f7] hover:bg-[#2a1a4e] rounded-lg transition-all"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <button className="mt-2 px-5 py-3 text-sm font-medium text-white bg-[#059669] rounded-lg">
+            <button className="mt-2 px-5 py-3 text-sm font-medium text-white bg-[#6d3aff] rounded-lg">
               Submit Tool
             </button>
           </nav>
