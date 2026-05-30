@@ -11,6 +11,7 @@ const BLOG_SLUGS = [
   "canva-vs-figma-vs-penpot-design-tools-2026",
   "internal-tools-no-code-budibase-retool",
   "mobile-app-development-no-code-flutterflow-draftbit-glide",
+  "nocode-vs-lowcode-2026-comparison-guide",
 ];
 
 const TOOL_SLUGS = [
