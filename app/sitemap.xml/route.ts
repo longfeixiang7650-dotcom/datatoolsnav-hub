@@ -12,6 +12,7 @@ const BLOG_SLUGS = [
   "internal-tools-no-code-budibase-retool",
   "mobile-app-development-no-code-flutterflow-draftbit-glide",
   "nocode-vs-lowcode-2026-comparison-guide",
+  "webflow-vs-bubble-vs-framer-2026",
 ];
 
 const TOOL_SLUGS = [
