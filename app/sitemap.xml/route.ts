@@ -13,6 +13,7 @@ const BLOG_SLUGS = [
   "mobile-app-development-no-code-flutterflow-draftbit-glide",
   "nocode-vs-lowcode-2026-comparison-guide",
   "webflow-vs-bubble-vs-framer-2026",
+  "flutterflow-vs-draftbit-vs-adalo-2026",
 ];
 
 const TOOL_SLUGS = [
