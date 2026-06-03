@@ -15,6 +15,7 @@ const BLOG_SLUGS = [
   "webflow-vs-bubble-vs-framer-2026",
   "flutterflow-vs-draftbit-vs-adalo-2026",
   "nocode-lowcode-mid-2026-ai-enterprise-trends",
+  "nocode-crm-platforms-hubspot-mailchimp-activecampaign-2026",
 ];
 
 const TOOL_SLUGS = [
