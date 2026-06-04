@@ -16,6 +16,7 @@ const BLOG_SLUGS = [
   "flutterflow-vs-draftbit-vs-adalo-2026",
   "nocode-lowcode-mid-2026-ai-enterprise-trends",
   "nocode-crm-platforms-hubspot-mailchimp-activecampaign-2026",
+  "nocode-landscape-mid-2026-trends-producthunt-nocode-tech",
 ];
 
 const TOOL_SLUGS = [
