@@ -17,6 +17,7 @@ const BLOG_SLUGS = [
   "nocode-lowcode-mid-2026-ai-enterprise-trends",
   "nocode-crm-platforms-hubspot-mailchimp-activecampaign-2026",
   "nocode-landscape-mid-2026-trends-producthunt-nocode-tech",
+  "n8n-vs-pipedream-vs-parabola-2026",
 ];
 
 const TOOL_SLUGS = [
