@@ -65,9 +65,9 @@ export default function ToolDetailPage() {
     scripts.push(s1);
 
     const org = organizationSchema(
-      'B2B SaaS Tool Hub',
-      'https://b2b-saas-tool-hub.com',
-      'Comprehensive B2B SaaS directory and tool hub for modern enterprises.'
+      'NoCode Tool Hub',
+      'https://nocode-tools.net',
+      'Comprehensive no-code and low-code directory and tool hub for modern teams.'
     );
     const s2 = document.createElement('script');
     s2.type = 'application/ld+json';

@@ -56,7 +56,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-[#8BA3BE] max-w-2xl mb-10 leading-relaxed"
         >
-          Compare over 5,000+ B2B SaaS tools. Read verified reviews, analyze pricing, and integrate the right solutions.
+          Compare over 5,000+ no-code and SaaS tools. Read verified reviews, analyze pricing, and integrate the right solutions.
         </motion.p>
 
         {/* Search Bar */}

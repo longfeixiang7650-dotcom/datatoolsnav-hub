@@ -20,7 +20,7 @@ export async function generateMetadata({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — B2B SaaS Tool Hub`,
+    title: `${post.title} — NoCode Tool Hub`,
     description: post.excerpt,
   };
 }
@@ -175,13 +175,13 @@ export default async function BlogPostPage({
     post.title,
     post.author,
     post.date,
-    'B2B SaaS Tool Hub',
+    'NoCode Tool Hub',
     post.excerpt
   );
   const orgJsonLd = organizationSchema(
-    'B2B SaaS Tool Hub',
-    'https://b2b-saas-tool-hub.com',
-    'Comprehensive B2B SaaS directory and tool hub for modern enterprises.'
+    'NoCode Tool Hub',
+    'https://nocode-tools.net',
+    'Comprehensive no-code and low-code directory and tool hub for modern teams.'
   );
 
   return (

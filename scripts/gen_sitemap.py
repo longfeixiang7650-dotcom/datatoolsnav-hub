@@ -59,7 +59,7 @@ const TOOL_SLUGS = [
 ];
 
 export async function GET() {{
-  const baseUrl = "https://b2b-software.net";
+  const baseUrl = "https://nocode-tools.net";
   
   const urls: string[] = [];
   

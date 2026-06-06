@@ -9,10 +9,10 @@ const FAQ_SCHEMA = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is B2B SaaS?",
+      name: "What is no-code SaaS?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "B2B SaaS (Business-to-Business Software as a Service) refers to cloud-based software solutions that businesses subscribe to and use to support their operations. Unlike traditional software that requires on-premise installation, B2B SaaS is hosted by the provider and accessed via a web browser. Examples include Salesforce (CRM), HubSpot (Marketing), Slack (Communication), and Asana (Project Management).",
+        text: "No-code SaaS (Software as a Service) refers to cloud-based software tools that allow users to build applications and automate workflows without writing code. Unlike traditional software that requires programming skills, no-code platforms use visual interfaces, drag-and-drop builders, and pre-built templates. Examples include Airtable (databases), Webflow (websites), Zapier (automation), and Bubble (web apps).",
       },
     },
     {
@@ -25,10 +25,10 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "What's the difference between B2B and B2C SaaS?",
+      name: "What's the difference between no-code and low-code?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "B2B SaaS targets business customers and focuses on features like team collaboration, admin controls, security compliance, and ROI tracking. B2C SaaS targets individual consumers and prioritizes user experience, ease of use, and personal productivity. B2B products typically have higher price points, longer sales cycles, and require onboarding support, while B2C products are often self-serve with lower monthly fees.",
+        text: "No-code platforms require zero programming knowledge — users build entirely through visual interfaces. Low-code platforms reduce but don't eliminate the need for coding, allowing developers to extend functionality with custom scripts. No-code is best for business users and non-technical teams, while low-code suits IT departments and professional developers who need flexibility. Both accelerate development compared to traditional coding.",
       },
     },
     {
@@ -41,10 +41,10 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "What are the most popular B2B SaaS categories?",
+      name: "What are the most popular no-code categories?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The most popular B2B SaaS categories include CRM (Customer Relationship Management), Marketing Automation, Project Management, Human Resources (HRIS), Accounting & Finance, Customer Support (Help Desk), Communication & Collaboration, Analytics & Business Intelligence, Cybersecurity, and DevOps tools. Each category has dozens of competing platforms with varying feature sets and pricing models.",
+        text: "Popular no-code categories include Website Builders (Webflow, Carrd, Bubble), Internal Tools (Retool, Budibase, Noloco), Automation (Zapier, Make, n8n), Workflow & Project Management (Notion, Airtable, Monday.com), Database & Backend (Xano, Supabase, Appwrite), E-commerce (Shopify, Gumroad), and AI Tools. Many of these platforms connect via APIs to create powerful integrated systems without writing code.",
       },
     },
     {
@@ -57,18 +57,18 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "How do B2B SaaS pricing models work?",
+      name: "How do no-code and SaaS pricing models work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "B2B SaaS pricing models vary widely. Common models include per-user per-month pricing (the most common), tiered plans (Basic/Pro/Enterprise), usage-based pricing (pay per API call or storage), flat-rate pricing, and freemium with paid upgrades. Many vendors also offer annual discounts of 15–25% compared to monthly billing. Enterprise plans often include custom pricing.",
+        text: "No-code and SaaS pricing models vary widely. Common models include per-user per-month pricing (the most common), tiered plans (Free/Pro/Enterprise), usage-based pricing (pay per workflow run or API call), flat-rate pricing, and freemium with paid upgrades. Many vendors also offer annual discounts of 15–25% compared to monthly billing. Enterprise plans often include custom pricing and dedicated support.",
       },
     },
     {
       "@type": "Question",
-      name: "What is a B2B SaaS marketplace?",
+      name: "What is a no-code tool marketplace?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A B2B SaaS marketplace is a platform where businesses can discover, compare, and purchase software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials.",
+        text: "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. NoCode Tool Hub provides independent, curated comparisons to simplify your decision process.",
       },
     },
     {
@@ -105,18 +105,18 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "How do B2B SaaS companies handle data security?",
+      name: "How do no-code companies handle data security?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Reputable B2B SaaS companies implement encryption at rest and in transit, SOC 2 Type II audits, ISO 27001 certification, GDPR compliance, regular penetration testing, multi-factor authentication (MFA), role-based access controls (RBAC), and data backup & disaster recovery procedures. Always verify a vendor's security posture before committing to their platform.",
+        text: "Reputable no-code and SaaS companies implement encryption at rest and in transit, SOC 2 Type II audits, ISO 27001 certification, GDPR compliance, regular penetration testing, multi-factor authentication (MFA), role-based access controls (RBAC), and data backup & disaster recovery procedures. Always verify a vendor's security posture before committing to their platform.",
       },
     },
     {
       "@type": "Question",
-      name: "What is the average length of a B2B SaaS sales cycle?",
+      name: "What is the average length of a SaaS sales cycle?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The B2B SaaS sales cycle varies by deal size and complexity. Self-serve products under $100/month may close in minutes. Mid-market deals ($1K–$10K/year) typically take 2–4 weeks. Enterprise deals ($50K+/year) can take 3–12 months, involving multiple stakeholders, demo sessions, security reviews, and legal negotiations.",
+        text: "The SaaS sales cycle varies by deal size and complexity. Self-serve products under $100/month may close in minutes. Mid-market deals ($1K–$10K/year) typically take 2–4 weeks. Enterprise deals ($50K+/year) can take 3–12 months, involving multiple stakeholders, demo sessions, security reviews, and legal negotiations.",
       },
     },
     {
@@ -137,18 +137,18 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "How do B2B SaaS reviews and ratings work?",
+      name: "How do no-code tool reviews and ratings work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "B2B SaaS reviews are typically collected by third-party platforms like G2, Capterra, and TrustRadius. Users submit ratings (usually 1–5 stars) and written feedback. These platforms verify reviewers, moderate content for authenticity, and aggregate scores to produce overall ratings. Reviews cover criteria like ease of use, customer support, value for money, and feature set. Always read recent reviews and look for patterns rather than outliers.",
+        text: "No-code tool reviews are typically collected by third-party platforms like G2, Capterra, and TrustRadius. Users submit ratings (usually 1–5 stars) and written feedback. These platforms verify reviewers, moderate content for authenticity, and aggregate scores to produce overall ratings. Reviews cover criteria like ease of use, customer support, value for money, and feature set. Always read recent reviews and look for patterns rather than outliers.",
       },
     },
     {
       "@type": "Question",
-      name: "What is the future of B2B SaaS?",
+      name: "What is the future of no-code and SaaS?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The future of B2B SaaS is being shaped by AI-powered features (copilots, automation, predictive analytics), vertical SaaS (industry-specific solutions), product-led growth (PLG) strategies, usage-based and consumption pricing models, and increased focus on interoperability through open APIs. The global B2B SaaS market is projected to exceed $900 billion by 2030, driven by digital transformation across all industries.",
+        text: "The future of no-code and SaaS is being shaped by AI-powered features (copilots, automation, predictive analytics), vertical SaaS (industry-specific solutions), product-led growth (PLG) strategies, usage-based and consumption pricing models, and increased focus on interoperability through open APIs. The global no-code market alone is projected to exceed $45 billion by 2030, driven by digital transformation across all industries.",
       },
     },
   ],
@@ -156,9 +156,9 @@ const FAQ_SCHEMA = {
 
 const FAQ_ITEMS = [
   {
-    question: "What is B2B SaaS?",
+    question: "What is no-code SaaS?",
     answer:
-      "B2B SaaS (Business-to-Business Software as a Service) refers to cloud-based software solutions that businesses subscribe to and use to support their operations. Unlike traditional software that requires on-premise installation, B2B SaaS is hosted by the provider and accessed via a web browser. Examples include Salesforce (CRM), HubSpot (Marketing), Slack (Communication), and Asana (Project Management).",
+      "No-code SaaS (Software as a Service) refers to cloud-based software tools that allow users to build applications and automate workflows without writing code. Unlike traditional software that requires programming skills, no-code platforms use visual interfaces, drag-and-drop builders, and pre-built templates. Examples include Airtable (databases), Webflow (websites), Zapier (automation), and Bubble (web apps).",
   },
   {
     question: "How do you choose the right SaaS tool for your business?",
@@ -166,9 +166,9 @@ const FAQ_ITEMS = [
       "Choosing the right SaaS tool involves defining your requirements, budgeting, evaluating features, reading verified user reviews from platforms like G2 and Capterra, considering integration capabilities, testing with free trials or demos, and assessing vendor support and scalability. Always prioritize tools that solve your specific pain points rather than getting distracted by feature bloat.",
   },
   {
-    question: "What's the difference between B2B and B2C SaaS?",
+    question: "What's the difference between no-code and low-code?",
     answer:
-      "B2B SaaS targets business customers and focuses on features like team collaboration, admin controls, security compliance, and ROI tracking. B2C SaaS targets individual consumers and prioritizes user experience, ease of use, and personal productivity. B2B products typically have higher price points, longer sales cycles, and require onboarding support, while B2C products are often self-serve with lower monthly fees.",
+      "No-code platforms require zero programming knowledge — users build entirely through visual interfaces. Low-code platforms reduce but don't eliminate the need for coding, allowing developers to extend functionality with custom scripts. No-code is best for business users and non-technical teams, while low-code suits IT departments and professional developers who need flexibility. Both accelerate development compared to traditional coding.",
   },
   {
     question: "How much should a small business spend on SaaS?",
@@ -176,9 +176,9 @@ const FAQ_ITEMS = [
       "A common benchmark is that small businesses spend 3–10% of their annual revenue on SaaS subscriptions. For a company with $500K in revenue, that translates to roughly $15K–$50K per year. However, this varies by industry — tech startups often spend more, while traditional service businesses spend less. The key is to track SaaS usage regularly and eliminate underutilized subscriptions.",
   },
   {
-    question: "What are the most popular B2B SaaS categories?",
+    question: "What are the most popular no-code categories?",
     answer:
-      "The most popular B2B SaaS categories include CRM (Customer Relationship Management), Marketing Automation, Project Management, Human Resources (HRIS), Accounting & Finance, Customer Support (Help Desk), Communication & Collaboration, Analytics & Business Intelligence, Cybersecurity, and DevOps tools. Each category has dozens of competing platforms with varying feature sets and pricing models.",
+      "Popular no-code categories include Website Builders (Webflow, Carrd, Bubble), Internal Tools (Retool, Budibase, Noloco), Automation (Zapier, Make, n8n), Workflow & Project Management (Notion, Airtable, Monday.com), Database & Backend (Xano, Supabase, Appwrite), E-commerce (Shopify, Gumroad), and AI Tools. Many of these platforms connect via APIs to create powerful integrated systems without writing code.",
   },
   {
     question: "What is SaaS churn and why does it matter?",
@@ -186,14 +186,14 @@ const FAQ_ITEMS = [
       "SaaS churn refers to the percentage of customers who cancel their subscriptions over a given period. It's a critical metric because acquiring new customers costs 5–7x more than retaining existing ones. High churn indicates product-market fit issues, poor customer experience, or competitive pressures. Top SaaS companies aim for monthly churn rates below 3–5%.",
   },
   {
-    question: "How do B2B SaaS pricing models work?",
+    question: "How do no-code and SaaS pricing models work?",
     answer:
-      "B2B SaaS pricing models vary widely. Common models include per-user per-month pricing (the most common), tiered plans (Basic/Pro/Enterprise), usage-based pricing (pay per API call or storage), flat-rate pricing, and freemium with paid upgrades. Many vendors also offer annual discounts of 15–25% compared to monthly billing. Enterprise plans often include custom pricing.",
+      "No-code and SaaS pricing models vary widely. Common models include per-user per-month pricing (the most common), tiered plans (Free/Pro/Enterprise), usage-based pricing (pay per workflow run or API call), flat-rate pricing, and freemium with paid upgrades. Many vendors also offer annual discounts of 15–25% compared to monthly billing. Enterprise plans often include custom pricing and dedicated support.",
   },
   {
-    question: "What is a B2B SaaS marketplace?",
+    question: "What is a no-code tool marketplace?",
     answer:
-      "A B2B SaaS marketplace is a platform where businesses can discover, compare, and purchase software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials.",
+      "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. NoCode Tool Hub provides independent, curated comparisons to simplify your decision process.",
   },
   {
     question: "How important are integrations when choosing SaaS tools?",
@@ -216,14 +216,14 @@ const FAQ_ITEMS = [
       "A free trial gives you full access to premium features for a limited time (typically 7–30 days), after which you must subscribe. Freemium offers a permanently free version with limited features, designed to upsell you to paid plans when you need more functionality. Free trials are better for evaluating full capabilities, while freemium is good for long-term testing at no cost.",
   },
   {
-    question: "How do B2B SaaS companies handle data security?",
+    question: "How do no-code companies handle data security?",
     answer:
-      "Reputable B2B SaaS companies implement encryption at rest and in transit, SOC 2 Type II audits, ISO 27001 certification, GDPR compliance, regular penetration testing, multi-factor authentication (MFA), role-based access controls (RBAC), and data backup & disaster recovery procedures. Always verify a vendor's security posture before committing to their platform.",
+      "Reputable no-code and SaaS companies implement encryption at rest and in transit, SOC 2 Type II audits, ISO 27001 certification, GDPR compliance, regular penetration testing, multi-factor authentication (MFA), role-based access controls (RBAC), and data backup & disaster recovery procedures. Always verify a vendor's security posture before committing to their platform.",
   },
   {
-    question: "What is the average length of a B2B SaaS sales cycle?",
+    question: "What is the average length of a SaaS sales cycle?",
     answer:
-      "The B2B SaaS sales cycle varies by deal size and complexity. Self-serve products under $100/month may close in minutes. Mid-market deals ($1K–$10K/year) typically take 2–4 weeks. Enterprise deals ($50K+/year) can take 3–12 months, involving multiple stakeholders, demo sessions, security reviews, and legal negotiations.",
+      "The SaaS sales cycle varies by deal size and complexity. Self-serve products under $100/month may close in minutes. Mid-market deals ($1K–$10K/year) typically take 2–4 weeks. Enterprise deals ($50K+/year) can take 3–12 months, involving multiple stakeholders, demo sessions, security reviews, and legal negotiations.",
   },
   {
     question: "Should we build or buy SaaS tools?",
@@ -236,14 +236,14 @@ const FAQ_ITEMS = [
       "SaaS sprawl is the uncontrolled proliferation of software subscriptions across an organization, leading to wasted spending, security risks, and integration headaches. The average company uses 130+ SaaS tools. To prevent sprawl, implement a SaaS management policy, conduct quarterly audits, use a SaaS management platform, designate approval workflows for new tool purchases, and consolidate overlapping tools.",
   },
   {
-    question: "How do B2B SaaS reviews and ratings work?",
+    question: "How do no-code tool reviews and ratings work?",
     answer:
-      "B2B SaaS reviews are typically collected by third-party platforms like G2, Capterra, and TrustRadius. Users submit ratings (usually 1–5 stars) and written feedback. These platforms verify reviewers, moderate content for authenticity, and aggregate scores to produce overall ratings. Reviews cover criteria like ease of use, customer support, value for money, and feature set. Always read recent reviews and look for patterns rather than outliers.",
+      "No-code tool reviews are typically collected by third-party platforms like G2, Capterra, and TrustRadius. Users submit ratings (usually 1–5 stars) and written feedback. These platforms verify reviewers, moderate content for authenticity, and aggregate scores to produce overall ratings. Reviews cover criteria like ease of use, customer support, value for money, and feature set. Always read recent reviews and look for patterns rather than outliers.",
   },
   {
-    question: "What is the future of B2B SaaS?",
+    question: "What is the future of no-code and SaaS?",
     answer:
-      "The future of B2B SaaS is being shaped by AI-powered features (copilots, automation, predictive analytics), vertical SaaS (industry-specific solutions), product-led growth (PLG) strategies, usage-based and consumption pricing models, and increased focus on interoperability through open APIs. The global B2B SaaS market is projected to exceed $900 billion by 2030, driven by digital transformation across all industries.",
+      "The future of no-code and SaaS is being shaped by AI-powered features (copilots, automation, predictive analytics), vertical SaaS (industry-specific solutions), product-led growth (PLG) strategies, usage-based and consumption pricing models, and increased focus on interoperability through open APIs. The global no-code market alone is projected to exceed $45 billion by 2030, driven by digital transformation across all industries.",
   },
 ];
 
@@ -273,7 +273,7 @@ export default function FAQPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-[#8BA3BE] max-w-xl mx-auto leading-relaxed">
-              Everything you need to know about B2B SaaS — from choosing the right
+              Everything you need to know about no-code tools and SaaS — from choosing the right
               tools to understanding pricing, security, and industry trends.
             </p>
           </div>

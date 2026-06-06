@@ -8,9 +8,9 @@ interface JsonLdProps {
 }
 
 export default function JsonLd({
-  siteName = 'B2B SaaS Tool Hub',
-  siteUrl = 'https://b2b-saas-tool-hub.com',
-  description = 'Comprehensive B2B SaaS directory and tool hub for modern enterprises.',
+  siteName = 'NoCode Tool Hub',
+  siteUrl = 'https://nocode-tools.net',
+  description = 'Comprehensive no-code and low-code directory and tool hub for modern teams.',
 }: JsonLdProps) {
   useEffect(() => {
     const script = document.createElement('script');
