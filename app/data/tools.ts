@@ -675,45 +675,7 @@ export const ALL_TOOLS: ToolData[] = [
     id: "n8n", name: "n8n", category: "Automation & Workflow",
     rating: 4.6, reviewCount: 4800, icon: Code2,
     description: "Open-source workflow automation with self-hosting.",
-    longDescription: `n8n stands as a powerful, developer-first open-source workflow automation platform that bridges the gap between enterprise-grade control and low-code accessibility. Positioned as a self-hostable alternative to SaaS-centric tools like Zapier and Make, n8n empowers teams—especially engineering, DevOps, and privacy-conscious product organizations—to retain full ownership of their data, logic, and infrastructure. Its core value lies not just in connecting apps (with 400+ native integrations), but in enabling granular customization: users can inject JavaScript or Python directly into workflows via Code nodes, build reusable custom nodes, and audit every byte of data flowing through their automations. Unlike black-box cloud services, n8n's transparency—backed by MIT-licensed source code on GitHub—makes it ideal for regulated industries and security-sensitive environments.
-
-## Key Features
-n8n delivers exceptional flexibility through its visual workflow editor with a node-based canvas, where each step (HTTP, database, AI, webhook, etc.) is modular and configurable. It supports branching logic (IF/ELSE), error handling with retry policies and fallback paths, and parallel execution for performance-critical pipelines. The built-in expression editor uses a powerful templating syntax for dynamic data manipulation across nodes. Custom Code nodes allow inline JS or Python scripting—enabling complex transformations, API client logic, or integration with internal SDKs. n8n also includes credential management with encrypted storage, version-controlled workflows via Git sync, role-based access control in hosted plans, and robust logging with execution history down to individual node outputs.
-
-## Pros
-• Full data sovereignty—zero data leaves your infrastructure when self-hosted
-• MIT-licensed open source with active community (18k+ GitHub stars, 2.5k+ contributors)
-• Unmatched extensibility via custom nodes, Code nodes, and REST API for programmatic control
-• Transparent, deterministic execution model—no hidden throttling
-• Excellent documentation, detailed debugging tools, and real-time execution previews
-• Enterprise-ready features in Cloud/Pro tiers: SSO, audit logs, and SLA guarantees
-• Cost-effective at scale—self-hosting incurs only infrastructure costs
-
-## Cons
-• Steeper learning curve than Zapier for non-technical users
-• Self-hosted setup requires DevOps familiarity (Docker, reverse proxies, TLS)
-• Limited native mobile app support
-• Community nodes lack formal governance
-
-## Pricing Info
-n8n is completely free and open-source for self-hosted deployments (MIT license). The official n8n Cloud starts at $20/month for 1 user and 10,000 executions/month. Pro self-hosted license ($99/user/year) unlocks advanced features like workflow encryption and audit logs. All pricing publicly listed at n8n.io/pricing (Ratings sourced from G2).
-
-## Ideal Use Cases
-• Engineering teams automating internal toolchains (GitHub → Jira → Slack → internal DB)
-• Fintech or healthtech startups requiring HIPAA/GDPR-compliant on-premises automation
-• Agencies building white-labeled automation solutions for clients
-
-## Score Breakdown
-Features: 9.5/10 — exceptional depth for developers
-Ease of Use: 7.8/10 — intuitive for coders; less so for business users
-Value for Money: 9.7/10 — unbeatable for self-hosted
-Support: 8.2/10 — responsive community forums
-
-## Real User Quote
-"Switching from Make to n8n cut our monthly automation spend by 65% and gave us full control over PII handling. The ability to debug exactly where a JSON path fails saved our dev team 10+ hours per week." — Alex Rivera, DevOps Lead at Medidata Analytics
-
-## Alternatives
-Zapier (best for non-technical users, limited customization); Make (strong visual logic, closed-source, no self-hosting); Pipedream (developer-friendly, generous free tier, less mature enterprise governance)`,
+    longDescription: "n8n is a mature, open-source workflow automation platform that occupies a distinctive niche at the intersection of developer control and operational flexibility—serving as a serious alternative to SaaS-centric tools like Zapier or Make for teams unwilling to sacrifice security, scalability, or customization for convenience. Built with Node.js and designed around a visual, node-based editor, n8n enables users to connect over 400+ apps and services—including REST APIs, databases, cloud storage, messaging platforms, and custom HTTP endpoints—through intuitive drag-and-drop workflows. Its standout technical capabilities include full support for branching logic, error handling with retry policies and fallback paths, expression-based data transformation using JavaScript-like syntax, native credential management with encryption at rest, and robust webhook handling with signature verification. Unlike many low-code tools, n8n offers granular execution visibility: every node’s input/output is inspectable in real time, logs are retained per execution, and workflows can be versioned via Git integration. It excels in hybrid and regulated environments—commonly adopted by engineering teams, DevOps practitioners, and internal tooling squads building custom integrations, ETL pipelines, alert routing systems, CI/CD triggers, and automated reporting dashboards. While its self-hosted nature delivers unmatched data sovereignty and compliance alignment (e.g., GDPR, HIPAA-ready deployments), it does require operational overhead—users must manage infrastructure, updates, scaling, and backups, making it less suitable for non-technical business users seeking turnkey automation. The community edition is fully functional and MIT-licensed, while the enterprise offering adds RBAC, audit logging, SSO, and priority support. In sum, n8n isn’t just “Zapier for developers”—it’s a production-grade automation engine engineered for those who demand transparency, extensibility, and ownership over their integration layer.",
     websiteUrl: "https://n8n.io", pricing: "Free - $20/mo",
     pricingDetail: "Free self-hosted. Cloud Starter $20/mo, Pro $50/mo.",
     features: ["Self-hosted option", "400+ integrations", "Code nodes (JS/Python)", "Webhook triggers", "Error workflows", "Execution history", "Role-based access"],
@@ -857,7 +819,7 @@ Make (more connector-dense, stronger multi-app orchestration); n8n (open-source 
     id: "workato", name: "Workato", category: "Automation & Workflow",
     rating: 4.3, reviewCount: 2400, icon: Cloud,
     description: "Enterprise iPaaS for integration and automation.",
-    longDescription: "Workato is an enterprise integration platform as a service (iPaaS) that connects apps, data, and experiences across the entire organization.",
+    longDescription: "Workato stands as a leading enterprise-grade integration platform as a service (iPaaS) that bridges the growing chasm between siloed SaaS applications, legacy systems, and custom-built infrastructure—positioning itself at the high-end of the no-code/low-code automation market alongside competitors like MuleSoft and Boomi, but with a distinctive emphasis on business-user accessibility without sacrificing IT governance. Its core strength lies in a visual, recipe-based automation builder that supports both declarative logic for non-technical users and embedded JavaScript, SQL, and Python for advanced customization—enabling true co-piloting between citizen integrators and professional developers. Workato excels at real-time and batch data synchronization, event-driven workflows, API management, and complex multi-system orchestration across CRM (Salesforce, HubSpot), ERP (NetSuite, SAP), HRIS (Workday, BambooHR), marketing stacks (Marketo, Mailchimp), and databases (PostgreSQL, Snowflake). It’s widely adopted by mid-to-large enterprises—particularly in finance, operations, and customer success teams—that need scalable, auditable, and compliant automations across hybrid environments, including on-premises systems via secure agents. Key strengths include its robust security posture (SOC 2 Type II, HIPAA, GDPR-ready), granular role-based access controls, comprehensive monitoring dashboards with SLA tracking, and native AI-assisted recipe suggestions and error diagnosis. That said, Workato’s learning curve remains steeper than simpler tools like Zapier, its pricing model can become opaque at scale due to tiered connectors and execution-based billing, and while it supports custom code, deeply technical integrations still often require engineering support—making it less ideal for startups or departments seeking rapid, lightweight fixes. Ultimately, Workato delivers unmatched balance: enterprise rigor meets operational agility, empowering organizations to automate not just tasks, but end-to-end business processes with confidence, control, and continuity.",
     websiteUrl: "https://www.workato.com", pricing: "Custom pricing",
     pricingDetail: "Enterprise pricing based on connectors and usage. Free trial available.",
     features: ["1000+ enterprise connectors", "Recipe-based automation", "API platform", "Data governance", "Security controls", "Monitoring", "Pre-built templates"],
@@ -874,7 +836,7 @@ Make (more connector-dense, stronger multi-app orchestration); n8n (open-source 
     id: "relay-app", name: "Relay.app", category: "Automation & Workflow",
     rating: 4.4, reviewCount: 800, icon: Zap,
     description: "Modern automation platform with AI-native features.",
-    longDescription: "Relay.app is a modern workflow automation platform designed for teams, with AI-native features, approval workflows, and collaborative debugging.",
+    longDescription: "Relay.app is a next-generation no-code automation platform positioned at the intersection of collaborative workflow orchestration and AI-augmented operations—distinct from legacy RPA tools and simpler Zapier-style connectors by prioritizing team-centric design, real-time visibility, and intelligent decision-making within complex, multi-step processes. Built natively for distributed teams, it offers deeply integrated approval workflows with granular role-based permissions, collaborative debugging via shared execution logs and step-level annotations, and AI-native capabilities including natural language workflow generation, auto-suggested error remediation, and contextual prompt chaining across services like Slack, Notion, Salesforce, and Google Workspace. Its visual builder supports parallel branches, conditional logic, custom webhooks, and reusable workflow templates—enabling everything from HR onboarding sequences with document e-signing and calendar sync to customer support escalation paths that route tickets based on sentiment analysis and SLA thresholds. Relay excels for mid-market SaaS companies, operations teams in fast-scaling startups, and IT-adjacent business units needing auditability without engineering dependency—but it’s less suited for highly regulated industries requiring SOC 2 Type II compliance (still in progress) or for ultra-low-latency, high-volume transactional automation where dedicated enterprise middleware remains more robust. While its AI features significantly reduce setup time and improve maintainability, they currently require human validation for production-critical logic, and native ERP integrations (e.g., NetSuite, SAP) remain limited to API-based connections rather than prebuilt connectors. What sets Relay apart is its obsessive focus on collaboration as a first-class automation primitive—not just who triggers a flow, but how teammates co-own, inspect, adjust, and learn from it in real time—making it one of the most promising platforms for organizations transitioning from ad-hoc scripting and siloed tools toward scalable, observable, and human-in-the-loop process intelligence.",
     websiteUrl: "https://relay.app", pricing: "Free - $40/mo",
     pricingDetail: "Free (1000 tasks/mo). Pro $20/mo, Team $40/mo, Enterprise custom.",
     features: ["Visual workflow builder", "AI-powered automation", "Approval workflows", "Debug mode", "Path branching", "Sub-runs", "Team collaboration"],
