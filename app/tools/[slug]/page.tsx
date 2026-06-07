@@ -65,9 +65,9 @@ export default function ToolDetailPage() {
     scripts.push(s1);
 
     const org = organizationSchema(
-      'NoCode Tool Hub',
-      'https://nocode-tools.net',
-      'Comprehensive no-code and low-code directory and tool hub for modern teams.'
+      'Data Tools Nav',
+      'https://datatoolsnav.net',
+      'Comprehensive data analytics and BI tools directory for data-driven teams.'
     );
     const s2 = document.createElement('script');
     s2.type = 'application/ld+json';

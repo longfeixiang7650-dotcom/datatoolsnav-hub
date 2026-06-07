@@ -4,9 +4,9 @@ import { BLOG_POSTS } from "@/data/blog-posts";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog — NoCode Tool Hub",
+  title: "Blog — Data Tools Nav",
   description:
-    "Expert insights, comparisons, and strategies for choosing and using no-code and SaaS tools. Stay informed with the latest in software and technology.",
+    "Expert insights, comparisons, and strategies for choosing and using data analytics and BI tools. Stay informed with the latest in business intelligence and data technology.",
 };
 
 const CATEGORIES = Array.from(new Set(BLOG_POSTS.map((post) => post.category)));

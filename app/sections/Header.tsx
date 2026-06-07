@@ -40,7 +40,7 @@ export default function Header() {
             <Sparkles className="w-4 h-4 text-white" />
           </div>
           <span className="text-lg font-bold text-[#e8e0f7] group-hover:text-[#6d3aff] transition-colors">
-            NoCode Hub
+            Data Tools Nav
           </span>
         </Link>
 

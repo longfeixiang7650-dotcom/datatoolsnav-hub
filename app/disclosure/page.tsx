@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclosure — NoCode Tool Hub",
+  title: "Affiliate Disclosure — Data Tools Nav",
   description:
-    "NoCode Tool Hub's affiliate disclosure policy. Learn how we may earn commissions through partner links on our site.",
+    "Data Tools Nav's affiliate disclosure policy. Learn how we may earn commissions through partner links on our site.",
 };
 
 export default function DisclosurePage() {
@@ -27,7 +27,7 @@ export default function DisclosurePage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Transparency First</h2>
             <p>
-              NoCode Tool Hub is committed to transparency. This Affiliate Disclosure
+              Data Tools Nav is committed to transparency. This Affiliate Disclosure
               explains how we may earn compensation through links on our website.
             </p>
           </section>
@@ -35,7 +35,7 @@ export default function DisclosurePage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Affiliate Links</h2>
             <p>
-              Some of the links on NoCode Tool Hub are affiliate links. This means that
+              Some of the links on Data Tools Nav are affiliate links. This means that
               if you click on a link and make a purchase or sign up for a service, we may
               receive a commission at no additional cost to you.
             </p>
@@ -78,8 +78,8 @@ export default function DisclosurePage() {
             <p>
               If you have any questions about our affiliate relationships or this
               disclosure, please contact us at{" "}
-              <a href="mailto:info@nocode-tools.net" className="text-[#3B82F6] hover:underline">
-                info@nocode-tools.net
+              <a href="mailto:info@datatoolsnav.net" className="text-[#3B82F6] hover:underline">
+                info@datatoolsnav.net
               </a>
               .
             </p>

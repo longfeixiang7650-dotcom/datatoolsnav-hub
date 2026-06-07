@@ -27,7 +27,7 @@ const TOOL_SLUGS = [
 ]
 
 export async function GET() {
-  const baseUrl = "https://nocode-tools.net";
+  const baseUrl = "https://datatoolsnav.net";
 
   const staticPages = [
     { url: `${baseUrl}`, priority: 1.0 },

@@ -6,30 +6,28 @@ import CookieBanner from "./components/CookieBanner";
 
 export const metadata: Metadata = {
   title: {
-    default: "NoCode Tool Hub — Best No-Code Tools & Platform Reviews 2026",
-    template: "%s — NoCode Tool Hub",
+    default: "Data Tools Nav — Best Data Analytics & BI Tools Directory 2026",
+    template: "%s — Data Tools Nav",
   },
   description:
-    "Compare 69+ no-code tools with verified reviews, pricing breakdowns, and expert comparisons. Find the perfect no-code platform for your business. Webflow, Bubble, Airtable, Zapier and more.",
+    "Discover 50+ data analytics and business intelligence tools with verified reviews, pricing breakdowns, and expert comparisons. Find the perfect BI platform for your business. Tableau, Power BI, Looker, Metabase and more.",
   keywords: [
-    "no-code tools",
-    "low-code platforms",
-    "no-code development",
-    "website builders no code",
-    "app builders no code",
-    "no-code automation",
-    "no-code database",
+    "data tools",
+    "BI platforms",
+    "business intelligence",
+    "analytics tools",
+    "data visualization",
+    "BI software",
+    "data analytics",
+    "dashboard tools",
   ],
-  verification: {
-    google: "T5bb4mZivi0CfaYYRiKZLSNIWmhvAX6_RVgDEyonTGo",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "NoCode Tool Hub",
-    title: "NoCode Tool Hub — Best No-Code Tools & Platform Reviews 2026",
+    siteName: "Data Tools Nav",
+    title: "Data Tools Nav — Best Data Analytics & BI Tools Directory 2026",
     description:
-      "Compare 69+ no-code tools with verified reviews, pricing, and expert comparisons.",
+      "Discover 50+ data analytics and business intelligence tools with verified reviews, pricing, and expert comparisons.",
   },
 };
 

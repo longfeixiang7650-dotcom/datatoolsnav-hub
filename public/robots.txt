@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nocode-tools.net/sitemap.xml
+Sitemap: https://datatoolsnav.net/sitemap.xml

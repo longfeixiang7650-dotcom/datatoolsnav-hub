@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FileText, Target, TrendingUp, Search } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About — NoCode Tool Hub",
+  title: "About — Data Tools Nav",
   description:
-    "NoCode Tool Hub is an independent directory of enterprise software. We curate and compare no-code and low-code products to help businesses make informed decisions.",
+    "Data Tools Nav is an independent directory of data analytics and business intelligence tools. We curate and compare BI platforms to help businesses make informed decisions.",
 };
 
 const VALUES = [
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <span className="text-gradient">Software Decisions</span>
           </h1>
           <p className="text-lg text-[#8BA3BE] leading-relaxed max-w-2xl mx-auto">
-            NoCode Tool Hub is an independent directory that helps businesses
+            Data Tools Nav is an independent directory that helps businesses
             discover, compare, and evaluate enterprise software. We aggregate
             information from publicly available sources to give you a clear
             picture of what each tool offers.
@@ -57,7 +57,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-[#F0F4F8] mb-6">What We Do</h2>
           <div className="space-y-4 text-[#8BA3BE] leading-relaxed">
             <p>
-              NoCode Tool Hub was created to solve a common problem: finding
+              Data Tools Nav was created to solve a common problem: finding
               reliable, up-to-date information about enterprise software is
               harder than it should be. Review sites are often biased by
               sponsorship, pricing is hidden behind sales calls, and feature
@@ -148,10 +148,10 @@ export default function AboutPage() {
               Contact Us
             </Link>
             <a
-              href="mailto:info@nocode-tools.net"
+              href="mailto:info@datatoolsnav.net"
               className="px-6 py-3 border border-[#1E3A5F] hover:border-[#2A5080] text-[#8BA3BE] hover:text-[#F0F4F8] font-medium rounded-lg transition-all"
             >
-              info@nocode-tools.net
+              info@datatoolsnav.net
             </a>
           </div>
         </div>

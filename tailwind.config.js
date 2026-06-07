@@ -13,13 +13,13 @@ module.exports = {
           200: '#2a1a4e',
           300: '#3b2566',
           400: '#4c2d82',
-          500: '#6d3aff',
+          500: '#6366F1',
         },
         muted: {
-          DEFAULT: '#a78bfa',
-          light: '#c4b5fd',
+          DEFAULT: '#818cf8',
+          light: '#a5b4fc',
         },
-        surface: '#e8e0f7',
+        surface: '#e0e7ff',
       },
       fontFamily: {
         sans: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],

@@ -46,10 +46,10 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6d3aff] to-[#a78bfa] flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-lg font-bold text-[#e8e0f7]">NoCode Hub</span>
+              <span className="text-lg font-bold text-[#e8e0f7]">Data Tools Nav</span>
             </Link>
             <p className="text-sm text-[#c4b5fd] leading-relaxed mb-6">
-              The most comprehensive directory of no-code tools. Discover, compare, and integrate the best platforms for building without code.
+              The most comprehensive directory of data analytics and business intelligence tools. Discover, compare, and integrate the best platforms for data-driven decisions.
             </p>
             <div className="flex items-center gap-3">
               <a href="#" className="w-9 h-9 rounded-lg bg-[#1a1233] border border-[#3b2566] flex items-center justify-center text-[#c4b5fd] hover:text-[#6d3aff] hover:border-[#4c2d82] transition-all">
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#3b2566] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[#a78bfa]">
-            &copy; {new Date().getFullYear()} NoCode Tool Hub. All rights reserved.
+            &copy; {new Date().getFullYear()} Data Tools Nav. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-sm text-[#a78bfa] hover:text-[#c4b5fd] transition-colors">

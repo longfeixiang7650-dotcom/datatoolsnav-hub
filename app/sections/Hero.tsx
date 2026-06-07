@@ -33,7 +33,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#162440] border border-[#1E3A5F] mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-[#22D3EE] pulse-dot" />
-          <span className="text-sm font-medium text-[#22D3EE]">5000+ Business Tools Curated</span>
+          <span className="text-sm font-medium text-[#22D3EE]">50+ Data & BI Tools Curated</span>
         </motion.div>
 
         {/* Headline */}
@@ -43,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-[#F0F4F8] tracking-tight leading-[1.05] mb-6 max-w-3xl"
         >
-          Find the Perfect Software to{' '}
+          Find the Perfect BI Tool to{' '}
           <span className="text-gradient" style={{ textShadow: '0 0 40px rgba(59,130,246,0.3)' }}>
             Scale Your Business
           </span>
@@ -56,7 +56,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-[#8BA3BE] max-w-2xl mb-10 leading-relaxed"
         >
-          Compare over 5,000+ no-code and SaaS tools. Read verified reviews, analyze pricing, and integrate the right solutions.
+          Compare 50+ data analytics and business intelligence tools. Read verified reviews, analyze pricing, and find the right solutions.
         </motion.p>
 
         {/* Search Bar */}
@@ -79,7 +79,7 @@ export default function Hero() {
             <Search className="ml-5 w-5 h-5 text-[#4A6380] flex-shrink-0" />
             <input
               type="search"
-              placeholder="Search for CRM, Analytics, HR tools..."
+              placeholder="Search for BI, Analytics, Visualization tools..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onFocus={() => setIsFocused(true)}

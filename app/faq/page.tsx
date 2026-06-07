@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "What is a no-code tool marketplace?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. NoCode Tool Hub provides independent, curated comparisons to simplify your decision process.",
+        text: "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. Data Tools Nav provides independent, curated comparisons to simplify your decision process.",
       },
     },
     {
@@ -193,7 +193,7 @@ const FAQ_ITEMS = [
   {
     question: "What is a no-code tool marketplace?",
     answer:
-      "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. NoCode Tool Hub provides independent, curated comparisons to simplify your decision process.",
+      "A no-code tool marketplace is a platform where businesses can discover, compare, and evaluate software tools. Examples include G2, Capterra, TrustRadius, and GetApp. These marketplaces aggregate user reviews, feature comparisons, and pricing information to help buyers make informed decisions. Some also facilitate direct purchases or free trials. Data Tools Nav provides independent, curated comparisons to simplify your decision process.",
   },
   {
     question: "How important are integrations when choosing SaaS tools?",

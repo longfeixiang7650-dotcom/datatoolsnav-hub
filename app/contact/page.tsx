@@ -141,22 +141,22 @@ export default function ContactPage() {
                 <p className="text-sm text-[#8BA3BE]">
                   <strong className="text-[#F0F4F8]">Support:</strong>
                   <br />
-                  <a href="mailto:support@nocode-tools.net" className="text-[#3B82F6] hover:underline">
-                    support@nocode-tools.net
+                  <a href="mailto:support@datatoolsnav.net" className="text-[#3B82F6] hover:underline">
+                    support@datatoolsnav.net
                   </a>
                 </p>
                 <p className="text-sm text-[#8BA3BE]">
                   <strong className="text-[#F0F4F8]">General:</strong>
                   <br />
-                  <a href="mailto:info@nocode-tools.net" className="text-[#3B82F6] hover:underline">
-                    info@nocode-tools.net
+                  <a href="mailto:info@datatoolsnav.net" className="text-[#3B82F6] hover:underline">
+                    info@datatoolsnav.net
                   </a>
                 </p>
                 <p className="text-sm text-[#8BA3BE]">
                   <strong className="text-[#F0F4F8]">Press:</strong>
                   <br />
-                  <a href="mailto:info@nocode-tools.net" className="text-[#3B82F6] hover:underline">
-                    info@nocode-tools.net
+                  <a href="mailto:info@datatoolsnav.net" className="text-[#3B82F6] hover:underline">
+                    info@datatoolsnav.net
                   </a>
                 </p>
               </div>

@@ -20,7 +20,7 @@ export async function generateMetadata({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — NoCode Tool Hub`,
+    title: `${post.title} — Data Tools Nav`,
     description: post.excerpt,
   };
 }
@@ -175,13 +175,13 @@ export default async function BlogPostPage({
     post.title,
     post.author,
     post.date,
-    'NoCode Tool Hub',
+    'Data Tools Nav',
     post.excerpt
   );
   const orgJsonLd = organizationSchema(
-    'NoCode Tool Hub',
-    'https://nocode-tools.net',
-    'Comprehensive no-code and low-code directory and tool hub for modern teams.'
+    'Data Tools Nav',
+    'https://datatoolsnav.net',
+    'Comprehensive data analytics and BI tools directory for data-driven teams.'
   );
 
   return (
