@@ -18,6 +18,8 @@ const BLOG_SLUGS = [
   "nocode-crm-platforms-hubspot-mailchimp-activecampaign-2026",
   "nocode-landscape-mid-2026-trends-producthunt-nocode-tech",
   "n8n-vs-pipedream-vs-parabola-2026",
+  "ai-powered-no-code-automation-2026-intelligent-workflows",
+  "design-tools-2026-canva-figma-penpot-balsamiq-creatie",
 ];
 
 const TOOL_SLUGS = [
