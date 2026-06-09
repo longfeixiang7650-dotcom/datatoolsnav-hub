@@ -1,13 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
-import { ChevronDown, Database, BarChart3, Search, Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { ChevronDown, Database, BarChart3, Search, Shield, TrendingUp, Users, Zap, Star } from "lucide-react";
+import { useEffect } from "react";
 
-export const metadata: Metadata = {
-  title: "FAQ — Data Tools Nav",
-  description:
-    "Frequently asked questions about data analytics tools, BI platforms, and how to choose the right solution for your business.",
-};
+// Metadata set via useEffect to keep compatibility with "use client"
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
@@ -153,6 +149,10 @@ import { useState } from "react";
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    document.title = "FAQ — Data Tools Nav";
+  }, []);
 
   return (
     <div className="relative pt-32 pb-20 px-6">

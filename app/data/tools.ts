@@ -1391,3 +1391,5 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
   },
 ];
 
+export const TOOL_MAP = new Map(ALL_TOOLS.map((t) => [t.id, t]));
+
