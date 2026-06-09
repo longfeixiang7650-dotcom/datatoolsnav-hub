@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2a1a4e] border border-[#3b2566] mb-8">
             <span className="w-2 h-2 rounded-full bg-[#a78bfa] pulse-dot" />
             <span className="text-sm font-medium text-[#a78bfa]">
-              {ALL_TOOLS.length} No-Code Tools Reviewed
+              {ALL_TOOLS.length} Data Tools Reviewed
             </span>
             <span className="mx-2 text-[#3b2566]">|</span>
             <span className="text-sm font-medium text-[#F59E0B]">
@@ -92,16 +92,16 @@ export default function HomePage() {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-[#e8e0f7] tracking-tight leading-[1.05] mb-6 max-w-3xl">
-            Build Without Code.{" "}
+            Unlock Data Insights.{" "}
             <span className="text-gradient" style={{ textShadow: "0 0 40px rgba(109,58,255,0.3)" }}>
-              Ship Faster
+              Drive Decisions
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-[#c4b5fd] max-w-2xl mb-10 leading-relaxed">
-            Compare 69+ no-code platforms with real G2 ratings and expert comparisons.
-            Find the perfect tool for your next project — no coding required.
+            Compare 50+ data analytics platforms with real G2 ratings and expert comparisons.
+            Find the perfect BI tool for your business — no coding required.
           </p>
 
           {/* Search Bar */}
@@ -110,7 +110,7 @@ export default function HomePage() {
               <Search className="ml-5 w-5 h-5 text-[#a78bfa] flex-shrink-0" />
               <input
                 type="search"
-                placeholder="Search no-code tools, platforms, or categories..."
+                placeholder="Search data tools, BI platforms, or categories..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 py-4 px-3 bg-transparent text-[#e8e0f7] placeholder:text-[#a78bfa] outline-none text-base"
@@ -192,7 +192,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-[#e8e0f7]">Editor&apos;s Picks</h2>
-                <p className="text-sm text-[#c4b5fd]">Top-rated no-code tools our team recommends</p>
+                <p className="text-sm text-[#c4b5fd]">Top-rated data tools our team recommends</p>
               </div>
             </div>
             <Link
@@ -264,7 +264,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-2xl md:text-[2rem] font-bold text-[#e8e0f7] tracking-tight">
-                {selectedCategory ? `${selectedCategory} Tools` : "All No-Code Tools"}
+                {selectedCategory ? `${selectedCategory} Tools` : "All Data Tools"}
               </h2>
               <p className="text-[#c4b5fd] mt-1 text-base">
                 {filteredTools.length} tool{filteredTools.length !== 1 ? "s" : ""} found
@@ -401,7 +401,7 @@ export default function HomePage() {
             </div>
             <div>
               <h2 className="text-2xl font-bold text-[#e8e0f7]">Trending Tools</h2>
-              <p className="text-sm text-[#c4b5fd]">Highest-rated no-code platforms this month</p>
+              <p className="text-sm text-[#c4b5fd]">Highest-rated data tools this month</p>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

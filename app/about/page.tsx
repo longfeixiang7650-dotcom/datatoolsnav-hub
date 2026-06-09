@@ -64,7 +64,7 @@ export default function AboutPage() {
               comparisons quickly go out of date.
             </p>
             <p>
-              We catalog and compare no-code and SaaS tools across 15+ categories,
+              We catalog and compare data and analytics tools across 15+ categories,
               including CRM, Marketing, DevOps, Security, HR, Finance, and more.
               Each tool page includes verified pricing tiers, feature lists, pros
               and cons synthesized from user reviews, and practical use case
