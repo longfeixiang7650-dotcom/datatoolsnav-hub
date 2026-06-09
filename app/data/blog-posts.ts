@@ -128,7 +128,7 @@ A: AI features are highly mature for specific tasks—automating data preparatio
 
 **Q: Is embedded analytics feasible with open-source alternatives like Apache Superset or Metabase?**  
 A: While Superset and Metabase offer free, open-source cores, enterprise-grade embedded analytics requires robust SDKs, white-labeling, granular row-level security, and SLA-backed uptime—features only available in paid enterprise editions (Superset Cloud, Metabase Enterprise) or commercial platforms like Sisense and Sigma. Open-source options typically incur higher total cost of ownership due to infrastructure, customization, and support requirements.`,
-    author: "Tools Expert",
+    author: "Karen Chen",
     authorRole: "Tools Navigation Hub",
     date: "2026-06-07",
     category: "BI Platforms",
@@ -259,7 +259,7 @@ A: Looker Studio (Free) is the strongest choice—its drag-and-drop interface, p
 
 **Q: What’s the average implementation timeline for enterprise deployment?**  
 A: Based on 127 verified enterprise rollouts (2025–2026), median timelines are: Power BI (3.2 weeks), Tableau (5.8 weeks), Qlik Sense (7.1 weeks), and Grafana (2.4 weeks for infrastructure monitoring). Custom D3.js implementations average 14–22 weeks due to full-stack development requirements.`,
-    author: "Tools Expert",
+    author: "Karen Chen",
     authorRole: "Tools Navigation Hub",
     date: "2026-06-07",
     category: "Data Visualization",
@@ -287,7 +287,7 @@ AI-powered analytics is no longer futuristic—it's foundational. The highest-le
 One final piece of advice: invest in observability as infrastructure. The best stacks include end-to-end lineage tracking (from source API to ingestion job to dbt model to BI dashboard), automated data quality scoring, and alerting tied to business impact. If your pipeline breaks and no one knows until a stakeholder emails asking why revenue is off, you're already behind.
 
 The modern data stack in 2026 isn't about collecting the shiniest tools. It's about building a resilient, interpretable, and intelligent system where data flows with intention—and where analytics engineers operate as strategic partners, not pipeline janitors.`,
-    author: "Tools Expert",
+    author: "Karen Chen",
     authorRole: "Tools Navigation Hub",
     date: "2026-06-08",
     category: "Analytics Engineering",
@@ -347,7 +347,7 @@ A: Assuming LLMs understand your business logic. Without rigorous semantic layer
 In 2026, the winning data stack looks less like a monolith and more like a well-curated marketplace: best-in-class tools stitched together by open standards (OpenLineage, SQLMesh, Delta Sharing), governed by contracts, and owned by domain teams—not platform engineers. Stop optimizing for cost per terabyte. Start optimizing for time-to-trust, time-to-action, and time-to-value. Your analysts—and your customers—will thank you.
 
 **Recommendation:** Audit your stack this quarter against these 7 trends. Prioritize semantic layer adoption *before* adding more AI features. And never, ever let a model go to production without an active data contract.`,
-    author: "Tools Expert",
+    author: "Karen Chen",
     authorRole: "Tools Navigation Hub",
     date: "2026-06-09",
     category: "Data Analytics",
@@ -744,7 +744,7 @@ And remember: tools are enablers — not outcomes. Invest equal energy in data c
 *David Park is a Data Engineering Analyst at Data Tools Nav, advising Fortune 500 and high-growth startups on modern data stack architecture since 2018. He holds the Google Cloud Professional Data Engineer and Snowflake SnowPro Advanced certifications. Follow him on LinkedIn for weekly pipeline deep dives.*
 
 *© 2026 Data Tools Nav. All rights reserved. This report reflects tool capabilities as of June 1, 2026. Vendor roadmaps and pricing are subject to change.*`,
-    author: "David Park",
+    author: "Karen Chen",
     authorRole: "Data Engineering Analyst",
     date: "2026-06-15",
     category: "Data Pipelines",

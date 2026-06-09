@@ -272,7 +272,7 @@ export default async function BlogPostPage({
                     <p className="font-bold text-[#e8e0f7]">{post.author}</p>
                     <p className="text-sm text-[#c4b5fd]">{post.authorRole}</p>
                     <p className="text-xs text-[#a78bfa] mt-2">
-                      All reviews and comparisons are based on verified data from G2, Capterra, TrustRadius, and other trusted sources.
+                      Datatoolsnav-hub independently researches and verifies all product data. Ratings sourced from G2, Capterra, and other trusted review platforms.
                     </p>
                   </div>
                 </div>
