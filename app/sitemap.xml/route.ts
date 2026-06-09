@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
 
 const BLOG_SLUGS = [
-  "best-bi-platforms-2026",
-  "data-engineering-pipeline-2026-etl-eltd-reverse-etl-tools-comparison",    "data-visualization-tools-guide",
+    "best-bi-platforms-2026",
+    "data-engineering-pipeline-2026-etl-eltd-reverse-etl-tools-comparison",
+    "data-visualization-tools-guide",
+    "top-data-analytics-data-science-trends-2026",
 ] as const;
 
 const TOOL_SLUGS = [

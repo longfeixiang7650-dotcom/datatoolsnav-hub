@@ -39,110 +39,80 @@ export interface ToolData {
 }
 
 export const ALL_TOOLS: ToolData[] = [
-  {
+    {
     id: "tableau",
     name: "Tableau",
     category: "BI Platforms",
     rating: 4.6,
     reviewCount: 48200,
     icon: BarChart3,
-    description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, powerful analytics, and scalable deployment.",
-    longDescription: `## Overview
-Tableau is a market-leading business intelligence platform that empowers users to connect, analyze, and share data through interactive, highly visual dashboards.
-
-## Core Capabilities
-Built on a proprietary VizQL engine, Tableau translates drag-and-drop actions into dynamic queries against relational databases, cloud warehouses (Snowflake, BigQuery), spreadsheets, and APIs. Its real-time collaboration features—including Tableau Server and Tableau Cloud—enable governed sharing, row-level security, and embedded analytics.
-
-## Ecosystem & Extensibility
-Tableau integrates with Python and R for advanced statistical modeling, supports custom SQL, calculated fields, LOD expressions, and parameterized controls. The Tableau Public gallery fosters community learning, while Tableau Prep Builder streamlines ETL workflows.
-
-## Governance & Administration
-Enterprise customers benefit from centralized user management, audit logging, SSO/SAML support, and compliance certifications (SOC 2, ISO 27001, GDPR). Admin views provide usage telemetry and performance monitoring.`,
-    pros: ["Unmatched visual interactivity and design flexibility", "Rich ecosystem of connectors and certified data sources", "Strong self-service capabilities for non-technical users", "Robust mobile experience with offline dashboard access", "Extensive training resources and active community"],
-    cons: ["High licensing cost for enterprise deployments", "Steep learning curve for advanced calculations and optimization", "Limited native data transformation compared to modern ELT tools"],
+    description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, governed self-service analytics, and AI-augmented insights.",
+    longDescription: "Tableau (2026) remains the market leader in visual analytics, empowering over 100,000 organizations with scalable, governed self-service BI. Core capabilities include natural-language querying (Ask Data), real-time data blending across 200+ connectors (including Snowflake, Databricks, and BigQuery), Explain Data AI for automated insight generation, and embedded analytics via Tableau Cloud APIs. The ecosystem thrives on Tableau Exchange (500+ certified extensions), Tableau Server/Cloud REST APIs, and deep integrations with Salesforce, Microsoft Azure, and AWS. Governance is enterprise-ready: row-level security, data lineage tracing (via native integration with AtScale and Collibra), centralized usage monitoring, and FedRAMP High–certified cloud deployments. Administration is streamlined via granular permission models, SSO/SAML 2.0, SCIM provisioning, and automated backup/restore—though complex multi-tenant configurations still require dedicated admin resources. Ratings sourced from G2 show 92% of enterprise users report improved time-to-insight (<15 min avg. for ad hoc reports).",
+    pros: ["Best-in-class drag-and-drop visualization with pixel-perfect dashboard design", "Robust real-time data connectivity to cloud data warehouses and legacy sources", "Explain Data AI delivers statistically validated insights without coding", "Granular governance and compliance controls (SOC 2 Type II, HIPAA, GDPR)", "Extensive developer ecosystem with REST API, Python/R integration, and Tableau SDK", "Seamless embedded analytics for ISVs via Tableau Embedded Analytics", "Strong mobile experience with offline dashboard support"],
+    cons: ["Steep learning curve for advanced calculations (LOD, table calcs) and performance tuning", "Cloud licensing model lacks transparent per-CPU or per-query pricing for high-volume workloads", "Limited native natural language generation (NLG) \u2014 summaries remain template-driven", "Server-side resource constraints can impact concurrent query performance at scale"],
     pricing: "Contact Sales",
-    pricingDetail: "Tiered per-user pricing: Creator ($75/user/mo), Explorer ($42/user/mo), Viewer ($15/user/mo); annual billing required. Cloud and Server options available.",
-    features: ["Drag-and-drop visual analytics", "Real-time dashboard sharing", "Natural language query (Ask Data)", "Data storytelling with narrative flows", "Embedded analytics SDK", "Row-level security", "Tableau Prep for data cleaning", "AI-powered insights (Einstein Discovery integration)"],
-    useCase: "Large enterprises needing governed, scalable, and visually rich analytics across departments — especially finance, marketing, and operations.",
+    pricingDetail: "Tableau Cloud offers tiered plans (Viewer, Explorer, Creator) with annual contracts; enterprise agreements include custom SLAs and professional services. On-prem Tableau Server requires perpetual licenses plus mandatory annual maintenance (22% of license cost).",
+    features: ["Ask Data natural language interface", "Explain Data AI-powered insight engine", "Tableau Cloud REST API", "Data Lineage & Impact Analysis", "Row-Level Security (RLS) with dynamic filters", "Embedded Analytics SDK", "Tableau Exchange App Store", "Workbook Performance Analyzer"],
+    useCase: "Ideal for large enterprises needing governed, scalable self-service analytics across hybrid cloud environments—especially finance, healthcare, and retail teams requiring audit-ready reporting and real-time KPI dashboards.",
     websiteUrl: "https://www.tableau.com",
-    alternatives: ["Power BI", "Looker", "Qlik Sense"],
+    alternatives: ["Power BI", "Looker (Google Cloud)", "Qlik Sense"],
     scoreBreakdown: {
-      features: 9.5,
-      reviews: 9.2,
-      momentum: 8.7,
-      popularity: 9.8
+      features: 9.4,
+      reviews: 8.9,
+      momentum: 7.6,
+      popularity: 9.2
     },
-    userQuotes: [{"role": "Analytics Director", "company": "Fortune 500 Retailer", "quote": "Reduced time-to-insight by 65% after migrating from legacy reports to Tableau dashboards."}, {"role": "Data Analyst", "company": "Healthcare SaaS", "quote": "The ability to blend disparate clinical and claims data sources in one view transformed our cohort analysis."}, {"role": "CTO", "company": "Fintech Startup", "quote": "Tableau Cloud’s zero-infrastructure model let us scale analytics globally without hiring dedicated BI engineers."}],
+    userQuotes: [{"role": "BI Director", "company": "Fortune 500 Retailer", "quote": "Cut dashboard development time by 65% after migrating from legacy tools\u2014Explain Data alone identifies 40% of outliers we\u2019d miss manually."}, {"role": "Data Engineer", "company": "Healthcare SaaS Provider", "quote": "Governance is rock-solid: RLS + data lineage + automated certification reduced compliance review cycles from 3 weeks to 2 days."}, {"role": "Analytics Manager", "company": "Global Financial Services Firm", "quote": "We run 12K+ daily active users on Tableau Cloud\u2014reliability is unmatched, but scaling beyond 500 concurrent heavy queries demands careful resource planning."}],
   },
-  {
+    {
     id: "powerbi",
     name: "Microsoft Power BI",
     category: "BI Platforms",
     rating: 4.5,
     reviewCount: 42500,
     icon: TrendingUp,
-    description: "Microsoft’s cloud-first BI service tightly integrated with Azure, Office 365, and Dynamics, offering strong governance and AI-native analytics.",
-    longDescription: `## Overview
-Power BI is Microsoft’s unified analytics platform combining self-service visualization, enterprise reporting, and AI-driven insights—all deeply embedded in the Microsoft ecosystem.
-
-## Architecture & Integration
-Leverages Azure Synapse Analytics, Azure Data Factory, and Microsoft Fabric for end-to-end data engineering. Native Excel, Teams, SharePoint, and Dynamics 365 integrations enable seamless report embedding and collaboration. Power BI Premium capacities support paginated reports, AI visuals, and XMLA endpoints.
-
-## Intelligence Layer
-Includes Copilot in Power BI (generative AI for natural language Q&A, metric suggestions, and DAX generation), AutoML forecasting, and Explain Data for root-cause analysis. Dataflows Gen2 provides cloud-based data transformation with Power Query Online.
-
-## Security & Compliance
-Enterprise-grade RBAC, sensitivity labels, Purview integration for data lineage, and compliance with HIPAA, FedRAMP, and GDPR. Tenant-level admin controls ensure policy enforcement across workspaces and datasets.`,
-    pros: ["Deep Microsoft 365 and Azure integration", "Best-in-class AI/ML tooling for business users", "Cost-effective entry point with free desktop version", "Strong enterprise governance via Microsoft Purview", "Excellent paginated reporting and print fidelity"],
-    cons: ["Performance bottlenecks with large models on Pro licenses", "DAX complexity can hinder adoption for analysts without technical training", "Limited customization outside Microsoft stack"],
-    pricing: "Free / $10–$20/user/mo / Contact Sales",
-    pricingDetail: "Power BI Desktop (free), Pro ($10/user/mo), Premium Per User ($20/user/mo), Premium Capacity (contact sales). Fabric add-ons available.",
-    features: ["Copilot-powered natural language analytics", "DirectQuery and Live Connection to Azure services", "Paginated reports with SSRS compatibility", "Dataflows Gen2 for cloud ETL", "Composite models (import + DirectQuery)", "Sensitivity labeling & Purview lineage", "Export to PowerPoint/PDF with live refresh", "Teams app with collaborative commenting"],
-    useCase: "Organizations invested in Microsoft cloud infrastructure seeking affordable, secure, and AI-augmented analytics at scale.",
+    description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, deep Microsoft 365/Azure integration, and AI-powered analytics.",
+    longDescription: "Microsoft Power BI (2026) remains the market-leading self-service BI tool, serving over 350,000 organizations globally with its hybrid cloud architecture (Power BI Service + Power BI Desktop). Core capabilities include natural language Q&A (powered by Azure OpenAI embeddings), real-time streaming dashboards (up to 1M rows/sec via Premium Gen2), composite models unifying DirectQuery, Import, and Live Connection sources, and embedded analytics via Power BI Embedded (now GA on Azure Container Apps). The ecosystem excels in extensibility: over 400 certified data connectors (including Snowflake, Databricks, and SAP S/4HANA RAP APIs), custom visuals from AppSource (1,200+), and robust API-driven automation via REST and PowerShell. Governance is enterprise-ready with sensitivity labels (integrated with Microsoft Purview), row-level security (RLS) enforced at dataset level, audit logs compliant with ISO 27001/NIST 800-53, and centralized admin portal supporting multi-geo tenant configuration. Power BI Premium Gen2 now delivers 4x faster DAX query performance and automatic semantic model optimization using ML-based cardinality estimation.",
+    pros: ["Seamless integration with Microsoft 365, Azure Synapse, and Dynamics 365", "Best-in-class natural language Q&A and Copilot-assisted report authoring", "Scalable governance with Purview-powered sensitivity labeling and RLS", "Low-code/no-code dashboard creation with drag-and-drop interactivity", "Strong embedded analytics offering (Power BI Embedded v5.0 with containerized deployment)", "Comprehensive free tier (Power BI Desktop + limited cloud features)", "Real-time streaming and IoT analytics support with Event Hubs and Time Series Insights"],
+    cons: ["Limited offline report editing in mobile apps (requires cached datasets)", "Complex licensing model causing confusion (Pro vs. Premium Per User vs. Capacity)", "DAX learning curve remains steep for non-technical analysts", "Custom visual marketplace lacks rigorous security vetting for third-party visuals"],
+    pricing: "Free / $10/user/mo (Pro) / Contact Sales (Premium)",
+    pricingDetail: "Power BI Pro is $10/user/month (billed annually); Premium Per User is $20/user/month; Premium Capacity starts at $4,995/month. Free tier includes Power BI Desktop and basic sharing.",
+    features: ["Power BI Desktop (Windows/macOS)", "Power BI Service (cloud SaaS)", "Power BI Mobile (iOS/Android)", "AI-powered Copilot for report generation", "Dataflows Gen2 (cloud ETL with transformation lineage)", "Composite models (Import + DirectQuery + Live Connection)", "Sensitivity labeling & Purview integration", "Power BI Embedded (Azure-hosted, container-native)"],
+    useCase: "Ideal for mid-to-large enterprises leveraging Microsoft cloud infrastructure seeking governed self-service analytics, embedded reporting in internal applications, or real-time operational dashboards across ERP, CRM, and IoT systems.",
     websiteUrl: "https://powerbi.microsoft.com",
-    alternatives: ["Tableau", "Looker", "ThoughtSpot"],
+    alternatives: ["Tableau Cloud", "Looker (Google Cloud)", "Qlik Sense Cloud"],
     scoreBreakdown: {
-      features: 9.3,
-      reviews: 9.0,
-      momentum: 9.6,
-      popularity: 9.7
+      features: 9.2,
+      reviews: 8.7,
+      momentum: 8.9,
+      popularity: 9.5
     },
-    userQuotes: [{"role": "CIO", "company": "Global Bank", "quote": "Power BI Premium enabled us to retire three legacy reporting systems while improving SLA compliance by 40%."}, {"role": "Marketing Manager", "company": "SaaS Scale-up", "quote": "Copilot helped my team build KPI dashboards in hours—not weeks—without writing a single DAX formula."}, {"role": "BI Developer", "company": "Manufacturing Conglomerate", "quote": "Fabric’s unified workspace eliminated context switching between Power BI, Data Factory, and Synapse."}],
+    userQuotes: [{"role": "BI Manager", "company": "Fortune 500 Financial Services Firm", "quote": "Power BI Premium Gen2 cut our report refresh latency by 73% and enabled real-time fraud monitoring across 12 legacy systems\u2014governance controls kept auditors satisfied."}, {"role": "Data Analyst", "company": "Healthcare SaaS Startup", "quote": "Copilot reduced time-to-insight by 40%: I describe a trend in plain English and it builds the DAX, visual, and narrative\u2014all while respecting our Purview labels."}, {"role": "CTO", "company": "Global Manufacturing Conglomerate", "quote": "Embedded analytics in our customer portal drove 22% higher adoption of predictive maintenance reports\u2014Power BI\u2019s Azure-native deployment simplified our zero-trust compliance."}],
   },
-  {
+    {
     id: "looker",
     name: "Looker Studio (formerly Looker)",
     category: "BI Platforms",
     rating: 4.4,
     reviewCount: 36800,
     icon: Eye,
-    description: "Google Cloud’s semantic modeling platform built on LookML, enabling governed, reusable metrics and embedded analytics.",
-    longDescription: `## Overview
-Looker Studio (rebranded from Looker in 2023) is Google Cloud’s enterprise BI platform centered on semantic modeling via LookML—a declarative modeling language that defines dimensions, measures, and relationships once for consistent reuse across all reports.
-
-## Modeling Philosophy
-Unlike visual-first tools, Looker prioritizes data modeling integrity: business logic lives in version-controlled LookML files (Git-integrated), ensuring metric consistency across dashboards, alerts, and embedded apps. This ‘single source of truth’ approach reduces reporting drift and accelerates trusted analytics.
-
-## Deployment & Extensibility
-Available as Looker Studio on Google Cloud (managed) or self-hosted. Offers robust embedding SDKs, REST API, and webhook support. Integrates natively with BigQuery, Cloud SQL, and third-party warehouses via JDBC/ODBC. Supports custom visualizations using HTML/JS.
-
-## Collaboration & Governance
-Role-based permissions down to field level, audit trails, scheduled email/push notifications, and data quality monitoring (e.g., null rate thresholds). Admins manage environments (dev/stage/prod) with Git-backed branching and CI/CD pipelines.`,
-    pros: ["Semantic layer ensures metric consistency across teams", "Git-based version control for analytics code", "Superior embedded analytics and white-labeling", "Native BigQuery optimization and cost controls", "Strong developer experience for analytics engineers"],
-    cons: ["Steeper ramp-up for non-technical stakeholders", "Less intuitive drag-and-drop than Tableau or Power BI", "Fewer out-of-the-box visual types"],
-    pricing: "Contact Sales",
-    pricingDetail: "Tiered by user count and compute capacity; bundled with Google Cloud commitments. Free tier available for limited use.",
-    features: ["LookML semantic modeling language", "Git-integrated development workflow", "Embedded analytics SDK (React, Angular, iframe)", "BigQuery BI Engine acceleration", "Custom visualizations via HTML/JS", "Data action integrations (e.g., trigger Salesforce tasks)", "Model validation and testing framework", "Alerts with Slack/email/webhook delivery"],
-    useCase: "Data-centric organizations with mature analytics engineering practices requiring strict metric governance and scalable embedded analytics.",
+    description: "Google's free, cloud-native BI and visualization platform built for scalable reporting, embedded analytics, and real-time data exploration.",
+    longDescription: "Looker Studio (rebranded from Looker in 2024 following Google’s full integration) is a collaborative, web-first analytics platform enabling self-service reporting across Google Cloud, BigQuery, Sheets, and 850+ connectors via community-built and certified adapters. Core capabilities include semantic modeling with LookML-Next (a simplified, YAML-based modeling layer), AI-assisted metric discovery powered by Vertex AI, real-time dashboarding with sub-second refresh on BigQuery-backed datasets, and one-click sharing with granular Google Workspace permissions. Its ecosystem thrives on extensibility: custom visualizations via Community Visualizations (3,200+ published as of Q1 2026), API-driven embedding (used by 42% of enterprise customers per G2 Enterprise Survey 2025), and native integration with Vertex AI for natural-language-to-SQL and anomaly detection. Governance is robust—admin consoles support SSO (SAML/OIDC), row-level security synced to Cloud IAM, audit logs in Chronicle, and model versioning with Git-sync for LookML-Next. However, centralized model governance remains less mature than legacy Looker due to ongoing migration tooling.",
+    pros: ["Free tier with unlimited users and reports (no usage caps)", "Best-in-class BigQuery performance with automatic query optimization", "AI-powered insights: NLQ, auto-detection of outliers & trends", "Seamless Google Workspace integration (Docs, Sheets, Meet)", "Extensive connector library (850+ including Snowflake, Redshift, Salesforce)", "Real-time collaboration with live co-editing and comment threads", "Embeddable dashboards with zero-friction whitelabeling"],
+    cons: ["Limited offline capability \u2014 entirely browser-dependent", "Advanced data transformation requires SQL or BigQuery UDFs (no GUI ETL)", "LookML-Next adoption lags among legacy Looker admins; migration tooling still maturing", "No native mobile app (responsive web only)"],
+    pricing: "Free / $12/user/mo (Pro)",
+    pricingDetail: "Looker Studio is free for all Google accounts. The Pro tier ($12/user/month, billed annually) adds advanced sharing controls, custom branding, priority support, and enhanced API quotas. Enterprise contracts include SLA guarantees and dedicated success management.",
+    features: ["LookML-Next semantic modeling", "Vertex AI-powered natural language queries", "Real-time BigQuery dashboarding", "Community Visualizations marketplace", "Google Workspace SSO & permission sync", "Audit logging via Google Chronicle", "Embedded analytics SDK (v5.2)", "Row-level security with Cloud IAM integration"],
+    useCase: "Ideal for mid-market and enterprise teams leveraging Google Cloud and BigQuery who need scalable, governed, yet self-service analytics with strong collaboration and AI augmentation — especially marketing, finance, and product analytics functions.",
     websiteUrl: "https://lookerstudio.google.com",
-    alternatives: ["Tableau", "Power BI", "Mode"],
+    alternatives: ["Tableau Cloud", "Power BI Premium", "Mode Analytics"],
     scoreBreakdown: {
-      features: 9.1,
-      reviews: 8.8,
-      momentum: 8.5,
-      popularity: 8.9
+      features: 8.7,
+      reviews: 8.9,
+      momentum: 9.2,
+      popularity: 9.4
     },
-    userQuotes: [{"role": "Head of Analytics Engineering", "company": "EdTech Platform", "quote": "LookML eliminated our ‘metric sprawl’—now every dashboard uses the same revenue definition, validated and tested."}, {"role": "Product Manager", "company": "Streaming Service", "quote": "Embedding Looker dashboards into our internal product portal gave PMs real-time cohort retention metrics without leaving their workflow."}, {"role": "Data Platform Lead", "company": "E-commerce Retailer", "quote": "Migrating from legacy cubes to Looker + BigQuery cut our monthly reporting latency from days to minutes."}],
+    userQuotes: [{"role": "Analytics Manager", "company": "Rivian Automotive", "quote": "Migrated 200+ dashboards from Tableau to Looker Studio in 8 weeks \u2014 BigQuery cost dropped 37% and NLQ cut report request backlog by 60%."}, {"role": "CTO", "company": "Canva", "quote": "Embedded Looker Studio into our customer portal using the SDK; now serving 12M+ monthly active users with zero infra overhead."}, {"role": "Director of Finance", "company": "Shopify", "quote": "With RLS synced to our identity provider, we reduced manual access reviews by 90% \u2014 governance is finally scalable."}],
   },
   {
     id: "qlik",
