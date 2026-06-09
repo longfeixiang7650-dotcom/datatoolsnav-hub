@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import { ChevronDown, Database, BarChart3, Search, Shield, TrendingUp, Users, Zap } from "lucide-react";
 
@@ -146,8 +148,6 @@ const FAQ_LIST = [
     text: "ETL (Extract, Transform, Load) is the process of moving data from various source systems into a central data warehouse. ETL tools automate this process — extracting data from APIs, databases, and files; transforming it into analysis-ready formats; and loading it into the warehouse. If your organization works with data from multiple sources, an ETL tool like Fivetran, Airbyte, or Stitch is essential for maintaining a reliable data pipeline.",
   },
 ];
-
-"use client";
 
 import { useState } from "react";
 
