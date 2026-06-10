@@ -8,24 +8,24 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="relative pt-32 pb-20 px-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-[800px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#3B82F6] bg-[#162440] px-3 py-1.5 rounded-md mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/50 px-3 py-1.5 rounded-md mb-4">
             Legal
           </span>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[#F0F4F8] tracking-tight mb-3">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-100 tracking-tight mb-3">
             Terms of Service
           </h1>
-          <p className="text-[#8BA3BE] text-sm">
+          <p className="text-slate-400 text-sm">
             Last updated: May 13, 2026
           </p>
         </div>
 
-        <div className="space-y-8 text-[#8BA3BE] leading-relaxed">
+        <div className="space-y-8 text-slate-400 leading-relaxed">
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">1. Acceptance of Terms</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">1. Acceptance of Terms</h2>
             <p>
               By accessing or using the Data Tools Nav website (the "Site"), you agree to be
               bound by these Terms of Service ("Terms"). If you do not agree to all of these
@@ -35,7 +35,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">2. Description of Service</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">2. Description of Service</h2>
             <p>
               Data Tools Nav is a curated directory platform that provides information,
               comparisons, reviews, and pricing details about business-to-business software-as-a-
@@ -46,7 +46,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">3. User Accounts and Registration</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">3. User Accounts and Registration</h2>
             <p className="mb-3">
               Certain features of the Site may require account registration. When creating an
               account, you agree to:
@@ -64,7 +64,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">4. User Conduct</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">4. User Conduct</h2>
             <p className="mb-3">You agree not to use the Site to:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Violate any applicable laws, regulations, or third-party rights</li>
@@ -79,7 +79,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">5. Intellectual Property</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">5. Intellectual Property</h2>
             <p className="mb-3">
               The Site and its original content, features, and functionality — including but not
               limited to the layout, design, logos, trademarks, database structure, and written
@@ -94,7 +94,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">6. Tool Listings and Reviews</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">6. Tool Listings and Reviews</h2>
             <p className="mb-3">
               Information about tools listed on our platform is gathered from public sources,
               vendor-provided data, and user-submitted reviews. We strive for accuracy but make
@@ -113,7 +113,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">7. Third-Party Links and Services</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">7. Third-Party Links and Services</h2>
             <p>
               Our Site contains links to third-party websites and services that are not owned or
               controlled by Data Tools Nav. We have no control over, and assume no
@@ -124,7 +124,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">8. Subscription and Pricing Information</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">8. Subscription and Pricing Information</h2>
             <p className="mb-3">
               Pricing information displayed on our platform is based on publicly available data
               and may not reflect current pricing. Prices are subject to change by the respective
@@ -139,7 +139,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">9. Limitation of Liability</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">9. Limitation of Liability</h2>
             <p>
               To the fullest extent permitted by law, Data Tools Nav, its officers, directors,
               employees, and affiliates shall not be liable for any indirect, incidental, special,
@@ -150,7 +150,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">10. Disclaimer of Warranties</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">10. Disclaimer of Warranties</h2>
             <p>
               The Site and all content are provided on an "as is" and "as available" basis
               without warranties of any kind, either express or implied, including but not limited
@@ -161,7 +161,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">11. Indemnification</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">11. Indemnification</h2>
             <p>
               You agree to indemnify, defend, and hold harmless Data Tools Nav and its
               affiliates, officers, agents, and employees from any claims, damages, losses,
@@ -172,7 +172,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">12. Termination</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">12. Termination</h2>
             <p>
               We may terminate or suspend your access to the Site immediately, without prior
               notice or liability, for any reason, including breach of these Terms. Upon
@@ -183,7 +183,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">13. Governing Law</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">13. Governing Law</h2>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of the
               State of California, without regard to its conflict of law provisions. Any disputes
@@ -193,11 +193,11 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">14. Contact Information</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">14. Contact Information</h2>
             <div className="mt-4 p-5 bg-[#0F1D32] border border-[#1E3A5F] rounded-xl">
-              <p className="mb-2"><strong className="text-[#F0F4F8]">Email:</strong> legal@datatoolsnav.net</p>
-              <p className="mb-2"><strong className="text-[#F0F4F8]">Support:</strong> support@datatoolsnav.net</p>
-              <p><strong className="text-[#F0F4F8]">Address:</strong> 123 Software Row, Suite 200, Austin, TX 78701</p>
+              <p className="mb-2"><strong className="text-slate-100">Email:</strong> legal@datatoolsnav.net</p>
+              <p className="mb-2"><strong className="text-slate-100">Support:</strong> support@datatoolsnav.net</p>
+              <p><strong className="text-slate-100">Address:</strong> 123 Software Row, Suite 200, Austin, TX 78701</p>
             </div>
           </section>
         </div>

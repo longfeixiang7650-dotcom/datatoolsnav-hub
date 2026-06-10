@@ -8,24 +8,24 @@ export const metadata: Metadata = {
 
 export default function DisclosurePage() {
   return (
-    <div className="relative pt-32 pb-20 px-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-[800px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#3B82F6] bg-[#162440] px-3 py-1.5 rounded-md mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/50 px-3 py-1.5 rounded-md mb-4">
             Legal
           </span>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[#F0F4F8] tracking-tight mb-3">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-100 tracking-tight mb-3">
             Affiliate Disclosure
           </h1>
-          <p className="text-[#8BA3BE] text-sm">
+          <p className="text-slate-400 text-sm">
             Last updated: May 21, 2026
           </p>
         </div>
 
-        <div className="space-y-6 text-[#8BA3BE] leading-relaxed">
+        <div className="space-y-6 text-slate-400 leading-relaxed">
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Transparency First</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">Transparency First</h2>
             <p>
               Data Tools Nav is committed to transparency. This Affiliate Disclosure
               explains how we may earn compensation through links on our website.
@@ -33,7 +33,7 @@ export default function DisclosurePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Affiliate Links</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">Affiliate Links</h2>
             <p>
               Some of the links on Data Tools Nav are affiliate links. This means that
               if you click on a link and make a purchase or sign up for a service, we may
@@ -47,7 +47,7 @@ export default function DisclosurePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">No Impact on Rankings</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">No Impact on Rankings</h2>
             <p>
               Our tool listings, ratings, and recommendations are never influenced by
               affiliate relationships. We evaluate tools based on publicly available
@@ -58,7 +58,7 @@ export default function DisclosurePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Partners</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">Partners</h2>
             <p>
               We may participate in affiliate programs including but not limited to:
             </p>
@@ -74,7 +74,7 @@ export default function DisclosurePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#F0F4F8] mb-3">Questions</h2>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">Questions</h2>
             <p>
               If you have any questions about our affiliate relationships or this
               disclosure, please contact us at{" "}

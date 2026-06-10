@@ -128,8 +128,8 @@ A: AI features are highly mature for specific tasks—automating data preparatio
 
 **Q: Is embedded analytics feasible with open-source alternatives like Apache Superset or Metabase?**  
 A: While Superset and Metabase offer free, open-source cores, enterprise-grade embedded analytics requires robust SDKs, white-labeling, granular row-level security, and SLA-backed uptime—features only available in paid enterprise editions (Superset Cloud, Metabase Enterprise) or commercial platforms like Sisense and Sigma. Open-source options typically incur higher total cost of ownership due to infrastructure, customization, and support requirements.`,
-    author: "Karen Chen",
-    authorRole: "Tools Navigation Hub",
+    author: "Sean Moretti",
+    authorRole: "Founder & CEO, Juniper Interactive",
     date: "2026-06-06",
     category: "BI Platforms",
     readTime: 11,
@@ -498,8 +498,8 @@ And remember: tools are enablers — not outcomes. Invest equal energy in data c
 *David Park is a Data Engineering Analyst at Data Tools Nav, advising Fortune 500 and high-growth startups on modern data stack architecture since 2018. He holds the Google Cloud Professional Data Engineer and Snowflake SnowPro Advanced certifications. Follow him on LinkedIn for weekly pipeline deep dives.*
 
 *© 2026 Data Tools Nav. All rights reserved. This report reflects tool capabilities as of June 1, 2026. Vendor roadmaps and pricing are subject to change.*`,
-    author: "Karen Chen",
-    authorRole: "Data Engineering Analyst",
+    author: "Sean Moretti",
+    authorRole: "Technical Lead, Juniper Interactive",
     date: "2026-06-07",
     category: "Data Pipelines",
     readTime: 28,
@@ -574,7 +574,7 @@ Full data source list:
 - DBTA. "The State of Data Engineering 2026." Database Trends and Applications, Vol. 29, Issue 3.
 - Forrester. "The Trust Dividend: How Data Observability Drives Business Adoption." Tech Report FR-2026-0542, May 2026.
 - IDC. "Compliance-Driven Data Governance: The Rise of Enforceable SLAs." Document #US51845226, March 2026.`,
-    author: "Alex Rivera",
+    author: "Layla Martins",
     authorRole: "Senior Data Strategy Analyst",
     date: "2026-06-10",
     category: "Data Engineering",
