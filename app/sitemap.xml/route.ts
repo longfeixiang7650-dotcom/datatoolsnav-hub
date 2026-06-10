@@ -5,6 +5,7 @@ const BLOG_SLUGS = [
     "data-engineering-pipeline-2026-etl-eltd-reverse-etl-tools-comparison",
     "data-visualization-tools-guide",
     "top-data-analytics-data-science-trends-2026",
+    "data-quality-observability-2026-key-findings",
 ] as const;
 
 const TOOL_SLUGS = [
