@@ -6,7 +6,8 @@ const BLOG_SLUGS = [
     "data-visualization-tools-guide",
     "top-data-analytics-data-science-trends-2026",
     "data-quality-observability-2026-key-findings",
-] as const;
+    "ga4-vs-adobe-vs-mixpanel-2026",
+  ] as const;
 
 const TOOL_SLUGS = [
   "tableau",
