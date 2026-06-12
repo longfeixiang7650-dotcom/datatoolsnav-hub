@@ -30,3 +30,6 @@ patch.diff
 newtools.js
 new-tools-batch.ts
 .vercel
+.next_old/
+tsconfig.tsbuildinfo
+scripts/
