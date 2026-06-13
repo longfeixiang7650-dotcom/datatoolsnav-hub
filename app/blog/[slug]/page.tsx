@@ -364,7 +364,7 @@ export default async function BlogPostPage({
                 </div>
                 <h3 className="text-sm font-bold text-[#e8e0f7] mb-2">Find the Right Tool</h3>
                 <p className="text-xs text-[#c4b5fd] mb-4">
-                  Browse 79+ enterprise software reviews
+                  Browse 25+ data analytics tools
                 </p>
                 <Link
                   href="/"
