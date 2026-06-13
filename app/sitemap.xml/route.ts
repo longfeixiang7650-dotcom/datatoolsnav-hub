@@ -7,6 +7,8 @@ const BLOG_SLUGS = [
     "top-data-analytics-data-science-trends-2026",
     "data-quality-observability-2026-key-findings",
     "ga4-vs-adobe-vs-mixpanel-2026",
+    "dbt-analytics-engineering-guide-2026",
+    "essential-data-analytics-tools-2026",
   ] as const;
 
 const TOOL_SLUGS = [
@@ -20,6 +22,21 @@ const TOOL_SLUGS = [
     "lightdash",
     "hex",
     "plotly",
+    "fivetran",
+    "dbt",
+    "airbyte",
+    "snowplow",
+    "stitch",
+    "matillion",
+    "snowflake",
+    "sisense",
+    "domo",
+    "airflow",
+    "databricks",
+    "talend",
+    "optimizely",
+    "vwo",
+    "google-cloud-experimentation-suite",
 ] as const;
 
 const CATEGORY_SLUGS = [
@@ -29,7 +46,6 @@ const CATEGORY_SLUGS = [
     "data-integration",
     "data-visualization",
     "data-warehousing",
-    "['bi-platforms',-'data-visualization']",
 ] as const;
 
 export async function GET() {
