@@ -1222,7 +1222,17 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
     reviewCount: 3800,
     icon: BarChart3,
     description: "AI-driven embedded analytics platform with cloud-native architecture enabling white-label dashboards, low-code app building, and governed self-service analytics for ISVs and mid-to-large enterprises.",
-    longDescription: "Sisense is a mature, enterprise-grade embedded analytics and business intelligence platform trusted by over 2,800 global customers--including 25% of Fortune 500 companies--as of Q2 2026. Deployed across hybrid environments (cloud-native on AWS/Azure, on-premises, or containerized via Docker/Kubernetes), Sisense leverages its proprietary in-chip data engine to accelerate query performance: real-world benchmarks show sub-second response times for dashboards querying 50+ billion rows across 12+ joined tables, with average load latency under 3.2 seconds for 10K-row visualizations. Its Elasticube architecture supports real-time ingestion from 200+ connectors--including Snowflake, SAP HANA, Salesforce, and REST APIs--with incremental refresh cycles as frequent as every 2 minutes. Power users at firms like Dell Technologies and Philips Healthcare report deploying 450+ production dashboards serving 18,000+ active monthly users, with 72% of self-service reports built without SQL by business analysts using drag-and-drop widgets and natural-language search. The platform's embedded analytics SDK enables white-labeled integration into SaaS applications; one fintech client embedded 37 custom analytics modules into their core loan origination platform, reducing time-to-insight for underwriters by 68%. Sisense's AI layer--Sisense Copilot--delivers context-aware insights using fine-tuned LLMs trained on proprietary BI ontologies, achieving 91% accuracy in automated anomaly detection across time-series KPIs. Governance is enforced via role-based access controls down to the row- and column-level, with audit logs retained for 36 months and SOC 2 Type II, HIPAA, and GDPR compliance certified in 2025. Average implementation time for mid-market deployments (5-15 data sources, <100 users) is 11.4 weeks, supported by 120+ certified partners and a 24/7 enterprise support SLA guaranteeing <15-minute response for P1 incidents.",
+    longDescription: `## Overview
+Sisense is a mature, enterprise-grade embedded analytics and business intelligence platform trusted by over 2,800 global customers--including 25% of Fortune 500 companies--as of Q2 2026. Deployed across hybrid environments (cloud-native, on-prem, or containerized via Docker/Kubernetes), it leverages a proprietary in-chip data engine for sub-second query performance on datasets exceeding 50 billion rows.
+
+## Core Capabilities
+The Elasticube architecture supports real-time ingestion from 200+ connectors with incremental refresh cycles as frequent as every 2 minutes. Sisense Copilot, the AI layer, delivers context-aware insights with 91% accuracy in automated anomaly detection across time-series KPIs. Business analysts build 72% of self-service reports without SQL using drag-and-drop widgets and natural-language search.
+
+## Embedded Analytics & Governance
+The platform's embedded analytics SDK enables white-labeled integration into SaaS applications; one fintech client embedded 37 custom modules, reducing underwriter time-to-insight by 68%. Governance is enforced via row- and column-level RBAC, with audit logs retained for 36 months and SOC 2 Type II, HIPAA, GDPR compliance certified in 2025.
+
+## Performance & Ecosystem
+Power users at Dell Technologies and Philips Healthcare deploy 450+ production dashboards serving 18,000+ active users. Average mid-market implementation (5-15 data sources, <100 users) is 11.4 weeks, supported by 120+ certified partners and 24/7 enterprise SLA with <15-minute P1 response.`,
     pros: [
         "Sub-second query performance on datasets exceeding 50B rows via in-chip engine",
         "Robust embedded analytics SDK with white-labeling and multi-tenancy support",
@@ -1312,7 +1322,17 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
     reviewCount: 8200,
     icon: Search,
     description: "Domo is a cloud-native business intelligence and data analytics platform designed for enterprise teams seeking real-time, self-service analytics without heavy IT dependency.",
-    longDescription: "Domo is a cloud-native business intelligence and data analytics platform designed for enterprise teams seeking real-time, self-service analytics without heavy IT dependency. Positioned as an operating system for business, Domo unifies data from 1,000+ connectors — including Salesforce, Google Analytics, Snowflake, Workday, and SAP — into a centralized, governed environment. Its architecture is built on a proprietary data engine optimized for low-latency ingestion and visualization, supporting up to 50M rows per dataset with sub-second dashboard load times for most use cases. Domo leverages a microservices-based SaaS infrastructure hosted on AWS, with SOC 2 Type II, HIPAA, and GDPR compliance baked in. The platform supports embedded analytics, custom app development via Domo App Studio (using JavaScript/HTML/CSS), and AI-powered insights through Domo IQ, which delivers automated anomaly detection, natural language Q&A, and predictive recommendations. Domo's ecosystem includes a public Appstore with 300+ pre-built cards and workflows, certified partner integrations (e.g., Deloitte, Accenture), and native support for dbt Core via Domo's Transform Engine. It targets mid-market to large enterprises — especially in retail, financial services, and SaaS — with analytics teams of 5-50+ users, where cross-functional alignment, executive visibility, and rapid iteration are critical. Over 2,000 customers — including Whirlpool, Sky, and Toyota — leverage Domo for KPI tracking, sales performance management, and customer analytics. Average time-to-value is reported at 7-10 days for core dashboards, and 89% of surveyed customers report improved decision speed within the first quarter. Ratings sourced from G2.",
+    longDescription: `## Overview
+Domo is a cloud-native business intelligence and data analytics platform designed for enterprise teams seeking real-time, self-service analytics without heavy IT dependency. Positioned as an operating system for business, Domo unifies data from 1,000+ connectors--including Salesforce, Snowflake, Workday, and SAP--into a centralized, governed environment.
+
+## Core Capabilities
+Domo's proprietary data engine supports up to 50M rows per dataset with sub-second dashboard load times. The platform powers AI-driven insights through Domo IQ--automated anomaly detection, natural language Q&A, and predictive recommendations. Magic ETL provides visual data transformation, while App Studio enables custom analytics applications using JavaScript/HTML/CSS.
+
+## Ecosystem & Integrations
+The Domo Appstore features 300+ pre-built cards and workflows, with certified partner integrations from Deloitte and Accenture. Native dbt Core support via Domo's Transform Engine enables modern analytics engineering workflows. Over 2,000 customers--including Whirlpool, Sky, and Toyota--leverage Domo for KPI tracking and sales performance management.
+
+## Performance & Use Cases
+Average time-to-value is 7-10 days for core dashboards, with 89% of surveyed customers reporting improved decision speed within the first quarter. Domo targets mid-market to large enterprises in retail, financial services, and SaaS, serving analytics teams of 5-50+ users requiring cross-functional alignment and executive visibility.`,
     pros: ["Real-time data ingestion with sub-second dashboard refreshes", "Extensive native connector library (1,000+ pre-built integrations)", "No-code + low-code flexibility via Magic ETL and App Studio", "Strong mobile experience with offline-capable iOS/Android apps", "Enterprise-grade security and compliance certifications (SOC 2, HIPAA, GDPR)", "AI-powered insights via Domo IQ with natural language query support", "Robust embedded analytics and white-labeling options for ISVs"],
     cons: ["Steeper learning curve for advanced transformations vs. SQL-centric tools", "Limited native data modeling layer compared to modern BI tools like Looker", "Higher cost of ownership for small teams (<10 users) due to minimum seat requirements", "Custom JavaScript card development requires front-end expertise"],
     pricing: "From $80/user/mo",
@@ -1427,7 +1447,17 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
     reviewCount: 3800,
     icon: Box,
     description: "Unified data analytics and AI platform providing lakehouse architecture for data engineering, data science, machine learning, and collaborative SQL analytics at enterprise scale.",
-    longDescription: "Databricks is a unified data analytics platform built on Apache Spark, serving over 12,000 enterprise customers--including 54% of the Fortune 500--as of Q1 2026. Its Lakehouse architecture combines the scalability of data lakes with ACID transactional reliability and SQL-based governance of data warehouses, enabling organizations to unify ETL, machine learning, BI, and real-time streaming on a single platform. Customers report 65-80% faster time-to-insight for complex analytics workloads compared to legacy Hadoop or cloud warehouse stacks; one Fortune 100 financial services firm reduced model training latency from 42 hours to under 90 minutes after migrating 4.2 PB of structured and semi-structured data to Databricks Unity Catalog. The platform supports 17+ data sources natively (including Snowflake, Redshift, Delta Lake, Kafka, and SAP S/4HANA), processes over 2.3 exabytes of data monthly across its global infrastructure, and runs 14 million+ daily jobs--72% of which are ML or AI-driven pipelines. Databricks SQL delivers sub-second response times for ad-hoc queries on datasets exceeding 10 TB, while Photon engine acceleration improves query throughput by 3.2x versus standard Spark SQL. Its MosaicML-integrated AI platform enables production-grade LLM fine-tuning, RAG deployment, and model monitoring--with 68% of active AI teams using Databricks Model Serving for low-latency inference at <120ms P95 latency. Governance is enforced via Unity Catalog, supporting fine-grained row- and column-level access control across 2,100+ registered data assets and 48,000+ permission grants per large enterprise. Cluster autoscaling dynamically provisions up to 1,200 worker nodes in under 45 seconds, and Delta Live Tables automates data quality enforcement with 99.99% SLA uptime across multi-region deployments. Integration with Azure AD, Okta, and SCIM ensures seamless identity sync for teams averaging 1,800+ active users per deployment.",
+    longDescription: `## Overview
+Databricks is a unified data analytics platform built on Apache Spark, serving over 12,000 enterprise customers--including 54% of the Fortune 500--as of Q1 2026. Its Lakehouse architecture combines data lake scalability with ACID transactional reliability and SQL-based governance, unifying ETL, ML, BI, and real-time streaming on a single platform.
+
+## Core Capabilities
+Customers report 65-80% faster time-to-insight for complex analytics workloads. Databricks SQL delivers sub-second query response on datasets exceeding 10 TB, while the Photon engine accelerates throughput by 3.2x versus standard Spark SQL. The platform processes over 2.3 exabytes of data monthly across 14 million+ daily jobs, with 72% being ML or AI-driven pipelines.
+
+## AI & Machine Learning
+MosaicML integration enables production-grade LLM fine-tuning, RAG deployment, and model monitoring--68% of active AI teams use Databricks Model Serving with <120ms P95 inference latency. Cluster autoscaling provisions up to 1,200 worker nodes in under 45 seconds, and Delta Live Tables automates data quality enforcement with 99.99% SLA uptime.
+
+## Governance & Ecosystem
+Unity Catalog provides fine-grained row- and column-level access control across enterprise data assets, supporting 2,100+ registered assets with 48,000+ permission grants. Native integrations span 17+ data sources including Snowflake, Kafka, and SAP S/4HANA, with seamless Azure AD, Okta, and SCIM identity sync for teams averaging 1,800+ active users.`,
     pros: [
         "Unified Lakehouse architecture eliminates data silos between analytics and ML teams",
         "Unity Catalog provides enterprise-grade governance with row/column-level security",
@@ -1483,35 +1513,6 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
       company: "Cloud-Native Startup",
       quote: "Adopting Databricks was the best infrastructure decision we made."
     }],
-  },
-  {
-    id: "hex",
-    name: "Hex",
-    category: "Analytics",
-    rating: 4.4,
-    reviewCount: 3200,
-    icon: Search,
-    description: "Hex is a collaborative, cloud-native data analytics platform that unifies SQL, Python, and AI-powered analysis in an interactive notebook interface\u2014designed for modern data teams to explore, visualize, and share insights without infrastructure overhead.",
-    longDescription: "As of 2026, Hex holds ~14% market share among cloud-based analytics notebooks (per Gartner Market Share Report Q1 2026), ranking third behind Databricks Notebooks (32%) and JupyterHub-based enterprise deployments (21%). It serves over 3,200 paying customers\u2014including 47 Fortune 500 companies\u2014and processes more than 8.4 billion queries monthly across its global infrastructure. Hex\u2019s core differentiator lies in its zero-config, in-browser execution engine: 92% of SQL queries execute under 2.1 seconds on average (based on Hex\u2019s 2025 Platform Performance Benchmark), and Python cells run with full pandas, numpy, and scikit-learn support\u2014no local kernel setup required.\n\nHex delivers real-world performance gains: customers report a 63% reduction in time-to-insight for ad-hoc analysis (2025 Hex Customer Impact Survey, n=1,842), and 78% of teams using Hex for cross-functional reporting cut dashboard iteration cycles from days to under 2 hours. Its ecosystem includes native connectors to 42 data sources\u2014including Snowflake (used by 68% of Hex customers), BigQuery, Redshift, PostgreSQL, and DuckDB\u2014and supports programmatic access via REST API, CLI, and Terraform provider. Hex also integrates deeply with Slack (12M+ messages sent via Hex alerts in 2025), GitHub (full Git-sync for notebooks with branch-aware version control), and BI tools like Looker and Tableau through embedded data app exports.\n\nThe platform\u2019s AI capabilities\u2014Hex Copilot\u2014are trained exclusively on anonymized, opt-in user code and metadata, achieving 89% accuracy on SQL generation tasks (MLPerf Analytics v2.1 benchmark) and reducing query debugging time by 41%. Hex\u2019s Data Apps feature powers over 17,000 production-grade internal tools\u2014from sales commission calculators to real-time inventory dashboards\u2014with built-in role-based access controls, usage telemetry, and SSO-backed authentication. Its enterprise-grade security posture includes SOC 2 Type II, HIPAA BAA eligibility, and optional private cloud deployment options for regulated industries.",
-    pros: ["Blazing-fast in-browser SQL and Python execution with no local setup", "AI-assisted coding and natural language query generation with high accuracy", "Real-time collaboration with live cursors, comments, and shared state", "Enterprise-ready governance: RBAC, audit logs, SSO, and private deployment options"],
-    cons: ["Limited offline functionality\u2014requires persistent internet connection", "Advanced ML model training workflows require export to external environments (e.g., SageMaker, Vertex AI)"],
-    pricing: "Free / Team / Enterprise",
-    pricingDetail: "Hex offers a free tier for individual analysts, Team plan at $99/user/month with collaboration features, and Enterprise plan with SSO, audit logs, and dedicated support.",
-    features: ["Notebook-based SQL editor", "Python in-browser execution", "Interactive visualizations", "AI-assisted data analysis", "Real-time collaboration", "Scheduled reports & alerts", "Version control for notebooks", "Data app publishing"],
-    useCase: "Ideal for data analysts, scientists, and engineers who want a collaborative notebook platform with SQL, Python, and AI-powered analytics in one unified workspace.",
-    websiteUrl: "https://hex.tech",
-    alternatives: ["Mode Analytics", "Deepnote", "Jupyter Notebook", "Databricks Notebooks"],
-    scoreBreakdown: {
-      features: 8.6,
-      reviews: 8.4,
-      momentum: 8.8,
-      popularity: 8.2
-    },
-    userQuotes: [
-      {"role": "Data Analyst", "company": "Mid-Market SaaS", "quote":"We cut our weekly revenue deep-dive from 6 hours to 45 minutes\u2014Hex Copilot writes 70% of our exploratory SQL, and sharing live notebooks with product managers eliminated version confusion."},
-      {"role": "Head of Data", "company": "Fast-Growing Startup", "quote":"Hex replaced three separate tools\u2014Jupyter, Metabase, and a custom Flask app\u2014reducing our analytics tooling spend by 40% while improving adoption across non-technical stakeholders."},
-      {"role": "Data Engineer", "company": "Enterprise Corp", "quote":"The Git-integrated notebook versioning and CI/CD pipeline hooks let us treat analytics code like production software\u2014finally achieving parity with our engineering SDLC."}
-    ],
   },
   {
     id: "",
