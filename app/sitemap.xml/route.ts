@@ -9,6 +9,10 @@ const BLOG_SLUGS = [
     "ga4-vs-adobe-vs-mixpanel-2026",
     "dbt-analytics-engineering-guide-2026",
     "essential-data-analytics-tools-2026",
+    "embedded-analytics-guide-2026",
+    "cloud-data-warehouses-2026-comparison",
+    "data-lakehouse-vs-warehouse-vs-lake-2026",
+    "airflow-vs-prefect-vs-dagster-2026-orchestration-comparison",
   ] as const;
 
 const TOOL_SLUGS = [
