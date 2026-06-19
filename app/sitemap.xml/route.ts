@@ -13,6 +13,7 @@ const BLOG_SLUGS = [
     "cloud-data-warehouses-2026-comparison",
     "data-lakehouse-vs-warehouse-vs-lake-2026",
     "airflow-vs-prefect-vs-dagster-2026-orchestration-comparison",
+    "data-catalog-tools-compared-2026",
   ] as const;
 
 const TOOL_SLUGS = [

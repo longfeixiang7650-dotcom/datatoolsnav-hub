@@ -33,3 +33,5 @@ new-tools-batch.ts
 .next_old/
 tsconfig.tsbuildinfo
 scripts/
+*.bak
+*.corrupted
