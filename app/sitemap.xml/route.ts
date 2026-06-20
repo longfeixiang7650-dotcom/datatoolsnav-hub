@@ -1,19 +1,19 @@
 import { MetadataRoute } from "next";
 
 const BLOG_SLUGS = [
-    "best-bi-platforms-2026",
-    "data-engineering-pipeline-2026-etl-eltd-reverse-etl-tools-comparison",
-    "data-visualization-tools-guide",
-    "top-data-analytics-data-science-trends-2026",
-    "data-quality-observability-2026-key-findings",
-    "ga4-vs-adobe-vs-mixpanel-2026",
-    "dbt-analytics-engineering-guide-2026",
-    "essential-data-analytics-tools-2026",
-    "embedded-analytics-guide-2026",
-    "cloud-data-warehouses-2026-comparison",
-    "data-lakehouse-vs-warehouse-vs-lake-2026",
     "airflow-vs-prefect-vs-dagster-2026-orchestration-comparison",
+    "best-bi-platforms-2026",
+    "bi-platform-selection-smb-2026",
+    "cloud-data-warehouses-2026-comparison",
     "data-catalog-tools-compared-2026",
+    "data-lakehouse-vs-warehouse-vs-lake-2026",
+    "data-quality-observability-2026-key-findings",
+    "data-visualization-tools-guide",
+    "dbt-analytics-engineering-guide-2026",
+    "embedded-analytics-guide-2026",
+    "essential-data-analytics-tools-2026",
+    "ga4-vs-adobe-vs-mixpanel-2026",
+    "reverse-etl-data-activation-2026-guide",
   ] as const;
 
 const TOOL_SLUGS = [
