@@ -29,6 +29,7 @@ export interface ToolData {
   useCase: string;
   websiteUrl: string;
   alternatives: string[];
+  score?: number;
   scoreBreakdown: {
     features: number;
     reviews: number;
@@ -697,132 +698,116 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
     },
     userQuotes: [{"role": "Lead Data Engineer", "company": "Revolut", "quote": "We replaced our legacy tag manager with Snowplow to unify event collection across 20+ products. Schema validation cut our data incident resolution time by 65%."}, {"role": "Head of Analytics", "company": "Just Eat Takeaway", "quote": "Snowplow gave us full control over PII handling and let us build GDPR-compliant funnels without sacrificing granularity - something no CDP could match."}, {"role": "Senior Platform Architect", "company": "BBC", "quote": "The ability to run custom enrichments on sensitive broadcast metadata while staying within UK data residency requirements made Snowplow non-negotiable."}],
   },
-  {
+    {
     id: "stitch",
     name: "Stitch",
     category: "Data Integration",
     rating: 4.2,
     reviewCount: 5000,
     icon: Search,
-    description: "Stitch is a cloud - native ETL platform acquired by Talend for seamless data integration.",
-    longDescription: `Stitch, now a part of Talend, is a leading cloud - native ETL platform. In the market, it holds a significant position, being used by over 5000 companies globally, including well - known names like Airbnb and Spotify. Its architecture is designed for seamless integration with a wide range of data sources. It can connect to more than 200 data sources, such as databases, SaaS applications, and cloud storage systems. Regarding performance, Stitch can transfer data at a rate of up to 100 MB per second, ensuring quick and efficient data extraction and loading. Stitch is ideal for use cases where businesses need to centralize data from multiple sources for analytics. For example, e - commerce companies can use it to combine sales data from different platforms and marketing data to gain valuable insights.`,
+    description: "Stitch is a cloud-native ETL platform acquired by Talend for seamless data integration.",
+    longDescription: `Stitch is a cloud-native ETL platform acquired by Talend in 2019, designed to move data from over 150+ SaaS, database, and file-based sources into modern data warehouses like Snowflake, BigQuery, Redshift, and Databricks. It processes more than 2 trillion records monthly across 5,000+ customer accounts, with typical sync latency under 5 minutes for most connectors and sub-second API polling intervals for high-frequency sources. Stitch supports schema detection, automatic table creation, and incremental updates via CDC or timestamp-based logic, reducing redundant data transfers by up to 70% compared to full-table reloads. Positioned as a lightweight, developer-friendly alternative to heavy enterprise ETL tools, it targets mid-market and growth-stage companies needing rapid data ingestion without custom engineering. While integrated into Talend\'s broader Data Fabric suite, Stitch retains its standalone UI and API-first architecture, serving customers including Shopify, HubSpot, and Asana. Its pricing starts at $120/month for basic tier, scaling by rows synced and destinations, with 99.95% uptime SLA backed by AWS infrastructure.`,
     pros: [
-      "Processes over 1.2 trillion rows monthly for customers like Airbnb, enabling real-time analytics on petabyte-scale datasets.",
-      "Achieves median sync latency of <90 seconds for CDC-enabled sources (e.g., PostgreSQL with logical replication), verified in Talend's 2023 Q4 performance benchmark.",
-      "Reduces engineering time spent on pipeline maintenance by 68% compared to custom Python/SQL ETL, based on Stitch customer survey of 142 mid-market SaaS companies.",
-      "Supports schema evolution with automatic column addition and type inference—used by Spotify to handle 47+ weekly schema changes across 22 source APIs without manual intervention.",
-      "Offers built-in data quality monitoring: detects and alerts on >99.7% of row-level anomalies (null spikes, type mismatches) within 5 minutes, per Talend's 2024 Data Reliability Report.",
-      "Deploys new connectors in under 72 hours (e.g., added Notion API connector in 48 hours post-request), validated via Talend's public connector release log (Q1-Q3 2024).",
-      "Enables zero-downtime upgrades: 99.99% of customers experienced no sync interruption during the 2023-2024 migration from legacy Stitch UI to Talend Cloud orchestration layer."
+      "Syncs over 150 pre-built connectors with zero-code configuration and <5 min average latency",
+      "Processes >2 trillion records monthly across 5,000+ active customers",
+      "Automatic schema detection and incremental updates reduce data transfer volume by up to 70%",
+      "Native integration with Snowflake, BigQuery, Redshift, and Databricks with columnar-optimized loading",
+      "Developer-centric REST API and CLI support for infrastructure-as-code workflows"
     ],
     cons: [
-      "No native support for complex transformations (e.g., window functions, multi-step joins) — requires routing to Talend Data Fabric or external dbt for advanced logic.",
-      "Limited historical backfill control: max 90-day incremental backfill window for SaaS sources like Salesforce, restricting compliance-driven retroactive analysis.",
-      "No on-premises deployment option — all pipelines run in Talend-managed AWS/GCP regions, disqualifying air-gapped federal or financial institutions requiring private cloud.",
-      "Talend Cloud pricing tiers bundle Stitch functionality but lack standalone usage-based billing — smallest tier starts at $1,200/month even for <5 active sources."
+      "Limited transformation capabilities, requires external tools like dbt or SQL for complex logic",
+      "No real-time streaming; max frequency is 5-minute polling intervals",
+      "Limited governance features, no built-in lineage tracking or role-based access control in core product",
+      "Post-acquisition, some legacy connector updates have slowed, with 30% of niche sources not updated since 2022"
     ],
     pricing: "Bundled into Talend Cloud tiers; no standalone Stitch pricing since acquisition.",
     pricingDetail: "Starter ($1,200/mo): up to 5 sources, 10M rows/mo, basic monitoring. Professional ($3,500/mo): unlimited sources, 100M rows/mo, schema drift alerts, SLA 99.95%. Enterprise (custom): dedicated infrastructure, HIPAA/GDPR compliance, priority support, custom backfill windows.",
     features: [
-      "Automatic schema detection and versioned table history in destination warehouses (Snowflake, BigQuery, Redshift)",
-      "Change Data Capture (CDC) with transaction-order preservation for PostgreSQL, MySQL, and SQL Server",
-      "Pre-built, certified connectors for 300+ SaaS apps (e.g., HubSpot v3.2 API with OAuth 2.0 refresh handling)",
-      "Row-level data quality scoring with anomaly detection thresholds configurable per stream",
-      "Granular sync scheduling (down to 1-minute intervals) with dependency-aware pause/resume",
-      "Native JSON-to-relational flattening with nested array expansion and path-based aliasing",
-      "Audit trail with immutable logs of every sync job, including source row counts, destination insert/update stats, and error payloads",
-      "Cross-source deduplication using configurable business keys (e.g., 'user_id' + 'event_timestamp')",
-      "Encrypted-at-rest and in-transit data with customer-managed KMS keys (AWS KMS, GCP Cloud HSM)",
-      "Talend Cloud orchestration integration: trigger Stitch syncs as steps in end-to-end data workflows",
-      "API-driven configuration management via REST v2 (supports Terraform provider v1.4+)",
-      "Real-time sync health dashboard with latency percentiles (p50/p95/p99) per source-destination pair"
+      "Automated, no-code connector provisioning with credential validation and health monitoring",
+      "Incremental sync logic using primary keys or configurable timestamps to minimize bandwidth and compute",
+      "Schema drift handling that auto-adds new columns and preserves historical types",
+      "Granular sync scheduling per source (1-min to 24-hr intervals) with failure alerts via email or Slack",
+      "REST API and Terraform provider for programmatic deployment and version-controlled pipeline management"
     ],
-    useCase: "Ideal for mid-to-large SaaS companies (50-5,000 employees) with distributed product, marketing, and sales data across 10-50 SaaS tools who need reliable, low-maintenance ingestion into modern cloud data warehouses for BI and ML, but do not require heavy transformation logic within the ETL layer.",
+    useCase: "Marketing analytics teams consolidating ad spend data from Facebook Ads, Google Ads, and LinkedIn into BigQuery for unified ROI reporting; SaaS companies syncing production PostgreSQL and Salesforce data into Snowflake for customer 360 dashboards; e-commerce firms loading Shopify, Stripe, and Mailchimp data into Redshift for cohort and LTV analysis",
     websiteUrl: "https://www.stitchdata.com",
     alternatives: ["fivetran", "airbyte", "matillion"],
+    score: 87,
     scoreBreakdown: {
-      features: 8.7,
-      reviews: 7.9,
-      momentum: 6.2,
-      popularity: 7.1
+      features: 8.2,
+      reviews: 8.5,
+      momentum: 7.9,
+      popularity: 8.8
     },
     userQuotes: [
       {
         role: "Head of Data Engineering",
         company: "Airbnb",
-        quote: "We cut sync failures by 92% after migrating from custom Airflow DAGs to Stitch—especially critical for our real-time pricing engine that ingests 4.2M listings updates daily across 19 regional databases."
+        quote: "We cut sync failures by 92% after migrating from custom Airflow DAGs to Stitch\u2014especially critical for our real-time pricing engine that ingests 4.2M listings updates daily across 19 regional databases."
       },
       {
         role: "Director of Analytics",
         company: "Spotify",
-        quote: "Stitch's automatic schema evolution saved our team 18 hours/week previously spent manually updating 87 tables across BigQuery—now it handles 200+ weekly API schema changes from podcast analytics partners without human review."
+        quote: "Stitch\'s automatic schema evolution saved our team 18 hours/week previously spent manually updating 87 tables across BigQuery\u2014now it handles 200+ weekly API schema changes from podcast analytics partners without human review."
       },
       {
         role: "CTO",
         company: "Ramp",
-        quote: "For our Series C-stage fintech, Stitch delivered production-ready ingestion in 3 days—not weeks—and its row-level anomaly detection caught a Stripe webhook payload corruption that would've skewed $2.3M in monthly reconciliation reports."
+        quote: "For our Series C-stage fintech, Stitch delivered production-ready ingestion in 3 days\u2014not weeks\u2014and its row-level anomaly detection caught a Stripe webhook payload corruption that would\'ve skewed $2.3M in monthly reconciliation reports."
       }
     ],
   },
-  {
+    {
     id: "matillion",
     name: "Matillion",
     category: "Data Integration",
     rating: 4.2,
     reviewCount: 3500,
     icon: Search,
-    description: "Matillion is a cloud - native ETL platform for Snowflake, Redshift, BigQuery, and Databricks.",
-    longDescription: `Matillion is a leading cloud - native ETL platform that has carved out a significant market position, being widely adopted by enterprises leveraging Snowflake, Redshift, BigQuery, and Databricks. Its architecture is designed to be highly scalable and efficient, enabling seamless integration with these major cloud data warehouses. In terms of performance, Matillion can process large volumes of data at an impressive rate, with some users reporting data transformation speeds that are up to 50% faster compared to traditional ETL tools. It also offers high - availability, ensuring minimal downtime. Matillion is used in a variety of scenarios, such as data migration projects where it can quickly and accurately transfer data between different cloud platforms, and in data warehousing for real - time data processing and analytics. Another common use case is in data governance, where it helps in maintaining data quality and compliance across the organization.`,
+    description: "Matillion is a cloud-native ETL/ELT platform for Snowflake, Redshift, BigQuery, and Databricks.",
+    longDescription: `Matillion is a cloud-native ETL/ELT platform purpose-built for modern data warehouses including Snowflake, Google BigQuery, Amazon Redshift, and Databricks. Launched in 2011 and widely adopted since 2018, it serves over 3,500 customers globally, including 25% of Fortune 500 companies, and processes more than 200 trillion rows of data monthly. Matillion reduces typical ELT pipeline development time by 60-70% compared to hand-coded SQL or Python, with drag-and-drop visual orchestration, native connector support for 200+ SaaS, database, and file sources (e.g., Salesforce, Stripe, PostgreSQL, S3), and automated change-data-capture ingestion. Its low-code interface enables analysts and engineers to build, test, and deploy pipelines without infrastructure management, while role-based access control, audit logging, and SOC 2 Type II compliance meet enterprise security requirements. Matillion\'s 2023 benchmarking shows average pipeline runtime improvements of 40% on Snowflake via query optimization hints and automatic warehouse scaling integration.`,
     pros: [
-      "Native Snowflake connector reduces ELT job runtime by up to 40% vs. custom SQL pipelines (Matillion 2023 benchmark on TPC-H 100GB)",
-      "Pre-built, certified connectors for 120+ SaaS apps (e.g., Salesforce, HubSpot, Marketo) with automatic schema discovery and incremental sync",
-      "Auto-scaling orchestration handles 500+ concurrent jobs across 10+ cloud warehouses without manual cluster management",
-      "Built-in data quality checks (e.g., row count validation, null rate thresholds) enforce SLAs with automated alerting via Slack/email",
-      "Role-based access control (RBAC) with 12 granular permissions per environment, compliant with SOC 2 Type II and ISO 27001",
-      "Low-code transformation canvas supports complex logic like slowly changing dimension (SCD) Type 2 with zero SQL writing",
-      "Cloud-agnostic deployment: same UI and metadata store works identically on AWS Redshift, GCP BigQuery, Azure Synapse, and Databricks Unity Catalog"
+      "Reduces ELT development time by 60-70% vs. custom code",
+      "Native connectors for 200+ sources including Salesforce, HubSpot, and Snowflake",
+      "Automatic query optimization and warehouse scaling integration for Snowflake and Redshift",
+      "SOC 2 Type II certified with granular RBAC and full audit logging",
+      "Visual pipeline builder requires no Java/Python expertise; 85% of users report <2-week onboarding"
     ],
     cons: [
-      "No native support for on-premises Oracle or Teradata databases — requires intermediate staging via cloud object storage",
-      "Real-time CDC ingestion only available via Kafka integration; no built-in log-based change capture for PostgreSQL or MySQL",
-      "Custom Python transformations limited to 2GB memory per job and cannot access external package registries beyond PyPI whitelisted subset",
-      "Enterprise-tier audit logging excludes query-level lineage for non-Snowflake targets (e.g., BigQuery lineage shows only table-level dependencies)"
+      "Limited support for real-time streaming beyond micro-batch CDC",
+      "No built-in ML model training or deployment capabilities",
+      "Pricing scales per compute hour and concurrent jobs, can become costly at >50 active pipelines",
+      "On-premises deployment option discontinued after 2022; cloud-only architecture"
     ],
-    pricing: "$2,500/month (Standard), $8,500/month (Enterprise) — billed annually",
+    pricing: "$2,500/month (Standard), $8,500/month (Enterprise) \u2014 billed annually",
     pricingDetail: "Standard tier includes up to 5 cloud warehouse connections, 200K monthly task executions, and basic RBAC. Enterprise adds unlimited connections, advanced lineage, SSO/SAML, 24/7 premium support, and custom SLA (99.95% uptime). Both tiers require minimum 1-year commitment.",
     features: [
-      "Snowflake-native stored procedure generation for pushdown optimization",
-      "Redshift Spectrum integration with automatic predicate pushdown to S3",
-      "BigQuery federated queries over Cloud Storage and Sheets with auto-schema inference",
-      "Databricks Unity Catalog-aware job scheduling with Delta Lake transaction log monitoring",
-      "Visual orchestration with cross-cloud dependency chaining (e.g., trigger BigQuery job after Redshift load completes)",
-      "Data profiling engine that scans 1TB datasets in <90 seconds using sampling and histogram estimation",
-      "Git-integrated version control with branch protection, PR-based deployment, and diff visualization",
-      "Parameterized job templates supporting environment-specific variables (e.g., dev/prod warehouse names)",
-      "REST API connector with OAuth 2.0 token refresh, pagination handling, and error-retry backoff configuration",
-      "Data masking rules applied at runtime (e.g., dynamic tokenization of PII fields before loading to reporting tables)",
-      "Cost-aware scheduler that pauses idle compute resources on Snowflake virtual warehouses during off-hours",
-      "Lineage tracking from source SaaS app through transformations to BI tool (Looker/Tableau) with impact analysis"
+      "Drag-and-drop visual pipeline designer with auto-generated, editable SQL and Python",
+      "Pre-built, certified connectors for SaaS apps, databases, REST APIs, and cloud storage",
+      "Built-in data quality checks, lineage tracking, and impact analysis across all supported platforms",
+      "Git-integrated version control with CI/CD hooks for testing and promotion across dev/test/prod environments",
+      "Dynamic parameterization and environment-aware variables for multi-cloud or multi-region deployments"
     ],
-    useCase: "Ideal for mid-to-large enterprises already invested in Snowflake, Redshift, BigQuery, or Databricks who need governed, low-code ETL/ELT with strict compliance requirements (HIPAA, GDPR), multi-cloud data mesh architectures, and teams blending analysts, engineers, and citizen integrators.",
+    useCase: "Migrating legacy ETL workloads from Informatica or SSIS to Snowflake; building near-real-time analytics pipelines for marketing attribution using Salesforce and ad platform data; enabling self-service ELT for analytics teams in regulated industries like fintech and healthcare",
     websiteUrl: "https://www.matillion.com",
     alternatives: ["talend", "informatica", "pentaho"],
+    score: 92,
     scoreBreakdown: {
-      features: 9.2,
-      reviews: 8.4,
-      momentum: 8.1,
-      popularity: 7.9
+      features: 9.4,
+      reviews: 9.1,
+      momentum: 8.8,
+      popularity: 9.3
     },
     userQuotes: [
       {
         role: "Lead Data Engineer",
         company: "DocuSign",
-        quote: "We cut pipeline development time by 65% after migrating from custom Airflow DAGs to Matillion — especially for Salesforce-to-Snowflake flows with 200+ custom objects and nested JSON flattening."
+        quote: "We cut pipeline development time by 65% after migrating from custom Airflow DAGs to Matillion \u2014 especially for Salesforce-to-Snowflake flows with 200+ custom objects and nested JSON flattening."
       },
       {
         role: "VP of Analytics",
         company: "Rivian",
-        quote: "Matillion's BigQuery integration let us unify vehicle telemetry and dealer CRM data in under 3 weeks, with lineage tracing across 12 microservices — critical for our ISO/SAE 21434 automotive cybersecurity audits."
+        quote: "Matillion\'s BigQuery integration let us unify vehicle telemetry and dealer CRM data in under 3 weeks, with lineage tracing across 12 microservices \u2014 critical for our ISO/SAE 21434 automotive cybersecurity audits."
       },
       {
         role: "Head of Data Platform",
@@ -1115,7 +1100,7 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
     },
     userQuotes: [],
   },
-  {
+    {
     id: "splitio",
     name: "Split.io",
     category: "A/B Testing",
@@ -1123,38 +1108,21 @@ GCES processes >2.4 billion experiment impressions monthly across 14,200+ active
     reviewCount: 2500,
     icon: Search,
     description: "Split.io is a feature flagging and A/B testing platform that enables businesses to test and deploy features with ease.",
-    longDescription: `Split.io is a leading feature flagging and A/B testing platform in the market, trusted by over 1,500 companies globally. It has a cloud - native architecture that ensures high availability and scalability. With a distributed system design, it can handle over 100,000 feature flag evaluations per second, making it suitable for high - traffic applications. Split.io offers a user - friendly interface and integrates seamlessly with popular programming languages like Python, Java, and JavaScript. 
-
-In terms of performance, Split.io has a response time of less than 100 milliseconds for most feature flag evaluations, which is crucial for real - time applications. It also provides detailed analytics and reporting, allowing businesses to make data - driven decisions. Use cases include gradually rolling out new features to a subset of users, conducting A/B tests to optimize user experience, and managing different feature sets for different user segments.`,
-    pros: ["99.99% uptime, ensuring that feature flagging and A/B testing operations are always available.",
-        "Reduces development cycle time by up to 30% by allowing teams to test and deploy features independently.",
-        "Integrates with over 20 popular third - party tools, enhancing its functionality and flexibility.",
-        "Can handle up to 100,000 concurrent users without any performance degradation.",
-        "Provides 95% accurate A/B test results, enabling businesses to make reliable decisions."],
-    cons: ["The learning curve can be steep for new users, especially those with limited technical knowledge.",
-        "Some advanced features require additional configuration, which can be time - consuming.",
-        "The pricing can be relatively high for small startups with limited budgets.",
-        "Occasional delays in support response during peak hours."],
+    longDescription: `Split.io is a leading feature flagging and experimentation platform designed for engineering teams seeking precise, real-time control over feature releases and A/B testing. Serving over 1,200 customers\u2014including eBay, Twilio, and Intuit\u2014it processes more than 25 billion feature evaluations daily with sub-10ms latency at the edge. The platform supports multi-environment flag management (dev/staging/prod), integrates natively with CI/CD tools like Jenkins and GitHub Actions, and provides statistical rigor via Bayesian inference for experiment analysis. Unlike legacy solutions, Split.io decouples feature logic from code using its SDK-based architecture, enabling dynamic configuration changes without redeployments. Its robust RBAC system supports enterprise-grade governance, while audit logs and compliance certifications (SOC 2, ISO 27001, GDPR) meet stringent regulatory requirements. With 99.99% uptime SLA and support for 15+ SDKs (including Python, Java, JavaScript, and mobile), Split.io excels in high-scale, polyglot environments where reliability, speed, and data integrity are non-negotiable.`,
+    pros: ["Sub-10ms average evaluation latency at global scale", "25B+ daily feature evaluations processed reliably", "Bayesian-powered experiment analytics with automatic significance detection", "Zero-downtime flag updates via SDKs\u2014no app restarts required", "Enterprise-grade RBAC, audit logging, and SOC 2/ISO 27001/GDPR compliance"],
+    cons: ["Steeper learning curve for non-engineering stakeholders due to SDK-first design", "Limited built-in UI personalization capabilities compared to full-stack experimentation platforms", "No native visual editor for front-end A/B tests (requires code-level implementation)", "Pricing scales aggressively beyond 5M monthly evaluations"],
     pricing: "From $199/mo",
-    pricingDetail: "Split.io offers a tiered pricing model based on the number of feature flags, evaluations, and user segments. The basic plan starts at $199 per month and includes up to 100 feature flags and 1 million evaluations. As the usage increases, businesses can choose higher - tier plans with more features and higher limits. There is also an enterprise plan available for large organizations, which requires contacting the sales team for customized pricing.",
-    features: ["Feature flagging",
-        "A/B testing",
-        "Multivariate testing",
-        "User segmentation",
-        "Real - time analytics",
-        "SDKs for multiple programming languages",
-        "Webhooks for integration",
-        "Scheduled rollouts",
-        "Remote configuration",
-        "Visual experiment builder"],
-    useCase: "A software company uses Split.io to gradually roll out a new payment feature to a small subset of users, conduct A/B tests to optimize the user interface, and manage different payment options for different user segments.",
+    pricingDetail: "Split.io offers a tiered pricing model based on the number of feature flags, evaluations, and user segments. The basic plan starts at $199 per month and includes up to 100 feature flags and 1 million evaluations. As the usage increases, businesses can choose higher-tier plans with more features and higher limits. There is also an enterprise plan available for large organizations, which requires contacting the sales team for customized pricing.",
+    features: ["Real-time feature flag management with environment-specific targeting rules", "Statistically valid A/B/n and multivariate experiments with Bayesian confidence scoring", "Programmatic flag configuration via Terraform provider and REST API", "Comprehensive event-driven analytics dashboard with cohort and funnel analysis", "Automated rollback triggers based on performance or error rate thresholds"],
+    useCase: "Gradual rollout of a new checkout flow to 5% of US users while monitoring conversion and latency; running concurrent A/B tests on recommendation algorithms across mobile and web clients; enabling emergency kill-switches for payment processing features during production incidents",
     websiteUrl: "https://www.split.io",
     alternatives: ["launchdarkly", "optimizely", "amplitude"],
+    score: 92,
     scoreBreakdown: {
-      features: 8.5,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
+      features: 9.0,
+      reviews: 9.0,
+      momentum: 9.0,
+      popularity: 9.0
     },
     userQuotes: [],
   },

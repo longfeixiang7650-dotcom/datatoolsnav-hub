@@ -15,6 +15,9 @@ const BLOG_SLUGS = [
     "ga4-vs-adobe-vs-mixpanel-2026",
     "reverse-etl-data-activation-2026-guide",
     "data-governance-2026",
+    "reverse-etl-operational-analytics-2026",
+    "why-we-ditched-spreadsheets-for-sql-notebooks",
+    "modern-data-stack-tool-selection-guide-2026",
   ] as const;
 
 const TOOL_SLUGS = [
