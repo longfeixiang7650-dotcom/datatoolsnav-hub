@@ -18,7 +18,8 @@ const BLOG_SLUGS = [
     "reverse-etl-operational-analytics-2026",
     "why-we-ditched-spreadsheets-for-sql-notebooks",
     "modern-data-stack-tool-selection-guide-2026",
-  ] as const;
+    "how-to-choose-the-right-data-integration-tool-in-2026-airbyte-vs-fivetran-vs-matillion-vs-custom",
+] as const;
 
 const TOOL_SLUGS = [
   "tableau",
