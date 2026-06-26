@@ -19,6 +19,7 @@ const BLOG_SLUGS = [
     "why-we-ditched-spreadsheets-for-sql-notebooks",
     "modern-data-stack-tool-selection-guide-2026",
     "how-to-choose-the-right-data-integration-tool-in-2026-airbyte-vs-fivetran-vs-matillion-vs-custom",
+    "why-we-switched-from-tableau-to-apache-superset",
 ] as const;
 
 const TOOL_SLUGS = [
