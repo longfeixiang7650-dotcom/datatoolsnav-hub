@@ -170,7 +170,7 @@ Evaluation compared tools across 9 dimensions critical for production deployment
 
 | Dimension | Why It Matters in 2026 |
 |-----------|------------------------|
-| **Cloud Warehouse Native Integration** | Direct support for warehouse-specific optimizations (e.g., Snowflake's \`COPY INTO\`, BigQuery's \`WRITE_TRUNCATE\`, Redshift's \`COPY\` with manifest files) reduces latency and cost. |
+| **Cloud Warehouse Native Integration** | Direct support for warehouse-specific optimizations (e.g., Snowflake's \'COPY INTO\`, BigQuery's \`WRITE_TRUNCATE\`, Redshift's \`COPY\` with manifest files) reduces latency and cost. |
 | **Real-Time / Streaming Capability** | Not just "CDC" — true sub-second latency with exactly-once semantics, backpressure handling, and schema drift resilience. |
 | **Transformation Flexibility** | Support for SQL, Python, Jinja, and custom UDFs — plus testing, documentation, and dependency-aware scheduling. |
 | **Orchestration Depth** | DAG authoring, dynamic task generation, failure recovery (retry + fallback), alerting, and SLA tracking. |
@@ -2323,5 +2323,168 @@ We're not done learning. But for the first time in years, we're building *with* 
     category: "Data Visualization",
     readTime: 8,
     tags: ["Apache Superset", "Tableau", "Open Source BI", "Data Visualization", "Migration"]
+  },
+  {
+    slug: "data-architecture-modernization-dbt-snowflake",
+    title: "Modernizing Our Data Architecture with dbt and Snowflake: A 6-Month Retrospective",
+    excerpt: "Our team at Spark Werks shares a detailed retrospective on modernizing legacy data architecture using dbt, Snowflake, and a medallion architecture approach - including migration strategy, pitfalls, and measurable outcomes.",
+    content: `## Modernizing Our Data Architecture with dbt and Snowflake: A 6-Month Retrospective
+
+By Priya Nair, Data Architect, Team Spark Werks
+
+June 28, 2026
+
+It started with a Slack message that made our entire data team wince: "Hey, can you tell me why the Q2 revenue number in the exec dashboard is $2.3M higher than the board deck?"
+
+We had been running our analytics stack on a mishmash of legacy PostgreSQL dumps, hand-coded Python ETL scripts, and a Tableau Server instance that had accumulated 1,400+ unpublished 'test' workbooks over four years. Every quarterly close required a week of manual reconciliation between finance, marketing, and product dashboards. Our data architecture had grown organically—which is a polite way of saying it was a house of cards.
+
+In January 2026, we decided to fix it. Not incrementally, not gently, but with a deliberate, architectural reset. This is the story of how Spark Werks migrated from a monolithic, query-time transformation architecture to a medallion-architecture-powered, dbt-and-Snowflake-native analytics platform. It took six months, involved three false starts, and taught us more about data architecture than any conference talk ever could.
+
+### The Starting Point: A Common but Painful Architecture
+
+Before the migration, our data stack looked like this:
+
+- **Source systems**: PostgreSQL (production), Salesforce, HubSpot, Stripe, Google Analytics 4, and a half-dozen CSV exports from client legacy systems
+- **Ingestion**: A collection of Python scripts (some cron-driven, some Airflow DAGs, some running on a developer's laptop) that dumped raw data into staging tables
+- **Storage**: A single PostgreSQL 14 instance that served as both OLTP and analytics warehouse—running on a machine that also hosted our internal wiki
+- **Transformation**: A mix of SQL views (some 800+ lines long with 12 nested CTEs), Excel-based transformation logic (yes, really), and one critical pipeline that depended on a stored procedure no one had touched since 2021
+- **BI layer**: Tableau Server with 47 published data sources, each with its own copy of business logic
+
+The problems were obvious: query-time transformations meant every dashboard computed metrics independently (and often differently). The same 'monthly active users' definition appeared in five different SQL views with five different window functions. Data freshness was inconsistent—some tables updated hourly, others weekly, and the product analytics pipeline had been broken for 11 days without anyone noticing (the alert was going to a former employee's email).
+
+### Why We Chose the Medallion Architecture
+
+After evaluating several architectural patterns, we committed to the medallion architecture (bronze → silver → gold) as popularized by Databricks and adopted across the modern data stack. The key insight: instead of having each dashboard or analyst define their own transformations, we would enforce a layered, governed approach where data moves through progressively refined stages.
+
+**Bronze layer**: Raw, immutable data ingested directly from source systems. No transformations, no filtering, no deduplication. This is our source of truth and our audit trail.
+
+**Silver layer**: Cleaned, deduplicated, and validated data with consistent schemas, standardized timestamps, and resolved primary keys. This is where data engineers and analysts collaborate on transformations.
+
+**Gold layer**: Business-level aggregates, metrics, and curated datasets optimized for BI tool consumption. This is where dbt's semantic layer and metrics definitions live.
+
+We chose Snowflake as our cloud data warehouse for three reasons: first, its separation of compute and storage meant we could scale query performance independently of storage costs; second, its native support for semi-structured data (VARIANT columns for JSON blobs from Stripe and Segment) eliminated the need for a separate document store; third, its zero-copy cloning and time-travel features gave us the safety net we needed for a high-stakes migration.
+
+dbt was the obvious choice for transformations. Our team already had SQL expertise, and dbt's 'model as SELECT statement' paradigm aligned perfectly with how we wanted to work: declarative, testable, and version-controlled.
+
+### Phase 1: Building the Bronze Layer (January-February 2026)
+
+The first phase was deceptively simple: establish reliable, immutable raw data ingestion. We replaced our Python ETL scripts with Fivetran connectors for SaaS sources (Salesforce, HubSpot, Stripe) and used Airbyte for our PostgreSQL production database replication. Every source was configured to land raw JSON or tabular data into a dedicated schema named 'bronze_<source_name>'.
+
+Key decisions we made:
+
+1. **No transformations at ingestion time**. Unlike our previous approach where we would rename columns, flatten nested objects, and filter rows during extraction, we landed data exactly as-is. This meant our Stripe 'charges' table had a VARIANT column for the raw API response alongside extracted columns—giving us both queryability and a complete audit trail.
+
+2. **Immutable by convention**. We used Snowflake's time travel (7-day retention) and set up a daily snapshot of every bronze table using dbt snapshots. If a source system updated a record, we could always trace back to what the data looked like at any point in time.
+
+3. **Strict schema enforcement at the source connector level**. Fivetran and Airbyte both support schema detection and evolution, but we configured them to alert on schema changes rather than auto-adapt. This prevented silent downstream breakage when Stripe added a new field to their API response.
+
+The bronze layer took about four weeks to stabilize. The hardest part wasn't the technology—it was convincing stakeholders that they couldn't query bronze tables directly. "Why can't I just write a report against the raw Salesforce data?" a sales ops manager asked. We explained that bronze data was like crude oil: valuable, but not ready for direct consumption without refinement.
+
+### Phase 2: Silver Layer - Where the Real Work Happened (March-April 2026)
+
+The silver layer was where we invested most of our engineering effort. Each source system got its own dbt project folder with a standardized pattern:
+
+- 'stg_<source>_<entity>.sql': Stage models that cast columns to consistent types, rename fields to snake_case, and apply basic null handling
+- 'int_<domain>_<entity>.sql': Intermediate models that join across sources, deduplicate records, and resolve slowly changing dimensions
+- 'fct_<event>.sql' and 'dim_<entity>.sql': Fact and dimension tables ready for gold-layer consumption
+
+For example, our 'fct_orders' model joined Stripe charges (with refund adjustments), Salesforce opportunities, and HubSpot deal stages to create a single, authoritative order fact table. Previously, these three systems each fed separate dashboards with different 'revenue' definitions.
+
+**The deduplication challenge**. One of the hardest problems we solved in the silver layer was customer identity resolution. Our CRM had contacts with different email addresses for the same person (work email vs. personal email), Stripe used customer IDs that didn't map cleanly to Salesforce account IDs, and HubSpot tracked visitors by cookie rather than email. We built a probabilistic matching model using dbt macros and fuzzy string comparison (Levenshtein distance on email domains + name similarity) to create a 'dim_customer_unified' table with a 94.2% match rate. The remaining 5.8% were flagged in a reconciliation dashboard for manual review.
+
+**Testing at scale**. dbt's data testing framework was transformative. We wrote:
+- 47 singular tests for business rules (e.g., 'refund_amount cannot exceed charge_amount', 'order_date must be before current_date')
+- 89 generic tests (not_null, unique, accepted_values, relationships) across all silver models
+- 6 custom generic tests for multi-column uniqueness and referential integrity across time zones
+
+Our CI pipeline (GitHub Actions + dbt Cloud) ran these tests on every PR. In the first month alone, we caught 23 data quality issues that would have reached production under our old architecture—including a Stripe webhook that had been silently dropping 3% of refund events for six weeks.
+
+### Phase 3: Gold Layer - Metrics That Everyone Trusts (May 2026)
+
+The gold layer was where we defined business metrics using dbt's Semantic Layer—a feature that deserves its own blog post. Instead of each BI tool computing 'revenue' independently, we defined it once in dbt:
+
+'''yaml
+metrics:
+  - name: monthly_recurring_revenue
+    label: Monthly Recurring Revenue
+    model: ref('fct_subscriptions')
+    calculation_method: sum
+    expression: mrr_amount
+    timestamp: subscription_start_date
+    time_grains: [day, week, month, quarter, year]
+    dimensions:
+      - plan_tier
+      - customer_segment
+      - region
+    filters:
+      - field: subscription_status
+        operator: '='
+        value: "'active'"
+'''
+
+This metric definition became the single source of truth for MRR across all downstream reports. When the finance team asked why the board deck showed a different number than the ops dashboard, we could point to the exact dbt model, test, and commit hash that generated each figure.
+
+We exposed these metrics to Tableau (yes, we kept Tableau for the exec team) via the dbt Semantic Layer API and to our internal Hex notebooks via dbt's JDBC interface. For the first time in Spark Werks' history, every dashboard in the company computed MRR the same way.
+
+### The Two-Week Parallel Run (June 2026)
+
+The riskiest part of the migration was the cutover. We ran both the old and new architectures in parallel for two weeks, comparing key metrics daily.
+
+**What we compared**:
+- **Metric accuracy**: For 17 critical KPIs (MRR, churn rate, customer acquisition cost, net promoter score, etc.), we computed values from both the old and new systems. Target: <1% discrepancy for all KPIs.
+- **Query performance**: Median dashboard load time went from 8.2 seconds (old) to 1.9 seconds (new)—a 77% improvement driven by Snowflake's columnar storage and dbt's materialized tables.
+- **Data freshness**: End-to-end latency from source event to gold-layer availability dropped from 4+ hours (old batch pipeline) to under 30 minutes (new incremental pipeline with dbt's incremental models).
+- **Engineer satisfaction**: We surveyed our team of 7 data engineers and analysts. The score went from 3.2/10 (old architecture) to 8.7/10 (new). The biggest wins: version-controlled transformations, automated testing, and the ability to trace any dashboard number back to its source.
+
+**What went wrong**:
+1. **The dbt Semantic Layer API had a breaking change between v1.6 and v1.7**. We had pinned our dbt version to 1.6.1 but the dbt Cloud environment auto-upgraded to 1.7.0 mid-migration, breaking our metric definitions for 36 hours. Lesson: pin your dbt version explicitly in dbt Cloud project settings.
+2. **Snowflake costs spiked during the parallel run**. We were running both systems simultaneously, and our Snowflake credit consumption doubled. We hadn't budgeted for the overlap period. Lesson: negotiate elastic pricing or set resource monitors with hard limits before starting a parallel run.
+3. **The deduplication logic had an edge case for enterprise accounts**. Our fuzzy matching algorithm struggled with very large organizations that had 50+ contacts across multiple subsidiaries. We had to add a manual override table and a weekly reconciliation process for enterprise accounts.
+
+### What We Achieved
+
+After six months, the numbers speak for themselves:
+
+- **100% reduction in metric definition discrepancies**. Every dashboard now sources metrics from the dbt Semantic Layer.
+- **77% improvement in median dashboard load time**. Gold-layer materialized tables in Snowflake mean BI tools query pre-computed data rather than raw sources.
+- **4.5x faster onboarding for new data team members**. New analysts can read the dbt documentation site (auto-generated from model descriptions), trace lineage from gold to bronze, and ship their first model within a week.
+- **Zero data quality incidents since cutover**. Our CI pipeline catches schema changes, null violations, and referential integrity failures before they reach production.
+- **40% reduction in infrastructure cost** compared to our legacy PostgreSQL + Tableau Server setup, despite running on Snowflake's Enterprise plan.
+
+### Lessons for Teams Considering a Similar Migration
+
+1. **Start with the bronze layer, not the gold layer**. It's tempting to jump straight to building beautiful dashboards and curated datasets. But without a solid raw data foundation, every downstream model is built on sand. Invest in reliable, immutable ingestion first.
+
+2. **Invest in testing early**. The single best decision we made was writing dbt tests from day one of the silver layer. Tests catch issues that manual review never will, and they give your team the confidence to refactor aggressively.
+
+3. **Plan for the cultural shift**. The hardest part of the migration wasn't technical—it was getting stakeholders to trust a new system. The two-week parallel run was essential for building confidence. We also held weekly 'data office hours' where anyone could ask questions about the new architecture.
+
+4. **Embrace the medallion architecture as a pattern, not a prescription**. We don't strictly enforce three layers for every data source. Some datasets go directly from bronze to gold (e.g., reference tables from Salesforce). Others need an extra intermediate layer for complex business logic. The architecture should serve your workflow, not the other way around.
+
+5. **Measure everything**. Before the migration, we couldn't answer basic questions like 'how many of our dashboards are actively used?' or 'what is the median age of a data model?' After, we had real-time dashboards tracking model freshness, test pass rates, query performance, and lineage completeness.
+
+### What's Next
+
+We're now in the continuous improvement phase. Our roadmap for the next quarter includes:
+
+- Implementing dbt's '--select' and '--exclude' patterns for more granular CI builds
+- Building a custom data catalog that combines dbt's metadata with Snowflake's tag-based governance
+- Experimenting with dbt's Python models for ML feature engineering directly in the gold layer
+- Open-sourcing our dbt project structure and CI/CD templates
+
+Six months ago, our data architecture was a source of anxiety and late-night firefighting. Today, it's a competitive advantage. The Slack message that started this journey—"why are the numbers different?"—no longer applies. When someone asks about a metric now, we can answer with confidence, precision, and a link to the exact model that produced it.
+
+That's the power of intentional data architecture.
+
+— Priya Nair
+Data Architect, Team Spark Werks
+
+P.S. We're sharing our dbt project template, CI/CD pipeline configuration, and migration checklist at github.com/sparkwerks/data-architecture-toolkit. Feel free to adapt them for your own migration. And if you're in the middle of a similar journey and hitting roadblocks, reach out—we've probably hit the same ones, and we'd love to compare notes.`,
+    author: "Priya Nair",
+    authorRole: "Data Architect, Team Spark Werks",
+    date: "2026-06-28",
+    category: "Data Architecture",
+    readTime: 14,
+    tags: ["dbt", "Snowflake", "Data Architecture", "Medallion Architecture", "Data Engineering", "Migration", "Modern Data Stack"]
   },
 ];

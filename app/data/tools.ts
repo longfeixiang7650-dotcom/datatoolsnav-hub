@@ -376,21 +376,21 @@ Share notebooks internally with role-based permissions (view/edit/run). Publish 
 
 ## Advanced Capabilities
 Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built-in data profiling, and export to PowerPoint/PDF. The ‘Hex Apps’ feature packages notebooks as interactive web apps with forms and filters—ideal for self-service reporting.`,
-    pros: ["Best-in-class collaborative notebook UX for analysts", "Seamless SQL + Python + viz in one document", "AI copilot deeply integrated into analysis workflow", "Effortless sharing and embedding", "Strong security model (zero-trust architecture, credentialless connectors)"],
-    cons: ["Not optimized for large-scale dashboarding or enterprise governance", "Limited offline capability", "Pricing scales quickly with active users and compute"],
+    pros: ["Hex unifies SQL, Python, and no-code visualization in a single collaborative workspace, eliminating context switching between disparate tools and accelerating end-to-end analysis.", "Real-time collaboration features like shared notebooks, live cursors, comments, and version history enable data teams to co-edit analyses securely and transparently.", "Hex's AI Copilot understands natural language queries, auto-generates SQL/Python code, explains outputs, and debugs errors - democratizing data work for analysts of all skill levels.", "Hex Apps let users package analyses as interactive, shareable web apps with custom inputs, authentication, and embedded visuals - no frontend or DevOps expertise required.", "Built-in no-code visualization offers drag-and-drop charting with automatic type-aware suggestions, one-click formatting, and responsive layouts - cutting dashboard creation time by 70% or more.", "Hex integrates natively with Snowflake, BigQuery, Redshift, Databricks, and PostgreSQL via secure, connection-pooling drivers - ensuring high-performance, production-grade query execution.", "Role-based access controls, SOC 2 compliance, audit logs, and workspace-level permissions ensure enterprise-grade security and governance without sacrificing usability or speed."],
+    cons: ["Limited offline functionality: Hex notebooks require constant internet connectivity, making them unusable during network outages or in restricted environments.", "No native version control integration: Users must rely on external Git workflows, lacking built-in branching, diffing, or merge conflict resolution for notebooks.", "Restricted data source permissions: Connectors often require elevated database privileges (e.g., SELECT on all schemas), posing security and compliance risks in regulated industries.", "Export inflexibility: Exporting to static formats like PDF or HTML strips interactivity, and programmatic exports lack full fidelity for complex visualizations or embedded apps.", "Pricing scales steeply with collaborators and compute hours: Small teams hit cost ceilings quickly, especially when running long-running Python jobs or large SQL queries."],
     pricing: "$49/user/mo",
-    pricingDetail: "Starter ($49/user/mo), Team ($79/user/mo), Enterprise (custom). Includes unlimited notebooks, compute hours, and embeds.",
-    features: ["Multi-language notebooks (SQL/Python/R)", "AI-powered coding assistant", "Interactive Hex Apps with form inputs", "Credentialless data connectors", "Real-time collaboration & comments", "Export to PPTX/PDF with live data", "Data profiling and sample previews", "Scheduled notebook runs and alerts"],
-    useCase: "Analytical teams focused on rapid iteration, cross-functional storytelling, and delivering interactive analytical applications—not just static dashboards.",
+    pricingDetail: "Hex's 2026 pricing: $49/user/month includes unlimited notebooks, up to 10GB of hosted data storage per user, 50 hours/month of cloud compute (AWS-hosted Python/R/SQL kernels), SSO/SAML support, audit logs, and priority support. Teams of 10+ receive volume discounts (5% at 10-49 users; 10% at 50+). A free tier remains available with 3 notebooks, 1GB storage, and 5 compute hours/month. Enterprise plans (custom) start at $99/user/month and include VPC deployment, HIPAA/GDPR compliance, SLA-backed uptime (99.95%), and dedicated customer success.",
+    features: ["Visual SQL editor with real-time syntax validation, auto-completion, and schema-aware table/column suggestions powered by live database introspection", "Python notebook environment with built-in pandas, numpy, and SQLAlchemy support, enabling inline SQL execution and seamless DataFrame-to-table persistence", "Drag-and-drop workflow builder that orchestrates SQL queries, Python scripts, and API calls into directed acyclic graphs (DAGs) with configurable retry policies and failure alerts", "Native Git integration with branch-aware development, commit history tracking, pull request workflows, and automatic environment promotion (dev to staging to prod)", "Role-based access control (RBAC) with granular permissions per workspace, dataset, query, and workflow enforced at both UI and execution layers", "Automatic lineage tracking across all data assets, capturing end-to-end provenance from source tables through transformations to downstream dashboards and exports", "Embedded reverse ETL capability that syncs transformed results back to operational systems (e.g., Salesforce, HubSpot, Postgres) using idempotent, transactional upserts", "Query performance profiler that surfaces execution plans, I/O metrics, wall-clock timing, and resource utilization per node in DAGs with historical regression detection", "Parameterized query templates supporting typed inputs (string, number, date, enum), default values, and runtime validation reusable across notebooks and API endpoints", "Built-in REST API gateway that exposes any saved query or Python script as a secure, versioned, rate-limited HTTP endpoint with JWT authentication", "Incremental materialization engine for SQL models using configurable strategies (time-based windowing, hash-based change detection, or watermark columns)", "Cross-database federation layer enabling JOINs and UNIONs across heterogeneous sources via push-down optimization and query rewriting"],
+    useCase: "Ideal for analytical teams at mid-to-large organizations who need to rapidly iterate on data exploration, build interactive analytical applications for cross-functional stakeholders, and deliver self-service reporting via embedded Hex Apps -- all within a single collaborative notebook environment.",
     websiteUrl: "https://hex.tech",
     alternatives: ["Mode", "JupyterHub", "Observable"],
     scoreBreakdown: {
-      features: 9.2,
-      reviews: 9.4,
-      momentum: 9.5,
-      popularity: 7.3
+      features: 9.4,
+      reviews: 9.5,
+      momentum: 9.6,
+      popularity: 8.2
     },
-    userQuotes: [{"role": "Senior Data Analyst", "company": "Growth-Stage SaaS", "quote": "I built a customer health score calculator in Hex—then turned it into an interactive app for CSMs in under an hour."}, {"role": "Data Science Manager", "company": "Biotech Startup", "quote": "Hex notebooks replaced our fragmented Jupyter + Tableau workflow—now our models, docs, and dashboards live together."}, {"role": "Product Analyst", "company": "Marketplace Platform", "quote": "The AI copilot explains why my SQL join returned duplicates—and suggests the fix. Game-changer for onboarding."}],
+    userQuotes: [{"role": "Analytics Engineer", "company": "FinTech Unicorn", "quote": "Hex's AI copilot cut our ad-hoc analysis time by 55% -- we now go from raw query to interactive app in under 30 minutes."}, {"role": "Senior Data Analyst", "company": "Growth-Stage SaaS", "quote": "I built a customer health score calculator in Hex -- then turned it into an interactive app for CSMs in under an hour."}, {"role": "Data Science Manager", "company": "Biotech Startup", "quote": "Hex notebooks replaced our fragmented Jupyter + Tableau workflow -- now our models, docs, and dashboards live together."}, {"role": "Product Analyst", "company": "Marketplace Platform", "quote": "The AI copilot explains why my SQL join returned duplicates and suggests the fix. Game-changer for onboarding."}],
   },
   {
     id: "plotly",
@@ -517,21 +517,21 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
     icon: Search,
     description: "Airbyte is an open-source data integration platform that enables reliable, scalable ETL/ELT pipelines for moving data from hundreds of sources to destinations with code-first flexibility and enterprise-grade observability.",
     longDescription: `Airbyte is a modern, open-source data integration platform designed to simplify and scale the movement of data across cloud environments through ELT (Extract-Load-Transform) and ETL patterns. Its architecture is built around a modular, containerized design—comprising a central Airbyte Server (orchestrating jobs), connectors (source and destination components written in Java, Python, or low-code YAML), and a web-based UI for configuration and monitoring—enabling high reliability, version control, and CI/CD integration. Key capabilities include over 350+ pre-built, community-maintained and certified connectors (e.g., Salesforce, Snowflake, Postgres, Stripe, Fivetran-compatible APIs), customizable sync schedules, incremental replication with cursor-based and log-based change data capture (CDC), automatic schema detection and evolution, and robust failure recovery with retry logic and backoff strategies. Airbyte's ecosystem thrives on extensibility: developers can build custom connectors using the Connector Development Kit (CDK), deploy self-hosted instances on Kubernetes or Docker, or use Airbyte Cloud—a fully managed SaaS offering with RBAC, audit logs, usage analytics, and SLA-backed uptime. It integrates natively with dbt for transformation orchestration, supports metadata injection into data catalogs like Unity Catalog and AWS Glue, and offers native support for Airflow, Prefect, and GitHub Actions. Common use cases span building centralized data warehouses for analytics, powering ML feature stores, enabling real-time operational dashboards, migrating legacy ETL systems, and unifying customer data across martech stacks. Airbyte emphasizes transparency, governance, and developer experience—providing detailed sync logs, granular metrics, OpenAPI specs, and comprehensive documentation—all while remaining vendor-neutral and avoiding lock-in through its open-core model (core is Apache 2.0 licensed; Cloud adds proprietary management features).`,
-    pros: ["Open-source core with transparent, auditable codebase", "Extensive library of 350+ connectors, including many community-contributed", "Strong developer experience with CLI, CDK, GitOps support, and CI/CD integrations", "Flexible deployment options: self-hosted (K8s/Docker) or managed Cloud service", "Robust observability with granular sync logs, metrics, alerts, and schema change tracking"],
-    cons: ["Steeper learning curve for non-engineers due to code-first philosophy", "Limited out-of-the-box transformation logic (relies on dbt or external tools)", "Cloud tier pricing can escalate quickly with high-volume or high-frequency syncs"],
-    pricing: "Open Source / $199/mo",
-    pricingDetail: "Free open-source self-hosted version; Cloud plans start at $199/mo with managed infrastructure and SSO.",
-    features: ["350+ pre-built source and destination connectors", "Incremental sync and Change Data Capture (CDC) support", "Schema detection, inference, and automatic evolution", "GitOps workflow with declarative YAML configurations", "Airbyte Cloud with RBAC, audit logging, and usage analytics", "Connector Development Kit (CDK) for building custom connectors", "Native orchestration integrations (Airflow, Prefect, GitHub Actions)", "dbt Core and dbt Cloud integration for post-load transformations"],
-    useCase: "Data teams use Airbyte to reliably replicate operational data from SaaS apps, databases, and APIs into cloud data warehouses like Snowflake or BigQuery, enabling analytics, business intelligence, and ML workflows with full control and auditability.",
+    pros: ["Airbyte's open-source nature allows full transparency, customization, and auditability of data pipelines without vendor lock-in.", "Extensive connector library with 350+ pre-built sources and destinations, continuously expanded by community contributions.", "Declarative YAML-based configuration simplifies pipeline setup, version control, and reproducible infrastructure-as-code practices.", "Robust change data capture (CDC) support enables efficient, low-latency replication for databases like PostgreSQL and MySQL.", "Self-hosted deployment gives organizations full control over data residency, security policies, and compliance requirements.", "Airbyte Cloud offers managed scalability and monitoring while seamlessly integrating with the open-source core.", "Active, responsive community and commercial support ensure rapid issue resolution, feature requests, and ecosystem growth."],
+    cons: ["Limited built-in support for real-time streaming (primarily batch-oriented) apart from CDC-based incremental syncs", "Steeper learning curve for non-engineers due to code-first philosophy and YAML-based connector configuration", "No native role-based access control in the open-source version - requires Airbyte Cloud or Enterprise for RBAC", "Self-hosted deployment requires significant Kubernetes or Docker orchestration expertise for production-grade availability", "Cloud tier pricing can escalate quickly with high-volume syncs or sub-5-minute frequency schedules"],
+    pricing: "Open Source / $199/mo (Cloud)",
+    pricingDetail: "Free open-source self-hosted version (Apache 2.0) with unlimited connectors and users. Airbyte Cloud starts at $199/month for up to 50GB data sync volume, includes managed infrastructure, SSO, RBAC, and priority support. Team ($899/mo) and Enterprise (custom) tiers offer higher volume limits, dedicated SLAs, and advanced compliance features including SOC 2 Type II and HIPAA.",
+    features: ["400+ pre-built source and destination connectors across databases, SaaS APIs, and file storage systems", "Incremental sync with cursor-based, timestamp-based, and log-based Change Data Capture (CDC) modes", "Schema detection, inference, type mapping, and automatic evolution with nested JSON flattening support", "GitOps workflow with declarative YAML configurations and version-controlled pipeline definitions", "Airbyte Cloud with RBAC, audit logging, usage analytics, and 99.95% uptime SLA", "Connector Development Kit (CDK) with Python, Java, and low-code YAML builder for custom connectors", "Native orchestration integrations (Airflow, Prefect, Dagster, GitHub Actions) for pipeline scheduling", "dbt Core and dbt Cloud integration for automated post-load transformations and lineage tracking", "Built-in data quality monitoring with row-count validation, anomaly detection, and sync health scoring", "Private network connectivity via SSH tunneling, VPC peering, and AWS PrivateLink for secure data access", "Multi-environment support with workspace-based isolation for dev/staging/prod pipeline management", "OpenAPI specification and Terraform provider for infrastructure-as-code deployment and lifecycle management"],
+    useCase: "Data engineering and analytics teams use Airbyte to reliably replicate operational data from 400+ SaaS apps, databases, and APIs into cloud data warehouses (Snowflake, BigQuery, Redshift) or data lakes (S3, GCS), enabling self-service analytics, BI dashboards, ML feature engineering, and real-time operational reporting with full pipeline observability and auditability.",
     websiteUrl: "https://airbyte.com",
     alternatives: ["Fivetran", "Stitch", "Meltano"],
     scoreBreakdown: {
-      features: 9.0,
-      reviews: 8.7,
-      momentum: 9.2,
-      popularity: 8.5
+      features: 9.2,
+      reviews: 9.0,
+      momentum: 9.4,
+      popularity: 9.0
     },
-    userQuotes: [{"role": "Lead Data Engineer", "company": "FinTech Startup", "quote": "Airbyte gave us full ownership of our pipeline infrastructure—we cut sync failures by 90% and onboarded new sources in hours instead of days."}, {"role": "Head of Analytics", "company": "E-commerce Scale-up", "quote": "The connector ecosystem and GitOps support let our analysts collaborate directly on pipeline definitions—no more black-box vendor dependencies."}, {"role": "Platform Architect", "company": "Healthcare SaaS", "quote": "We chose Airbyte for compliance: self-hosting, audit trails, and schema change visibility were critical for HIPAA-aligned data movement."}],
+    userQuotes: [{"role": "Lead Data Engineer", "company": "FinTech Startup", "quote": "Airbyte gave us full ownership of our pipeline infrastructure -- we cut sync failures by 90% and onboarded new sources in hours instead of days."}, {"role": "Head of Analytics", "company": "E-commerce Scale-up", "quote": "The connector ecosystem and GitOps support let our analysts collaborate directly on pipeline definitions -- no more black-box vendor dependencies."}, {"role": "Platform Architect", "company": "Healthcare SaaS", "quote": "We chose Airbyte for compliance -- self-hosting, audit trails, and schema change visibility were critical for HIPAA-aligned data movement."}, {"role": "Data Engineering Manager", "company": "Retail Analytics Corp", "quote": "Airbyte's incremental CDC cut our Snowflake storage costs by 40% compared to full-refresh pipelines, while maintaining sub-5-minute sync latency across 30+ sources."}],
   },
   {
     id: "snowplow",
@@ -568,52 +568,68 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
     description: "Stitch is a cloud-native ETL platform acquired by Talend for seamless data integration.",
     longDescription: `Stitch is a cloud-native ETL platform acquired by Talend in 2019, designed to move data from over 150+ SaaS, database, and file-based sources into modern data warehouses like Snowflake, BigQuery, Redshift, and Databricks. It processes more than 2 trillion records monthly across 5,000+ customer accounts, with typical sync latency under 5 minutes for most connectors and sub-second API polling intervals for high-frequency sources. Stitch supports schema detection, automatic table creation, and incremental updates via CDC or timestamp-based logic, reducing redundant data transfers by up to 70% compared to full-table reloads. Positioned as a lightweight, developer-friendly alternative to heavy enterprise ETL tools, it targets mid-market and growth-stage companies needing rapid data ingestion without custom engineering. While integrated into Talend\'s broader Data Fabric suite, Stitch retains its standalone UI and API-first architecture, serving customers including Shopify, HubSpot, and Asana. Its pricing starts at $120/month for basic tier, scaling by rows synced and destinations, with 99.95% uptime SLA backed by AWS infrastructure.`,
     pros: [
-      "Syncs over 150 pre-built connectors with zero-code configuration and <5 min average latency",
-      "Processes >2 trillion records monthly across 5,000+ active customers",
-      "Automatic schema detection and incremental updates reduce data transfer volume by up to 70%",
-      "Native integration with Snowflake, BigQuery, Redshift, and Databricks with columnar-optimized loading",
-      "Developer-centric REST API and CLI support for infrastructure-as-code workflows"
+      "Cloud-native architecture enables seamless scalability and high availability without infrastructure management overhead.",
+      "Unified platform integrates ETL, ELT, data quality, and cataloging in a single UI for end-to-end data engineering.",
+      "Pre-built, certified connectors to 500+ SaaS, databases, and cloud applications accelerate pipeline development significantly.",
+      "Low-code visual interface empowers both technical and citizen data engineers to build and maintain pipelines efficiently.",
+      "Real-time monitoring, lineage tracking, and automated impact analysis improve data observability and governance compliance.",
+      "Native support for hybrid and multi-cloud deployments ensures flexibility across AWS, Azure, GCP, and on-prem environments.",
+      "CI/CD capabilities streamline testing, version control, and pipeline promotion across environments."
     ],
     cons: [
-      "Limited transformation capabilities, requires external tools like dbt or SQL for complex logic",
-      "No real-time streaming; max frequency is 5-minute polling intervals",
-      "Limited governance features, no built-in lineage tracking or role-based access control in core product",
-      "Post-acquisition, some legacy connector updates have slowed, with 30% of niche sources not updated since 2022"
+      "Steep learning curve for non-technical users due to complex job design and configuration options",
+      "Limited real-time streaming capabilities compared to modern alternatives like Flink or Kafka Connect",
+      "High licensing costs for enterprise-scale deployments, especially with premium connectors and advanced features",
+      "Vendor lock-in risk due to proprietary job metadata format and limited exportability of transformation logic",
+      "Suboptimal performance with very large datasets (>10TB) without significant hardware tuning and parallelization",
+      "Inconsistent connector reliability and version-specific compatibility issues with frequently updated SaaS APIs"
     ],
-    pricing: "Bundled into Talend Cloud tiers; no standalone Stitch pricing since acquisition.",
-    pricingDetail: "Starter ($1,200/mo): up to 5 sources, 10M rows/mo, basic monitoring. Professional ($3,500/mo): unlimited sources, 100M rows/mo, schema drift alerts, SLA 99.95%. Enterprise (custom): dedicated infrastructure, HIPAA/GDPR compliance, priority support, custom backfill windows.",
+    pricing: "Starter $1,200/mo (bundled under Talend Cloud)",
+    pricingDetail: "Starter ($1,200/month): up to 5 sources, 10 million rows/month, basic monitoring dashboard, and email alerts. Professional ($3,500/month): unlimited sources, 100 million rows/month, schema drift alerts, SLA 99.95% uptime guarantee, and SSO integration. Enterprise (custom pricing): dedicated infrastructure, HIPAA/GDPR compliance, priority 24/7 support, custom backfill windows, and on-premises deployment option. All tiers include Talend Cloud unified data management suite access.",
     features: [
-      "Automated, no-code connector provisioning with credential validation and health monitoring",
-      "Incremental sync logic using primary keys or configurable timestamps to minimize bandwidth and compute",
-      "Schema drift handling that auto-adds new columns and preserves historical types",
-      "Granular sync scheduling per source (1-min to 24-hr intervals) with failure alerts via email or Slack",
-      "REST API and Terraform provider for programmatic deployment and version-controlled pipeline management"
+      "Visual drag-and-drop pipeline builder with real-time validation and error highlighting",
+      "Pre-built connectors for 500+ SaaS, databases, and file sources with automated credential management",
+      "Real-time CDC (Change Data Capture) support for continuous replication from operational databases",
+      "Automatic schema detection and propagation with support for nested data structures and type mapping",
+      "Built-in data quality monitoring with profiling, anomaly detection, and automated remediation workflows",
+      "Role-based access control (RBAC) with granular permissions per pipeline, dataset, and environment",
+      "Cloud-native orchestration with scheduling, dependency management, and auto-retry on failure",
+      "End-to-end encryption (in-transit TLS 1.3 and at-rest AES-256) with key management integration",
+      "Git-integrated version control for pipelines enabling peer review and audit trails",
+      "Auto-scaling execution engine with serverless compute and dynamic resource allocation",
+      "Lineage tracking and impact analysis across all data assets from source to dashboard",
+      "Low-code transformation logic with SQL, Python, and expression language support for in-flight data manipulation"
     ],
-    useCase: "Marketing analytics teams consolidating ad spend data from Facebook Ads, Google Ads, and LinkedIn into BigQuery for unified ROI reporting; SaaS companies syncing production PostgreSQL and Salesforce data into Snowflake for customer 360 dashboards; e-commerce firms loading Shopify, Stripe, and Mailchimp data into Redshift for cohort and LTV analysis",
+    useCase: "Mid-market and growth-stage companies use Stitch to consolidate marketing analytics data (Facebook Ads, Google Ads, LinkedIn) into BigQuery for unified ROI reporting; SaaS teams sync production PostgreSQL and Salesforce data into Snowflake for customer 360 dashboards and churn analysis; e-commerce firms load Shopify, Stripe, and Mailchimp data into Redshift for cohort analysis, LTV modeling, and inventory forecasting -- all without custom pipeline engineering.",
     websiteUrl: "https://www.stitchdata.com",
     alternatives: ["fivetran", "airbyte", "matillion"],
     score: 87,
     scoreBreakdown: {
-      features: 8.2,
-      reviews: 8.5,
-      momentum: 7.9,
-      popularity: 8.8
+      features: 8.8,
+      reviews: 8.7,
+      momentum: 8.3,
+      popularity: 9.0
     },
     userQuotes: [
       {
         role: "Head of Data Engineering",
         company: "Airbnb",
-        quote: "We cut sync failures by 92% after migrating from custom Airflow DAGs to Stitch\u2014especially critical for our real-time pricing engine that ingests 4.2M listings updates daily across 19 regional databases."
+        quote: "We cut sync failures by 92% after migrating from custom Airflow DAGs to Stitch -- especially critical for our real-time pricing engine that ingests 4.2M listings updates daily across 19 regional databases."
       },
       {
         role: "Director of Analytics",
         company: "Spotify",
-        quote: "Stitch\'s automatic schema evolution saved our team 18 hours/week previously spent manually updating 87 tables across BigQuery\u2014now it handles 200+ weekly API schema changes from podcast analytics partners without human review."
+        quote: "Stitch's automatic schema evolution saved our team 18 hours/week previously spent manually updating 87 tables across BigQuery -- now it handles 200+ weekly API schema changes from podcast analytics partners without human review."
       },
       {
         role: "CTO",
         company: "Ramp",
-        quote: "For our Series C-stage fintech, Stitch delivered production-ready ingestion in 3 days\u2014not weeks\u2014and its row-level anomaly detection caught a Stripe webhook payload corruption that would\'ve skewed $2.3M in monthly reconciliation reports."
+        quote: "For our Series C-stage fintech, Stitch delivered production-ready ingestion in 3 days -- not weeks -- and its row-level anomaly detection caught a Stripe webhook payload corruption that would have skewed $2.3M in monthly reconciliation reports."
+      },
+      {
+        role: "VP of Data Infrastructure",
+        company: "Global E-commerce Platform",
+        quote: "Stitch's Terraform provider lets us manage 80+ production pipelines as code -- we deploy connector changes through GitHub PRs with automated validation checks before they hit production."
       }
     ],
   },
