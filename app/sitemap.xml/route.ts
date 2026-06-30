@@ -22,6 +22,7 @@ const BLOG_SLUGS = [
     "why-we-switched-from-tableau-to-apache-superset",
     "data-architecture-modernization-dbt-snowflake",
     "stream-processing-vs-batch-processing-2026-guide",
+    "data-contracts-schema-governance-2026",
 ] as const;
 
 const TOOL_SLUGS = [
