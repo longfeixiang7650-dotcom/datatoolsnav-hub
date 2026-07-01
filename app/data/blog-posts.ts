@@ -2678,4 +2678,109 @@ Schema drift won't disappear overnight. But with data contracts, it stops being 
     readTime: 8,
     tags: ["Data Contracts", "Schema Governance", "dbt", "Great Expectations", "Data Engineering", "Data Quality", "Data Pipelines", "Data Governance"]
   },
+  {
+    slug: "analytics-tools-smb-comparison-2026",
+    title: "Six Analytics Tools, Four Teams, One Year: What Actually Worked for SMBs",
+    excerpt: "A year-long journey testing Tableau, Power BI, Looker Studio, Metabase, Hex, and Mode Analytics across four different SMB teams -- the honest findings, budget realities, and what I'd recommend based on team size and technical maturity.",
+    content: `# Six Analytics Tools, Four Teams, One Year: What Actually Worked for SMBs  
+*By Lotte Lefebvre — Data & Analytics Consultant, Spark Werks Studio*  
+**Date:** 2026-07-02  
+**Read time:** 9 minutes  
+
+---
+
+Hey friends — Lotte here. If you’ve ever stared at a spreadsheet at 3 a.m., wondering whether your “analytics stack” is actually *working* or just quietly draining your budget and morale… welcome. You’re not alone.
+
+This post isn’t theory. It’s my field notes from the last 12 months — testing six analytics tools across four very different SMB clients: a 12-person e-commerce brand scaling into EU markets, a 28-person SaaS startup with two data-savvy engineers and zero dedicated analysts, a 7-person boutique marketing agency drowning in GA4 + HubSpot exports, and a 19-person nonprofit tracking grant impact across three legacy databases.
+
+We didn’t just *demo* these tools. We deployed them. Trained people on them. Broke them. Fixed them. And yes — canceled licenses.
+
+Here’s what stuck — and what didn’t.
+
+---
+
+## 🧪 The Shortlist (and Why I Picked Them)
+
+I focused on tools that *claim* to serve SMBs — not enterprise monoliths or academic sandboxes. That meant prioritizing:
+
+- Transparent, per-user pricing (no “contact sales” black holes)  
+- Setup under 2 hours *without* cloud infra engineering  
+- Real support for non-SQL users *and* SQL power users  
+- Export flexibility (PDF, CSV, scheduled emails — no “premium add-on only”)  
+
+The six contenders:  
+- **Tableau Cloud** (not Desktop — we tested what SMBs actually buy)  
+- **Power BI Pro** (the $10/user/month tier — *not* Premium or Embedded)  
+- **Looker Studio (formerly Google Data Studio)** — free tier + paid add-ons  
+- **Metabase Cloud** (their managed SaaS offering)  
+- **Hex** (the “notebook-first” BI tool)  
+- **Mode** (SQL-first, with growing no-code dashboards)  
+
+Spoiler: Two of them got quietly retired after Week 3.
+
+---
+
+## ⚖️ The Real-World Breakdown (No Marketing Fluff)
+
+### 🔹 Tableau Cloud  
+**Price:** $75/user/month (billed annually)  
+**Setup time:** ~90 minutes (SSO + connector config + first dashboard)  
+**Team fit:** Best for teams with *at least one* analyst who speaks calculated fields and LOD expressions  
+**Pros:** Stunning visuals, rock-solid permissions, great mobile UX  
+**Cons:** Steep learning curve for non-analysts; “drag-and-drop” feels like assembling IKEA furniture *blindfolded*; no native CSV upload — you need a database or connector  
+**Hidden cost:** Training. We spent ~14 hours total on onboarding for a 9-person team — mostly unlearning Excel habits. Also: $200/mo extra for *scheduled PDF exports* (yes, really).  
+
+### 🔹 Power BI Pro  
+**Price:** $10/user/month (billed monthly — no annual discount trap)  
+**Setup time:** ~25 minutes (sign in → connect to Excel/SharePoint → publish)  
+**Team fit:** Ideal for Microsoft shops (Teams, Outlook, SharePoint users)  
+**Pros:** Seamless integration with Excel & Azure SQL; intuitive drag-and-drop for basic reports; great for quick KPI cards  
+**Cons:** Report sharing outside org = “publish to web” (public) or pay for Premium ($20/user); DAX syntax trips up junior analysts; refresh limits (8x/day on Pro) choked our e-commerce client’s real-time inventory dashboards  
+**Hidden cost:** None *upfront* — but if you hit refresh limits or need row-level security beyond basic roles? You’re upgrading. Fast.
+
+### 🔹 Looker Studio  
+**Price:** Free (with Google Workspace account)  
+**Setup time:** <10 minutes (connect Google Sheets, GA4, BigQuery — done)  
+**Team fit:** Marketing teams, ops folks, founders who want *answers*, not architecture  
+**Pros:** Zero cost, shockingly capable for its price, collaborative in real time  
+**Cons:** No native SQL editor (you *can* write custom queries in BigQuery, but it’s buried), fragile when connecting to non-Google sources (we lost 3 days debugging Postgres SSL certs), no user-level audit logs  
+**Hidden cost:** Time. So much time. Not money — but when your nonprofit client spent 6 hours trying to get a filtered view working, that’s $1,200 in opportunity cost.
+
+### 🔹 Metabase Cloud  
+**Price:** $12/user/month (billed annually; $15/month if billed monthly)  
+**Setup time:** ~40 minutes (connect DB → set up groups → build first question)  
+**Team fit:** Teams with *one* SQL person + non-technical stakeholders  
+**Pros:** Clean UI, natural-language questions (“show me revenue by region last month”), built-in SQL editor *side-by-side* with visualizations, excellent permission groups  
+**Cons:** Limited chart types (no waterfall, no Sankey), slow on large datasets (>10M rows), no native mobile app  
+**Hidden cost:** None — but their “Cloud” tier requires you to own your database. So if you’re on Heroku Postgres, fine. If you’re on an old MySQL instance behind a firewall? Good luck.
+
+### 🔹 Hex  
+**Price:** $45/user/month (Pro plan — required for sharing dashboards)  
+**Setup time:** ~60 minutes (auth → connect → run first Python cell → visualize)  
+**Team fit:** Analysts who love notebooks *and* want to ship dashboards without dev handoff  
+**Pros:** Magical blend of code + interactivity; live Python/R cells; beautiful, responsive outputs; version control baked in  
+**Cons:** Overkill for simple reporting; non-coders felt alienated (“Why do I need to click ‘Run’?”); no native Excel export (only CSV/PDF)  
+**Hidden cost:** Onboarding. We had to teach *everyone* basic notebook hygiene — cell execution order, variable scope. Took 2 full days.
+
+### 🔹 Mode  
+**Price:** $15/user/month (Analyst plan — required for dashboard sharing)  
+**Setup time:** ~50 minutes (connect → write first query → build chart → share)  
+**Team fit:** SQL-native teams who want lightweight self-service for business users  
+**Pros:** Best-in-class SQL editor, fast query engine, clean dashboard builder, great documentation  
+**Cons:** Visual builder feels like an afterthought; no drag-and-drop filtering for non-SQL users; limited branding options  
+**Hidden cost:** None — but if your team doesn’t already write SQL, Mode won’t teach them. It assumes fluency.
+
+---
+
+## 📊 Quick-Reference Comparison Table
+
+| Tool`,
+    author: "Lotte Lefebvre",
+    authorRole: "Data & Analytics Consultant, Spark Werks Studio",
+    date: "2026-07-02",
+    category: "BI Platforms",
+    readTime: 9,
+    tags: ["BI", "Tableau", "Power BI", "Looker Studio", "Metabase", "Hex", "SMB", "Data Analytics", "Comparison"]
+  },
+
 ];
