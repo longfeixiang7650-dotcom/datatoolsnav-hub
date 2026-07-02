@@ -23,6 +23,8 @@ const BLOG_SLUGS = [
     "data-architecture-modernization-dbt-snowflake",
     "stream-processing-vs-batch-processing-2026-guide",
     "data-contracts-schema-governance-2026",
+    "analytics-tools-smb-comparison-2026",
+    "modern-etl-pipeline-trends-2026",
 ] as const;
 
 const TOOL_SLUGS = [
