@@ -1520,7 +1520,7 @@ Crucially, reverse ETL is not just 'ETL in reverse.' It's purpose-built for oper
 ### Key Use Cases in 2026
 
 #### (a) Sales Acceleration
-Sales teams in 2026 don't want dashboards -- they want context. Reverse ETL syncs enriched lead scoring models (built in dbt, trained on 18 months of win/loss data + product usage signals) directly into Salesforce. At DatatoolsNav's own benchmarking with 42 B2B SaaS customers, this reduced manual lead enrichment time by 67% and increased qualified opportunity conversion by 22%. One fintech client saw their average deal size climb 15% after syncing real-time product adoption heatmaps (e.g., 'has configured API keys + run 3+ webhooks') into Salesforce Opportunity records.
+Sales teams in 2026 don't want dashboards -- they want context. Reverse ETL syncs enriched lead scoring models (built in dbt, trained on 18 months of win/loss data + product usage signals) directly into Salesforce. At DatatoolsNav's own benchmarking with 42 enterprise customers, this reduced manual lead enrichment time by 67% and increased qualified opportunity conversion by 22%. One fintech client saw their average deal size climb 15% after syncing real-time product adoption heatmaps (e.g., 'has configured API keys + run 3+ webhooks') into Salesforce Opportunity records.
 
 #### (b) Marketing Personalization
 Static segments are dead. In 2026, marketers activate dynamic audiences based on live behavioral and firmographic signals. Reverse ETL pushes dbt-modeled cohorts -- like 'High-Intent Free Users: >5 logins/week + visited pricing page + 2+ feature tours' -- into Braze and Mailchimp within 90 seconds of the qualifying event. A 2026 Gartner study found brands using reverse ETL for real-time audience activation achieved 3.8x higher email CTR and 2.1x more demo requests per campaign than those relying on nightly CSV exports.
@@ -1888,7 +1888,7 @@ We're a 12-person analytics team at a mid-market SaaS company (180M ARR, ~650 em
 
 ### Who We Are (and Why This Hurt So Much)
 
-We're the Analytics Engineering & Insights team at Veridia -- a B2B SaaS platform for compliance automation. Our team includes 5 analytics engineers, 4 business intelligence analysts, 2 data scientists, and 1 analytics manager. We serve ~30 internal stakeholders across Sales, Marketing, Customer Success, and Finance.
+We're the Analytics Engineering & Insights team at Veridia -- a SaaS platform for compliance automation. Our team includes 5 analytics engineers, 4 business intelligence analysts, 2 data scientists, and 1 analytics manager. We serve ~30 internal stakeholders across Sales, Marketing, Customer Success, and Finance.
 
 Our "reporting stack" pre-2023 looked like this:  
 - Raw data → dbt models → Snowflake views  
