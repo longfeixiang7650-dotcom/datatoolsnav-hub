@@ -36,3 +36,6 @@ scripts/
 *.bak
 *.corrupted
 refine_tools.py
+package.json
+package-lock.json
+tsconfig.json
