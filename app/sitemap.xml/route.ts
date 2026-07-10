@@ -25,6 +25,13 @@ const BLOG_SLUGS = [
     "data-contracts-schema-governance-2026",
     "analytics-tools-smb-comparison-2026",
     "modern-etl-pipeline-trends-2026",
+    "building-unified-analytics-stack-bigquery-databricks-dbt",
+    "real-time-data-streaming-2026-kafka-vs-pulsar-vs-redpanda-vs-kinesis",
+    "clickhouse-vs-druid-vs-rockset-vs-materialize-2026",
+    "how-to-choose-etl-tool-2026-airbyte-vs-fivetran-vs-matillion-vs-dbt-vs-custom",
+    "data-analysis-tools-comparison-2026",
+    "real-time-analytics-platforms-2026-stream-processing",
+    "data-pipeline-observability-tools-2026",
 ] as const;
 
 const TOOL_SLUGS = [
