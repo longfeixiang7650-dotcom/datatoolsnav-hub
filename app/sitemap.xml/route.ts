@@ -32,6 +32,7 @@ const BLOG_SLUGS = [
     "data-analysis-tools-comparison-2026",
     "real-time-analytics-platforms-2026-stream-processing",
     "data-pipeline-observability-tools-2026",
+    "natural-language-query-tools-2026-text-to-sql-comparison",
 ] as const;
 
 const TOOL_SLUGS = [
