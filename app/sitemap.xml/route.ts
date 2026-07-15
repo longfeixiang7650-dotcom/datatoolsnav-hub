@@ -33,6 +33,10 @@ const BLOG_SLUGS = [
     "real-time-analytics-platforms-2026-stream-processing",
     "data-pipeline-observability-tools-2026",
     "natural-language-query-tools-2026-text-to-sql-comparison",
+    "embedded-analytics-2026",
+    "choose-right-data-viz-tool-analytics-stack-2026",
+    "web-scraping-tools-comparison-for-analysts",
+    "top-data-analytics-platforms-bi-2026",
 ] as const;
 
 const TOOL_SLUGS = [
