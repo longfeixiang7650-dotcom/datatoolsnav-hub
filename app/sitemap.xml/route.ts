@@ -37,6 +37,7 @@ const BLOG_SLUGS = [
     "choose-right-data-viz-tool-analytics-stack-2026",
     "web-scraping-tools-comparison-for-analysts",
     "top-data-analytics-platforms-bi-2026",
+  "state-of-data-integration-2026",
 ] as const;
 
 const TOOL_SLUGS = [
@@ -102,7 +103,11 @@ export async function GET() {
     urls.push(`<url><loc>${baseUrl}/tools/${slug}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
   }
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join("
+")}
+</urlset>`;
 
   return new Response(sitemap, {
     headers: { "Content-Type": "application/xml" },
