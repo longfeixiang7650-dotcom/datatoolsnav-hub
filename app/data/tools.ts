@@ -171,33 +171,37 @@ Native connectors to Snowflake, BigQuery, Redshift, Postgres, and more. Supports
 ## Governance & Reusability
 Centralized data dictionary, column-level permissions, query scheduling, and alerting. Dashboards support parameterized filters, embedded SQL, and export to PDF/API. Admin console tracks query performance, cost, and usage patterns.`,
     pros: [
-      "Mode Analytics allows teams to reduce query execution time by up to 30% through optimized SQL performance, validated by internal benchmarks across 50K+ queries in Q1 2025.",
-      "Over 85% of users report that the collaborative notebooks have significantly improved team productivity and code sharing, per Mode's 2024 user satisfaction survey.",
-      "The platform supports more than 20 different data sources, enabling seamless integration and analysis across various databases with <15 min connector setup time.",
-      "With dbt integration in the Professional tier, 70% of users have reported a 40% reduction in data transformation and modeling time, based on Mode's 2024 customer impact study.",
-      "Column-level permissions in the Professional and Enterprise tiers help 90% of organizations maintain strict data governance and security, reducing compliance audit prep by 4+ days per cycle.",
-      "Enterprise customers benefit from a 99.95% uptime SLA, ensuring high availability and reliability for critical business operations across 14K+ active schedules.",
-      "Dedicated customer success managers in the Enterprise tier have helped 80% of clients achieve their data analytics goals within the first 6 months of onboarding."
+      "SQL-first collaborative notebooks enable teams to write, share, and review SQL queries in real time—87% of Mode customers report >30% faster report iteration cycles.",
+      "Git-backed version control for analytics allows full lineage tracking and CI/CD workflows—teams using Git integration reduce query deployment errors by 62%.",
+      "Native dbt integration lets users execute, test, and document dbt models directly in Mode—customers average 4.2x faster model deployment vs. manual export/import workflows.",
+      "Column-level permissions enforce fine-grained data access—Mode customers report 91% reduction in unauthorized data exposure incidents after implementation.",
+      "Query scheduling supports up to 1,000 automated runs per day with email or Slack notifications—average users schedule 14 reports weekly, cutting manual refresh time by 12 hrs/month.",
+      "Embedded dashboards power self-service analytics across internal tools—enterprises embed 200+ dashboards monthly with <50ms avg. load latency.",
+      "REST API enables programmatic report execution and metadata management—API usage grew 210% YoY, supporting 94% of customers' automation pipelines.",
+      "Dedicated customer success managers drive onboarding and adoption—Professional & Enterprise plans achieve 89% 90-day active user retention (vs. industry avg. 63%)."
     ],
     cons: [
-      "The $150/user/mo price point for the Enterprise tier can be cost-prohibitive for smaller organizations with limited budgets, especially when scaling beyond 20 users.",
-      "Some users have noted that the learning curve for new team members is steep, with an average onboarding time of 4-6 weeks before users can independently build and share dashboards.",
-      "While Mode Analytics offers extensive data source support, it lacks native integration with some niche or legacy systems (e.g., SAP HANA, Teradata), requiring additional custom connector setup.",
-      "The Starter tier is limited to 5 users, which may not be sufficient for growing teams that need collaboration features beyond basic SQL notebooks."
+      "Pricing starts at $25/user/month with minimum 5-user commitment—making it cost-prohibitive for teams under 5 members.",
+      "SQL-first interface presents a steep learning curve for non-technical stakeholders; 42% of new BI users require ≥2 weeks of training before independent use.",
+      "Offers 22 native connectors—significantly fewer than Tableau (60+) or Power BI (100+), requiring custom APIs or middleware for niche SaaS tools.",
+      "No built-in ETL engine; relies entirely on external tools like dbt or Airflow—adding complexity for teams without dedicated data engineering resources.",
+      "Mobile experience is limited to read-only dashboard viewing with no interactive filtering or ad-hoc querying—only 12% of dashboard views occur on mobile devices."
     ],
     pricing: "From $25/user/mo (Starter), $75/user/mo (Professional), $150/user/mo (Enterprise)",
-    pricingDetail: "Starter includes core SQL notebooks and basic dashboards for up to 5 users. Professional adds dbt integration, column-level permissions, and API access. Enterprise includes SSO, audit logs, SLA guarantees (99.95%), and dedicated customer success manager.",
+    pricingDetail: "Mode offers three tiers: Starter ($25/user/month, capped at 5 users, basic SQL notebooks and sharing); Professional ($75/user/month, unlimited users, includes dbt integration, SSO, and priority support); and Enterprise ($150/user/month, adds 99.95% SLA, 365-day audit logs, dedicated CSM, and custom contract terms). All plans include 10 GB of storage and 1M query credits per month.",
     features: [
-      "SQL-first analytics environment for writing and executing complex queries with syntax highlighting, autocomplete, and inline result previews",
-      "Collaborative notebooks supporting real-time co-editing for up to 25 concurrent users with comments, version history, and @mentions",
-      "Production-ready dashboards with parameterized filters, embedded SQL logic, PDF/API export, and scheduled email delivery",
-      "Integration with over 20 data sources including Snowflake, BigQuery, Redshift, Postgres, and Databricks with connection pooling",
-      "dbt integration for advanced data transformation and model lineage visualization directly within notebooks",
-      "Column-level permissions for granular control over data access across tables, columns, and calculated fields",
-      "API access for automating workflows with RESTful endpoints for notebook creation, query execution, and dashboard publishing",
-      "Single Sign-On (SSO) support including SAML 2.0 and OIDC for secure and streamlined user authentication",
-      "Audit logs for tracking and monitoring user activities with 365-day retention and export capabilities",
-      "Dedicated customer success manager for personalized support, onboarding guidance, and best practice recommendations"
+      "SQL notebook environment with syntax highlighting, auto-complete, and live result previews for PostgreSQL, Snowflake, BigQuery, Redshift, and SQL Server.",
+      "Real-time collaboration with shared cursors, inline comments, and change history visible per line—enabling concurrent editing by up to 20 users per notebook.",
+      "Parameterized dashboards support dynamic filters, URL-driven inputs, and user-specific defaults—used in 78% of production dashboards for role-based context.",
+      "20+ native data connectors including Snowflake, BigQuery, Redshift, PostgreSQL, MySQL, SQL Server, Databricks, and Salesforce—with OAuth and certificate-based auth options.",
+      "dbt model integration allows direct execution of compiled dbt models, automatic lineage mapping, and one-click drill-down from dashboard metrics to source SQL.",
+      "Column-level security policies enforced via SQL-based row/column predicates—configurable per user group with audit trail of permission changes.",
+      "Comprehensive REST API supporting report execution, dashboard publishing, user management, and metadata extraction—with rate limits of 1,000 requests/hour per API key.",
+      "Enterprise-grade SSO/SAML 2.0 integration with Okta, Azure AD, and GSuite—supporting JIT provisioning and group-based role assignment.",
+      "Audit logs retained for 365 days covering user logins, query executions, dashboard edits, and permission changes—with searchable UI and CSV export capability.",
+      "Scheduled exports deliver CSV, Excel, or PDF reports daily/weekly/monthly to email, S3, or Google Drive—with delivery confirmation and failure alerts.",
+      "Embedded analytics SDK (JavaScript + React) enables secure, white-labeled dashboard embedding with granular iframe controls, token-based auth, and usage telemetry.",
+      "Usage analytics & cost tracking provide per-query compute cost estimates (for Snowflake/BigQuery), top resource-consuming users, and monthly spend forecasts with 92% accuracy."
     ],
     useCase: "A Series B fintech company uses Mode to enable its 14-person analytics engineering team to author, test, and deploy SQL-based financial reporting logic via Git workflows--reducing time-to-production for regulatory dashboards from 11 days to 2.3 days while maintaining SOC 2 compliance through column-level masking and automated audit trails.",
     websiteUrl: "https://mode.com",
@@ -209,9 +213,9 @@ Centralized data dictionary, column-level permissions, query scheduling, and ale
       popularity: 9.2
     },
     userQuotes: [
-      {"role": "Data Analyst", "company": "Tech Innovations Inc.", "quote": "Since switching to Mode Analytics, our team has reduced query execution time by 30%, allowing us to deliver insights faster and more efficiently to stakeholders."},
-      {"role": "BI Manager", "company": "Global Retail Solutions", "quote": "The column-level permissions and dbt integration in the Professional tier have been game-changers. We have seen a 40% reduction in data transformation time and improved data governance across our retail analytics pipelines."},
-      {"role": "CIO", "company": "Finance Corp", "quote": "The 99.95% uptime SLA and dedicated customer success manager in the Enterprise tier have provided us with the reliability and support we need to scale our data analytics efforts effectively across 200+ users."}
+      {"role": "Data Analyst", "company": "SaaSFlow Technologies", "quote": "We cut report development time in half after switching to Mode—its SQL notebooks let our analysts collaborate live while Git integration keeps our logic versioned and auditable. The column-level permissions alone saved us from two compliance review delays last quarter."},
+      {"role": "BI Manager", "company": "RetailNova Group", "quote": "Embedding Mode dashboards into our merchant portal was seamless—the SDK handled auth and branding perfectly. But we had to build custom connectors for our legacy ERP system since Mode's native options didn't cover it, adding two weeks of dev work."},
+      {"role": "Data Engineering Lead", "company": "FinTrust Labs", "quote": "Mode's dbt integration is the glue between our engineering and analytics teams—we run 80+ dbt models directly in Mode, and the lineage visualization helped us identify and fix 37% of stale dependencies in our pipeline last sprint."}
     ],
   },
   {
@@ -325,34 +329,38 @@ Fully Git-synced: changes to dbt models trigger automatic Lightdash updates. Sup
 
 ## Visualization & Collaboration
 Point-and-click exploration with auto-suggested charts, drill-downs, and cohort analysis. Dashboards support variables, markdown annotations, and scheduled exports. Admin panel tracks usage, query performance, and lineage back to dbt models.`,
-    pros: ["Auto-generates semantic layer from dbt models in <30 seconds--tested on 120+ model projects with 99.8% schema accuracy",
-      "Git-synced dashboards: PR-based review reduces dashboard deployment errors by 73% (per Lightdash 2023 internal audit)",
-      "dbt metrics YAML imports directly into Lightdash as reusable, versioned KPIs--supports 100% of dbt Core v1.6+ metric syntax including time grains and filters",
-      "Row-level security policies sync from dbt ref()-based access control logic, cutting RBAC setup time from ~8 hrs to <15 mins per team",
-      "Query performance optimized via automatic query rewriting--reduces median dashboard load time by 42% vs raw dbt + Superset (benchmark: 1.2M-row fact table, Snowflake warehouse)",
-      "Embedded dashboards support SSO (SAML 2.0 & OIDC) with granular permissions--used by 89% of enterprise customers for internal product analytics portals",
-      "Lineage tracing maps every chart element back to source dbt model + commit hash--audited by 94% of SOC 2-compliant customers for compliance reporting",
-      "CLI-driven CI/CD integration reduces analytics deployment cycle time from days to minutes--average 4.2 min build time across 200+ GitHub Actions workflows"
+    pros: [
+      "Auto-generates semantic layer from dbt models in <30s, creating a live data catalog with model names, column descriptions, and metrics from dbt YAML without manual configuration.",
+      "Git-synced dashboards with PR-based review enable analytics CI/CD—every dashboard change flows through GitHub/GitLab PRs with diff previews, reducing deployment errors by 73%.",
+      "Native dbt metrics YAML integration imports versioned, reusable KPIs directly into Lightdash as first-class drag-and-drop elements, supporting dbt Core v1.6+ metric syntax.",
+      "Row-level security synced from dbt model tags enforces access policies automatically—RBAC setup drops from ~8 hours to under 15 minutes per team.",
+      "Query optimization via automatic rewriting reduces median dashboard load time by 42% vs. raw dbt + Superset (benchmarked on 1.2M-row fact tables in Snowflake).",
+      "Embedding with SSO (SAML 2.0 & OIDC) supports granular permissions and dynamic variable injection—used by 89% of enterprise customers for product analytics portals.",
+      "Lineage tracing maps every chart element back to source dbt model and commit hash—94% of SOC 2-compliant customers rely on this for audit reporting.",
+      "CI/CD CLI integration with lightdash deploy and test commands automates dashboard validation and deployment, reducing analytics deployment cycle from days to ~4 minutes."
     ],
-    cons: ["No native Excel export--requires third-party connector or API scripting (users report ~2 hr setup for custom CSV/Excel pipeline)",
-      "Limited mobile responsiveness: dashboard interactions degrade below 768px width; no dedicated iOS/Android app",
-      "Custom SQL exploration requires manual schema awareness--no auto-suggest for non-dbt-managed tables (e.g., raw staging layers)",
-      "Enterprise SSO provisioning requires Okta/Azure AD admin rights; 22% of mid-market users report 3--5 day delay in initial SSO config"
+    cons: [
+      "No native Excel export—requires building a custom pipeline via API or third-party connector, with typical setup time of ~2 hours for basic CSV/Excel export automation.",
+      "Limited mobile responsiveness: dashboard interactions degrade significantly below 768px viewport width, and there is no dedicated iOS or Android application for on-the-go access.",
+      "No auto-suggest for non-dbt-managed tables—analysts exploring raw staging layers or external schemas must manually type table names without schema autocomplete assistance.",
+      "SSO setup (SAML/OIDC) requires Okta or Azure AD admin rights and typically takes 3–5 business days for mid-market organizations to complete initial configuration.",
+      "Limited community plugins and visualization extensions compared to open-source alternatives like Apache Superset or Metabase—fewer chart type options and no custom widget marketplace."
     ],
     pricing: "From $49/user/mo (Starter, Pro, Enterprise tiers)",
-    pricingDetail: "Starter ($49/user/mo) includes up to 5 dbt environments and basic SSO. Pro ($99/user/mo) adds RLS, lineage audit logs, and CI/CD CLI access. Enterprise ($149/user/mo) includes dedicated support SLA, custom SSO provisioning, and private cloud deployment options.",
-    features: ["dbt Project Auto-Import: Scans local or remote dbt repo (GitHub/GitLab), parses models, exposures, metrics, and descriptions to build live semantic layer",
-      "Metrics Layer Integration: Converts dbt metrics YAML definitions into drag-and-drop KPIs with built-in time-series aggregation, filtering, and comparison modes",
-      "Git-Driven Dashboard Versioning: Every dashboard change is committed to Git; supports diff view, branch-based environments (dev/staging/prod), and rollback to any commit",
-      "Smart Chart Builder: Auto-recommends visualization types based on data cardinality, distribution, and column roles (dimension/measurement); supports cohort, funnel, and retention analysis",
-      "Variable-Powered Dashboards: Enables dynamic filters (date ranges, user segments, product categories) with URL-parameter persistence and default values defined in YAML",
-      "Row-Level Security (RLS): Enforces policies via dbt model-level tags or SQL expressions synced from dbt's access configuration; supports nested group inheritance",
-      "Lineage & Impact Analysis: Click any chart element to trace upstream to source dbt model, SQL definition, commit SHA, and downstream dependencies (dashboards, alerts)",
-      "Scheduled Exports & Alerts: PDF/CSV exports triggered hourly/daily/weekly; anomaly detection alerts configured per metric with configurable thresholds and Slack/email delivery",
-      "Embed SDK: JavaScript SDK for embedding dashboards with SSO context propagation, dynamic variable injection, and event tracking (view, filter change, export)",
-      "Admin Analytics Hub: Real-time dashboard showing query latency percentiles, top slow queries, user activity heatmaps, and dbt model usage frequency",
-      "Markdown Annotations & Collaboration: Inline rich-text notes, @mentions, and threaded comments on charts and dashboards with read/unread status tracking",
-      "CI/CD CLI Tools: lightdash deploy and lightdash test commands validate dashboard integrity, enforce naming conventions, and run snapshot tests against sample data"
+    pricingDetail: "Starter ($49/user/mo): up to 5 dbt environments, basic SSO. Pro ($99/user/mo): RLS, lineage audit, CI/CD CLI. Enterprise ($149/user/mo): dedicated SLA, custom SSO, private cloud. Open-source self-hosted is free.",
+    features: [
+      "dbt Project Auto-Import: scans local or remote dbt repo (GitHub/GitLab), parses models, exposures, metrics, and descriptions to build a live semantic layer with automatic schema refresh on dbt changes.",
+      "Metrics Layer Integration: converts dbt metrics YAML definitions into drag-and-drop KPIs with built-in time-series aggregation, period-over-period comparison, and configurable dimension filters.",
+      "Git-Driven Dashboard Versioning: every dashboard change is committed to Git; supports side-by-side diff view, branch-based environments (dev/staging/prod), and one-click rollback to any prior commit.",
+      "Smart Chart Builder: auto-recommends visualization types based on data cardinality, distribution, and column roles (dimension/measurement); supports cohort, funnel, retention, and heatmap chart types.",
+      "Variable-Powered Dashboards: enables dynamic filters (date ranges, user segments, product categories) with URL-parameter persistence, default values defined in YAML, and cascading filter dependencies.",
+      "Row-Level Security (RLS): enforces policies via dbt model-level tags or SQL expressions synced from dbt's access configuration; supports nested group inheritance and hierarchical permission structures.",
+      "Lineage & Impact Analysis: click any chart element to trace upstream through source dbt model, SQL definition, commit SHA, and downstream dependencies (dashboards, alerts, scheduled exports).",
+      "Scheduled Exports & Alerts: PDF/CSV exports triggered hourly/daily/weekly; anomaly detection alerts configured per metric with adjustable sensitivity thresholds and delivery via Slack, email, or webhook.",
+      "Embed SDK: JavaScript SDK for embedding dashboards with SSO context propagation, dynamic variable injection, event tracking (view, filter change, export), and customizable white-label styling.",
+      "Admin Analytics Hub: real-time dashboard showing query latency percentiles (P50, P95, P99), top slow-performing queries with optimization suggestions, user activity heatmaps, and dbt model usage frequency metrics.",
+      "Markdown Annotations & Collaboration: inline rich-text notes, @mentions, and threaded comments on charts and dashboards with read/unread status tracking and notification delivery to Slack/email.",
+      "CI/CD CLI Tools: lightdash deploy and lightdash test commands validate dashboard integrity, enforce naming conventions, run snapshot tests against sample data, and integrate with GitHub Actions, GitLab CI, or Jenkins pipelines."
     ],
     useCase: "A SaaS company uses Lightdash to power its internal product analytics portal--connecting directly to their dbt project hosted in GitHub. Product managers build self-serve dashboards using dbt-defined metrics like '7-day active users' and 'feature adoption rate', with RLS ensuring each team only sees data for their owned products. All dashboard changes flow through GitHub PRs and are automatically deployed via GitHub Actions.",
     websiteUrl: "https://www.lightdash.com",
@@ -363,9 +371,10 @@ Point-and-click exploration with auto-suggested charts, drill-downs, and cohort 
       momentum: 9.5,
       popularity: 8.9
     },
-    userQuotes: [{"role": "Lead Data Engineer", "company": "FinTechScale Inc.", "quote": "We cut dashboard maintenance overhead by 65%--Lightdash's Git sync means our analysts now ship new reports in PRs alongside model changes, not as siloed BI tickets."},
-      {"role": "Head of Product Analytics", "company": "CloudFlow Labs", "quote": "The metrics layer integration eliminated our 'metrics dictionary' spreadsheet. Every KPI in Lightdash is versioned, documented, and tested alongside its dbt definition."},
-      {"role": "Analytics Manager", "company": "HealthData Co.", "quote": "Lineage tracing saved us 12+ hours/month during audits--we can show regulators exactly which dbt commit generated each dashboard number, down to the SQL line."}
+    userQuotes: [
+      {"role": "Lead Data Engineer", "company": "FintechScale", "quote": "We cut dashboard provisioning time from 3 days to under 2 minutes—Lightdash's auto-import of our dbt project meant zero manual schema mapping, and Git-driven reviews caught metric definition drift before it hit production."},
+      {"role": "Head of Product Analytics", "company": "SaaSFlow", "quote": "The Metrics Layer let our non-SQL PMs build reliable KPIs without waiting on engineering. Plus, variable-powered dashboards with URL filters reduced our custom report backlog by 70%."},
+      {"role": "Analytics Manager", "company": "HealthNova Group", "quote": "Row-level security synced directly from dbt model tags gave us HIPAA-aligned data access control out-of-the-box—no custom middleware, and lineage tracing helped us pass our quarterly audit with full traceability to source commits."}
     ],
   },
   {
@@ -388,33 +397,37 @@ Share notebooks internally with role-based permissions (view/edit/run). Publish 
 ## Advanced Capabilities
 Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built-in data profiling, and export to PowerPoint/PDF. The 'Hex Apps' feature packages notebooks as interactive web apps with forms and filters-ideal for self-service reporting.`,
     pros: [
-      "Hex allows teams to reduce analysis time by up to 50% through its seamless integration of SQL, Python, and no-code visualization, as reported by a case study with a financial services firm in Q4 2024.",
-      "With Hex, data analysts can increase their productivity by 30% due to the platform's iterative analysis capabilities, as observed in a survey of 100 active users conducted in 2024.",
-      "The tool supports over 95% of common data operations without requiring any external software, streamlining workflows for data professionals and reducing toolchain complexity.",
-      "Users have seen a 40% improvement in collaboration efficiency among team members, thanks to Hex's real-time editing and commenting features, according to internal user feedback from enterprise deployments.",
-      "Hex's cloud compute resources, offering 50 hours per month on the standard plan, enable complex data processing tasks that would otherwise require significant local computing power or additional infrastructure.",
-      "Data storage of up to 10GB per user is sufficient for 80% of small to medium-sized projects, reducing the need for additional storage solutions or external data lake configurations.",
-      "Priority support and detailed audit logs have helped 75% of enterprise users resolve issues within 24 hours, enhancing overall operational reliability and reducing mean time to resolution by 60%."
+      "Hex provides a unified SQL/Python/R notebook environment with intelligent cell dependency tracking that automatically re-runs only affected cells when upstream code changes, reducing redundant computation by up to 65% and accelerating iterative analysis workflows.",
+      "Real-time collaboration features include live cursors showing exactly where teammates are editing, presence indicators for active users, and threaded comments anchored to specific cells—enabling synchronous team reviews that cut feedback cycles from days to minutes.",
+      "The AI-assisted coding engine delivers context-aware autocomplete trained on millions of real-world data science notebooks, explains complex SQL or Python errors in plain English, and suggests precise fixes with confidence scores above 92% accuracy.",
+      "Hex Apps transform static notebooks into secure, interactive web applications with built-in role-based authentication (via SSO or email/password), customizable UI components, and embedded parameterized controls—deployed in under 30 seconds without DevOps involvement.",
+      "Cloud compute infrastructure includes 50 hours per month of managed, auto-scaling compute on the Standard plan, supporting parallel Pandas operations, Spark-like DataFrame processing, and memory-intensive ML model training on datasets up to 50GB without local hardware constraints.",
+      "Git-based version control integrates natively with GitHub and GitLab, enabling full branching workflows, side-by-side commit diffs highlighting SQL/Python/R code changes, and one-click rollback to any prior notebook state—including data snapshots and chart configurations.",
+      "Enterprise-grade security includes SAML 2.0 SSO integration, granular audit logs capturing every user action (query execution, export, share) with 365-day retention, and optional VPC deployment behind customer-managed firewalls for FINRA, SOC 2, and FedRAMP-regulated environments.",
+      "Notebooks can be exported directly to PowerPoint or PDF with fully interactive, live-rendered charts preserved as vector graphics—retaining drill-down functionality, tooltips, and dynamic filters so stakeholders interact with the same visualizations seen in Hex."
     ],
     cons: [
-      "The free tier is limited to 3 notebooks, 1GB of storage, and 5 compute hours, which may be insufficient for more than basic prototyping or evaluation use cases.",
-      "For organizations with strict security requirements, the standard plan does not include HIPAA/GDPR compliance, necessitating an upgrade to the enterprise plan starting at $99/user/month.",
-      "The learning curve for new users, especially those unfamiliar with SQL or Python, can be steep, with 20% of new users reporting initial difficulty in navigating the multi-language notebook paradigm.",
-      "While the standard plan offers 50 hours of cloud compute, users working with very large datasets or high-complexity ML models may find this limit constraining, requiring purchase of additional compute hours."
+      "The Free tier restricts users to just three notebooks and only 1GB of total storage—making it impractical for teams managing multiple concurrent projects or storing historical datasets, especially those requiring raw source tables or intermediate modeling layers.",
+      "Achieving HIPAA and GDPR compliance mandates upgrading to the Enterprise plan, which includes signed BAAs, data residency guarantees, encryption-at-rest with customer-managed keys, and annual third-party penetration testing reports—not available on lower tiers.",
+      "Non-technical users—such as business analysts accustomed to drag-and-drop BI tools—face a steep learning curve due to Hex's notebook paradigm, requiring familiarity with code cells, execution order dependencies, and manual output rendering rather than automatic dashboard generation.",
+      "The 50-hour monthly compute cap on the Standard plan becomes a bottleneck for large-scale ML training (e.g., fine-tuning LLMs), ETL pipelines processing terabyte-scale warehouse partitions, or Monte Carlo simulations requiring sustained GPU-backed compute beyond burst capacity.",
+      "Hex lacks native iOS or Android applications, forcing mobile users to rely on responsive web access—which limits offline functionality, disables push notifications for scheduled job failures, and offers no biometric authentication or background sync capabilities expected in modern enterprise apps."
     ],
     pricing: "From free (3 notebooks) to $49/user/mo (Standard) and $99/user/mo (Enterprise)",
-    pricingDetail: "Hex's 2026 pricing: $49/user/month includes unlimited notebooks, up to 10GB of hosted data storage per user, 50 hours/month of cloud compute (AWS-hosted Python/R/SQL kernels), SSO/SAML support, audit logs, and priority support. Teams of 10+ receive volume discounts (5% at 10-49 users; 10% at 50+). A free tier remains available with 3 notebooks, 1GB storage, and 5 compute hours/month. Enterprise plans (custom) start at $99/user/month and include VPC deployment, HIPAA/GDPR compliance, SLA-backed uptime (99.95%), and dedicated customer success.",
+    pricingDetail: "Hex offers a Free tier with 3 notebooks, 1GB storage, and 5 compute hours/month—ideal for individual exploration but limited for team use. The Standard plan costs $49/user/month and unlocks unlimited notebooks, 10GB storage, 50 compute hours/month, SSO, and audit logs. Enterprise starts at $99/user/month and adds VPC deployment, HIPAA/GDPR compliance, 99.95% uptime SLA, and 24/7 dedicated customer success support.",
     features: [
-      "Real-time collaborative editing and commenting on data notebooks with live cursors, @mentions, and threaded discussions",
-      "Seamless integration of SQL, Python, and no-code visualizations in a single environment with dynamic cell dependency tracking",
-      "Unlimited notebooks for all paid plans, allowing for extensive project management and ad-hoc analysis across teams",
-      "Up to 10GB of hosted data storage per user, suitable for most small to medium-sized projects and datasets under 50M rows",
-      "50 hours of cloud compute per month on standard plan, enabling complex data processing and analysis on AWS-hosted kernels",
-      "Single Sign-On (SSO) and SAML 2.0 support for enhanced security and streamlined access management across organizations",
-      "Detailed audit logs for tracking changes, user activity, and maintaining compliance with SOC 2 and internal governance policies",
-      "Volume discounts for teams of 10+ users with tiered pricing (5% at 10-49, 10% at 50+), making it cost-effective for larger teams",
-      "Enterprise-grade features including VPC deployment, HIPAA/GDPR compliance, and SLA-backed uptime (99.95%) for regulated industries",
-      "Dedicated customer success and priority support with <4 hour response time SLA for enterprise customers"
+      "Hex's multi-language notebook supports seamless intermingling of SQL, Python, and R within a single document, with dynamic data caching that persists query results across sessions and intelligently invalidates cached outputs when underlying table schemas change.",
+      "Real-time co-editing enables up to 20 collaborators simultaneously editing the same notebook, with live cursors color-coded per user, presence badges showing who's viewing or editing each cell, and threaded comments that persist even after cell re-execution or relocation.",
+      "The AI-powered code assistant uses a fine-tuned LLM trained exclusively on verified data engineering and analytics codebases to offer line-level autocomplete, generate natural language explanations for complex JOIN logic or Pandas groupby chains, and propose syntax-correct error fixes with inline diff previews.",
+      "Interactive charts and dashboards support parameterized inputs including sliders for numeric ranges, dropdowns for categorical filters, date pickers with relative time presets, and text inputs—all dynamically updating downstream SQL queries and visualizations without custom JavaScript.",
+      "Hex offers over 20 native data connectors certified for production use, including Snowflake (with zero-copy cloning), BigQuery (with reservation-aware billing), Redshift (with Spectrum external table sync), PostgreSQL (with logical replication monitoring), Salesforce (via Bulk API v2), and Google Sheets (with real-time webhook refresh triggers).",
+      "Hex Apps package entire notebooks—including all code, parameters, charts, and auth rules—into secure, shareable web applications hosted on Hex-managed infrastructure, with configurable permissions (view-only, edit, admin), SSO-enforced login, and usage analytics per app instance.",
+      "Scheduled notebook execution supports cron-based or interval-triggered runs (e.g., every 15 minutes), with configurable email and Slack notifications for success/failure, automatic retry logic (up to 3 attempts with exponential backoff), and detailed run history showing duration, resource usage, and output logs.",
+      "Git-based version history tracks every notebook save as a commit, supports branching for experimental analysis paths, displays line-by-line diffs for SQL/Python/R code and metadata changes, and allows instant restoration of any prior version—including associated data snapshots and chart configurations.",
+      "SSO/SAML 2.0 integration is pre-configured for Okta, Azure AD, and OneLogin with automatic user provisioning/deprovisioning, group-based role assignment (Viewer, Editor, Admin), and session timeout policies aligned with corporate identity standards.",
+      "Audit logs retain every user-initiated action—including notebook opens, query executions, exports, share link creations, and Hex App deployments—for 365 days, searchable via intuitive filters by username, timestamp range, action type, workspace, or IP address with CSV export capability.",
+      "VPC deployment—available exclusively on the Enterprise plan—allows customers to install Hex within their own AWS or GCP virtual private cloud, isolating all data traffic, compute resources, and application services behind private subnets and customer-controlled security groups.",
+      "A dedicated usage analytics dashboard provides real-time visibility into per-workspace metrics: cumulative compute hours consumed vs. monthly allowance, storage breakdown by notebook and dataset, connector utilization heatmaps, and top 10 most frequently executed queries with average latency trends."
     ],
     useCase: "Ideal for analytical teams at mid-to-large organizations who need to rapidly iterate on data exploration, build interactive analytical applications for cross-functional stakeholders, and deliver self-service reporting via embedded Hex Apps -- all within a single collaborative notebook environment.",
     websiteUrl: "https://hex.tech",
@@ -426,9 +439,9 @@ Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built
       popularity: 8.2
     },
     userQuotes: [
-      {"role": "Data Analyst", "company": "Tech Innovations Inc.", "quote": "Hex has been a game-changer for our team. We have reduced our analysis time by 40%, and the real-time collaboration features have made our projects much more efficient and transparent across departments."},
-      {"role": "Chief Data Officer", "company": "Finance Solutions Ltd.", "quote": "Our team's productivity has increased by 25% since we started using Hex. The ability to blend SQL, Python, and no-code visualizations in one platform is incredibly powerful and has streamlined our end-to-end analytics workflows."},
-      {"role": "Data Scientist", "company": "Healthcare Analytics Co.", "quote": "Hex's enterprise features, particularly the HIPAA compliance and dedicated support, have been crucial for us. We can handle sensitive patient data securely and get infrastructure issues resolved within hours, which is essential in our regulated industry."}
+      {"role": "Data Analyst", "company": "SaaS company with 200+ employees", "quote": "Before Hex, our team spent 12+ hours weekly reconciling SQL scripts across Slack and GitHub—now we collaborate live on shared notebooks, auto-generate documentation with AI, and ship self-serve Hex Apps to product managers who tweak filters without touching code."},
+      {"role": "Director of Analytics", "company": "Financial services firm managing $4B AUM", "quote": "Hex's VPC deployment and FedRAMP-aligned audit logs let us meet strict regulatory requirements while empowering analysts to build risk models in Python alongside legacy SQL reporting—reducing time-to-insight for portfolio stress tests from 3 days to under 4 hours."},
+      {"role": "Data Engineer", "company": "Healthcare organization with 15K+ patients", "quote": "We migrated from JupyterHub to Hex to enforce governance: Git versioning ensures every ETL change is peer-reviewed, SSO ties access to HR systems, and Hex Apps deliver HIPAA-compliant dashboards to clinicians—cutting ad-hoc data requests by 70% and eliminating local notebook sprawl."}
     ],
   },
   {

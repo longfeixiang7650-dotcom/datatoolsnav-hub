@@ -37,7 +37,9 @@ const BLOG_SLUGS = [
     "choose-right-data-viz-tool-analytics-stack-2026",
     "web-scraping-tools-comparison-for-analysts",
     "top-data-analytics-platforms-bi-2026",
-  "state-of-data-integration-2026",
+    "state-of-data-integration-2026",
+    "data-cleaning-preparation-tools-2026",
+    "data-governance-modern-data-stack-2026",
 ] as const;
 
 const TOOL_SLUGS = [
