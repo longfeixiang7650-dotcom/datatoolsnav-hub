@@ -40,6 +40,7 @@ const BLOG_SLUGS = [
     "state-of-data-integration-2026",
     "data-cleaning-preparation-tools-2026",
     "data-governance-modern-data-stack-2026",
+    "python-r-julia-spss-statistical-analysis-2026",
 ] as const;
 
 const TOOL_SLUGS = [
