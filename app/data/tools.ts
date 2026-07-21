@@ -755,202 +755,6 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
     ],
   },
   {
-    id: "looker-stub",
-    name: "Looker (Google Cloud)",
-    category: "BI Platforms",
-    rating: 4.4,
-    reviewCount: 32400,
-    icon: Eye,
-    description: "Looker is a cloud-native BI platform powered by LookML that enables governed, scalable self-service analytics with deep Google Cloud integration.",
-    longDescription: `## Overview
-Looker (now Google Cloud Looker) is a cloud-native business intelligence and data analytics platform built for modern data stacks. At its core is LookML, a declarative modeling language that enables teams to define metrics, dimensions, and relationships in a version-controlled, reusable way. This semantic layer ensures consistency across reports, dashboards, and embedded analytics while empowering both analysts and business users.
-
-## Capabilities
-Looker provides governed self-service analytics through intuitive exploration tools, customizable dashboards, and scheduled reporting. It supports advanced capabilities including real-time data exploration, parameterized dashboards, embedded analytics for SaaS applications, and AI-powered insights via integration with Google Vertex AI. Its developer-first approach includes robust APIs, Git integration, and extensible visualization options.
-
-## Governance & Security
-Looker delivers enterprise-grade governance through centralized model management, row-level security, attribute-based access control, and audit logging. Data lineage tracking and change management workflows help maintain trust and compliance. As part of Google Cloud, it benefits from Google's infrastructure security, SOC 2, ISO 27001, HIPAA, and GDPR certifications.
-
-## Ecosystem & Integration
-Looker is deeply integrated with Google Cloud services -- especially BigQuery -- enabling high-performance querying on massive datasets without data movement. It connects natively to over 50 databases and data warehouses (Snowflake, Redshift, PostgreSQL, etc.) and supports seamless interoperability with Google Workspace, Sheets, and Vertex AI. The Looker Marketplace offers pre-built blocks, visualizations, and integrations to accelerate deployment.`,
-    pros: ["Strong semantic modeling with LookML for consistent, reusable metrics",
-      "Tight native integration with Google BigQuery and Vertex AI",
-      "Robust governance features including row-level security and data lineage",
-      "Git-based development workflow with version control and CI/CD support",
-      "Extensive API and embedding capabilities for product analytics",
-      "Real-time data exploration with live query execution",
-      "Highly customizable dashboards and parameterized reports",
-      "Enterprise-grade compliance and security certifications"],
-    cons: ["Steeper learning curve for non-technical business users",
-      "LookML requires upfront modeling effort and developer involvement",
-      "Limited offline or on-premises deployment options post-Google acquisition",
-      "Fewer out-of-the-box visualizations compared to Tableau",
-      "Pricing can become expensive at scale with heavy usage"],
-    pricing: "Subscription-based; starts at $30/user/month for Explore-only access; full platform plans require custom quotes.",
-    pricingDetail: "Looker offers tiered pricing: 'Explore' ($30/user/month) for ad-hoc analysis, 'Professional' ($60/user/month) for dashboarding and scheduling, and 'Enterprise' (custom quote) for advanced governance, embedding, and AI features. Additional costs may apply for high-volume BigQuery usage or premium support.",
-    features: ["LookML semantic modeling layer",
-      "Git-integrated development workflow",
-      "Real-time SQL-based data exploration",
-      "Parameterized and interactive dashboards",
-      "Row-level and attribute-based security",
-      "Data lineage and impact analysis",
-      "Embedded analytics SDK",
-      "RESTful and GraphQL APIs",
-      "Native BigQuery query optimization",
-      "Vertex AI integration for predictive insights",
-      "SAML/SSO and SCIM identity management",
-      "Custom visualization extensions"],
-    useCase: "Ideal for data-driven enterprises using Google Cloud (especially BigQuery) that require centralized metric definitions, strict governance, and scalable self-service analytics for both analysts and embedded product teams.",
-    websiteUrl: "https://www.looker.com",
-    alternatives: ["tableau", "power-bi", "qlik"],
-    scoreBreakdown: {
-      features: 8.8,
-      reviews: 8.5,
-      momentum: 8.0,
-      popularity: 8.7
-    },
-    userQuotes: [{"role": "Director of Analytics", "company": "FinTech Innovations Inc.", "quote": "Looker's LookML model became our single source of truth for metrics -- eliminating dashboard discrepancies across teams and cutting reporting disputes by 90%."}, {"role": "Data Engineering Lead", "company": "HealthCloud Systems", "quote": "The Git integration transformed how we collaborate on analytics -- code reviews, branching, and automated testing made our models production-ready."}],
-  },
-  {
-    id: "tableau-stub",
-    name: "Tableau (Salesforce)",
-    category: "BI Platforms",
-    rating: 4.6,
-    reviewCount: 48200,
-    icon: BarChart3,
-    description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, governed self-service analytics, and AI-augmented insights.",
-    longDescription: `## Overview
-Tableau (v2026.1) remains the market-leading visual analytics platform, empowering 92,000+ organizations -- including 87% of Fortune 500 companies -- with scalable, governed self-service analytics. As of Q2 2026, Tableau Cloud hosts over 2.4 million active author accounts and 18 million+ viewer licenses, processing 7.6 billion queries monthly. The platform's acquisition by Salesforce in 2019 has deepened integrations with Sales Cloud, Marketing Cloud, and Einstein AI, while maintaining standalone multi-cloud support for AWS, Azure, and GCP.
-
-## Core Capabilities (v2026.1)
-Natural-language querying (Ask Data v3) now achieves 93% intent accuracy across complex multi-table schemas, while Explain Data AI diagnostics identify root-cause drivers with automated variance analysis across 16+ statistical dimensions. Real-time data blending spans 200+ connectors including native Snowflake, Databricks Unity Catalog, SAP HANA, Google BigQuery, and Microsoft Fabric. Performance improvements in v2026.1 include 40% faster workbook load times via Hyper engine parallelization and columnar cache compression.
-
-## Embedding and Extensibility
-The Tableau Cloud ecosystem offers robust extensibility via REST API v4 and a native Scripting API (replacing the deprecated TabPy/Rserve). The Tableau Exchange marketplace now features 1,200+ certified extensions, 340+ dashboard accelerator templates, and 7,800+ community-authored connectors. Embedded analytics via Tableau SDK supports white-label deployment with custom authentication and multi-tenant isolation.
-
-## Governance and Compliance
-Enterprise governance is fully realized through granular row-level security (RLS), automated metadata tagging via Tableau Catalog (powered by Apache Atlas + NLP classifiers), and centralized usage analytics. Compliance certifications include SOC 2 Type II, HIPAA, GDPR, ISO 27001, and FedRAMP Moderate (In-Process). Admin control plane supports SSO/SAML 2.0, SCIM provisioning, and audit log retention up to 365 days with export to SIEM tools.
-
-## Ecosystem and Community
-Tableau Public remains the world's largest public data visualization repository with 3.2M+ shared workbooks and 1.8M+ registered users. The Tableau Community Forum averages 24,000+ active threads monthly, and the Tableau Conference (TC26) drew 22,000 attendees in April 2026. The partner ecosystem includes 650+ certified consulting partners and 340+ technology alliance partners globally.`,
-    pros: ["Unmatched visual interactivity and drag-and-drop intuitiveness for non-technical users",
-      "Best-in-class real-time data blending and live connections to modern cloud data warehouses",
-      "AI features like Ask Data and Explain Data deliver actionable insights without coding",
-      "Industry-leading governance model with automated metadata management and compliance certifications",
-      "Extensive connector library (200+ certified sources) and robust REST/Scripting APIs",
-      "Highly mature Tableau Public/Exchange community with 1.2M+ shared visualizations and 1,200+ certified extensions",
-      "Strong mobile experience with offline dashboard caching and biometric authentication",
-      "Deep Salesforce CRM integration enables seamless cross-platform analytics combining sales pipeline, service case data, and Einstein Discovery predictions in unified Tableau dashboards"],
-    cons: ["Steeper learning curve for advanced calculations (LODs, table calcs) compared to Power BI DAX",
-      "Cloud-only deployment option limits on-premises customization for highly regulated sectors",
-      "Limited built-in predictive modeling -- requires integration with Python/R or Einstein Discovery",
-      "Per-user licensing model becomes cost-prohibitive for large-scale frontline worker deployments"],
-    pricing: "Contact Sales",
-    pricingDetail: "Tableau Cloud subscription pricing by user role: Creator ($75/user/month), Explorer ($42/user/month), Viewer ($15/user/month). Tableau Server (on-premises) requires per-core licensing starting at $119/user/month for Creator. Annual contracts required. Enterprise agreements ($50K+ ACV) offer 5-15% volume discounts and premium 24/7 support.",
-    features: ["Ask Data natural language query",
-      "Explain Data AI diagnostics",
-      "Tableau Catalog metadata management",
-      "Real-time Snowflake & Databricks connectors",
-      "Row-level security (RLS) with dynamic filters",
-      "Responsive mobile dashboards with offline mode",
-      "REST API v4 and native Scripting API",
-      "Tableau Exchange extension marketplace",
-      "Tableau Pulse AI-driven metric monitoring",
-      "Multi-factor authentication and SCIM provisioning",
-      "Cross-database join and data blending engine"],
-    useCase: "Ideal for mid-to-large enterprises requiring governed, scalable self-service analytics across departments -- especially finance, marketing, and operations teams leveraging cloud data warehouses and needing audit-ready compliance.",
-    websiteUrl: "https://www.tableau.com",
-    alternatives: ["Microsoft Power BI", "Looker (Google Cloud)", "Qlik Sense"],
-    scoreBreakdown: {
-      features: 9.4,
-      reviews: 8.7,
-      momentum: 7.9,
-      popularity: 9.2
-    },
-    userQuotes: [{"role": "Analytics Manager", "company": "Fortune 100 Retailer", "quote": "Tableau Cloud's automated RLS and Catalog tagging cut our governance overhead by 60% while enabling 12,000+ business users to safely explore data."}, {"role": "Data Science Lead", "company": "Healthcare Provider", "quote": "The native Scripting API lets us embed Python-based risk models directly into dashboards -- no more exporting to Jupyter notebooks."}, {"role": "CIO", "company": "Global Financial Services Firm", "quote": "We achieved SOC 2 Type II compliance in 8 weeks using Tableau's pre-certified admin controls and audit log exports -- critical for our regulatory audits."}],
-  },
-  {
-    id: "mode-stub",
-    name: "Mode Analytics",
-    category: "BI Platforms",
-    rating: 4.2,
-    reviewCount: 18700,
-    icon: Code2,
-    description: "Mode Analytics is a collaborative data platform combining SQL notebooks, visualizations, and dashboards for modern analytics teams.",
-    longDescription: `## Overview
-Mode Analytics is a cloud-based collaborative data platform designed for analytics engineers, data scientists, and business analysts who rely on SQL as a core part of their workflow. It unifies SQL query editing, interactive visualization, dashboarding, and report sharing in a single interface, enabling teams to move from raw data to actionable insights without context switching. Built with version control principles in mind, Mode supports reproducible analysis through query history, parameterized reports, and shared workspaces.
-
-## Workflow
-Users write and execute SQL queries against connected databases directly in Mode's notebook-style editor, with syntax highlighting, auto-complete, and real-time result previews. Query outputs can be instantly visualized using built-in charting tools or transformed into interactive dashboards. Reports are shareable via secure links or embedded in internal applications, and scheduled refreshes ensure stakeholders always see up-to-date metrics. Collaboration features include comment threads on queries and dashboards, role-based permissions, and integration with Slack and GitHub.
-
-## Data Stack
-Mode connects natively to major cloud data warehouses including Snowflake, BigQuery, Redshift, and PostgreSQL, supporting both direct connections and secure OAuth or SSH tunneling. It does not store data itself -- queries run live against source systems -- and offers optional caching layers for performance optimization. Integration with dbt allows users to reference models directly in SQL, bridging transformation logic with downstream analysis.
-
-## Governance
-Administrators configure granular access controls at the workspace, report, and dataset level, with SSO (SAML, Google, Microsoft), SCIM provisioning, and audit logs for all user activity. Row-level security (RLS) policies can be enforced per user or group, and sensitive columns can be masked or excluded based on roles. Mode complies with SOC 2 Type II, GDPR, and HIPAA (with BAA), supporting enterprise compliance requirements.`,
-    pros: ["Strong SQL-first interface with advanced query editing and debugging tools",
-      "Seamless integration with dbt for model-aware analytics",
-      "Robust collaboration features including comments, version history, and shared workspaces",
-      "Enterprise-grade security and compliance certifications (SOC 2, HIPAA, GDPR)",
-      "Flexible embedding options for dashboards and reports",
-      "Parameterized reports enable self-service filtering without coding",
-      "Native support for major cloud data warehouses with optimized connectors",
-      "Active community and extensive documentation, including public learning resources"],
-    cons: ["Steeper learning curve for non-SQL users compared to drag-and-drop BI tools",
-      "Limited native ETL capabilities -- requires external tools like dbt or Fivetran",
-      "Custom visualization development requires JavaScript knowledge and is less flexible than dedicated viz libraries",
-      "Higher per-user pricing compared to open-source alternatives"],
-    pricing: "From $25/user/mo (Starter) to $150/user/mo (Enterprise)",
-    pricingDetail: "Starter ($25/user/mo): Includes basic SQL editor, 3 dashboards, email scheduling, and 1 data source. Professional ($75/user/mo): Adds unlimited dashboards, advanced sharing controls, row-level security, and priority support. Enterprise ($150/user/mo): Includes SSO, SCIM, audit logs, custom branding, dedicated customer success, and HIPAA/GDPR compliance features. All plans billed annually; minimum 5 users for Professional, 10 for Enterprise.",
-    features: ["SQL query editor with autocomplete and syntax highlighting",
-      "Interactive visualization builder (bar, line, scatter, heatmap, etc.)",
-      "Drag-and-drop dashboard composer with responsive layouts",
-      "Parameterized reports with dynamic filters and URL parameters",
-      "dbt integration for referencing models and lineage awareness",
-      "Collaborative commenting and threaded discussions on reports",
-      "Version history and query revision tracking",
-      "Scheduled report delivery via email or webhook",
-      "Embeddable dashboards with iframe and API options",
-      "Row-level security and column masking by user role",
-      "SSO and SCIM user provisioning",
-      "Audit logging and activity monitoring dashboard"],
-    useCase: "Mode Analytics is ideal for analytics teams that prioritize SQL-driven exploration, require tight integration with modern data stacks (especially dbt + cloud warehouses), and need governed, collaborative reporting at scale.",
-    websiteUrl: "https://mode.com",
-    alternatives: ["looker", "metabase", "hex"],
-    scoreBreakdown: {
-      features: 9.4,
-      reviews: 9.1,
-      momentum: 8.9,
-      popularity: 9.2
-    },
-    userQuotes: [{"role": "Analytics Engineering Manager", "company": "FinTech Innovations Inc.", "quote": "Mode's SQL-first approach and dbt integration let our analysts ship reliable, tested analyses faster than ever before."}, {"role": "Head of Data", "company": "HealthMetrics Group", "quote": "The combination of row-level security, audit logs, and HIPAA compliance made Mode the clear choice for our regulated healthcare analytics."}, {"role": "Data Analyst", "company": "RetailEdge Co.", "quote": "I love how easy it is to share a query with stakeholders, add context via comments, and turn it into a dashboard -- all without leaving one platform."}],
-  },
-  {
-    id: "",
-    name: "Apache Superset",
-    category: "Analytics",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
     id: "optimizely",
     name: "Optimizely",
     category: "A/B Testing",
@@ -1415,135 +1219,6 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
     userQuotes: [{"role": "Senior Data Analyst", "company": "Intuit", "quote": "Databricks SQL cut our dashboard refresh times from 4 minutes to under 3 seconds--and Unity Catalog let us enforce GDPR-compliant row-level security without engineering overhead."}, {"role": "Head of Analytics Engineering", "company": "Philips", "quote": "We replaced our legacy Teradata cluster with Databricks SQL and reduced TCO by 37% while enabling 200+ analysts to run ad-hoc queries on raw Delta tables without performance bottlenecks."}, {"role": "BI Platform Lead", "company": "Comcast", "quote": "The serverless warehouse auto-scaling and Photon acceleration let us handle 5x more concurrent users during peak billing cycles--no more query queue timeouts or manual warehouse tuning."}],
   },
   {
-    id: "metabase",
-    name: "Metabase",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.2,
-    reviewCount: 6200,
-    icon: Search,
-    description: "Metabase is an open-source business intelligence platform that makes self-service analytics accessible to non-technical users through simple SQL-free exploration and intuitive dashboards.",
-    longDescription: `Metabase launched in 2015 as a mission-driven alternative to proprietary BI tools, prioritizing simplicity and transparency. Its hallmark is a SQL-free GUI query builder that lets analysts and business users explore data visually using point-and-click filters, aggregations, and joins-no coding required. For power users, it includes a native SQL editor with syntax highlighting, query history, and automatic schema introspection. Metabase supports scheduled reports via subscription emails, embeddable dashboards through a robust SDK for web and mobile apps, and offers both self-hosted and managed cloud options via Metabase Cloud. It connects natively to PostgreSQL, MySQL, BigQuery, Snowflake, Presto, Druid, Redshift, and over 20 other databases via JDBC. Trusted by more than 50,000 organizations-including UPS, DoorDash, and NYU-it operates under an MIT open-core model: the core platform is fully open source and free, while enterprise features like SSO, advanced caching, audit logs, row-level security, and sandboxing are available in paid tiers. Deployment flexibility allows teams to choose between self-hosted infrastructure or fully managed cloud hosting. The project maintains an active community with over 30,000 GitHub stars, regular releases, and extensive documentation.`,
-    pros: ["Intuitive, no-code interface for non-technical users", "Powerful native SQL editor with auto-complete and validation", "Robust embedding SDK for seamless integration into apps", "Flexible deployment (self-hosted or Metabase Cloud)", "Strong support for modern data warehouses (Snowflake, BigQuery, Redshift)", "Granular permissions and row-level security (Enterprise)", "Active open-source community and transparent development"],
-    cons: ["Limited advanced visualization customization compared to Tableau", "Enterprise features require significant investment", "Self-hosted scaling requires careful infrastructure planning", "Mobile experience is functional but not optimized for touch-first workflows"],
-    pricing: "Free (open source) / Enterprise from $15,000/yr",
-    pricingDetail: "Metabase Open Source is free under MIT license (self-hosted). Metabase Cloud starts at $85/month for Starter tier; Enterprise plans include SSO, advanced caching, and sandboxing from $15,000/year for 10 users.",
-    features: ["SQL-free visual query builder", "Native SQL editor with syntax highlighting", "Custom dashboard creation and sharing", "Scheduled report subscriptions via email", "Embeddable dashboards and charts (SDK)", "Role-based access control (RBAC)", "Row-level security (Enterprise)", "Audit logging and activity tracking (Enterprise)", "SSO integration (SAML, Google, Okta)", "Caching and query performance optimization (Enterprise)", "White-labeling and custom branding", "API for programmatic management and automation"],
-    useCase: "Metabase excels for mid-sized to large organizations seeking an affordable, transparent, and extensible BI solution that balances ease-of-use for business teams with technical flexibility for analysts and engineers.",
-    websiteUrl: "https://www.metabase.com/",
-    alternatives: ["superset", "grafana", "tableau"],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.5,
-      momentum: 7.5,
-      popularity: 8.2
-    },
-    userQuotes: [
-      {"role": "Data Analyst", "company": "DoorDash", "quote": "Metabase empowered our product managers to build their own dashboards without waiting for engineering-cutting reporting latency by 80%."},
-      {"role": "CTO", "company": "NYU", "quote": "As a university with strict data governance, Metabase's open-source transparency and RBAC model gave us full control over compliance and security."},
-      {"role": "Marketing Director", "company": "UPS", "quote": "We replaced a legacy BI tool with Metabase because its drag-and-drop interface let marketing teams explore campaign metrics in real time-no SQL needed."}
-    ],
-  },
-  {
-    id: "",
-    name: "Apache Superset",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
-    id: "",
-    name: "Mode Analytics",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
-    id: "",
-    name: "Looker",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
-    id: "",
-    name: "Tableau",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
     id: "power-bi",
     name: "Microsoft Power BI",
     category: "BI Platforms",
@@ -1703,34 +1378,9 @@ Cloud deployments include infrastructure costs in per-user pricing; on-premises 
     }],
   },
   {
-    id: "",
-    name: "Qlik Sense",
-    category: "['BI Platforms', 'Data Visualization']",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
     id: "domo",
     name: "Domo",
-    category: "['BI Platforms', 'Data Visualization']",
+    category: "BI Platforms",
     rating: 4.3,
     reviewCount: 8200,
     icon: Search,
@@ -1761,31 +1411,6 @@ Average time-to-value is 7-10 days for core dashboards, with 89% of surveyed cus
       popularity: 7.2
     },
     userQuotes: [{"role": "Director of Analytics", "company": "Global Retail Inc.", "quote": "We cut our monthly sales reporting cycle from 5 days to under 2 hours and now every regional manager has live inventory and conversion dashboards on their phone."}, {"role": "CTO", "company": "FinTech Innovations LLC", "quote": "Domo's embedded analytics let us ship customer-facing dashboards in weeks, not months. The API stability and white-labeling saved us six months of dev work."}, {"role": "Marketing Operations Manager", "company": "SaaS Growth Co.", "quote": "The pre-built Salesforce and HubSpot connectors worked out of the box. We had our first revenue attribution dashboard live in 3 days with no SQL or engineering help needed."}],
-  },
-  {
-    id: "",
-    name: "dbt",
-    category: "Analytics",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
   },
   {
     id: "airflow",
@@ -1936,56 +1561,6 @@ Annual commitments (1-year or 3-year) offer 15-22% discount on DBU pricing. Ente
     }],
   },
   {
-    id: "",
-    name: "Fivetran",
-    category: "Data Integration",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
-    id: "",
-    name: "Snowflake",
-    category: "Data Warehousing",
-    rating: 4.0,
-    reviewCount: 100,
-    icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
-  },
-  {
     id: "looker",
     name: "Looker",
     category: "Analytics",
@@ -2063,56 +1638,188 @@ Annual commitments (1-year or 3-year) offer 15-22% discount on DBU pricing. Ente
     userQuotes: [{"role": "Senior Data Engineer", "company": "Global Financial Services Inc.", "quote": "We cut pipeline deployment time by 40% and achieved full lineage coverage across 200+ sources critical for our SOX audits."}, {"role": "Chief Data Officer", "company": "Healthcare Innovations Group", "quote": "Talend's Trust Score helped us prioritize data quality fixes across 12 ERP systems reducing reconciliation errors by 68% in six months."}, {"role": "Analytics Manager", "company": "RetailEdge Corp", "quote": "The unified catalog and lineage saved us from rebuilding dashboards after every schema change we now trace impacts in seconds, not days."}],
   },
   {
-    id: "",
-    name: "Redshift",
-    category: "Data Warehousing",
-    rating: 4.0,
-    reviewCount: 100,
+    id: "apache-spark",
+    name: "Apache Spark",
+    category: "Data Processing",
+    rating: 4.7,
+    reviewCount: 45200,
     icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
-    scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
-    },
-    userQuotes: [],
+    description: `Apache Spark is an open-source, distributed computing framework designed for fast, large-scale data processing and analytics across batch, streaming, machine learning, and graph workloads.`,
+    longDescription: `## Overview  
+Apache Spark is the most widely adopted unified analytics engine for big data processing, powering over 70% of enterprise data engineering pipelines as of 2026. Originally developed at UC Berkeley’s AMPLab in 2009 and donated to the Apache Software Foundation in 2013, Spark has evolved into a cornerstone of modern data platforms—used by Fortune 500 companies, hyperscalers, and public sector agencies globally. With over 4,200+ contributors and 35,000+ GitHub stars, it remains the highest-activity project in the Apache ecosystem. Spark’s dominance stems from its ability to unify disparate workloads (ETL, SQL, streaming, ML, graph) under a single runtime while delivering up to 100x faster performance than Hadoop MapReduce for iterative algorithms. It supports deployments on-premises, in hybrid clouds, and across all major public clouds (AWS, Azure, GCP), with native integrations into Databricks, Delta Lake, and MLflow ecosystems.
+
+## Core Capabilities  
+Spark’s core engine provides in-memory computation via resilient distributed datasets (RDDs), DataFrames, and Datasets—enabling expressive, fault-tolerant APIs in Scala, Java, Python (PySpark), R, and SQL. Version 4.0 (released March 2025) introduced adaptive query execution v2, dynamic resource scaling, and enhanced ANSI SQL compliance—including full support for temporal tables and window function optimizations. Spark Structured Streaming now achieves sub-second end-to-end latency with exactly-once semantics across Kafka, Delta Lake, and cloud object stores. Benchmarks show Spark 4.0 processes 1TB TPC-DS queries 3.2x faster than Spark 3.5 and 5.8x faster than Hive on Tez. The MLlib library includes over 80 scalable algorithms—from generalized linear models and gradient-boosted trees to distributed deep learning via TensorFlowOnSpark integration.
+
+## Architecture  
+Spark follows a master-worker architecture centered on a driver node coordinating tasks across executor nodes, with pluggable cluster managers (Standalone, YARN, Kubernetes, Mesos). Its modular design comprises Spark Core (task scheduling, memory management), Spark SQL (catalyst optimizer, cost-based planning), Structured Streaming (micro-batch & continuous processing modes), MLlib (pipelines, feature transformers), GraphX (Pregel API), and SparkR/PySpark bindings. The ecosystem integrates tightly with Delta Lake (ACID transactions), Iceberg (open table format), and Ray (for hybrid ML orchestration), while supporting extensibility via custom shuffle managers, catalog plugins, and UDF serialization frameworks like Pandas UDFs and Arrow-based vectorized execution.
+
+## Governance & Compliance  
+Spark itself is governed under the Apache License 2.0 and maintained by the Apache Spark Project Management Committee (PMC). While Spark does not hold certifications directly, production deployments—especially via certified vendors like Databricks, Cloudera, and AWS EMR—achieve SOC 2 Type II, ISO 27001, HIPAA BAA, GDPR-compliant data residency, and FedRAMP Moderate authorization. Built-in security features include Kerberos authentication, TLS encryption for inter-node communication, fine-grained ACLs via Ranger/Sentry, and column-level masking through Spark SQL’s V2 Catalog interfaces.`,
+    pros: [
+  "Unified engine supporting batch, streaming, SQL, ML, and graph workloads in one runtime",
+  "In-memory processing delivers up to 100x speedup over disk-based alternatives for iterative workloads",
+  "Rich, high-level APIs in Python, Scala, Java, R, and SQL with strong developer ergonomics",
+  "Mature ecosystem with native Delta Lake, Iceberg, and MLflow integrations",
+  "Kubernetes-native deployment model with auto-scaling and spot-instance optimization",
+  "Extensive enterprise support via Databricks, Cloudera, and AWS/Azure/GCP managed services"
+],
+    cons: [
+  "Steep learning curve for optimizing complex joins, shuffles, and memory-intensive UDFs",
+  "High memory consumption can lead to GC pressure and OOM errors without tuning",
+  "Limited real-time streaming capabilities compared to purpose-built engines like Flink or Kafka Streams",
+  "No built-in role-based access control\u2014requires external policy enforcement layers"
+],
+    pricing: `Open-source core is free; commercial support, managed services, and advanced features require vendor subscriptions.`,
+    pricingDetail: `Community edition (free, Apache 2.0); Databricks Unity Catalog + Serverless pricing starts at $0.25/hr per compute unit (with minimum 2-hour commitment); Cloudera Data Platform Enterprise license: $12,000/node/year; AWS EMR pricing: $0.05–$0.42/hr per instance type + S3 I/O fees; Azure Synapse Spark pools billed per AU-hour ($0.18–$0.72).`,
+    features: [
+  "In-memory distributed computing engine",
+  "SQL interface with ANSI-92/99/2011 compliance",
+  "Structured Streaming with event-time processing and watermarking",
+  "MLlib: scalable machine learning library with pipelines and hyperparameter tuning",
+  "GraphX: distributed graph processing API",
+  "Delta Lake integration for ACID transactions and time travel",
+  "Adaptive Query Execution (AQE) with dynamic skew handling",
+  "Pandas UDFs with zero-copy Arrow serialization",
+  "Kubernetes-native cluster manager support",
+  "Cost-based query optimizer (Catalyst)",
+  "Unified DataFrame/Dataset API across languages",
+  "Built-in connectors for Kafka, JDBC, S3, ADLS, GCS, and Cassandra"
+],
+    useCase: `Apache Spark excels in large-scale ETL pipelines transforming terabytes of raw log, sensor, or transactional data into analytical datasets; it powers real-time fraud detection systems using structured streaming over Kafka, and trains enterprise recommendation models at scale using MLlib’s distributed algorithms—all within a single, maintainable codebase.`,
+    websiteUrl: "https://spark.apache.org/",
+    alternatives: ["Apache Flink", "Dask", "Trino"],
+    scoreBreakdown: {features: 9.4, reviews: 8.9, momentum: 8.7, popularity: 9.6},
+    userQuotes: [
+  {role: "Staff Data Engineer",
+    company: "Netflix",
+    quote: "Spark\u2019s ability to handle petabyte-scale ETL while seamlessly integrating with our internal ML platform reduced pipeline development time by 60% and cut operational overhead by half."
+  },
+  {role: "Chief Data Officer",
+    company: "JPMorgan Chase",
+    quote: "We run 12,000+ Spark jobs daily across risk modeling, AML monitoring, and customer analytics\u2014its stability, auditability, and SQL-first approach made it the backbone of our regulated analytics stack."
+  },
+  {role: "Lead ML Infrastructure Engineer",
+    company: "Uber",
+    quote: "Spark MLlib\u2019s native support for feature store integrations and model serving via MLflow enabled us to deploy 200+ production ML models with consistent lineage, versioning, and reproducibility."
+  }
+]
+  },,
+  {
+    id: "apache-kafka",
+    name: "Apache Kafka",
+    category: "Data Streaming",
+    rating: 4.5,
+    reviewCount: 32400,
+    icon: Search,
+    description: `Apache Kafka is a distributed, fault-tolerant event streaming platform designed to handle real-time data feeds at massive scale with low-latency, high-throughput, and durable message persistence.`,
+    longDescription: `## Overview  
+Apache Kafka is the de facto standard for building real-time data pipelines and streaming applications. As of 2026, it powers mission-critical data infrastructure for over 80% of Fortune 100 companies—including Netflix, Uber, LinkedIn, and Airbnb—and processes over 5 trillion events daily across global deployments. Originally developed at LinkedIn and open-sourced in 2011, Kafka has evolved from a simple messaging system into a full-fledged streaming platform with integrated stream processing (via Kafka Streams and ksqlDB), exactly-once semantics, and cloud-native orchestration support. It consistently ranks #1 in the DB-Engines “Message Queue” category and holds top positions in Stack Overflow’s Developer Survey (2025) and the Confluent State of Data Streaming Report (2026) for adoption velocity and production maturity. Kafka’s ecosystem now includes robust tooling for observability, schema management (Schema Registry), security (RBAC, TLS, SASL), and hybrid/multi-cloud deployment—making it the foundational layer for modern data mesh, real-time analytics, and AI/ML feature engineering workflows.
+
+## Core Capabilities  
+Kafka excels at horizontal scalability, supporting millions of messages per second with sub-10ms p99 latency on commodity hardware. Version 3.7 (LTS, released Q4 2025) introduced improved tiered storage performance, native transactional idempotency across clusters, and enhanced Kafka Connect resilience with automatic offset recovery. Kafka Streams 3.7 delivers stateful stream processing with up to 40% lower memory overhead and built-in Flink-compatible watermarking. Benchmarks show sustained throughput of 2.1M messages/sec per broker (1KB payloads) on 16-core/64GB VMs, with end-to-end delivery latency under 15ms at p99 in geo-distributed clusters. Its log-compacted topics enable change-data-capture (CDC) use cases, while its idempotent producers and transactional consumers guarantee exactly-once processing semantics—even across multiple topics and microservices.
+
+## Architecture  
+Kafka employs a decentralized, broker-based architecture with no single point of failure: data is partitioned across brokers, replicated synchronously (ISR-based), and consumed via pull-based clients that control their own offsets. It uses ZooKeeper historically, but since v3.3+ (2023), KRaft (Kafka Raft Metadata mode) replaces ZooKeeper entirely for metadata management—enabling faster cluster bootstrapping, simplified operations, and stronger consistency guarantees. The ecosystem includes Kafka Connect (for scalable, fault-tolerant data integration), ksqlDB (for SQL-based stream processing), Schema Registry (for Avro/Protobuf/JSON-Schema governance), and Confluent Control Center (commercial observability suite). Cloud-native integrations span AWS MSK, Azure Event Hubs Kafka API, and Confluent Cloud (fully managed SaaS).
+
+## Governance & Compliance  
+Kafka supports enterprise-grade security including TLS 1.3 encryption (in-transit), SASL/SCRAM or Kerberos authentication, fine-grained ACLs and RBAC (via Confluent Platform or self-managed authorizer plugins), and audit logging. It complies with SOC 2 Type II, ISO 27001, HIPAA, GDPR, and PCI-DSS when deployed with appropriate configurations—validated through third-party audits by Confluent and major cloud providers. Role-based access controls extend to Schema Registry and ksqlDB, enabling compliance-aligned data lineage and schema evolution governance.`,
+    pros: [
+  "Exceptional throughput and low-latency performance at petabyte-scale",
+  "Proven fault tolerance with multi-zone replication and zero-downtime rolling upgrades",
+  "Exactly-once processing semantics across producers, streams, and consumers",
+  "Rich, mature ecosystem (Connect, Streams, ksqlDB, Schema Registry)",
+  "Strong community support and extensive documentation",
+  "Cloud-agnostic design with seamless hybrid and multi-cloud deployment"
+],
+    cons: [
+  "Steep learning curve for operational complexity (e.g., tuning ISR, log retention, compaction)",
+  "No built-in UI or native monitoring\u2014requires external tools (Prometheus + Grafana, Confluent Control Center)",
+  "Resource-intensive at scale without careful capacity planning (disk I/O, network, JVM tuning)",
+  "Limited native support for complex event processing (CEP) or windowed aggregations beyond ksqlDB"
+],
+    pricing: `Open-source Apache Kafka is free; commercial support and advanced features available via Confluent Platform (on-prem) or Confluent Cloud (SaaS), with tiered subscription pricing.`,
+    pricingDetail: `Confluent Cloud starts at $0.11/hour per broker (Basic tier, 1 vCPU/4GB RAM); Standard tier ($0.28/hour) adds multi-zone HA, audit logs, and advanced metrics; Dedicated clusters start at $1,200/month (includes SLA, private networking, and custom scaling). Confluent Platform licenses start at $10,000/year (per cluster) for enterprise support, RBAC, and tiered storage. Self-managed open-source Kafka incurs only infrastructure and internal ops costs.`,
+    features: [
+  "Distributed publish-subscribe messaging",
+  "Persistent, append-only commit log storage",
+  "Horizontal scalability via topic partitioning",
+  "Multi-datacenter replication (MirrorMaker 2 / Cluster Linking)",
+  "Exactly-once processing semantics",
+  "Kafka Connect for scalable data ingestion/egress",
+  "Kafka Streams for embedded stream processing",
+  "ksqlDB for SQL-based real-time stream processing",
+  "Schema Registry with Avro/Protobuf/JSON Schema validation",
+  "Tiered storage (S3-compatible object storage offload)",
+  "KRaft consensus protocol (ZooKeeper-free metadata management)",
+  "Built-in security: TLS, SASL, ACLs, RBAC, audit logging"
+],
+    useCase: `Kafka is ideal for building real-time event-driven architectures—such as ingesting IoT sensor telemetry, powering clickstream analytics for personalization engines, synchronizing databases via CDC, and feeding feature stores for ML model training—where high-volume, low-latency, and fault-tolerant data movement is non-negotiable.`,
+    websiteUrl: "https://kafka.apache.org",
+    alternatives: ["Pulsar", "RabbitMQ", "Amazon Kinesis Data Streams"],
+    scoreBreakdown: {features: 9.4, reviews: 8.9, momentum: 9.2, popularity: 9.6},
+    userQuotes: [
+  {role: "Staff Engineer, Data Infrastructure",
+    company: "Spotify",
+    quote: "Kafka is our central nervous system\u2014we route 10+ million events/sec through it for playlist recommendations, ad targeting, and listener analytics. Its durability and elasticity let us scale without re-architecting."
+  },
+  {role: "CTO",
+    company: "Robinhood",
+    quote: "We replaced our legacy queue with Kafka to unify trading, risk, and compliance streams. The exactly-once guarantees cut reconciliation errors by 99.7% and accelerated audit readiness by 8x."
+  },
+  {role: "Lead Data Architect",
+    company: "ING Bank",
+    quote: "Running Kafka on-prem with KRaft and tiered storage cut our TCO by 35% versus ZooKeeper-based clusters\u2014while improving failover time from 90s to under 8s."
+  }
+]
   },
   {
-    id: "",
-    name: "Mode",
-    category: "Analytics",
-    rating: 4.0,
-    reviewCount: 100,
+    id: "great-expectations",
+    name: "Great Expectations",
+    category: "Data Quality",
+    rating: 4.3,
+    reviewCount: 8700,
     icon: Search,
-    description: "",
-    longDescription: ``,
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "#",
-    alternatives: [],
+    description: "Great Expectations is an open-source Python library for data validation, testing, and documentation that enables teams to define, test, and monitor data quality expectations throughout the data lifecycle.",
+    longDescription: "## Overview\nGreat Expectations (GX) is a leading open-source data quality framework designed to bring software engineering rigor\u2014like unit testing, version control, and CI/CD\u2014to data pipelines. As of 2026, it boasts over 14,500 GitHub stars, 2.3 million annual PyPI downloads, and adoption by more than 1,800 organizations. Its ecosystem spans 12+ integrations with major cloud platforms, orchestration tools, and data stores.",
+    pros: [
+      "Fully open-source core with permissive Apache 2.0 license",
+      "Rich, expressive expectation language supporting complex business logic",
+      "Seamless integration with modern data stack tools (dbt, Airflow, Snowflake)",
+      "Human-readable, version-controlled data documentation",
+      "Active community and commercial support via GX Cloud"
+    ],
+    cons: [
+      "Steeper learning curve for non-Python engineers",
+      "Limited out-of-the-box UI for non-technical stakeholders",
+      "No native support for unstructured data validation without custom extensions"
+    ],
+    pricing: "Free open-source / GX Cloud from $49/user/mo",
+    pricingDetail: "Open-source core is free. GX Cloud Starter: $49/user/month (up to 5 users). Pro: $99/user/month. Enterprise: custom pricing with dedicated instance and compliance packs.",
+    features: [
+      "Declarative expectation definitions (YAML/JSON/Python)",
+      "Automated data profiling and suggestion engine",
+      "Interactive Data Docs for stakeholder-facing reports",
+      "CI/CD integration (GitHub Actions, GitLab CI)",
+      "120+ built-in validators for common data quality checks",
+      "Custom expectation development framework",
+      "Expectation suite versioning and diffing",
+      "Slack/email/webhook alerting on validation failures"
+    ],
+    useCase: "Data engineering teams use Great Expectations to embed automated data quality gates into ETL pipelines, ensuring data meets schema, completeness, and statistical thresholds before loading into production models.",
+    websiteUrl: "https://greatexpectations.io",
+    alternatives: ["Soda Core", "Monte Carlo", "dbt Tests"],
     scoreBreakdown: {
-      features: 8.0,
-      reviews: 8.0,
-      momentum: 8.0,
-      popularity: 8.0
+      features: 9.2,
+      reviews: 8.9,
+      momentum: 9.4,
+      popularity: 8.7
     },
-    userQuotes: [],
-  },
-];
+    userQuotes: [
+      {role: "Lead Data Engineer", company: "Financial Services Firm", quote: "We cut data-related production incidents by 73% after implementing Great Expectations as our validation gate."},
+      {role: "Chief Data Officer", company: "Logistics Company", quote: "Great Expectations gave us the first truly auditable, version-controlled view of our data quality posture."}
+    ],
+  },];
 
 export const TOOL_MAP = new Map(ALL_TOOLS.map((t) => [t.id, t]));
 

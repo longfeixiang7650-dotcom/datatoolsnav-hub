@@ -41,6 +41,7 @@ const BLOG_SLUGS = [
     "data-cleaning-preparation-tools-2026",
     "data-governance-modern-data-stack-2026",
     "python-r-julia-spss-statistical-analysis-2026",
+    "data-mesh-2026-practical-guide",
 ] as const;
 
 const TOOL_SLUGS = [
@@ -69,6 +70,9 @@ const TOOL_SLUGS = [
     "optimizely",
     "vwo",
     "google-cloud-experimentation-suite",
+    "great-expectations",
+    "apache-kafka",
+    "apache-spark",
 ] as const;
 
 const CATEGORY_SLUGS = [

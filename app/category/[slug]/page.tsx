@@ -39,6 +39,9 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   "E-Signature": "Electronic signature solutions for legally binding digital signatures, document workflows, and contract automation. Streamline your agreement processes.",
   "A/B Testing": "A/B testing and experimentation platforms for optimizing websites, mobile apps, and marketing campaigns through data-driven testing and personalization.",
   FinTech: "Financial technology solutions including payment gateways, lending platforms, investment tools, and banking APIs for modern financial services.",
+  "Data Processing": "Data processing frameworks and platforms for large-scale batch and stream processing, ETL, and analytical workloads. Compare distributed computing engines and pipeline technologies.",
+  "Data Quality": "Data quality and observability tools for validating, monitoring, and documenting data reliability across pipelines, warehouses, and AI/ML workflows.",
+  "Data Streaming": "Streaming data platforms and message brokers for real-time event ingestion, processing, and analytics at scale. Compare technologies for building event-driven architectures.",
 };
 
 // Count tools per category for stats
