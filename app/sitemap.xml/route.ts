@@ -42,6 +42,7 @@ const BLOG_SLUGS = [
     "data-governance-modern-data-stack-2026",
     "python-r-julia-spss-statistical-analysis-2026",
     "data-mesh-2026-practical-guide",
+    "ai-powered-analytics-bi-tools-2026",
 ] as const;
 
 const TOOL_SLUGS = [

@@ -9,7 +9,7 @@ const ALL_CATEGORIES = Array.from(new Set(ALL_TOOLS.map((t) => t.category)));
 
 // Slugify
 function slugify(category: string) {
-  return category.toLowerCase().replace(/\s+/g, "-");
+  return category.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-");
 }
 
 // Deslugify
@@ -60,7 +60,7 @@ const CATEGORY_STATS = ALL_CATEGORIES.reduce(
 );
 
 export function generateStaticParams() {
-  return ALL_CATEGORIES.map((cat) => ({
+  return ALL_CATEGORIES.filter(Boolean).map((cat) => ({
     slug: slugify(cat),
   }));
 }

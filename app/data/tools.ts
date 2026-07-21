@@ -1704,7 +1704,7 @@ Spark itself is governed under the Apache License 2.0 and maintained by the Apac
     quote: "Spark MLlib\u2019s native support for feature store integrations and model serving via MLflow enabled us to deploy 200+ production ML models with consistent lineage, versioning, and reproducibility."
   }
 ]
-  },,
+    },
   {
     id: "apache-kafka",
     name: "Apache Kafka",
