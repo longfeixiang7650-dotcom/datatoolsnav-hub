@@ -213,7 +213,7 @@ Mode natively connects to 20+ data warehouses including Snowflake, BigQuery, Red
       {role: "Head of BI", company: "Shopify (Merchant Solutions Team)", quote: "We replaced three separate tools with Mode: our legacy BI tool, JupyterHub, and internal dashboarding scripts. Centralizing everything cut onboarding time for new analysts by half."},
       {role: "Data Engineer", company: "Stripe", quote: "The ability to define RLS policies directly in SQL and have them enforced at query runtime eliminated dozens of custom views we previously maintained across Redshift schemas."}
     ],
-  },},
+  },
   {
     id: "metabase",
     name: "Metabase",
@@ -333,7 +333,7 @@ Superset natively connects to 80+ databases and data engines (e.g., PostgreSQL, 
       {role: "Analytics Manager", company: "Healthcare provider network", quote: "Superset semantic layer lets us standardize KPI definitions across departments no more inconsistent calculations between teams."},
       {role: "Platform Architect", company: "E-commerce scale-up", quote: "Deploying Superset on Kubernetes with Helm charts and integrating it into our CI/CD pipeline was straightforward unlike other tools requiring proprietary agents."}
     ],
-  },},
+  },
   {
     id: "lightdash",
     name: "Lightdash",
@@ -1860,6 +1860,7 @@ The framework natively connects with Apache Spark, Pandas, SQL databases (via SQ
       {role: "MLOps Engineer", company: "Healthcare AI Platform", quote: "GX expectation suites let us version data contracts alongside model artifacts. When feature store schemas evolve, we catch breaking changes before training pipelines run."}
     ],
   },
+];
 
 export const TOOL_MAP = new Map(ALL_TOOLS.map((t) => [t.id, t]));
 
