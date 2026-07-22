@@ -43,6 +43,7 @@ const BLOG_SLUGS = [
     "python-r-julia-spss-statistical-analysis-2026",
     "data-mesh-2026-practical-guide",
     "ai-powered-analytics-bi-tools-2026",
+    "power-bi-vs-tableau-vs-looker-2026-enterprise-comparison",
 ] as const;
 
 const TOOL_SLUGS = [
