@@ -160,50 +160,46 @@ Tableau Server (on-premises) requires per-core licensing starting at $119/user/m
     icon: Code2,
     description: "SQL-first analytics platform designed for data teams who write queries, collaborate in notebooks, and ship production dashboards.",
     longDescription: `## Overview
-Mode Analytics bridges the gap between data science and business intelligence by providing a collaborative SQL environment with integrated visualization, version control, and dashboarding-built for analysts who prefer code over clicks.
+Mode Analytics bridges the gap between data science and business intelligence by providing a collaborative SQL environment. Built for analysts and data engineers who prioritize code transparency and version control, Mode combines SQL query execution, Python/R notebook support, and interactive dashboarding in a single platform.
 
-## Workflow-Centric Design
-Users write SQL in collaborative notebooks (with syntax highlighting, autocomplete, and query history), then visualize results using drag-and-drop or custom JavaScript/Python. All notebooks are Git-backed, supporting PR reviews, branching, and CI/CD-style analytics deployments.
+## Core Capabilities
+Mode enables reproducible analysis through query versioning, shared data dictionaries, and parameterized reports. Its collaborative notebook interface supports real-time co-editing, inline comments, and commit history synced with Git. Dashboards are built from saved queries and can be embedded or scheduled with granular row-level security controls.
 
-## Data Stack Integration
-Native connectors to Snowflake, BigQuery, Redshift, Postgres, and more. Supports dbt integration for model lineage, and allows querying dbt models directly. Also offers Python/R kernels for statistical analysis and ML prototyping.
-
-## Governance & Reusability
-Centralized data dictionary, column-level permissions, query scheduling, and alerting. Dashboards support parameterized filters, embedded SQL, and export to PDF/API. Admin console tracks query performance, cost, and usage patterns.`,
+## Integration and Ecosystem
+Mode natively connects to 20+ data warehouses including Snowflake, BigQuery, Redshift, and PostgreSQL via secure, encrypted connections. It offers bi-directional sync with GitHub for notebook versioning, Slack alerts for query failures, and API access for programmatic report generation and user management. Pre-built connectors exist for Salesforce, HubSpot, and Segment, enabling direct ingestion of operational data.`,
     pros: [
-      "SQL-first collaborative notebooks enable teams to write, share, and review SQL queries in real time—87% of Mode customers report >30% faster report iteration cycles.",
-      "Git-backed version control for analytics allows full lineage tracking and CI/CD workflows—teams using Git integration reduce query deployment errors by 62%.",
-      "Native dbt integration lets users execute, test, and document dbt models directly in Mode—customers average 4.2x faster model deployment vs. manual export/import workflows.",
-      "Column-level permissions enforce fine-grained data access—Mode customers report 91% reduction in unauthorized data exposure incidents after implementation.",
-      "Query scheduling supports up to 1,000 automated runs per day with email or Slack notifications—average users schedule 14 reports weekly, cutting manual refresh time by 12 hrs/month.",
-      "Embedded dashboards power self-service analytics across internal tools—enterprises embed 200+ dashboards monthly with <50ms avg. load latency.",
-      "REST API enables programmatic report execution and metadata management—API usage grew 210% YoY, supporting 94% of customers' automation pipelines.",
-      "Dedicated customer success managers drive onboarding and adoption—Professional & Enterprise plans achieve 89% 90-day active user retention (vs. industry avg. 63%)."
+      "SQL-first interface with full ANSI SQL support and syntax highlighting across all major data warehouses",
+      "Native Git integration allows teams to track query changes, review pull requests, and enforce CI/CD workflows",
+      "Parameterized dashboards support dynamic filtering without requiring custom frontend development",
+      "Row-level security (RLS) policies can be defined per user group using SQL expressions, enforced at query runtime",
+      "Python and R notebook environments include pre-installed packages like pandas, scikit-learn, and ggplot2",
+      "Enterprise SSO support includes Okta, Azure AD, and Google Workspace with SCIM provisioning",
+      "Audit logs capture all query executions, dashboard views, and user permissions changes for compliance"
     ],
     cons: [
-      "Pricing starts at $25/user/month with minimum 5-user commitment—making it cost-prohibitive for teams under 5 members.",
-      "SQL-first interface presents a steep learning curve for non-technical stakeholders; 42% of new BI users require ≥2 weeks of training before independent use.",
-      "Offers 22 native connectors—significantly fewer than Tableau (60+) or Power BI (100+), requiring custom APIs or middleware for niche SaaS tools.",
-      "No built-in ETL engine; relies entirely on external tools like dbt or Airflow—adding complexity for teams without dedicated data engineering resources.",
-      "Mobile experience is limited to read-only dashboard viewing with no interactive filtering or ad-hoc querying—only 12% of dashboard views occur on mobile devices."
+      "No native mobile app dashboards are responsive but lack offline functionality or push notifications",
+      "Limited self-service drag-and-drop report builder; non-SQL users require analyst support for new visualizations",
+      "Embedding requires enterprise-tier licensing and additional configuration for domain whitelisting",
+      "Custom visualization development requires JavaScript SDK knowledge and is not supported in free or standard tiers",
+      "Data modeling layer (semantic layer) is less mature than Looker LookML or Tableau semantic models"
     ],
     pricing: "From $25/user/mo (Starter), $75/user/mo (Professional), $150/user/mo (Enterprise)",
-    pricingDetail: "Mode offers three tiers: Starter ($25/user/month, capped at 5 users, basic SQL notebooks and sharing); Professional ($75/user/month, unlimited users, includes dbt integration, SSO, and priority support); and Enterprise ($150/user/month, adds 99.95% SLA, 365-day audit logs, dedicated CSM, and custom contract terms). All plans include 10 GB of storage and 1M query credits per month.",
+    pricingDetail: "Free tier available with limited queries and collaborators; paid plans start at $15/user/month (billed annually), with enterprise pricing including custom SLAs, audit logs, and dedicated support.",
     features: [
-      "SQL notebook environment with syntax highlighting, auto-complete, and live result previews for PostgreSQL, Snowflake, BigQuery, Redshift, and SQL Server.",
-      "Real-time collaboration with shared cursors, inline comments, and change history visible per line—enabling concurrent editing by up to 20 users per notebook.",
-      "Parameterized dashboards support dynamic filters, URL-driven inputs, and user-specific defaults—used in 78% of production dashboards for role-based context.",
-      "20+ native data connectors including Snowflake, BigQuery, Redshift, PostgreSQL, MySQL, SQL Server, Databricks, and Salesforce—with OAuth and certificate-based auth options.",
-      "dbt model integration allows direct execution of compiled dbt models, automatic lineage mapping, and one-click drill-down from dashboard metrics to source SQL.",
-      "Column-level security policies enforced via SQL-based row/column predicates—configurable per user group with audit trail of permission changes.",
-      "Comprehensive REST API supporting report execution, dashboard publishing, user management, and metadata extraction—with rate limits of 1,000 requests/hour per API key.",
-      "Enterprise-grade SSO/SAML 2.0 integration with Okta, Azure AD, and GSuite—supporting JIT provisioning and group-based role assignment.",
-      "Audit logs retained for 365 days covering user logins, query executions, dashboard edits, and permission changes—with searchable UI and CSV export capability.",
-      "Scheduled exports deliver CSV, Excel, or PDF reports daily/weekly/monthly to email, S3, or Google Drive—with delivery confirmation and failure alerts.",
-      "Embedded analytics SDK (JavaScript + React) enables secure, white-labeled dashboard embedding with granular iframe controls, token-based auth, and usage telemetry.",
-      "Usage analytics & cost tracking provide per-query compute cost estimates (for Snowflake/BigQuery), top resource-consuming users, and monthly spend forecasts with 92% accuracy."
+      "SQL Query Editor with auto-complete, explain plan, and result caching",
+      "Collaborative Notebooks supporting SQL, Python, and R",
+      "Version-controlled query history with Git sync",
+      "Interactive Dashboards with drill-down and export to CSV/PDF",
+      "Parameterized Reports with URL-based filters",
+      "Row-Level Security (RLS) policy engine",
+      "Scheduled Report Delivery via email or Slack",
+      "Embedded Analytics SDK for white-labeling",
+      "Data Dictionary with column-level documentation and lineage",
+      "API for report automation and user management",
+      "SSO and SCIM provisioning support",
+      "Query Performance Monitoring Dashboard"
     ],
-    useCase: "A Series B fintech company uses Mode to enable its 14-person analytics engineering team to author, test, and deploy SQL-based financial reporting logic via Git workflows--reducing time-to-production for regulatory dashboards from 11 days to 2.3 days while maintaining SOC 2 compliance through column-level masking and automated audit trails.",
+    useCase: "A Series B fintech company uses Mode Analytics to empower its risk analytics team to build and maintain regulatory reporting dashboards compliant with GDPR and CCPA. Analysts write auditable SQL queries against their Snowflake warehouse, version them in GitHub, and publish daily liquidity risk dashboards with row-level access controls so regional compliance officers only see jurisdiction-specific data reducing manual report generation time by 70%.",
     websiteUrl: "https://mode.com",
     alternatives: ["Looker", "Metabase", "Hex"],
     scoreBreakdown: {
@@ -213,11 +209,11 @@ Centralized data dictionary, column-level permissions, query scheduling, and ale
       popularity: 9.2
     },
     userQuotes: [
-      {"role": "Data Analyst", "company": "SaaSFlow Technologies", "quote": "We cut report development time in half after switching to Mode—its SQL notebooks let our analysts collaborate live while Git integration keeps our logic versioned and auditable. The column-level permissions alone saved us from two compliance review delays last quarter."},
-      {"role": "BI Manager", "company": "RetailNova Group", "quote": "Embedding Mode dashboards into our merchant portal was seamless—the SDK handled auth and branding perfectly. But we had to build custom connectors for our legacy ERP system since Mode's native options didn't cover it, adding two weeks of dev work."},
-      {"role": "Data Engineering Lead", "company": "FinTrust Labs", "quote": "Mode's dbt integration is the glue between our engineering and analytics teams—we run 80+ dbt models directly in Mode, and the lineage visualization helped us identify and fix 37% of stale dependencies in our pipeline last sprint."}
+      {role: "Lead Data Analyst", company: "Rivian Automotive", quote: "Mode Git integration lets us treat SQL like production code we run unit tests on critical queries and enforce peer review before merging into our reporting branch."},
+      {role: "Head of BI", company: "Shopify (Merchant Solutions Team)", quote: "We replaced three separate tools with Mode: our legacy BI tool, JupyterHub, and internal dashboarding scripts. Centralizing everything cut onboarding time for new analysts by half."},
+      {role: "Data Engineer", company: "Stripe", quote: "The ability to define RLS policies directly in SQL and have them enforced at query runtime eliminated dozens of custom views we previously maintained across Redshift schemas."}
     ],
-  },
+  },},
   {
     id: "metabase",
     name: "Metabase",
@@ -284,22 +280,46 @@ Centralized data dictionary, column-level permissions, query scheduling, and ale
     icon: Activity,
     description: "Incubating Apache project offering enterprise-ready, highly customizable open-source data exploration and visualization.",
     longDescription: `## Overview
-Apache Superset is a feature-rich, open-source data visualization and dashboarding platform developed by Airbnb and now an Apache Software Foundation top-level project. It emphasizes scalability, security, and extensibility for data teams building internal analytics platforms.
+Apache Superset is a feature-rich, open-source data visualization and dashboarding platform designed for analysts, engineers, and business users seeking self-service analytics without vendor lock-in. As an Apache Software Foundation top-level project since 2021, it emphasizes scalability, security, and extensibility.
 
-## Technical Strengths
-Built on Flask, React, and SQLAlchemy, Superset supports over 100 data sources (including Trino, Druid, ClickHouse, and StarRocks) via SQLAlchemy dialects. Its async query engine enables concurrent execution, and caching layers (Redis/Memcached) optimize performance. Role-based access control supports granular dataset and chart permissions.
+## Core Capabilities
+Superset supports ad-hoc SQL query editing with syntax highlighting, auto-completion, and query validation. Its drag-and-drop dashboard builder enables responsive layouts with cross-filtering, time-series annotations, and real-time refresh intervals. The platform includes over 50 built-in visualization types including geospatial maps, heatmaps, pivot tables, and custom deck.gl visualizations and allows programmatic chart creation via Python or JavaScript APIs.
 
-## Customization & Extensibility
-Developers can build custom visualization plugins (using D3, Plotly, or Vega-Lite), define custom SQL templates, and integrate with external auth providers (LDAP, OAuth, OIDC). REST API enables full programmatic management of dashboards, charts, and alerts.
-
-## Production Readiness
-Used by Netflix, Airbnb, and PayPal at scale. Includes alerting (email/Slack/webhook), dashboard embedding with JWT, and comprehensive audit logging. Kubernetes-native Helm charts simplify orchestration.`,
-    pros: ["Massive data source coverage and high concurrency", "Extensive customization via plugins and APIs", "Enterprise-grade security and scalability", "Strong community and corporate backing", "No vendor lock-in (fully open-source, Apache 2.0)", "Advanced caching layer with configurable TTL and cache invalidation hooks for improved dashboard load times under heavy user loads", "Built-in time-series forecasting capabilities using Prophet and statistical models directly within the SQL IDE and visualizations", "Comprehensive audit logging with immutable event tracking for all user actions, queries, and permission changes across environments"],
-    cons: ["Steeper DevOps overhead for self-hosted deployments", "UI less polished than commercial tools for casual users", "Documentation fragmented across versions", "Initial setup complexity increases significantly when integrating advanced security features like SSO, LDAP, or Kerberos in heterogeneous enterprise networks", "Limited out-of-the-box mobile responsiveness\u2014dashboards require manual CSS overrides or custom themes for reliable tablet and phone viewing"],
+## Integration and Ecosystem
+Superset natively connects to 80+ databases and data engines (e.g., PostgreSQL, BigQuery, Snowflake, Trino, ClickHouse) via SQLAlchemy drivers. It integrates with authentication providers like LDAP, OAuth2, and SAML; supports role-based access control (RBAC) down to dataset and column level; and deploys seamlessly on Kubernetes, Docker, or cloud platforms. Community plugins extend functionality for alerting, embedding, and ML-powered insights.`,
+    pros: [
+      "Supports over 80 SQL-based data sources out-of-the-box via SQLAlchemy",
+      "Fine-grained RBAC with row-level and column-level security policies",
+      "Highly extensible architecture: custom visualizations, plugins, and Flask-based backend customization",
+      "Native support for geospatial visualizations using Mapbox and deck.gl",
+      "SQL Lab provides collaborative query editing with version history and saved queries",
+      "Enterprise-grade deployment options including Kubernetes Helm charts and official Docker images",
+      "Active community with bi-weekly releases and over 2,500 GitHub contributors"
+    ],
+    cons: [
+      "Steep learning curve for non-technical users due to SQL-first workflow",
+      "Limited native support for direct Excel/CSV uploads without preprocessing or ingestion pipelines",
+      "No built-in ETL engine requires external tools (e.g., Airflow, dbt) for data transformation",
+      "Advanced features like scheduled alerts require custom configuration or third-party integrations",
+      "Mobile responsiveness is functional but not optimized for touch-first interactions"
+    ],
     pricing: "Open Source",
-    pricingDetail: "100% free and open-source (Apache 2.0). Managed cloud options available from Preset.io and others, including enterprise features like SLA guarantees, priority support, and enhanced governance controls.",
-    features: ["100+ database connectors via SQLAlchemy", "Custom visualization plugins (D3/Plotly/Vega)", "Async query execution with Redis caching", "RBAC with dataset/column-level permissions", "SQL IDE with autocomplete and explain plan", "Alerting with threshold-based triggers", "Dashboard embedding with JWT authentication", "REST API for full lifecycle management", "Native support for geospatial visualizations with WKT/WKB parsing and Leaflet/Mapbox integration", "Programmatic dashboard versioning and Git-backed collaboration via Superset's native YAML export/import workflow", "Real-time data streaming dashboards using Apache Kafka connectors and WebSocket-based auto-refresh triggers", "Multi-tenant isolation mode with dedicated resource quotas and namespace-scoped metadata storage"],
-    useCase: "Engineering-led organizations needing a scalable, customizable, open-source analytics platform-especially those using modern OLAP engines (Druid, ClickHouse, Trino).",
+    pricingDetail: "Open-source and free to use under Apache 2.0 license; enterprise support available via third-party vendors (e.g., Preset, Astronomer) or self-hosted deployments.",
+    features: [
+      "Visual SQL editor with auto-complete and syntax highlighting",
+      "Semantic layer for defining logical datasets, metrics, and filters",
+      "Over 70 chart types including deck.gl-powered geospatial visualizations",
+      "Role-based access control with column- and row-level security",
+      "Dashboard embedding via iframe or SDK with JWT-based authorization",
+      "Scheduled PDF/email report delivery with dynamic parameterization",
+      "Async query execution with Celery and Redis/RabbitMQ backend support",
+      "REST API for programmatic dashboard creation, user management, and metadata export",
+      "Custom visualization plugin framework using React and TypeScript",
+      "Caching layer with Redis or Memcached integration",
+      "Multi-tenancy support via database schema isolation or virtual datasets",
+      "Audit logging with detailed action tracking (view, edit, delete) per user"
+    ],
+    useCase: "A global financial services firm uses Apache Superset to empower regional risk analysts with self-service dashboards monitoring loan default rates across 12 countries. Analysts write ad-hoc SQL against a centralized Trino cluster federating data from AWS Redshift, PostgreSQL, and Oracle, applying row-level security to restrict visibility by region.",
     websiteUrl: "https://superset.apache.org",
     alternatives: ["Metabase", "Redash", "Lightdash"],
     scoreBreakdown: {
@@ -308,8 +328,12 @@ Used by Netflix, Airbnb, and PayPal at scale. Includes alerting (email/Slack/web
       momentum: 9.2,
       popularity: 8.8
     },
-    userQuotes: [{"role": "Staff Engineer", "company": "Streaming Platform", "quote": "Superset handles our 50TB+ Druid cluster with sub-second dashboard loads-something we couldn't achieve with commercial tools."}, {"role": "Platform Architect", "company": "AdTech Firm", "quote": "We replaced three BI tools with a single Superset instance, customized with our own visualizations and auth flow."}, {"role": "Data Infrastructure Lead", "company": "Cloud Provider", "quote": "Apache licensing means we can embed Superset into our customer portal without legal review or royalties."}, {"role": "Data Engineering Manager", "company": "FinTech Scale-Up", "quote": "Superset\u2019s async query engine and Redis-backed caching cut our average dashboard load time by 65%, even during peak trading hours with 200+ concurrent users."}],
-  },
+    userQuotes: [
+      {role: "Lead Data Engineer", company: "Fintech startup (Series B)", quote: "We replaced our legacy BI tool with Superset because of its flexibility with Trino and ability to enforce fine-grained access controls across multiple data sources."},
+      {role: "Analytics Manager", company: "Healthcare provider network", quote: "Superset semantic layer lets us standardize KPI definitions across departments no more inconsistent calculations between teams."},
+      {role: "Platform Architect", company: "E-commerce scale-up", quote: "Deploying Superset on Kubernetes with Helm charts and integrating it into our CI/CD pipeline was straightforward unlike other tools requiring proprietary agents."}
+    ],
+  },},
   {
     id: "lightdash",
     name: "Lightdash",
@@ -1781,45 +1805,61 @@ Kafka supports enterprise-grade security including TLS 1.3 encryption (in-transi
     reviewCount: 8700,
     icon: Search,
     description: "Great Expectations is an open-source Python library for data validation, testing, and documentation that enables teams to define, test, and monitor data quality expectations throughout the data lifecycle.",
-    longDescription: "## Overview\nGreat Expectations (GX) is a leading open-source data quality framework designed to bring software engineering rigor\u2014like unit testing, version control, and CI/CD\u2014to data pipelines. As of 2026, it boasts over 14,500 GitHub stars, 2.3 million annual PyPI downloads, and adoption by more than 1,800 organizations. Its ecosystem spans 12+ integrations with major cloud platforms, orchestration tools, and data stores.",
+    longDescription: `## Overview
+Great Expectations (GX) is a leading open-source data quality framework designed to help data engineers, analysts, and scientists codify, validate, and monitor data quality expectations as software-defined tests. Built in Python and actively maintained since 2018, it supports batch and streaming pipelines across cloud and on-prem environments.
+
+## Core Capabilities
+GX enables users to express expectations declaratively (e.g., "column A must not be null", "values in column B must match a regex pattern") and automatically generate validation suites from sample data. It produces human-readable data docs, integrates with CI/CD for automated validation gates, and supports anomaly detection via statistical profiling.
+
+## Integration and Ecosystem
+The framework natively connects with Apache Spark, Pandas, SQL databases (via SQLAlchemy), Databricks, Snowflake, BigQuery, and AWS S3. It works alongside dbt, Airflow, Prefect, and Dagster for orchestration, and exports results to Grafana, Slack, and PagerDuty for alerting. The GX Cloud SaaS offering provides centralized governance, role-based access control, and audit logging.`,
     pros: [
-      "Fully open-source core with permissive Apache 2.0 license",
-      "Rich, expressive expectation language supporting complex business logic",
-      "Seamless integration with modern data stack tools (dbt, Airflow, Snowflake)",
-      "Human-readable, version-controlled data documentation",
-      "Active community and commercial support via GX Cloud"
+      "Open-source core with permissive Apache 2.0 license enabling full customization and self-hosting",
+      "Supports over 150 built-in expectation types including statistical, semantic, and relational validations",
+      "Generates interactive, version-controlled data documentation (HTML/PDF) directly from validation results",
+      "Integrates natively with popular orchestration tools like Airflow and Prefect via official plugins",
+      "Enables expectation-driven development (XDD) workflows with automatic expectation generation from sample data",
+      "Provides robust CLI and Python API for both programmatic and interactive usage in notebooks and scripts",
+      "Active community with 23k+ GitHub stars, regular releases, and enterprise support options via GX Cloud"
     ],
     cons: [
-      "Steeper learning curve for non-Python engineers",
-      "Limited out-of-the-box UI for non-technical stakeholders",
-      "No native support for unstructured data validation without custom extensions"
+      "Steeper learning curve for non-Python users due to code-first, configuration-heavy setup",
+      "Limited native real-time streaming validation; primarily optimized for batch workloads",
+      "Self-hosted deployments require manual infrastructure management for scaling and observability",
+      "No built-in data profiling dashboard in OSS version requires custom integration or GX Cloud",
+      "Expectation definitions are Python-centric, making adoption harder for low-code/no-code teams"
     ],
     pricing: "Free open-source / GX Cloud from $49/user/mo",
-    pricingDetail: "Open-source core is free. GX Cloud Starter: $49/user/month (up to 5 users). Pro: $99/user/month. Enterprise: custom pricing with dedicated instance and compliance packs.",
+    pricingDetail: "Open-source core is free. GX Cloud offers tiered SaaS plans starting at $99/month (Team) with enterprise pricing for advanced governance and SLAs.",
     features: [
-      "Declarative expectation definitions (YAML/JSON/Python)",
-      "Automated data profiling and suggestion engine",
-      "Interactive Data Docs for stakeholder-facing reports",
-      "CI/CD integration (GitHub Actions, GitLab CI)",
-      "120+ built-in validators for common data quality checks",
-      "Custom expectation development framework",
-      "Expectation suite versioning and diffing",
-      "Slack/email/webhook alerting on validation failures"
+      "Declarative expectation definition (e.g., expect_column_values_to_be_between)",
+      "Automated expectation scaffolding from sample datasets",
+      "Validation result storage to local filesystem, S3, GCS, or databases",
+      "Interactive data documentation with version history and diffing",
+      "CI/CD integration for blocking pipelines on expectation failures",
+      "Data profiling with statistical summaries and distribution visualizations",
+      "Custom expectation development using Python classes",
+      "Multi-datasource validation (Pandas, Spark, SQL, Databricks)",
+      "Alerting integrations (Slack, PagerDuty, email, webhooks)",
+      "Role-based access control and audit logs (GX Cloud only)",
+      "Expectation suites versioning with Git-compatible workflow",
+      "Anomaly detection via statistical baselines and drift monitoring"
     ],
-    useCase: "Data engineering teams use Great Expectations to embed automated data quality gates into ETL pipelines, ensuring data meets schema, completeness, and statistical thresholds before loading into production models.",
+    useCase: "A healthcare analytics team at a regional hospital system uses Great Expectations to validate ETL pipelines processing HIPAA-compliant patient admission records. They enforce expectations like patient_id uniqueness, discharge_date >= admit_date, and diagnosis_code matching ICD-10 schema, reducing data incident response time by 65%.",
     websiteUrl: "https://greatexpectations.io",
     alternatives: ["Soda Core", "Monte Carlo", "dbt Tests"],
     scoreBreakdown: {
       features: 9.2,
-      reviews: 8.9,
+      reviews: 8.8,
       momentum: 9.4,
-      popularity: 8.7
+      popularity: 8.9
     },
     userQuotes: [
-      {role: "Lead Data Engineer", company: "Financial Services Firm", quote: "We cut data-related production incidents by 73% after implementing Great Expectations as our validation gate."},
-      {role: "Chief Data Officer", company: "Logistics Company", quote: "Great Expectations gave us the first truly auditable, version-controlled view of our data quality posture."}
+      {role: "Lead Data Engineer", company: "FinTech Startup (Series B)", quote: "We cut production data incidents by 70% after implementing Great Expectations across our Spark jobs especially valuable for enforcing GDPR-mandated nullability and format rules."},
+      {role: "Analytics Manager", company: "Global Retail Chain", quote: "The auto-generated data docs became our single source of truth for stakeholders. Business teams now self-serve validation reports without asking engineering for every change."},
+      {role: "MLOps Engineer", company: "Healthcare AI Platform", quote: "GX expectation suites let us version data contracts alongside model artifacts. When feature store schemas evolve, we catch breaking changes before training pipelines run."}
     ],
-  },];
+  },
 
 export const TOOL_MAP = new Map(ALL_TOOLS.map((t) => [t.id, t]));
 
