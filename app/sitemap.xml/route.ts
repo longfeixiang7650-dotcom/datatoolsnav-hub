@@ -44,6 +44,7 @@ const BLOG_SLUGS = [
     "data-mesh-2026-practical-guide",
     "ai-powered-analytics-bi-tools-2026",
     "power-bi-vs-tableau-vs-looker-2026-enterprise-comparison",
+    "etl-vs-elt-2026-data-integration-comparison",
 ] as const;
 
 const TOOL_SLUGS = [
