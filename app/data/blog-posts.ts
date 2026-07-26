@@ -4884,5 +4884,245 @@ The future isn't ETL versus ELT. It's intelligent orchestration---choosing the r
     readTime: 8,
     tags: ["ETL", "ELT", "data integration", "data engineering", "data pipeline", "dbt", "Fivetran", "Airbyte", "Snowflake", "Databricks", "data transformation"]
   },
+  {
+    slug: "continuous-data-quality-monitoring-great-expectations-dbt",
+    title: `Continuous Data Quality Monitoring: A Practical Guide to Great Expectations + dbt + Airflow`,
+    excerpt: `A backend engineer's diary of wiring Great Expectations into our dbt pipeline...`,
+    content: `## Day 1: Why Not Just Rely on dbt Tests?
+
+At Juniper Interactive, we run ~240 dbt models across 7 core domains --- finance, user behavior, ad performance, and so on. For months, we leaned heavily on dbt's built-in 'not_null', 'unique', and 'accepted_values' tests. They're fast, declarative, and live right next to the model SQL. But last month, a subtle regression slipped through: a new upstream ETL job started emitting duplicate 'session_id's for mobile web sessions *only* during weekend traffic spikes. Our 'unique' test ran against a sample of 10k rows (default config), missed it, and downstream dashboards showed inflated session counts for 36 hours.
+
+That was the catalyst. We needed *continuous*, *coverage-aware*, *statistical* validation --- not just schema-level assertions. So we chose **Great Expectations (GX)** for its expectation suites, data docs, and validation store integrations --- and committed to embedding it *alongside* dbt, not replacing it.
+
+This post is my implementation diary: how we wired GX into our existing dbt Core + Airflow stack, automated validation in CI/CD, and shipped production monitoring in 11 working days.
+
+## The Architecture
+
+Here's what we ended up with:
+
+- **Source**: PostgreSQL (staging) and Snowflake (production warehouse)  
+- **dbt Core**: v1.8, models compiled to Snowflake; tests run via 'dbt test --select tag:quality_critical'  
+- **Great Expectations**: v1.0.9, configured with a Snowflake Datasource and Validation Store backed by S3  
+- **Airflow**: v2.8.1, DAGs orchestrated via 'TriggerDagRunOperator' and 'PythonOperator'  
+- **CI/CD**: GitHub Actions (self-hosted runners), with validation steps pre-merge and post-deploy  
+
+No microservices. No separate GX server. Everything runs in the same Python environment as our dbt project --- keeping blast radius small and observability tight.
+
+## Step 1: Project Structure & Initialization
+
+We added GX inside our existing dbt repo under 'analyses/gx/'. No monorepo split --- simpler permissions, shared secrets, single 'poetry.lock'.
+
+First, initialize GX:
+
+'cd analyses/gx  
+great_expectations init'
+
+We skipped the Jupyter flow (too heavy for CI). Instead, we used the CLI to scaffold a minimal config:
+
+'great_expectations datasource new --type snowflake --name prod_snowflake'
+
+Then edited 'great_expectations/great_expectations.yml':
+
+'datasources:
+  prod_snowflake:
+    class_name: Datasource
+    execution_engine:
+      class_name: SqlAlchemyExecutionEngine
+      connection_string: \${SNOWFLAKE_CONNECTION_STRING}
+    data_connectors:
+      default_runtime_data_connector_name:
+        class_name: RuntimeDataConnector
+        batch_identifiers:
+          - runtime_batch_identifier_name
+      default_inferred_data_connector_name:
+        class_name: InferredAssetSqlDataConnector
+        include_schema_name: true'
+
+Note: We use '\${SNOWFLAKE_CONNECTION_STRING}' (escaped as \\\${SNOWFLAKE_CONNECTION_STRING} in JS contexts) injected at runtime --- never hardcoded.
+
+## Step 2: Building Expectation Suites Alongside Models
+
+We didn't write expectations for *every* table. We focused on 32 high-impact tables --- those feeding executive dashboards or feeding ML training pipelines.
+
+For each, we created an expectation suite named after the dbt model (e.g., 'user_sessions_v2'). We used GX's 'suite new' but immediately replaced the auto-generated notebook with a reproducible Python script:
+
+'great_expectations suite new --expectation-suite-name user_sessions_v2 --datasource-name prod_snowflake --batch-request \'{"datasource_name": "prod_snowflake", "data_connector_name": "default_inferred_data_connector_name", "data_asset_name": "analytics.user_sessions_v2", "limit": 50000}\''
+
+Then we converted the resulting notebook into 'analyses/gx/suites/user_sessions_v2.py':
+
+'from great_expectations.core import ExpectationSuite  
+from great_expectations.core.expectation_configuration import ExpectationConfiguration  
+
+def get_expectation_suite() -> ExpectationSuite:  
+    suite = ExpectationSuite(expectation_suite_name="user_sessions_v2")  
+
+    suite.add_expectation(  
+        ExpectationConfiguration(  
+            expectation_type="expect_table_row_count_to_be_between",  
+            kwargs={"min_value": 100000, "max_value": 5000000},  
+        )  
+    )  
+
+    suite.add_expectation(  
+        ExpectationConfiguration(  
+            expectation_type="expect_column_values_to_not_be_null",  
+            kwargs={"column": "session_id"},  
+        )  
+    )  
+
+    suite.add_expectation(  
+        ExpectationConfiguration(  
+            expectation_type="expect_column_values_to_be_unique",  
+            kwargs={"column": "session_id"},  
+        )  
+    )  
+
+    suite.add_expectation(  
+        ExpectationConfiguration(  
+            expectation_type="expect_column_values_to_be_between",  
+            kwargs={"column": "event_timestamp", "min_value": "2023-01-01", "max_value": "2030-01-01"},  
+        )  
+    )  
+
+    return suite'
+
+Why Python over YAML? Because we can parameterize thresholds (e.g., row count bounds based on historical medians), import utility functions, and unit-test suites --- all critical for CI safety.
+
+## Step 3: Orchestration in Airflow
+
+We have one Airflow DAG per domain ('analytics_user_quality', 'analytics_finance_quality', etc.). Each runs hourly and validates *only* the tables owned by that domain.
+
+The key operator runs validation and fails the DAG if any expectation fails:
+
+'from airflow import DAG  
+from airflow.operators.python import PythonOperator  
+from great_expectations.data_context.types.base import DataContextConfig  
+from great_expectations.data_context import BaseDataContext  
+import os  
+
+def run_gx_validation(**context):  
+    # Load GX context from mounted volume  
+    context_root_dir = "/opt/airflow/dags/analyses/gx"  
+    data_context = BaseDataContext(  
+        project_config=DataContextConfig(  
+            config_version=3.0,  
+            plugins_directory=None,  
+            stores={  
+                "expectations_store": {...},  
+                "validations_store": {...},  
+                "evaluation_parameter_store": {...},  
+            },  
+            expectations_store_name="expectations_store",  
+            validations_store_name="validations_store",  
+            checkpoint_store_name="checkpoint_store",  
+        ),  
+        context_root_dir=context_root_dir,  
+    )  
+
+    # Run validation for suite  
+    results = data_context.run_checkpoint(  
+        checkpoint_name="user_sessions_v2_checkpoint",  
+        run_name=f"airflow_{context['dag_run'].run_id}",  
+    )  
+
+    # Raise if any failed  
+    if not results["success"]:  
+        raise ValueError(f"GX validation failed: {results['run_results']}")  
+
+dag = DAG(  
+    "analytics_user_quality",  
+    schedule_interval="0 * * * *",  
+    start_date=datetime(2024, 5, 1),  
+    catchup=False,  
+)  
+
+validate_task = PythonOperator(  
+    task_id="validate_user_sessions_v2",  
+    python_callable=run_gx_validation,  
+    dag=dag,  
+)'
+
+We mount the 'analyses/gx/' directory into the Airflow worker container and inject 'SNOWFLAKE_CONNECTION_STRING' via Airflow Connections.
+
+## Step 4: CI/CD Integration
+
+Two critical GitHub Actions workflows:
+
+### 1. Pre-merge: Validate Expectations Against Dev Snapshot
+
+Before merging a PR that modifies an expectation suite, we spin up a local Snowflake dev warehouse, seed it with anonymized prod data (~1M rows), and run the suite:
+
+'- name: Run GX validation
+  run: |
+    cd analyses/gx
+    great_expectations checkpoint run user_sessions_v2_checkpoint
+  env:
+    SNOWFLAKE_CONNECTION_STRING: \\\$SNOWFLAKE_DEV_CONN'
+
+If validation fails, the PR is blocked. No exceptions.
+
+If validation fails, the PR is blocked. No exceptions.
+
+### 2. Post-deploy: Rebuild Data Docs & Publish to S3
+
+After 'dbt deploy' succeeds, we trigger a second workflow that:
+
+- Generates static HTML data docs  
+- Uploads them to 's3://juniper-gx-data-docs/prod/'  
+- Invalidates CloudFront cache  
+
+'great_expectations docs build --no-view  
+aws s3 sync great_expectations/uncommitted/data_docs/local_site/ s3://juniper-gx-data-docs/prod/ --delete'
+
+Our team accesses docs at https://gx.juniper.dev --- fully versioned, searchable, and linked directly from Slack alerts.
+
+## What We Learned
+
+1. **Don't auto-generate expectations from profiling**  
+   Early on, we ran 'gx suite edit' with profiler output. It generated 47 expectations per table --- most useless (e.g., 'expect_column_values_to_be_in_set' on UUIDs). We scrapped them all and wrote only what mattered: business logic, SLA-bound thresholds, and known failure modes. Less is more.
+
+2. **dbt tests and GX are complementary --- not redundant**  
+   We kept all 'not_null' and 'unique' dbt tests. Why? They're faster (SQL-only), run earlier in the pipeline, and fail *before* materialization. GX runs *after* dbt models are built --- validating final state. We now treat dbt tests as "unit tests" and GX as "integration + contract tests".
+
+3. **Validation store choice impacts scalability**  
+   We started with a local JSON store. At 120+ daily validations, it became unwieldy. Switching to S3 + DynamoDB for the validation store (with TTL on old runs) cut validation listing time from 8s to <200ms. Use cloud-native storage early.
+
+4. **Parameterize thresholds --- but version them**  
+   Row count min/max values drift. We now pull them from a 'thresholds.yaml' file co-located with each suite, committed alongside expectations. That file is updated weekly via an Airflow task that computes rolling 7-day medians and writes deltas. Thresholds are auditable and reversible.
+
+5. **Alerting must be actionable**  
+   Our first Slack alert said "GX validation failed for user_sessions_v2". Useless. Now it includes:
+   - Link to failing validation result in Data Docs  
+   - Summary of failed expectations (e.g., "expect_column_values_to_be_unique on session_id failed: 12 duplicates found")  
+   - Link to the dbt model source and last 3 commits  
+   - Owner tag (@analytics-user-team)  
+
+6. **Local development ergonomics matter**  
+   Engineers hated waiting for Airflow or CI to validate changes. So we added a 'make gx-validate MODEL=user_sessions_v2' target that spins up a local Snowflake dev instance (via Docker), loads a snapshot, and runs the suite in <90 seconds. Local iteration speed made adoption frictionless.
+
+## Final Numbers (After 4 Weeks in Prod)
+
+- 32 expectation suites covering 100% of Tier-1 models  
+- Avg. validation runtime: 42s per suite (parallelized across domains in Airflow)  
+- 0 false positives; 3 real regressions caught before dashboard impact  
+- 27% reduction in "why is this metric wrong?" tickets to the analytics team  
+- All GX configs, suites, and checkpoints live in Git --- no manual edits in prod  
+
+We're now extending this pattern to our streaming layer (Kafka to Flink to Snowflake), using GX's new 'SparkDFExecutionEngine' to validate micro-batches. But that's a diary for next month.
+
+If you're evaluating GX + dbt: start narrow, automate early, and treat expectations like production code --- test them, version them, and own them.
+
+--- Robert  
+Backend Engineer, Juniper Interactive  
+Espoo, Finland  
+June 2024
+`,
+    author: "Robert Schwarz",
+    authorRole: "Backend Engineer, Juniper Interactive",
+    date: "2026-07-27",
+    category: "Data Engineering",
+    readTime: 9,
+    tags: ["Great Expectations", "dbt", "data quality", "Airflow", "CI/CD", "data observability", "analytics engineering"]
+  },
 ];
-// Total: 43 blog posts (added: etl-vs-elt-2026-data-integration-comparison)
+// Total: 44 blog posts (added: continuous-data-quality-monitoring-great-expectations-dbt)

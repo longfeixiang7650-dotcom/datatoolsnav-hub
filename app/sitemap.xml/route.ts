@@ -45,6 +45,7 @@ const BLOG_SLUGS = [
     "ai-powered-analytics-bi-tools-2026",
     "power-bi-vs-tableau-vs-looker-2026-enterprise-comparison",
     "etl-vs-elt-2026-data-integration-comparison",
+    "continuous-data-quality-monitoring-great-expectations-dbt",
 ] as const;
 
 const TOOL_SLUGS = [
