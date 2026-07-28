@@ -47,6 +47,7 @@ const BLOG_SLUGS = [
     "etl-vs-elt-2026-data-integration-comparison",
     "continuous-data-quality-monitoring-great-expectations-dbt",
     "google-analytics-migration-2026-ga4-vs-plausible-vs-fathom-vs-matomo",
+    "real-time-streaming-2026-kafka-vs-flink-vs-pulsar-vs-kinesis",
 ] as const;
 
 const TOOL_SLUGS = [
