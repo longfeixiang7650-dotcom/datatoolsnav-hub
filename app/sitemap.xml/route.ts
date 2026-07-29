@@ -48,6 +48,7 @@ const BLOG_SLUGS = [
     "continuous-data-quality-monitoring-great-expectations-dbt",
     "google-analytics-migration-2026-ga4-vs-plausible-vs-fathom-vs-matomo",
     "real-time-streaming-2026-kafka-vs-flink-vs-pulsar-vs-kinesis",
+    "fivetran-vs-airbyte-vs-stitch-vs-dbt-etl-elt-comparison"
 ] as const;
 
 const TOOL_SLUGS = [
