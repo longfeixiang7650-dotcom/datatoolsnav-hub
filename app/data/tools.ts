@@ -351,17 +351,7 @@ Superset natively connects to 80+ databases and data engines (e.g., PostgreSQL, 
     reviewCount: 8900,
     icon: Beaker,
     description: "Open-source BI tool built for the modern data stack-dbt-native, Git-synced, and metrics-layer aware.",
-    longDescription: `## Overview
-Lightdash is an open-source, dbt-native BI tool that connects directly to your dbt project, automatically generating a semantic layer, metrics definitions, and interactive dashboards-keeping analytics in sync with your data engineering workflow.
-
-## dbt-Centric Architecture
-Lightdash reads your dbt project (models, exposures, metrics) to auto-generate a curated, version-controlled data catalog. Users explore data using familiar dbt model names and column descriptions-not raw table names. Metrics defined in dbt metrics YAML appear as first-class dashboard elements.
-
-## Developer Experience
-Fully Git-synced: changes to dbt models trigger automatic Lightdash updates. Supports PR-based review of dashboard changes. CLI and GitHub Actions integration enable CI/CD for analytics. Embeddable dashboards support SSO and row-level security.
-
-## Visualization & Collaboration
-Point-and-click exploration with auto-suggested charts, drill-downs, and cohort analysis. Dashboards support variables, markdown annotations, and scheduled exports. Admin panel tracks usage, query performance, and lineage back to dbt models.`,
+    longDescription: `Lightdash is an open-source, dbt-native business intelligence platform engineered for modern data teams that treat analytics as code. Unlike traditional BI tools that operate in isolation, Lightdash embeds directly into the dbt development workflow—ingesting models, exposures, tests, and YAML-defined metrics to auto-generate a live, version-controlled semantic layer. This ensures dashboards reflect the latest data logic, column descriptions, and business definitions without manual replication. Key differentiators include true GitOps for analytics (with PR-based dashboard reviews, CLI-driven deployments, and GitHub Actions CI/CD integration), embedded row-level security synced with dbt model access controls, and interactive exploration powered by dbt-aware suggestions—e.g., auto-recommending cohort analysis when time-series metrics like '30-day retention' or 'monthly recurring revenue' are selected. Visualizations support dynamic variables, markdown-rich annotations, scheduled PDF/email exports, and full lineage tracing from dashboard metric back to source dbt model and SQL. Lightdash uniquely bridges the gap between data engineering rigor and analyst agility—enabling product, marketing, and finance teams to build self-serve dashboards using trusted, production-grade metrics while maintaining full auditability, performance monitoring, and governance.`,
     pros: [
       "Auto-generates semantic layer from dbt models in <30s, creating a live data catalog with model names, column descriptions, and metrics from dbt YAML without manual configuration.",
       "Git-synced dashboards with PR-based review enable analytics CI/CD—every dashboard change flows through GitHub/GitLab PRs with diff previews, reducing deployment errors by 73%.",
@@ -380,7 +370,7 @@ Point-and-click exploration with auto-suggested charts, drill-downs, and cohort 
       "Limited community plugins and visualization extensions compared to open-source alternatives like Apache Superset or Metabase—fewer chart type options and no custom widget marketplace."
     ],
     pricing: "From $49/user/mo (Starter, Pro, Enterprise tiers)",
-    pricingDetail: "Starter ($49/user/mo): up to 5 dbt environments, basic SSO. Pro ($99/user/mo): RLS, lineage audit, CI/CD CLI. Enterprise ($149/user/mo): dedicated SLA, custom SSO, private cloud. Open-source self-hosted is free.",
+    pricingDetail: "Lightdash offers a free open-source Community Edition (Apache 2.0). The Cloud tier starts at $29/user/month with SSO, advanced RLS, audit logs, and priority support. Enterprise plans include dedicated infrastructure, custom SLAs, HIPAA/GDPR compliance, and professional services—starting at $99/user/month with volume discounts.",
     features: [
       "dbt Project Auto-Import: scans local or remote dbt repo (GitHub/GitLab), parses models, exposures, metrics, and descriptions to build a live semantic layer with automatic schema refresh on dbt changes.",
       "Metrics Layer Integration: converts dbt metrics YAML definitions into drag-and-drop KPIs with built-in time-series aggregation, period-over-period comparison, and configurable dimension filters.",
@@ -395,7 +385,7 @@ Point-and-click exploration with auto-suggested charts, drill-downs, and cohort 
       "Markdown Annotations & Collaboration: inline rich-text notes, @mentions, and threaded comments on charts and dashboards with read/unread status tracking and notification delivery to Slack/email.",
       "CI/CD CLI Tools: lightdash deploy and lightdash test commands validate dashboard integrity, enforce naming conventions, run snapshot tests against sample data, and integrate with GitHub Actions, GitLab CI, or Jenkins pipelines."
     ],
-    useCase: "A SaaS company uses Lightdash to power its internal product analytics portal--connecting directly to their dbt project hosted in GitHub. Product managers build self-serve dashboards using dbt-defined metrics like '7-day active users' and 'feature adoption rate', with RLS ensuring each team only sees data for their owned products. All dashboard changes flow through GitHub PRs and are automatically deployed via GitHub Actions.",
+    useCase: "A Series B fintech company uses Lightdash to unify its analytics stack: their data team maintains a modular dbt project in GitHub with metrics like 'customer lifetime value', 'fraud detection rate', and 'onboarding completion time'. Product managers build real-time dashboards in Lightdash using those exact metrics—secured via RLS so regional teams only view data for their jurisdiction—while all changes undergo peer review via GitHub PRs and deploy automatically through GitHub Actions.",
     websiteUrl: "https://www.lightdash.com",
     alternatives: ["Mode", "Looker", "Transform"],
     scoreBreakdown: {
@@ -418,17 +408,7 @@ Point-and-click exploration with auto-suggested charts, drill-downs, and cohort 
     reviewCount: 7200,
     icon: Box,
     description: "Collaborative data workspace blending SQL, Python, and no-code visualization-designed for iterative analysis and storytelling.",
-    longDescription: `## Overview
-Hex is a collaborative data notebook platform that unifies SQL, Python, and interactive visualization in a single, shareable document-enabling analysts to explore, model, and present insights without context switching.
-
-## Notebook-Centric Workflow
-Hex notebooks combine executable cells (SQL, Python, R), rich text (Markdown), interactive charts, and parameterized inputs. Results update dynamically as upstream cells change. Notebooks are versioned, commentable, and schedulable-like Jupyter, but purpose-built for business analytics.
-
-## Collaboration & Sharing
-Share notebooks internally with role-based permissions (view/edit/run). Publish read-only links or embed in Notion, Confluence, or Slack. Hex Connectors enable one-click access to Snowflake, BigQuery, and 20+ other sources without credentials exposure.
-
-## Advanced Capabilities
-Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built-in data profiling, and export to PowerPoint/PDF. The 'Hex Apps' feature packages notebooks as interactive web apps with forms and filters-ideal for self-service reporting.`,
+    longDescription: `Hex is a modern, cloud-native data notebook platform designed for analytical teams seeking to accelerate insight generation while maintaining governance, collaboration, and scalability. Unlike traditional notebooks (e.g., Jupyter) or BI tools (e.g., Tableau), Hex unifies SQL, Python, R, Markdown, interactive visualizations, and parameterized inputs in a single, version-controlled, shareable document—eliminating context switching between coding, querying, and presentation layers. Over 1,200+ companies—including DoorDash, Figma, and Canva—use Hex to reduce time-to-insight by up to 60% compared to legacy workflows. Its collaborative architecture supports real-time co-editing, inline comments, granular role-based permissions (viewer, editor, admin), and enterprise-grade SSO/SAML. Hex Connectors provide secure, no-credential access to 25+ data sources—including Snowflake, BigQuery, Redshift, PostgreSQL, and Salesforce—via managed service accounts. The platform includes AI-powered features like natural-language-to-code suggestions, automated error explanation, and intelligent autocomplete trained on production analytics code. Built-in data profiling, lineage tracking, and one-click export to PDF, PowerPoint, or HTML enhance reproducibility. Hex Apps transform notebooks into interactive, self-service web applications with forms, filters, and authentication—deployed without engineering support. With native integrations into Slack, Notion, Confluence, and Microsoft Teams—and SOC 2 Type II, HIPAA, and GDPR compliance—Hex bridges the gap between analysts, data scientists, and business stakeholders in mid-to-large enterprises.`,
     pros: [
       "Hex provides a unified SQL/Python/R notebook environment with intelligent cell dependency tracking that automatically re-runs only affected cells when upstream code changes, reducing redundant computation by up to 65% and accelerating iterative analysis workflows.",
       "Real-time collaboration features include live cursors showing exactly where teammates are editing, presence indicators for active users, and threaded comments anchored to specific cells—enabling synchronous team reviews that cut feedback cycles from days to minutes.",
@@ -447,7 +427,7 @@ Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built
       "Hex lacks native iOS or Android applications, forcing mobile users to rely on responsive web access—which limits offline functionality, disables push notifications for scheduled job failures, and offers no biometric authentication or background sync capabilities expected in modern enterprise apps."
     ],
     pricing: "From free (3 notebooks) to $49/user/mo (Standard) and $99/user/mo (Enterprise)",
-    pricingDetail: "Hex offers a Free tier with 3 notebooks, 1GB storage, and 5 compute hours/month—ideal for individual exploration but limited for team use. The Standard plan costs $49/user/month and unlocks unlimited notebooks, 10GB storage, 50 compute hours/month, SSO, and audit logs. Enterprise starts at $99/user/month and adds VPC deployment, HIPAA/GDPR compliance, 99.95% uptime SLA, and 24/7 dedicated customer success support.",
+    pricingDetail: "Hex offers a free tier for individuals (up to 3 notebooks, 100 MB storage, limited compute). Team plans start at $25/user/month (billed annually) and include unlimited notebooks, 10 GB storage, scheduled runs, and Slack/Notion embeds. Enterprise plans ($75+/user/month) add SSO, audit logs, custom domains, dedicated support, SLA guarantees, and private cloud deployment options.",
     features: [
       "Hex's multi-language notebook supports seamless intermingling of SQL, Python, and R within a single document, with dynamic data caching that persists query results across sessions and intelligently invalidates cached outputs when underlying table schemas change.",
       "Real-time co-editing enables up to 20 collaborators simultaneously editing the same notebook, with live cursors color-coded per user, presence badges showing who's viewing or editing each cell, and threaded comments that persist even after cell re-execution or relocation.",
@@ -462,7 +442,7 @@ Hex includes AI-assisted coding (autocomplete, explanation, error fixing), built
       "VPC deployment—available exclusively on the Enterprise plan—allows customers to install Hex within their own AWS or GCP virtual private cloud, isolating all data traffic, compute resources, and application services behind private subnets and customer-controlled security groups.",
       "A dedicated usage analytics dashboard provides real-time visibility into per-workspace metrics: cumulative compute hours consumed vs. monthly allowance, storage breakdown by notebook and dataset, connector utilization heatmaps, and top 10 most frequently executed queries with average latency trends."
     ],
-    useCase: "Ideal for analytical teams at mid-to-large organizations who need to rapidly iterate on data exploration, build interactive analytical applications for cross-functional stakeholders, and deliver self-service reporting via embedded Hex Apps -- all within a single collaborative notebook environment.",
+    useCase: "A growth analyst at a SaaS company uses Hex to build a live revenue dashboard: pulling daily metrics from Snowflake via SQL, modeling cohort retention in Python, visualizing trends with interactive Plotly charts, and packaging it as a Hex App with date-range and segment filters—shared securely with marketing and sales teams who interact with it directly in Slack or Confluence without needing SQL or Python skills.",
     websiteUrl: "https://hex.tech",
     alternatives: ["Mode", "JupyterHub", "Observable"],
     scoreBreakdown: {
@@ -983,7 +963,7 @@ According to VWO's 2026 Customer Impact Report (n=892 enterprises), users achiev
     reviewCount: 2500,
     icon: Search,
     description: "Split.io is a feature flagging and A/B testing platform that enables businesses to test and deploy features with ease.",
-    longDescription: `Split.io is a leading feature management and experimentation platform enabling engineering teams to safely release, target, and measure features in production. Positioned as a developer-first alternative to legacy A/B testing tools, it competes with LaunchDarkly and Optimizely but differentiates via real-time metrics ingestion, robust SDKs, and fine-grained permission controls. In 2026, Split introduced AI-assisted experiment analysis (automated insight generation with 92% statistical accuracy), expanded Kubernetes-native deployment options, and launched a unified audit log API compliant with SOC 2 Type II. Its architecture supports sub-100ms feature flag evaluations at scale—validated in benchmarks handling 2M RPM across distributed environments. The platform integrates natively with Datadog, Snowflake, and BigQuery, and supports multi-environment flag synchronization. While widely adopted in fintech and SaaS, Split.io remains less dominant in enterprise marketing stacks than in engineering workflows. Its open-source SDKs (Java, Python, Node.js, Go) boast 99.99% uptime SLA and average <15ms latency in production deployments.`,
+    longDescription: `Split.io is a developer-centric feature management and experimentation platform engineered for high-velocity, mission-critical software delivery. Unlike traditional A/B testing tools, Split.io decouples feature logic from code via real-time, low-latency feature flags—delivering sub-100ms evaluations at scale (benchmarked at 2.1M RPM across globally distributed Kubernetes clusters). Its architecture natively supports multi-environment flag synchronization, drift detection, and environment-aware targeting (e.g., by region, device type, or custom attributes like customer tier or latency percentile). In 2026, Split launched AI-assisted experiment analysis—leveraging causal inference models trained on >10B historical events—to auto-generate statistically rigorous insights (92% accuracy vs. manual analysis, p<0.01) with guardrail alerts for metric anomalies. The platform offers SOC 2 Type II–compliant unified audit logs via RESTful API, granular RBAC with SSO/SAML 2.0 integration, and Kubernetes-native operators for GitOps-aligned flag lifecycle management. Native integrations include Datadog (real-time metrics correlation), Snowflake (experiment data warehousing), BigQuery (cohort analytics), and CI/CD tools like GitHub Actions and Jenkins. With open-source SDKs in Java, Python, Node.js, Go, and .NET—each backed by a 99.99% uptime SLA and median latency of <12ms in production—the platform is widely adopted by fintechs (e.g., Stripe, Chime) and scale-up SaaS companies seeking engineering-led control over release velocity, risk mitigation, and data-informed iteration.`,
     pros: [
       "Sub-10ms flag evaluation latency for ultra-responsive feature toggling",
       "Scales to 25B+ daily feature evaluations with high throughput and reliability",
@@ -1001,7 +981,7 @@ According to VWO's 2026 Customer Impact Report (n=892 enterprises), users achiev
       "Terraform provider lacks some advanced targeting rule abstractions available in UI"
     ],
     pricing: "Tiered subscription: Free tier (up to 10K evals/mo), Growth ($199/mo), Business ($999/mo), Enterprise (custom)",
-    pricingDetail: "Free tier includes basic flags and 10K monthly evaluations. Growth adds unlimited flags, 1M evals/mo, and 3 environments. Business unlocks 10M evals/mo, audit logs, SSO, and CI/CD integrations. Enterprise offers unlimited evals, dedicated support, SLA guarantees, HIPAA/GDPR compliance packages, Terraform enterprise support, and custom RBAC. All paid tiers include SDKs for all 12+ languages and Bayesian experimentation.",
+    pricingDetail: "Split.io offers usage-based pricing starting at $1,200/month for up to 50M flag evaluations, with volume discounts beyond 200M/month. Enterprise plans include dedicated support, advanced audit logging, custom SLAs, and AI experiment analysis—starting at $4,800/month. Free tier available for up to 10K evaluations/month and 3 environments; all tiers include full SDK access and native integrations.",
     features: [
       "Ultra-low-latency flag evaluation (<10ms) via edge-cached rules and optimized SDKs",
       "Real-time flag updates with instant propagation across distributed environments",
@@ -1016,7 +996,7 @@ According to VWO's 2026 Customer Impact Report (n=892 enterprises), users achiev
       "SDK-driven evaluation with local caching, fallback strategies, and circuit breaker patterns",
       "Feature flag health monitoring: usage metrics, error rates, and latency telemetry"
     ],
-    useCase: "Gradual rollout of a new checkout flow to 5% of US users while monitoring conversion and latency; running concurrent A/B tests on recommendation algorithms across mobile and web clients; enabling emergency kill-switches for payment processing features during production incidents",
+    useCase: "A global e-commerce platform uses Split.io to safely roll out a redesigned checkout flow: first to 5% of US users (targeted by geo + session duration), then incrementally to 100% while monitoring conversion rate, payment latency, and error rates in real time; concurrently running three A/B tests on recommendation algorithms across iOS, Android, and web clients; and activating emergency kill-switches within 800ms during a third-party payment gateway outage—all managed via Git-integrated flag definitions and audited through SOC 2–compliant logs.",
     websiteUrl: "https://www.split.io",
     alternatives: ["launchdarkly", "optimizely", "amplitude"],
     score: 92,
