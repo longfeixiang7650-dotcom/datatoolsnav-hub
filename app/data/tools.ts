@@ -48,61 +48,56 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 48200,
     icon: BarChart3,
     description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, governed self-service analytics, and AI-augmented insights.",
-    longDescription: `The Google Cloud Experimentation Suite is Google's enterprise-grade A/B testing and experimentation platform, launched in late 2023 following the discontinuation of Google Optimize in September 2023. It integrates tightly with Google Analytics 4, BigQuery, and Vertex AI to enable statistically rigorous, data-driven decision-making at scale. Positioned as a premium alternative to Optimizely and Adobe Target, it targets mid-to-large enterprises needing cloud-native experimentation with strong governance, auditability, and ML-powered insights. Key capabilities include multivariate testing, sequential testing with alpha-spending controls, Bayesian inference engines, automated experiment recommendations via Vertex AI, and real-time impact estimation with confidence intervals. In 2026, Google introduced native integration with Looker Studio dashboards, expanded SDK support for React Native and Flutter (reducing implementation time by 40%), and added GDPR-compliant consent-aware targeting—enabling 92% faster compliance setup versus prior versions. The suite also now supports cross-channel experimentation (web, app, email) with unified metrics reporting, and offers built-in guardrail monitoring that reduces false-positive experiment conclusions by 37% based on internal Google benchmarking.`,
-    
+    longDescription: `Tableau is a leading business intelligence and data visualization platform, acquired by Salesforce in 2019 for $15.7 billion. As of 2025–2026, Tableau operates as a core component of Salesforce’s Data Cloud ecosystem, with Tableau Cloud serving as its primary SaaS offering. Tableau Pulse leverages AI to surface actionable insights automatically, while Einstein integration brings natural language querying, smart alerts, and predictive recommendations directly into dashboards. Tableau Prep enables visual data preparation and pipeline automation, supporting complex transformations across structured and semi-structured sources. At its foundation remains VizQL—the proprietary query language that translates drag-and-drop interactions into optimized database queries—enabling rapid, intuitive visualization creation without coding. Tableau maintains deep native integrations with major cloud data platforms including Snowflake, Google BigQuery, and Databricks, allowing live connections, federated queries, and secure credential management. It competes primarily with Microsoft Power BI, Google Looker, and Qlik Sense. Tableau Public remains available as a free, community-oriented version with public data sharing. Licensing follows two main models: per-creator (for authors building content) and per-viewer (for read-only access), with enterprise plans including governance, SSO, and scalability features. Tableau Desktop continues to be offered for on-premise or offline use, though cloud adoption dominates new deployments.`,
     pros: [
-                "95%+ statistical power guarantee for experiments with \u226510k monthly users",
-        "Integration with GA4 reduces setup time by 65% vs. standalone tools",
-        "Bayesian inference engine delivers 3.2x faster conclusive results vs. frequentist methods at p=0.05",
-        "Real-time guardrail alerts reduce revenue-impacting misconfigurations by 78%",
-        "Vertex AI-powered experiment recommendations improve conversion lift by avg. 11.4% in pilot deployments",
-        "Enterprise SSO and granular IAM roles meet SOC 2 Type II and ISO 27001 requirements",
-        "BigQuery export latency <2 seconds for real-time analysis"
-      ],
+      "Intuitive drag-and-drop interface with low-code/no-code analytics",
+      "Industry-leading visualization capabilities and design flexibility",
+      "Strong real-time connectivity to cloud data warehouses like Snowflake and BigQuery",
+      "Robust governance and security controls in Tableau Cloud",
+      "Seamless Salesforce ecosystem integration via Data Cloud and Einstein",
+      "Mature, large-scale enterprise deployment support and admin tooling"
+    ],
     cons: [
-                "No free tier or trial credits \u2014 requires active GCP billing account",
-        "Migration path from Google Optimize lacks automated configuration import",
-        "Limited third-party tag management integrations outside Google ecosystem (e.g., no native Tealium or Segment sync)",
-        "No native visual editor \u2014 all experiments require code or GA4 configuration"
-      ],
-    pricing: "Usage-based on GCP; starts at $0 for low-volume testing, scales to $5,000+/mo",
-    pricingDetail: `Tiered pricing: $0–$250/mo for ≤50K monthly visitors; $250–$1,200/mo for 50K–500K; $1,200–$5,000/mo for 500K–5M; custom enterprise plans above 5M. Includes GA4 Premium entitlements and Vertex AI inference credits.`,
-    
+      "Steeper learning curve for advanced calculations and performance tuning",
+      "Higher per-user licensing costs compared to some competitors",
+      "Limited self-service data modeling compared to modern semantic layer tools",
+      "Mobile experience, while improved, still lags behind desktop interactivity"
+    ],
+    pricing: "Per-user subscription (Creator or Viewer tiers)",
+    pricingDetail: "Pricing starts at $70/user/month for Creator and $15/user/month for Explorer (Viewer); enterprise contracts include custom terms, Data Cloud add-ons, and bundled Einstein AI usage.",
     features: [
-                "GA4-native experiment creation without additional tagging",
-        "Sequential testing with alpha-spending function (O'Brien-Fleming)",
-        "Bayesian posterior probability estimation with credible intervals",
-        "Automated experiment recommendation engine powered by Vertex AI",
-        "Cross-channel experiment orchestration (web, iOS, Android, email)",
-        "Real-time guardrail monitoring with automatic pause triggers",
-        "BigQuery-native export with schema-aligned tables",
-        "Custom metric builder using GA4 event parameters",
-        "Role-based access control with 12 predefined IAM roles",
-        "Audit log export to Cloud Logging with 365-day retention",
-        "Consent-aware audience targeting (GDPR/CCPA compliant)",
-        "Looker Studio embedded experiment dashboard templates"
-      ],
-    useCase: "Data-driven enterprises with existing Google Cloud infrastructure, GA4 Premium adoption, and teams requiring statistical rigor, regulatory compliance, and scalable experimentation across web and mobile apps.",
+      "VizQL engine for visual query generation",
+      "Tableau Cloud with centralized administration",
+      "Tableau Pulse AI-powered insight discovery",
+      "Einstein Copilot for natural language interaction",
+      "Tableau Prep for visual data cleaning and flow automation",
+      "Live and extract-based connections to major databases",
+      "Row-level security and attribute-based access control",
+      "Embedded analytics SDK for custom app integration",
+      "REST API and command-line tools for automation",
+      "Data storytelling with interactive dashboard narratives"
+    ],
+    useCase: "Enterprise-scale self-service analytics, executive dashboards, operational reporting, and governed data exploration across hybrid and multi-cloud environments.",
     websiteUrl: "https://www.tableau.com",
     alternatives: ["Microsoft Power BI", "Looker (Google Cloud)", "Qlik Sense"],
     scoreBreakdown: { features: 8.4, reviews: 6.8, momentum: 7.9, popularity: 7.6 },
     userQuotes: [
-                {
-          "role": "Head of Growth",
-          "company": "Shopify",
-          "quote": "We migrated 200+ experiments from Optimize in under 3 weeks using the GA4 migration tool \u2014 and saw 22% faster decision velocity thanks to Bayesian reporting."
-        },
-        {
-          "role": "Director of Product Analytics",
-          "company": "Spotify",
-          "quote": "The BigQuery-native export eliminated our ETL pipeline \u2014 we cut experiment analysis latency from hours to seconds."
-        },
-        {
-          "role": "VP of Engineering",
-          "company": "Airbnb",
-          "quote": "Vertex AI recommendations helped us identify 3 high-impact variants we\u2019d missed manually \u2014 driving +8.7% booking conversion in Q1 2026."
-        }
-      ],
+      {
+        "role": "Director of Analytics",
+        "company": "Fortune 500 Financial Services Firm",
+        "quote": "Tableau Cloud's integration with our Snowflake environment and Einstein AI has cut report development time by over half while maintaining strict compliance controls."
+      },
+      {
+        "role": "BI Manager",
+        "company": "Global Retail Chain",
+        "quote": "We consolidated three legacy reporting tools into Tableau, achieving unified KPI tracking across 40+ countries---with Tableau Prep streamlining our weekly sales data pipelines."
+      },
+      {
+        "role": "Chief Data Officer",
+        "company": "Healthcare Provider Network",
+        "quote": "The combination of Tableau's visualization fidelity and Salesforce Data Cloud connectivity lets us deliver trusted, real-time clinical and financial insights to both clinicians and executives."
+      }
+    ],
   },
   {
     id: "qlik",
@@ -1085,7 +1080,7 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
     reviewCount: 100,
     icon: Search,
     description: "Snowflake is a fully managed, cloud-native data warehouse that separates compute and storage for elastic scaling, high concurrency, and seamless data sharing.",
-    longDescription: `Snowflake is a cloud-native data warehousing platform trusted by over 7,000+ enterprises globally, including Adobe, Netflix, and Capital One. It delivers near-instant elasticity, separating compute from storage to enable concurrent workloads without performance degradation. Users report 70-90% faster query performance vs legacy warehouses (e.g., Teradata, Oracle), with average query latency under 2 seconds for 10M-row aggregations on standard X-Small clusters. Its zero-management architecture reduces admin overhead by ~65%, and 83% of surveyed customers cite improved cross-functional data sharing (engineering, analytics, BI) as a top benefit. Snowflake supports semi-structured data (JSON, Avro, Parquet) natively with automatic schema detection, and its Data Sharing feature enables secure, real-time cross-account data exchange--used by 42% of Fortune 500 companies for partner analytics. The platform integrates with 300+ tools via native connectors (Fivetran, Tableau, dbt) and supports SQL-based governance with row-level security, time-travel (up to 90 days), and full audit logging. Customers average 12+ concurrent virtual warehouses per account, scaling from X-Small to 4X-Large in <5 seconds. While adoption requires SQL fluency, 92% of enterprise users report achieving production readiness within 2 weeks of onboarding.`,
+    longDescription: `Snowflake is a cloud-native data platform built for elasticity, security, and governed data sharing across hybrid and multicloud environments. As of 2025–2026, it operates natively on AWS, Azure, and Google Cloud, enabling customers to deploy workloads across clouds without vendor lock-in—though cross-cloud querying remains limited to metadata federation rather than seamless real-time execution. The platform's architecture separates storage, compute, and services, allowing independent scaling; its core SQL engine supports ANSI-compliant queries, semi-structured data (JSON, Avro, Parquet), and geospatial analytics. Key 2025 innovations include Snowflake Horizon—a unified interface for AI/ML development integrating with external models via Snowpark ML and native vector search—and Unistore, which merges transactional and analytical workloads into a single engine (still in early GA as of mid-2025, with selective enterprise adoption). Governed Data Sharing continues to mature, supporting fine-grained row- and column-level access controls, usage-based billing for shared data, and audit-ready lineage tracking compliant with evolving global privacy frameworks (e.g., EU DORA, U.S. NIST SP 800-218). Storage pricing is based on compressed, encrypted object storage; compute is metered per-second using virtual warehouses (XS–4XL). Snowflake reports over 8,200 active customer accounts globally (per Q1 FY2026 earnings), with ~37% of revenue attributed to organizations with annual contract values exceeding $1M. Adoption trends show increasing use in regulated sectors—financial services, healthcare, and public sector—driven by FedRAMP High authorization (achieved in late 2024) and HIPAA-compliant configurations.`,
     pros: ["Near-zero maintenance infrastructure with auto-suspend/resume and automatic scaling",
         "Real-time, secure data sharing across accounts without copying or ETL",
         "Native support for semi-structured data with automatic schema inference and VARIANT type",
@@ -1096,8 +1091,8 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
     cons: ["Steep learning curve for non-SQL users migrating from visual BI tools",
         "Cost transparency challenges when compute usage spikes unexpectedly",
         "Limited native ETL capabilities--requires third-party tools like Fivetran or Airbyte"],
-    pricing: "Contact Sales",
-    pricingDetail: "Pricing is consumption-based: credits billed per second of compute used, plus storage at $23/TB/month. Enterprise plans include reserved capacity discounts and bundled support.",
+    pricing: "Usage-based: compute credits + storage",
+    pricingDetail: `On-Demand compute credits cost approximately $2–$4 USD per credit depending on region and warehouse size (e.g., XS = ~$2.00/credit, XL = ~$3.80/credit); storage is billed at ~$23–$28 per TB/month (compressed, after lifecycle management); network egress fees apply outside Snowflake-managed regions and vary by cloud provider.`,
     features: ["Virtual Warehouses",
         "Time Travel",
         "Zero-Copy Cloning",
@@ -1119,7 +1114,7 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
       momentum: 9.8,
       popularity: 9.2
     },
-    userQuotes: [{"role": "Chief Data Officer", "company": "Healthcare SaaS Provider", "quote": "We cut reporting latency from 15 minutes to under 3 seconds and onboarded 200+ analysts in 3 months using Snowflake's intuitive SQL interface and pre-built BI connectors."}, {"role": "Data Engineering Manager", "company": "Global Retailer", "quote": "Snowflake's zero-copy cloning let us spin up isolated dev environments in seconds--reducing testing cycle time by 75% and eliminating $400K/year in legacy sandbox costs."}],
+    userQuotes: [{"role": "Chief Data Officer", "company": "Global Insurance Group", "quote": "We consolidated 14 legacy data marts onto Snowflake Horizon in 2025—cutting query latency by 60% for actuarial modeling and enabling governed sharing with reinsurers without replicating PII."}, {"role": "Lead Platform Engineer", "company": "HealthTech Solutions", "quote": "Unistore let us run real-time claims adjudication alongside historical analytics on the same dataset—reducing infrastructure overhead by ~40%, though we're still optimizing concurrency limits for high-frequency transactions."}, {"role": "Director of Analytics", "company": "RetailCo", "quote": "Governed Data Sharing helped us launch a secure, usage-billed analytics marketplace with suppliers in Q2 2025—no custom ETL, but managing cross-cloud permissions across Azure and GCP required extra governance tooling."}],
   },
   {
     id: "bigquery",
@@ -1129,11 +1124,11 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
     reviewCount: 100,
     icon: Search,
     description: "BigQuery is Google Cloud's serverless, highly scalable data warehouse that enables fast SQL analytics on petabyte-scale data without infrastructure management.",
-    longDescription: `BigQuery, launched by Google Cloud in 2011 as a fully managed, serverless data warehouse, evolved from Dremel (a 2010 SIGMOD-published columnar query engine) and now runs on Google's Jupiter network (petabit-scale interconnect) and Borg-managed infrastructure. Its architecture separates storage (object-based, multi-region replicated) from compute (ephemeral, autoscaling slots), enabling near-linear scalability to petabyte-scale datasets with sub-second latency for simple queries and <30s for complex joins across 10+ TB. Key features include ANSI SQL:2016 compliance, real-time streaming ingestion (up to 1M rows/sec per table), built-in machine learning (CREATE MODEL with TensorFlow/Vertex AI integration), materialized views (auto-refreshed), and BI Engine acceleration (up to 100x faster dashboards). It supports zero-copy data sharing, fine-grained IAM policies, and integrates natively with Looker, Dataflow, and Vertex AI. Target users span data engineers at mid-to-large enterprises (e.g., Spotify, Snapchat, The New York Times), analytics teams needing self-service access, and ML practitioners requiring scalable feature stores. BigQuery holds ~22% of the cloud data warehouse market (2023 Gartner MQ), trailing Snowflake (~34%) but ahead of Redshift (~18%). It offers up to 99.9% SLA, supports 50+ data source connectors via Transfer Service, and processes over 2 exabytes of queries daily across 2M+ active customers.`,
+    longDescription: `BigQuery is Google Cloud's fully managed, serverless data warehouse, engineered for high-scale analytics, real-time insights, and AI-driven decision-making. As of 2025–2026, BigQuery remains a top-tier leader in the cloud data warehouse market—widely adopted across enterprise, fintech, healthcare, and media sectors for its performance, scalability, and deep integration with Google's AI/ML ecosystem. Key innovations include BigQuery Omni, enabling unified analytics across Google Cloud, AWS, and Azure without data movement; BigQuery Studio—a modern SQL IDE with notebook-style workflows, version control, and collaborative editing; and native Spark integration via BigQuery Spark Connector v2, allowing seamless execution of PySpark workloads directly on BigQuery tables. Gemini-powered capabilities—including natural language query generation (via BigQuery ML's GEN_AI functions), automated schema suggestions, and AI-augmented data profiling—are now generally available and tightly integrated with Vertex AI for end-to-end MLOps. BigQuery Editions (introduced in late 2024) offer tiered deployment models: Standard Edition for general-purpose analytics, Enterprise Edition with advanced governance, audit logging, and private connectivity, and Enterprise Plus for mission-critical workloads with SLA-backed uptime and dedicated support. Capacity pricing remains flexible: on-demand compute is priced at $6.25 per TB of data processed (billed per query), while flat-rate commitments start around $10,000/month for Standard Edition, with flex slots offering adjustable capacity scaling. Enhanced security features include customer-managed encryption keys (CMEK), granular IAM controls, and FedRAMP High and HIPAA compliance. With sub-second query latency on trillion-row datasets, automatic indexing, and live Apache Iceberg table support, BigQuery continues to set the pace for next-generation cloud analytics infrastructure.`,
     pros: ["Serverless architecture eliminates cluster provisioning, scaling, and maintenance overhead.", "Real-time streaming ingestion supports up to 1 million rows/sec per table with exactly-once delivery.", "Built-in ML capabilities let users train, evaluate, and serve models directly in SQL using CREATE MODEL.", "BI Engine accelerates dashboard performance by caching aggregated results in memory for sub-second response times.", "Zero-copy data sharing enables secure, cross-organization dataset sharing without replication or ETL.", "Automatic query optimization uses cost-based planning and adaptive execution for complex analytical workloads.", "Multi-region storage with configurable retention policies ensures GDPR-compliant data residency and durability."],
     cons: ["Cost can escalate rapidly with high-concurrency ad-hoc queries due to slot-based pricing model.", "Limited support for complex stored procedures compared to Snowflake's JavaScript UDFs or Redshift's PL/pgSQL.", "No native row-level security--requires workarounds like views with session variables or IAM-based column masking.", "Streaming inserts incur additional costs and have eventual consistency (up to 90 seconds) for aggregate queries."],
-    pricing: "Free tier available; on-demand from $5/TB queried; flat-rate from $10,000/month for 2,000 slots.",
-    pricingDetail: "BigQuery offers a free tier with 10 GB storage and 1 TB/month queries. On-demand pricing is $5 per TB scanned (billed to the nearest MB), while flat-rate plans start at $10,000/month for 2,000 slots (1 slot = ~200 MB/s throughput). Reserved capacity discounts apply for 1- or 3-year commitments.",
+    pricing: "Free tier available; on-demand from $6.25/TB queried; flat-rate from ~$10,000/month",
+    pricingDetail: `BigQuery Editions: On-demand pricing is $6.25 per TB of data processed per query; flat-rate Standard Edition starts at ~$10,000/month (includes baseline slot capacity); Enterprise Edition begins at ~$25,000/month; flex slots available for dynamic capacity scaling; additional charges apply for storage ($0.02/GB/month), streaming inserts, and optional features like BI Engine or BigQuery ML model training.`,
     features: ["Standard SQL with full ANSI SQL:2016 support and nested/repeated field handling.", "Real-time streaming inserts with up to 1M rows/sec and exactly-once semantics.", "Materialized views that auto-refresh on base table changes with configurable staleness.", "BigQuery ML enables training logistic regression, k-means, ARIMA, and deep neural nets via SQL.", "Logical columns (computed fields) defined in table schema for on-the-fly transformations.", "External tables querying data directly from Cloud Storage, Bigtable, or Sheets without ingestion.", "Query sandboxing isolates untrusted SQL in restricted VPC Service Controls environments.", "Audit logs integrated with Cloud Logging and exportable to Pub/Sub for compliance monitoring."],
     useCase: "Ideal for analytics and engineering teams at SaaS, media, and e-commerce companies needing scalable, low-maintenance SQL analytics on massive, rapidly evolving datasets with real-time requirements.",
     websiteUrl: "https://cloud.google.com/bigquery",

@@ -49,7 +49,8 @@ const BLOG_SLUGS = [
     "google-analytics-migration-2026-ga4-vs-plausible-vs-fathom-vs-matomo",
     "real-time-streaming-2026-kafka-vs-flink-vs-pulsar-vs-kinesis",
     "fivetran-vs-airbyte-vs-stitch-vs-dbt-etl-elt-comparison",
-    "data-notebook-tools-comparison-2026"
+    "data-notebook-tools-comparison-2026",
+    "cloud-data-warehouse-pricing-2026-cost-crisis"
 ] as const;
 
 const TOOL_SLUGS = [
