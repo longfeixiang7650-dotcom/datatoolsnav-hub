@@ -163,29 +163,37 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 18700,
     icon: Code2,
     description: "SQL-first analytics platform designed for data teams who write queries, collaborate in notebooks, and ship production dashboards.",
-    longDescription: `## Overview
-Mode Analytics bridges the gap between data science and business intelligence by providing a collaborative SQL environment. Built for analysts and data engineers who prioritize code transparency and version control, Mode combines SQL query execution, Python/R notebook support, and interactive dashboarding in a single platform.
+    longDescription: `## Core Positioning
+Mode Analytics is a SQL-first business intelligence platform designed for analytics teams that value code-driven workflows, collaboration, and reproducibility. It positions itself at the intersection of data engineering, analytics engineering, and self-service BI--emphasizing transparency, version control, and analyst autonomy over fully automated or no-code experiences.
 
-## Core Capabilities
-Mode enables reproducible analysis through query versioning, shared data dictionaries, and parameterized reports. Its collaborative notebook interface supports real-time co-editing, inline comments, and commit history synced with Git. Dashboards are built from saved queries and can be embedded or scheduled with granular row-level security controls.
+## Key Capabilities
+Mode provides a unified environment for writing SQL queries, building parameterized dashboards, running Python and R notebooks, and sharing insights with stakeholders. Its native Git integration enables collaborative query development with branching, pull requests, and audit trails. Row-level security, enterprise SSO, and granular permissions support governed data access. The platform includes a lightweight semantic layer for consistent metrics but prioritizes direct SQL access over abstraction-heavy modeling.
 
-## Integration and Ecosystem
-Mode natively connects to 20+ data warehouses including Snowflake, BigQuery, Redshift, and PostgreSQL via secure, encrypted connections. It offers bi-directional sync with GitHub for notebook versioning, Slack alerts for query failures, and API access for programmatic report generation and user management. Pre-built connectors exist for Salesforce, HubSpot, and Segment, enabling direct ingestion of operational data.`,
+## Target Users & Use Cases
+Mode serves mid-to-large enterprises with dedicated analytics teams--especially those adopting modern data stacks (e.g., Snowflake, BigQuery, Redshift) and practices like dbt. Common use cases include cohort analysis, funnel reporting, marketing attribution, and operational dashboards where analysts need full control over logic and lineage. It's widely adopted in tech, SaaS, and finance sectors where analytical rigor and stakeholder trust in underlying logic are paramount.
+
+## Comparison to Competitors
+Compared to Looker, Mode offers stronger SQL flexibility and Git-native workflows but lacks Looker's mature semantic layer and embedded analytics breadth. Versus Hex, Mode has deeper SQL and governance features but fewer interactive notebook UX enhancements and real-time collaboration tools. Against Metabase, Mode delivers more robust enterprise controls, versioning, and notebook support--but Metabase excels in lightweight, open-source self-service for non-technical users.
+
+## Pricing Model
+Mode offers tiered per-user pricing: Starter ($25/user/mo), Professional ($75/user/mo), and Enterprise ($150/user/mo). Embedding, advanced security, and dedicated support require the Enterprise tier. All plans include core SQL, dashboarding, and notebook functionality.
+
+## Best For & Not Ideal For
+Mode is best for analytics teams that write SQL daily, rely on version control, and prioritize auditability and governance over drag-and-drop ease. It's not ideal for organizations seeking fully no-code self-service BI for frontline business users--or those needing deep natural language querying, mobile-first dashboards, or low-cost entry for large-scale non-technical adoption.`,
     pros: [
-      "SQL-first interface with full ANSI SQL support and syntax highlighting across all major data warehouses",
-      "Native Git integration allows teams to track query changes, review pull requests, and enforce CI/CD workflows",
-      "Parameterized dashboards support dynamic filtering without requiring custom frontend development",
-      "Row-level security (RLS) policies can be defined per user group using SQL expressions, enforced at query runtime",
-      "Python and R notebook environments include pre-installed packages like pandas, scikit-learn, and ggplot2",
-      "Enterprise SSO support includes Okta, Azure AD, and Google Workspace with SCIM provisioning",
-      "Audit logs capture all query executions, dashboard views, and user permissions changes for compliance"
+      "SQL-first interface",
+      "Native Git integration",
+      "Parameterized dashboards",
+      "Row-level security",
+      "Python and R notebooks",
+      "Enterprise SSO"
     ],
     cons: [
-      "No native mobile app dashboards are responsive but lack offline functionality or push notifications",
-      "Limited self-service drag-and-drop report builder; non-SQL users require analyst support for new visualizations",
-      "Embedding requires enterprise-tier licensing and additional configuration for domain whitelisting",
-      "Custom visualization development requires JavaScript SDK knowledge and is not supported in free or standard tiers",
-      "Data modeling layer (semantic layer) is less mature than Looker LookML or Tableau semantic models"
+      "No native mobile app",
+      "Limited self-service drag-and-drop builder",
+      "Embedding requires enterprise tier",
+      "Custom visualizations need JS SDK",
+      "Less mature semantic layer than Looker"
     ],
     pricing: "From $25/user/mo (Starter), $75/user/mo (Professional), $150/user/mo (Enterprise)",
     pricingDetail: "Free tier available with limited queries and collaborators; paid plans start at $15/user/month (billed annually), with enterprise pricing including custom SLAs, audit logs, and dedicated support.",
@@ -460,32 +468,37 @@ Superset natively connects to 80+ databases and data engines (e.g., PostgreSQL, 
     reviewCount: 12400,
     icon: LineChart,
     description: "Python framework for building analytical web applications-combining Plotly.js visuals with Flask/Django backends.",
-    longDescription: `## Overview
-Plotly Dash is an open-source Python framework for building reactive, web-based data applications. Unlike traditional BI tools, Dash gives developers full control to build bespoke analytics interfaces-from simple dashboards to complex internal tools-with minimal frontend code.
+    longDescription: `## Core Positioning
+Plotly Dash is an open-source Python framework designed for building interactive, web-based data applications and dashboards with full backend control and minimal frontend coding. It positions itself as a developer-first tool that bridges the gap between data science workflows and production-ready web applications--emphasizing reproducibility, scalability, and deep integration with the Python ecosystem.
 
-## Development Model
-Dash apps are written entirely in Python using a declarative component model (similar to React). Components include graphs (Plotly.js), tables (Dash DataTable), sliders, dropdowns, and Markdown. Callbacks handle interactivity-triggering updates based on user input without page reloads.
+## Key Capabilities
+Dash enables reactive UIs through declarative Python syntax, where components (like graphs, sliders, dropdowns) are defined in Python and automatically synced via callback functions. Its tight integration with Plotly.js delivers high-fidelity, interactive visualizations--including 3D charts, maps, and custom SVG overlays. Dash supports multi-page apps, URL routing, authentication (via Dash Enterprise), state management, and server-side callbacks that update UI elements without full page reloads. It also offers built-in support for themes, accessibility attributes, and modular app architecture.
 
-## Deployment & Scalability
-Deploy on Dash Enterprise (managed), Kubernetes, or any Python-compatible server. Supports authentication (Plotly Auth, Okta, Auth0), multi-tenancy, and server-side callbacks for heavy computation. Integrates with Pandas, NumPy, SciPy, and ML libraries.
+## Target Users & Use Cases
+Dash is ideal for data scientists, analysts, and Python developers who need to ship internal analytics tools, monitoring dashboards, or client-facing reporting apps--especially when customization, security, and backend logic matter more than drag-and-drop simplicity. Common use cases include real-time operational dashboards, financial risk modeling interfaces, scientific experiment trackers, and regulatory compliance reporting tools.
 
-## Ecosystem & Extensions
-Community-maintained components (dash-bootstrap-components, dash-cytoscape) accelerate UI development. Plotly Express provides high-level charting, while Dash Bio and Dash DAQ target domain-specific use cases (genomics, IoT). Fully compatible with Jupyter for prototyping.`,
+## Comparison to Competitors
+Compared to Streamlit, Dash offers finer-grained UI control and better separation of concerns but requires more explicit state management. Unlike Panel--which emphasizes HoloViews and declarative pipelines--Dash prioritizes Python-driven interactivity over notebook-native composition. Voilà converts Jupyter notebooks into standalone apps but lacks Dash's granular component lifecycle and callback architecture, making Dash more suitable for complex, multi-user applications.
+
+## Pricing Model
+Dash is free and open-source under the MIT license. Dash Enterprise--a managed cloud platform offering CI/CD, SSO, scalability, and support--is available on a per-user subscription basis. Pricing is transparent and tiered, with no hidden infrastructure fees, though self-hosting requires DevOps resources.
+
+## Best For & Not Ideal For
+Dash excels for teams with Python engineering capacity seeking full-stack control over analytics applications. It is not ideal for non-coders needing point-and-click dashboard builders, or for organizations lacking backend deployment expertise--since even basic production hosting demands familiarity with WSGI servers, reverse proxies, and HTTPS configuration.`,
     pros: [
-      "Enables rapid development of production-grade dashboards with Python, cutting average build time by 65% compared to custom JavaScript solutions",
-      "Seamless integration with Pandas, NumPy, and SciPy allows data scientists to deploy interactive visualizations without frontend expertise",
-      "Real-time updates via callbacks with sub-200ms latency for datasets under 1M rows, verified in independent benchmark tests",
-      "Dash Enterprise provides automated CI/CD pipelines, reducing deployment failures by 78% and accelerating release cycles by 4.2x",
-      "Built-in authentication and role-based access control (RBAC) meets SOC 2 compliance requirements out-of-the-box",
-      "Extensive component library with 45+ official Dash Core Components and 120+ community-maintained plugins",
-      "Server-side rendering ensures consistent cross-browser compatibility with 99.98% uptime across hosted applications",
-      "Comprehensive documentation with 220+ runnable examples, tutorials, and API references-rated 4.8/5 by developers"
+      "Rapid production-grade dashboard development in Python",
+      "Seamless Pandas/NumPy integration",
+      "Real-time callback updates",
+      "Extensive component library",
+      "Multiple deployment options",
+      "Strong enterprise-grade security and governance features"
     ],
     cons: [
-      "Steeper learning curve for developers unfamiliar with React concepts or callback dependency graphs",
-      "Limited native mobile responsiveness-requires custom CSS or third-party wrappers for optimal small-screen UX",
-      "Dash Enterprise pricing scales linearly per user, making large-scale adoption cost-prohibitive for organizations with 200+ analysts",
-      "No built-in offline mode; all interactivity requires a live server connection, hindering edge or air-gapped deployments"
+      "Learning curve for React concepts",
+      "Limited native mobile responsiveness",
+      "Enterprise pricing scales per user",
+      "No built-in offline mode",
+      "Self-hosted deployments require backend infrastructure expertise"
     ],
     pricing: "$0 (Open Source) / $99/user/month (Dash Enterprise)",
     pricingDetail: "The open-source version (MIT license) is free forever with full core functionality and community support. Dash Enterprise adds production-grade features including secure cloud hosting, SSO, audit logging, autoscaling, and 24/7 SLA-backed support. Enterprise plans start at $99 per active user per month with volume discounts for teams over 50 users.",
@@ -626,23 +639,36 @@ Community-maintained components (dash-bootstrap-components, dash-cytoscape) acce
     reviewCount: 5000,
     icon: Search,
     description: "Stitch is a cloud-native ETL platform acquired by Talend for seamless data integration.",
-    longDescription: `Stitch is a cloud-native ETL platform acquired by Talend in 2019, designed to move data from over 150+ SaaS, database, and file-based sources into modern data warehouses like Snowflake, BigQuery, Redshift, and Databricks. It processes more than 2 trillion records monthly across 5,000+ customer accounts, with typical sync latency under 5 minutes for most connectors and sub-second API polling intervals for high-frequency sources. Stitch supports schema detection, automatic table creation, and incremental updates via CDC or timestamp-based logic, reducing redundant data transfers by up to 70% compared to full-table reloads. Positioned as a lightweight, developer-friendly alternative to heavy enterprise ETL tools, it targets mid-market and growth-stage companies needing rapid data ingestion without custom engineering. While integrated into Talend\'s broader Data Fabric suite, Stitch retains its standalone UI and API-first architecture, serving customers including Shopify, HubSpot, and Asana. Its pricing starts at $120/month for basic tier, scaling by rows synced and destinations, with 99.95% uptime SLA backed by AWS infrastructure.`,
+    longDescription: `## Core Positioning
+Stitch is a cloud-native data integration platform acquired by Talend in 2019, positioned as a developer-friendly, code-optional ETL solution for organizations prioritizing speed-to-value in building analytics-ready data pipelines. It emphasizes simplicity, reliability, and broad source coverage over complex transformation logic, making it ideal for teams focused on ingestion rather than heavy data engineering.
+
+## Key Capabilities
+Stitch offers over 150 pre-built, maintained connectors to SaaS applications (e.g., Salesforce, HubSpot), databases (PostgreSQL, MySQL), and file sources (S3, Google Sheets). It supports scheduled, incremental data replication with automatic schema detection and evolution. While native transformations are limited, Stitch integrates seamlessly with SQL-based transformation layers like dbt and supports custom scripts via its Transformations feature. Monitoring includes real-time sync status dashboards, email alerts, and detailed sync logs. CI/CD workflows are supported through Talend Cloud's broader ecosystem, enabling version-controlled pipeline management.
+
+## Target Users & Use Cases
+Stitch serves mid-market and enterprise analytics teams--especially those with hybrid or multi-cloud environments--who need scalable, low-maintenance data ingestion into modern warehouses (Snowflake, BigQuery, Redshift, Databricks). Common use cases include marketing analytics (unifying ad spend and CRM data), product analytics (ingesting event streams from Segment or Mixpanel), and finance reporting (consolidating ERP and billing systems).
+
+## Comparison to Competitors
+Compared to Fivetran, Stitch offers tighter integration with Talend's broader data fabric but less out-of-the-box transformation and weaker native support for CDC and real-time streaming. Versus Airbyte--an open-source alternative--Stitch provides more mature enterprise features (SSO, audit logging, SLAs) and dedicated support, but less flexibility for self-hosted or highly customized deployments.
+
+## Pricing Model
+Stitch is available exclusively as part of Talend Cloud, with pricing tiered by data volume, number of sources, and included features. The Starter plan begins at $1,200/month and bundles Stitch with basic Talend Cloud capabilities; higher tiers add advanced governance, monitoring, and support. There is no standalone free or trial tier.
+
+## Best For & Not Ideal For
+Stitch is best for analytics teams seeking reliable, low-maintenance ingestion with minimal engineering overhead and strong vendor support. It is not ideal for organizations requiring real-time streaming, extensive in-flight transformations, strict open-source preferences, or those unwilling to adopt Talend's broader platform ecosystem.`,
     pros: [
-      "Cloud-native architecture enables seamless scalability and high availability without infrastructure management overhead.",
-      "Unified platform integrates ETL, ELT, data quality, and cataloging in a single UI for end-to-end data engineering.",
-      "Pre-built, certified connectors to 500+ SaaS, databases, and cloud applications accelerate pipeline development significantly.",
-      "Low-code visual interface empowers both technical and citizen data engineers to build and maintain pipelines efficiently.",
-      "Real-time monitoring, lineage tracking, and automated impact analysis improve data observability and governance compliance.",
-      "Native support for hybrid and multi-cloud deployments ensures flexibility across AWS, Azure, GCP, and on-prem environments.",
-      "CI/CD capabilities streamline testing, version control, and pipeline promotion across environments."
+      "Pre-built connectors",
+      "Low-code visual interface",
+      "Real-time monitoring",
+      "CI/CD capabilities",
+      "Hybrid and multi-cloud support",
+      "Strong enterprise support and SLAs"
     ],
     cons: [
-      "Steep learning curve for non-technical users due to complex job design and configuration options",
-      "Limited real-time streaming capabilities compared to modern alternatives like Flink or Kafka Connect",
-      "High licensing costs for enterprise-scale deployments, especially with premium connectors and advanced features",
-      "Vendor lock-in risk due to proprietary job metadata format and limited exportability of transformation logic",
-      "Suboptimal performance with very large datasets (>10TB) without significant hardware tuning and parallelization",
-      "Inconsistent connector reliability and version-specific compatibility issues with frequently updated SaaS APIs"
+      "Steep learning curve",
+      "Limited real-time streaming",
+      "High enterprise licensing costs",
+      "Vendor lock-in risk"
     ],
     pricing: "Starter $1,200/mo (bundled under Talend Cloud)",
     pricingDetail: "Starter ($1,200/month): up to 5 sources, 10 million rows/month, basic monitoring dashboard, and email alerts. Professional ($3,500/month): unlimited sources, 100 million rows/month, schema drift alerts, SLA 99.95% uptime guarantee, and SSO integration. Enterprise (custom pricing): dedicated infrastructure, HIPAA/GDPR compliance, priority 24/7 support, custom backfill windows, and on-premises deployment option. All tiers include Talend Cloud unified data management suite access.",
