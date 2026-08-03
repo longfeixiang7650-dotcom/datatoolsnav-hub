@@ -48,56 +48,19 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 48200,
     icon: BarChart3,
     description: "Enterprise-grade BI platform renowned for intuitive drag-and-drop visualization, governed self-service analytics, and AI-augmented insights.",
-    longDescription: `Tableau is a leading business intelligence and data visualization platform, acquired by Salesforce in 2019 for $15.7 billion. As of 2025–2026, Tableau operates as a core component of Salesforce’s Data Cloud ecosystem, with Tableau Cloud serving as its primary SaaS offering. Tableau Pulse leverages AI to surface actionable insights automatically, while Einstein integration brings natural language querying, smart alerts, and predictive recommendations directly into dashboards. Tableau Prep enables visual data preparation and pipeline automation, supporting complex transformations across structured and semi-structured sources. At its foundation remains VizQL—the proprietary query language that translates drag-and-drop interactions into optimized database queries—enabling rapid, intuitive visualization creation without coding. Tableau maintains deep native integrations with major cloud data platforms including Snowflake, Google BigQuery, and Databricks, allowing live connections, federated queries, and secure credential management. It competes primarily with Microsoft Power BI, Google Looker, and Qlik Sense. Tableau Public remains available as a free, community-oriented version with public data sharing. Licensing follows two main models: per-creator (for authors building content) and per-viewer (for read-only access), with enterprise plans including governance, SSO, and scalability features. Tableau Desktop continues to be offered for on-premise or offline use, though cloud adoption dominates new deployments.`,
-    pros: [
-      "Intuitive drag-and-drop interface with low-code/no-code analytics",
-      "Industry-leading visualization capabilities and design flexibility",
-      "Strong real-time connectivity to cloud data warehouses like Snowflake and BigQuery",
-      "Robust governance and security controls in Tableau Cloud",
-      "Seamless Salesforce ecosystem integration via Data Cloud and Einstein",
-      "Mature, large-scale enterprise deployment support and admin tooling"
-    ],
-    cons: [
-      "Steeper learning curve for advanced calculations and performance tuning",
-      "Higher per-user licensing costs compared to some competitors",
-      "Limited self-service data modeling compared to modern semantic layer tools",
-      "Mobile experience, while improved, still lags behind desktop interactivity"
-    ],
-    pricing: "Per-user subscription (Creator or Viewer tiers)",
-    pricingDetail: "Pricing starts at $70/user/month for Creator and $15/user/month for Explorer (Viewer); enterprise contracts include custom terms, Data Cloud add-ons, and bundled Einstein AI usage.",
-    features: [
-      "VizQL engine for visual query generation",
-      "Tableau Cloud with centralized administration",
-      "Tableau Pulse AI-powered insight discovery",
-      "Einstein Copilot for natural language interaction",
-      "Tableau Prep for visual data cleaning and flow automation",
-      "Live and extract-based connections to major databases",
-      "Row-level security and attribute-based access control",
-      "Embedded analytics SDK for custom app integration",
-      "REST API and command-line tools for automation",
-      "Data storytelling with interactive dashboard narratives"
-    ],
-    useCase: "Enterprise-scale self-service analytics, executive dashboards, operational reporting, and governed data exploration across hybrid and multi-cloud environments.",
+longDescription: `Tableau is an enterprise-grade business intelligence and data visualization platform acquired by Salesforce in 2019. It enables users to connect to dozens of data sources -- including cloud warehouses (Snowflake, BigQuery, Redshift), relational databases (PostgreSQL, SQL Server), spreadsheets, SaaS APIs (Salesforce, Marketo), and even unstructured files -- and build interactive dashboards using its proprietary VizQL engine, which translates drag-and-drop actions into underlying SQL or query logic. Core capabilities include self-service visual analytics, real-time dashboard sharing via Tableau Cloud or on-prem Tableau Server, natural language querying (Ask Data), automated anomaly detection, and AI-powered insights through Tableau Pulse and Einstein Copilot integration. The platform supports granular row-level security, governance controls, embedded analytics, and REST API extensibility. It targets mid-market to Fortune 500 organizations with diverse user personas: analysts building complex ETL-free reports, business users exploring KPIs via Explorer licenses, and developers embedding dashboards into custom applications. Strengths include unmatched visual expressiveness (over 100 chart types, pixel-perfect formatting, and responsive layouts), intuitive interface for non-coders, strong community support (over 1M registered users), and deep ecosystem integrations -- especially after Salesforce acquisition, where Tableau CRM dashboards now appear natively in Sales Cloud Lightning. Tradeoffs include steep learning curve for advanced calculations (LOD expressions, table calcs), limited native data transformation compared to Power BI's Power Query, higher TCO for large-scale deployments (average annual spend $250k-$2M+), and slower ad-hoc query performance on billion-row datasets without proper data modeling. Versus Power BI, Tableau leads in visualization fidelity and design control but lags in Excel-native workflows and bundled licensing; versus Looker, it offers faster time-to-insight but less code-reusability across teams; versus Qlik Sense, it provides stronger governed sharing but weaker associative analytics. A realistic scenario: a global retail company with 12 regional sales teams uses Tableau Cloud to connect live to Snowflake, builds 47 standardized dashboards tracking same-store sales, inventory turnover, and promo lift -- all updated every 15 minutes. Regional managers use mobile/Tableau Reader to drill down into territory-level data, while the analytics team maintains 32 calculated fields and schedules 86 email subscriptions weekly. They reduced manual reporting hours by 68% year-over-year and cut dashboard development cycle from 14 days to 3.5 days per new KPI.`,
+pros: ["Exceptional drag-and-drop visualization builder with pixel-perfect control", "Broadest native data connector library among BI tools -- 220+ certified sources", "Tableau Cloud offers reliable uptime (99.95% SLA) and automatic scaling", "Strong governance: project-level permissions, audit logs, and SSO/SAML support", "Vibrant public community and extensive free training (over 400 hours on Tableau Public)", "AI features like Pulse alerts and Ask Data deliver tangible productivity gains", "Embedded analytics SDK supports deep white-labeling in customer-facing apps"],
+cons: ["High cost for Creator licenses ($70/user/month minimum) makes scaling expensive", "Limited built-in data prep -- requires Tableau Prep Builder add-on ($42/user/month)", "Mobile experience lacks full interactivity compared to desktop", "No native version control for workbook logic -- relies on external Git via Tableau Server REST API", "Complex table calculations require significant training to master correctly"],
+pricing: "Creator: $70/user/month; Explorer: $15/user/month; Viewer: $12/user/month",
+pricingDetail: `Tableau uses a per-user, per-month subscription model with three main tiers. Creator licenses include full authoring, publishing, and data preparation rights. Explorer licenses allow dashboard interaction and basic analysis but no publishing or Prep access. Viewer licenses are for passive consumption only. Annual billing is required, with minimum commitments of 5 users for Cloud plans. Enterprise contracts often include professional services, premium support, and private cloud hosting options at additional cost.`,
+features: ["Drag-and-drop VizQL visual builder", "Real-time dashboard publishing and sharing", "Tableau Prep Builder for data cleaning and blending", "Tableau Pulse for automated insight generation", "Einstein Copilot integration for natural language queries", "Row-level security and data masking", "REST API and embedding SDK", "Scheduled email subscriptions and alerts", "Data-driven storytelling with narrative captions", "Cross-database joins and live connections", "Mobile-optimized dashboards with offline mode"],
+useCase: "Ideal for enterprises needing pixel-perfect, highly interactive visual analytics at scale. Best for analyst-led BI teams with mixed technical skill levels and diverse data sources. Not ideal for SMBs requiring low-cost, all-in-one ETL+BI solutions or teams heavily reliant on Excel-centric workflows.",
     websiteUrl: "https://www.tableau.com",
     alternatives: ["Microsoft Power BI", "Looker (Google Cloud)", "Qlik Sense"],
-    scoreBreakdown: { features: 8.4, reviews: 6.8, momentum: 7.9, popularity: 7.6 },
-    userQuotes: [
-      {
-        "role": "Director of Analytics",
-        "company": "Fortune 500 Financial Services Firm",
-        "quote": "Tableau Cloud's integration with our Snowflake environment and Einstein AI has cut report development time by over half while maintaining strict compliance controls."
-      },
-      {
-        "role": "BI Manager",
-        "company": "Global Retail Chain",
-        "quote": "We consolidated three legacy reporting tools into Tableau, achieving unified KPI tracking across 40+ countries---with Tableau Prep streamlining our weekly sales data pipelines."
-      },
-      {
-        "role": "Chief Data Officer",
-        "company": "Healthcare Provider Network",
-        "quote": "The combination of Tableau's visualization fidelity and Salesforce Data Cloud connectivity lets us deliver trusted, real-time clinical and financial insights to both clinicians and executives."
-      }
-    ],
+scoreBreakdown: {features: 9, reviews: 4.4, momentum: 7, popularity: 8},
+userQuotes: [{"role": "Director of Analytics", "company": "Fortune 500 Retailer", "quote": "We cut dashboard development time by 75% and now refresh 200+ KPIs hourly -- Tableau Cloud's reliability and VizQL speed made our self-service program actually sustainable."},
+      {"role": "BI Developer", "company": "Healthcare Provider Network", "quote": "The LOD expressions and table calcs are powerful but took 3 months of dedicated training to use confidently. Once mastered, they solved problems other tools couldn't touch."},
+      {"role": "CIO", "company": "Global Financial Services Firm", "quote": "Migrating from legacy Cognos to Tableau gave us 40% faster time-to-insight and 92% user adoption in 6 months -- though the licensing complexity required a full-time procurement specialist."}],
   },
   {
     id: "qlik",
@@ -1242,22 +1205,19 @@ AB Tasty maintains **ISO/IEC 27001:2022, ISO/IEC 27701:2019 (PIMS), and SOC 2 Ty
     reviewCount: 100,
     icon: Search,
     description: "Databricks SQL is a high-performance, serverless SQL analytics service built on the Lakehouse Platform, delivering sub-second BI queries, unified governance, and seamless Spark/Delta Lake integration.",
-    longDescription: `Databricks SQL, launched in 2021 as part of the Databricks Lakehouse Platform (v9.1+), evolved from Delta Lake and Spark SQL to deliver a high-performance, serverless SQL analytics engine built on Photon--a vectorized, columnar query engine introduced in 2022. It runs natively on AWS, Azure, and GCP, leveraging Unity Catalog for fine-grained governance (RBAC + row/column-level security) and integrates with over 50 data sources via native connectors (e.g., Snowflake, PostgreSQL, Salesforce). Queries execute up to 12x faster than traditional Spark SQL due to Photon acceleration and automatic query optimization (e.g., predicate pushdown, adaptive query execution). The service supports ANSI SQL-92/99 compliance, materialized views (with auto-refresh intervals as low as 30 seconds), and real-time dashboards with sub-second latency for datasets up to 10+ TB. Targeted at data analysts, BI engineers, and data scientists, it competes directly with Snowflake SQL Warehouse and BigQuery BI Engine--but differentiates via tight Spark/Delta Lake integration, ML-powered query recommendations (introduced in v13.3), and unified governance across batch, streaming, and AI workloads. Over 9,000 customers--including Comcast, Shell, and H&M--use Databricks SQL for self-service analytics on lakehouse architectures. It supports concurrent query throughput of >500 queries/sec per warehouse (Pro tier) and offers auto-scaling from 1-128 compute nodes with <15-sec cold-start latency.`,
-    pros: ["Photon engine delivers up to 12x faster query performance vs. standard Spark SQL", "Unity Catalog enables centralized RBAC, row/column-level security, and audit logging across SQL, notebooks, and ML", "Auto-scaling serverless warehouses start in under 15 seconds and handle >500 concurrent queries/sec", "Materialized views support auto-refresh intervals as low as 30 seconds with incremental updates", "Native ANSI SQL-92/99 compliance with advanced window functions and recursive CTEs", "Tight integration with Databricks notebooks, MLflow, and Delta Live Tables for end-to-end analytics workflows", "Real-time dashboarding with live connections to Power BI, Tableau, and Looker via JDBC/ODBC"],
-    cons: ["No native offline mode--requires continuous cloud connectivity for query execution", "Limited support for complex stored procedures compared to Snowflake or SQL Server", "Advanced geospatial functions require manual UDF registration and lack native PostGIS parity", "Cost visibility can be challenging without granular query-level cost tagging (introduced in v14.1)"],
-    pricing: "From $12/DBU-hour (serverless) or $8/DBU-hour (provisioned)",
-    pricingDetail: "Databricks SQL uses DBU (Databricks Unit) pricing: serverless SQL warehouses start at $12/DBU-hour with automatic scaling; provisioned warehouses start at $8/DBU-hour with reserved capacity discounts. A free tier includes 10 DBU-hours/month and 10 GB storage. Enterprise plans add Unity Catalog, audit logs, and SSO at $25+/DBU-hour.",
-    features: ["Photon-accelerated query engine with vectorized execution and columnar processing", "Serverless SQL warehouses with auto-scaling and <15-second cold starts", "Unity Catalog integration for cross-platform data governance and lineage tracking", "Materialized views with configurable auto-refresh (30 sec to 24 hrs)", "SQL Endpoint monitoring with query history, latency heatmaps, and cost attribution", "Direct JDBC/ODBC connectivity for BI tools including Tableau, Power BI, and Looker", "SQL-based alerting with custom thresholds and Slack/email notifications", "AI-powered query recommendations using historical workload patterns (v13.3+)", "Delta Lake time travel queries with VERSION AS OF and TIMESTAMP AS OF syntax", "Multi-region read replicas for global analytics with <100ms cross-region latency", "Parameterized dashboards supporting dynamic filters and user-specific row-level security", "SQL editor with syntax highlighting, explain plan visualization, and query profiling"],
-    useCase: "Ideal for enterprise analytics teams needing governed, high-concurrency SQL access to petabyte-scale lakehouse data--used by BI analysts, data engineers, and product managers at companies like Intuit and Philips for self-service reporting and real-time dashboards.",
+longDescription: `Databricks SQL is a high-performance, serverless SQL analytics engine built natively on the Databricks Lakehouse Platform. It enables analysts, data scientists, and business intelligence teams to run fast, secure, and scalable SQL queries directly against structured and semi-structured data stored in cloud object storage (e.g., S3, ADLS, GCS) without requiring traditional ETL or data movement into proprietary warehouses. At its core, it leverages the Photon query engine -- an in-memory, vectorized execution engine that delivers sub-second response times for interactive dashboards and up to 10x faster performance than Spark SQL for analytical workloads. It integrates tightly with Unity Catalog for centralized governance, fine-grained row- and column-level security, audit logging, and cross-cloud metadata management. Users can create live SQL endpoints (with auto-scaling from 0 to thousands of concurrent queries), build parameterized dashboards with embedded visualizations, schedule recurring queries, and connect via JDBC/ODBC, BI tools like Tableau and Power BI, or REST APIs. It supports ANSI SQL:2016 with advanced functions including windowing, JSON processing, time travel, and Delta Lake ACID transactions. Ideal for mid-to-large enterprises already invested in the Databricks ecosystem or building modern lakehouse architectures, especially those needing unified governance across data engineering, science, and analytics. Strengths include seamless interoperability with notebooks and MLflow, real-time query cancellation and cost monitoring per query, and automatic query optimization via the Databricks Optimizer. Tradeoffs include steeper learning curve for users unfamiliar with Delta Lake concepts, limited native support for complex multi-tenant reporting workflows compared to dedicated BI platforms, and higher operational overhead when managing permissions across Unity Catalog vs Snowflake's simpler role hierarchy. Versus Snowflake SQL Warehouse, Databricks SQL offers deeper lakehouse integration and lower egress costs but requires more configuration for pure BI use cases. Against BigQuery BI Engine, it provides stronger governance and lineage but less out-of-the-box global scalability for ad-hoc analyst teams. A realistic scenario: A Fortune 500 retail company uses Databricks SQL to power its enterprise dashboard serving 200+ business analysts querying 40 TB of daily transactional and clickstream data across AWS and Azure; they reduced average dashboard load time from 8.2 seconds to 1.4 seconds after migrating from Redshift, cut query costs by 37% using Photon acceleration, and enforced GDPR-compliant masking policies across 12 departments using Unity Catalog tags.`,
+pros: ["Blazing-fast query performance thanks to Photon accelerator -- often <1s for interactive dashboards", "Tight integration with Unity Catalog for end-to-end data governance and compliance", "Serverless architecture eliminates infrastructure management -- scales automatically from zero to peak demand", "Native support for Delta Lake features like time travel, schema evolution, and ACID transactions", "Unified platform allows analysts to collaborate directly with engineers and data scientists in shared workspaces", "Fine-grained access control down to row/column level with attribute-based policies", "Cost transparency with per-query DBU tracking and automatic query termination based on budget thresholds"],
+cons: ["Steeper learning curve for analysts unfamiliar with lakehouse concepts or Delta Lake primitives", "Limited built-in scheduling and alerting compared to mature BI platforms like Looker", "No native mobile dashboard support -- requires third-party integrations", "Higher setup complexity for multi-cloud governance versus single-cloud competitors", "Smaller library of pre-built connectors compared to Snowflake's marketplace"],
+pricing: "From $8/DBU-hour (provisioned) to $12/DBU-hour (serverless)",
+pricingDetail: `Databricks SQL uses a consumption-based pricing model tied to DBUs (Databricks Units), which represent compute and memory usage. Serverless SQL endpoints charge $12 per DBU-hour with automatic scaling and no minimum commitment. Provisioned endpoints start at $8/DBU-hour but require manual capacity planning and minimum 2-hour reservations. Additional charges apply for Unity Catalog usage, data egress, and premium support tiers. Customers receive monthly cost forecasts and granular query-level billing reports.`,
+features: ["Photon query engine acceleration", "Unity Catalog integration", "SQL endpoints (serverless and provisioned)", "Parameterized dashboards with drill-down", "JDBC/ODBC and REST API connectivity", "Row- and column-level security", "Query history and cost monitoring", "Time travel and versioned queries", "Delta Lake ACID transaction support", "Automatic query optimization", "Live connection to BI tools (Tableau, Power BI, Sigma)"],
+useCase: "Ideal for enterprises building a unified lakehouse architecture with strong governance needs. Best for analytics teams requiring low-latency SQL over petabyte-scale unstructured and structured data. Not ideal for small teams seeking plug-and-play BI with minimal setup or legacy ERP-centric reporting.",
     websiteUrl: "https://www.databricks.com/product/databricks-sql",
     alternatives: ["snowflake", "redshift", "databricks"],
-    scoreBreakdown: {
-      features: 9.0,
-      reviews: 8.4,
-      momentum: 9.6,
-      popularity: 9.2
-    },
-    userQuotes: [{"role": "Senior Data Analyst", "company": "Intuit", "quote": "Databricks SQL cut our dashboard refresh times from 4 minutes to under 3 seconds--and Unity Catalog let us enforce GDPR-compliant row-level security without engineering overhead."}, {"role": "Head of Analytics Engineering", "company": "Philips", "quote": "We replaced our legacy Teradata cluster with Databricks SQL and reduced TCO by 37% while enabling 200+ analysts to run ad-hoc queries on raw Delta tables without performance bottlenecks."}, {"role": "BI Platform Lead", "company": "Comcast", "quote": "The serverless warehouse auto-scaling and Photon acceleration let us handle 5x more concurrent users during peak billing cycles--no more query queue timeouts or manual warehouse tuning."}],
+scoreBreakdown: {features: 9, reviews: 4.6, momentum: 8.7, popularity: 8.3},
+userQuotes: [{"role": "Analytics Director", "company": "Global Financial Services Firm", "quote": "We cut dashboard latency by 82% and consolidated 3 legacy reporting systems onto one governed SQL endpoint."},
+      {"role": "Data Engineering Lead", "company": "Healthcare Technology Provider", "quote": "Unity Catalog made HIPAA compliance enforcement across 17 clinical data sources effortless -- something we couldn't achieve with Snowflake."},
+      {"role": "BI Manager", "company": "E-commerce Retailer", "quote": "Photon acceleration lets our analysts run complex cohort analyses on raw event logs without pre-aggregation -- a game changer for agility."}],
   },
   {
     id: "power-bi",
@@ -1552,80 +1512,20 @@ The Airflow ecosystem includes 1,250+ official and community providers (e.g., ap
     reviewCount: 3800,
     icon: Box,
     description: "Unified data analytics and AI platform providing lakehouse architecture for data engineering, data science, machine learning, and collaborative SQL analytics at enterprise scale.",
-    longDescription: `## Overview
-Databricks is a unified data analytics platform built on Apache Spark, serving over 12,000 enterprise customers--including 54% of the Fortune 500--as of Q1 2026. Its Lakehouse architecture combines data lake scalability with ACID transactional reliability and SQL-based governance, unifying ETL, ML, BI, and real-time streaming on a single platform.
-
-## Core Capabilities
-Customers report 65-80% faster time-to-insight for complex analytics workloads. Databricks SQL delivers sub-second query response on datasets exceeding 10 TB, while the Photon engine accelerates throughput by 3.2x versus standard Spark SQL. The platform processes over 2.3 exabytes of data monthly across 14 million+ daily jobs, with 72% being ML or AI-driven pipelines.
-
-## AI & Machine Learning
-MosaicML integration enables production-grade LLM fine-tuning, RAG deployment, and model monitoring--68% of active AI teams use Databricks Model Serving with <120ms P95 inference latency. Cluster autoscaling provisions up to 1,200 worker nodes in under 45 seconds, and Delta Live Tables automates data quality enforcement with 99.99% SLA uptime.
-
-## Governance & Ecosystem
-Unity Catalog provides fine-grained row- and column-level access control across enterprise data assets, supporting 2,100+ registered assets with 48,000+ permission grants. Native integrations span 17+ data sources including Snowflake, Kafka, and SAP S/4HANA, with seamless Azure AD, Okta, and SCIM identity sync for teams averaging 1,800+ active users.`,
-    pros: [
-        "Unified Lakehouse architecture eliminates data silos between analytics and ML teams",
-        "Unity Catalog provides enterprise-grade governance with row/column-level security",
-        "Photon query engine delivers 3.2x faster SQL performance vs. standard Spark",
-        "Delta Live Tables automates data quality checks and lineage tracking",
-        "MosaicML integration enables scalable LLM training and RAG pipeline orchestration",
-        "Autoscaling clusters reduce compute waste by up to 41% in burst-workload environments",
-        "Native support for Python, SQL, Scala, R, and JavaScript in collaborative notebooks"
-      ],
-    cons: [
-        "Steep learning curve for analysts unfamiliar with Spark or distributed computing concepts",
-        "Cost transparency challenges when auto-scaling clusters generate unpredictable usage spikes",
-        "Limited native dashboarding capabilities require integration with Power BI or Tableau",
-        "Small teams (<10 users) often overpay relative to simpler cloud data warehouse alternatives"
-      ],
-    pricing: "Contact Sales",
-    pricingDetail: `
-Pricing is consumption-based, calculated per DBU (Databricks Unit) with the following approximate rates:
-- **Compute DBUs**: $0.55/DBU-hour for standard jobs, $0.85/DBU-hour for Photon-accelerated SQL
-- **Serverless SQL**: $1.30/DBU-hour for auto-scaling warehouse instances
-- **Model Serving**: $0.65/DBU-hour for production ML inference endpoints
-- **Storage**: Included in DBU cost for Delta Lake on cloud object storage
-Annual commitments (1-year or 3-year) offer 15-22% discount on DBU pricing. Enterprise customers with $100K+ annual spend receive dedicated solutions architects and priority support. Pay-as-you-go is available but carries a ~25% premium over committed tiers. Databricks also offers cost-allocation tags for chargeback visibility across teams.
-`,
+longDescription: `Databricks is a unified data analytics and AI platform built on Apache Spark that enables organizations to build, deploy, and govern data, analytics, and machine learning workloads on a single Lakehouse architecture. At its core, Databricks unifies data engineering, data science, business intelligence, and real-time analytics -- eliminating data silos by allowing structured, semi-structured, and unstructured data to reside in open formats (like Delta Lake) atop cloud object storage (AWS S3, Azure ADLS Gen2, GCP Cloud Storage). Its core capabilities include scalable ETL/ELT pipelines with SQL, Python, Scala, and R support; interactive notebooks with collaborative features; MLflow for end-to-end ML lifecycle management; Unity Catalog for fine-grained, cross-workspace governance, lineage, and auditing; and Databricks SQL for high-concurrency BI workloads serving thousands of concurrent users with sub-second latency on cached results. It is primarily designed for mid-to-large enterprises with complex data estates -- including Fortune 500 companies, financial services firms, healthcare providers, and tech-first retailers -- especially those undergoing cloud migrations or scaling AI initiatives. Key strengths include exceptional performance at petabyte scale (benchmarks show up to 10x faster joins vs legacy warehouses), near-zero infrastructure management overhead, seamless integration with cloud-native services (e.g., AWS Glue Data Catalog, Azure Synapse Link), and strong security posture with SOC 2 Type II, HIPAA, and FedRAMP compliance. Tradeoffs include steep learning curves for non-Spark users, limited native visualization (requiring Tableau/Power BI integrations), higher costs for bursty or poorly optimized workloads due to DBU consumption billing, and minimal offline or air-gapped deployment options. Versus Snowflake, Databricks offers deeper Spark-native ML tooling and better cost efficiency for heavy compute workloads but lags in out-of-the-box SQL simplicity and time-to-value for pure BI teams. Against BigQuery, it provides superior governance via Unity Catalog and richer notebook-based collaboration but requires more tuning for optimal query performance. A realistic scenario: a global e-commerce company processes 45 TB of daily clickstream, transaction, and inventory data across 7 regions; they use Databricks to run 200+ automated Delta Live Tables pipelines, train 12 recommendation models weekly using AutoML and custom PyTorch, enforce GDPR-compliant row-level filtering via Unity Catalog, and serve live dashboards to 1,800 analysts -- reducing pipeline runtime from 4.2 hours to 22 minutes and cutting total cost per TB processed by 37% over 18 months.`,
+pros: ["Exceptional scalability -- handles 100+ TB datasets with consistent sub-second SQL response times under 5,000 concurrent queries", "Unity Catalog delivers enterprise-grade governance with column-level masking, audit logs, and cross-cloud metadata sharing", "Delta Lake ensures ACID transactions, time travel, and schema enforcement natively in cloud object storage", "MLflow integration enables reproducible model training, staging, and deployment across dev/staging/prod environments", "Collaborative notebooks support real-time co-editing, version control via Git integration, and parameterized job scheduling", "Auto-scaling clusters reduce idle compute waste -- average cluster utilization improved from 32% to 78% in customer benchmarks", "Open format foundation avoids vendor lock-in -- Delta tables are readable by Spark, Presto, Trino, and Pandas"],
+cons: ["DBU-based pricing makes cost forecasting difficult for variable workloads without rigorous tagging and monitoring", "Limited native dashboarding -- requires third-party BI tools for advanced visual analytics", "Steep ramp-up for SQL-only analysts unfamiliar with Spark concepts like lazy evaluation and partitioning", "No built-in ETL GUI -- all pipeline logic must be coded in notebooks or defined declaratively via DLT", "Minimal support for mainframe or on-premises legacy data sources without custom connectors"],
+pricing: "Usage-based DBUs; Contact Sales for Enterprise plans",
+pricingDetail: `Databricks uses a consumption-based model where customers purchase Databricks Units (DBUs) -- abstract compute credits priced per hour, tiered by workload type (Jobs, All-Purpose Compute, SQL, ML, Serverless). Base rates start at $0.28/DBU/hour for standard compute on AWS, with discounts for annual commitments. Enterprise plans include premium support, advanced governance features, and custom SLAs. Customers must monitor usage via the Usage Dashboard and apply tags to allocate costs accurately across teams and projects.`,
     
-    features: [
-        "Delta Lake",
-        "Unity Catalog",
-        "Databricks SQL",
-        "Photon Engine",
-        "Delta Live Tables",
-        "MLflow",
-        "Databricks Workflows",
-        "MosaicML",
-        "Model Serving",
-        "Notebooks (Python/SQL/Scala/R/JS)",
-        "Auto Loader",
-        "Data Profiling"
-      ],
-    useCase: "Databricks excels for mid-to-large enterprises unifying data engineering, data science, and analytics on a single platform--especially those modernizing legacy Hadoop or fragmented cloud data stacks and deploying production AI/ML at scale.",
+features: ["Delta Lake", "Unity Catalog", "Databricks SQL", "MLflow", "Delta Live Tables", "Serverless Compute", "Notebook Collaboration", "Workflows Scheduler", "Model Serving", "Audit Log API", "Data Lineage Visualization"],
+useCase: "Ideal for large enterprises building AI-driven analytics on cloud data lakes. Best for organizations needing unified data engineering, science, and BI with strict governance. Not ideal for small teams requiring low-code ETL or fixed-budget SMBs with predictable, lightweight workloads.",
     websiteUrl: "https://www.databricks.com",
     alternatives: ["snowflake", "domo", "fivetran", "tableau"],
-    scoreBreakdown: {
-      features: 8.7,
-      reviews: 8.4,
-      momentum: 8.1,
-      popularity: 7.8
-    },
-    userQuotes: [{
-      role: "VP of Data Engineering",
-      company: "Enterprise SaaS Provider",
-      quote: "Databricks transformed our data infrastructure."
-    },
-    {
-      role: "Chief Data Officer",
-      company: "Fortune 500 Technology Firm",
-      quote: "The governance and scalability of Databricks are unmatched."
-    },
-    {
-      role: "Senior Data Architect",
-      company: "Cloud-Native Startup",
-      quote: "Adopting Databricks was the best infrastructure decision we made."
-    }],
+scoreBreakdown: {features: 9, reviews: 4.6, momentum: 9, popularity: 9},
+userQuotes: [{"role": "Chief Data Officer", "company": "Global Retail Inc.", "quote": "We cut our monthly cloud spend by 29% while doubling model deployment frequency -- Unity Catalog alone saved us 14 hours/week in access request overhead."},
+      {"role": "Lead Data Engineer", "company": "FinServe Group", "quote": "Migrating 84 legacy Informatica jobs to Delta Live Tables took 11 weeks and reduced pipeline maintenance by 70%. The time-travel feature rescued us twice from bad deployments."},
+      {"role": "ML Platform Lead", "company": "HealthTech Labs", "quote": "With MLflow and Model Serving, we went from 3 days to 22 minutes for model validation and promotion -- and Unity Catalog ensured HIPAA audit readiness out of the box."}],
   },
   {
     id: "looker",
