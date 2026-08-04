@@ -52,7 +52,8 @@ const BLOG_SLUGS = [
     "data-notebook-tools-comparison-2026",
     "cloud-data-warehouse-pricing-2026-cost-crisis",
     "experimentation-platforms-2026-optimizely-vwo-splitio-abtasty",
-    "state-of-self-service-analytics-2026-data-report"
+    "state-of-self-service-analytics-2026-data-report",
+    "open-source-bi-embedded-analytics-tools-2026-selection-guide"
 ] as const;
 
 const TOOL_SLUGS = [
