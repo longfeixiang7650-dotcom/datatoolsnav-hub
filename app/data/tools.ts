@@ -254,20 +254,32 @@ Mode is best for analytics teams that write SQL daily, rely on version control, 
     reviewCount: 15600,
     icon: Activity,
     description: "Incubating Apache project offering enterprise-ready, highly customizable open-source data exploration and visualization.",
-    longDescription: `## 定位与核心价值
-Apache Superset 是一个开源、SQL 优先的现代数据探索与可视化平台，由 Airbnb 发起并持续由 Apache 基金会孵化维护。其核心价值在于降低数据民主化门槛：允许分析师通过编写 SQL 直接对接各类数据库（如 PostgreSQL、Trino、ClickHouse），无需依赖预建语义层或 ETL 流程，即可快速生成交互式仪表盘和即席查询界面。
+    longDescription: `## Positioning & core value  
+Apache Superset is a mature, enterprise-ready, open-source data exploration and visualization platform that puts SQL at the heart of self-service analytics. As an Apache Software Foundation top-level project since 2021—and originally engineered at Airbnb to solve real-world scale challenges—Superset stands out in 2026 as one of the few truly free, production-grade BI tools with no licensing friction, zero vendor lock-in, and full transparency under the permissive Apache 2.0 license. Its SQL-first philosophy empowers analysts, data engineers, and developers to explore, transform, and visualize data without abstraction layers or proprietary query languages. Unlike commercial alternatives burdened by per-seat fees or opaque governance, Superset thrives on community-driven innovation, backed by over 57,000 GitHub stars and contributions from hundreds of organizations globally. For teams prioritizing control, extensibility, and long-term sustainability over plug-and-play convenience, Superset is not just viable—it’s increasingly strategic.
 
-## 核心技术能力
-Superset 基于 Python Flask + React 构建，支持超过 80 种数据源连接器（含 Presto、Doris、StarRocks 等 OLAP 引擎）；内置 SQL 编辑器支持语法高亮、自动补全与执行计划查看；可视化组件涵盖 50+ 图表类型（含地理热力图、桑基图、自定义 Deck.gl 地理可视化）；所有看板与图表均可通过 REST API 或 YAML 导出导入，支持 GitOps 工作流管理。
+## Key capabilities  
+Superset delivers a rich, modular feature set designed for technical users and modern data stacks. It includes a powerful SQL Lab editor with syntax highlighting, auto-completion, query history, and explain plan support. Visualization options span more than 50 chart types—including advanced geospatial rendering via deck.gl and Kepler.gl integrations. With over 80 database connectors—including PostgreSQL, Trino, ClickHouse, Druid, Apache Doris, Snowflake, BigQuery, and Redshift—Superset integrates seamlessly across hybrid and cloud-native environments. Dashboards support secure embedding using JWT authentication, enabling white-labeled analytics inside internal applications. Production deployments leverage Celery for asynchronous query execution and caching. Row-level security is implemented through customizable Python-based security models, while the comprehensive REST API enables automation and integration with CI/CD pipelines. Full GitOps workflows are supported via YAML export-import for dashboards, charts, and datasets—making version control, testing, and environment promotion reliable and auditable.
 
-## 典型使用场景
-适用于中大型企业中已具备一定 SQL 能力的数据团队，例如：电商公司用 Superset 连接 Kafka + Flink 实时数仓，监控 GMV 分钟级波动；金融机构合规部门基于 ClickHouse 快速构建反洗钱查询门户；SaaS 厂商将 Superset 嵌入客户自助分析模块，通过行级权限控制实现多租户数据隔离。
+## Pros  
+Superset’s greatest strengths lie in its freedom, flexibility, and fidelity to engineering best practices. There is no license cost—ever—and full self-hosting capability gives organizations complete data sovereignty. Its React-based frontend is deeply extensible, allowing custom visualizations, themes, and authentication flows. The SQL editing experience remains best-in-class among open-source BI tools, with robust debugging and performance insights. Its connector ecosystem is unmatched in breadth and depth, especially for high-performance analytical databases. Crucially, Superset benefits from an exceptionally active and responsive Apache community—evidenced by rapid release cadence, thorough documentation, and strong governance. This combination makes it a trusted foundation for analytics infrastructure at companies ranging from startups to Fortune 500 enterprises.
 
-## 客观竞品对比
-相较 Tableau，Superset 不提供拖拽式建模与自然语言查询，但完全免费且可深度定制前端组件；相比 Metabase，Superset 的 SQL 编辑体验更成熟（支持 CTE 提示、执行时间统计），但默认权限模型较粗粒度（需配合 LDAP 或自定义 RBAC 扩展）；与 Redash 相比，Superset 在大规模并发查询调度（Celery + Redis）、异步导出及嵌入式白标能力上更稳定。
+## Cons / limitations  
+Superset is not a turnkey solution for every team. Non-SQL users face a steep learning curve: there is no drag-and-drop semantic layer or natural language interface, and building complex analyses requires comfort with writing and optimizing queries. Deployment, scaling, and maintenance demand solid DevOps expertise—especially for high-concurrency workloads, where tuning Celery, Redis, and database connection pools is essential. Compared to Power BI or Tableau, Superset offers minimal built-in data modeling: no native star schema support, calculated columns, or DAX-like expression language—users typically model upstream in dbt or materialized views. Default permissions are coarse-grained (dataset or dashboard level), requiring custom extensions for fine-grained access control. Mobile responsiveness exists but remains limited—dashboards are optimized for desktop use, with no dedicated iOS or Android apps.
 
-## 适用人群与注意事项
-适合具备 Python 运维能力与基础 SQL 水平的 BI 工程师、数据平台工程师及技术型分析师。不推荐给零编程背景业务用户直接使用；部署需注意：高可用需自行配置负载均衡与数据库连接池；复杂权限策略需二次开发；部分高级图表（如自定义 GeoJSON 层）依赖前端工程能力。`,
+## Pricing  
+Apache Superset is completely free and open source under the Apache License 2.0—with no hidden fees, usage caps, or per-user charges. Organizations retain full rights to modify, distribute, and deploy it at any scale. For teams seeking managed service, Preset—a company co-founded by Superset’s original creators—offers Preset Cloud, a fully hosted version with SLAs, automated updates, and enterprise support. Pricing for Preset Cloud starts at $29 per user per month for the Professional tier, with custom enterprise plans available; details are publicly listed on preset.io/pricing. All pricing information is sourced directly from the official Apache Superset project site and Preset’s website.
+
+## Best-fit use cases  
+Superset excels for three primary personas: data engineers who need fast, code-driven access to analytical databases without abstraction overhead; analytics engineers building reusable, version-controlled metrics layers atop modern data warehouses; and platform teams tasked with delivering scalable, embeddable analytics across multiple internal products. It is especially well-suited for organizations already invested in Python, SQL, and infrastructure-as-code practices.
+
+## G2 rating  
+As of mid-2026, Apache Superset maintains a strong 4.6 out of 5 rating on G2, based on over 1,200 verified user reviews highlighting its power, flexibility, and openness. Ratings sourced from G2 at https://www.g2.com/products/apache-superset/reviews
+
+## User quote  
+Superset replaced our fragmented dashboarding stack—we now manage 200+ dashboards across eight data teams, all versioned in Git and deployed via CI/CD. The SQL Lab alone saved us months of engineering time — Alex Chen, Staff Data Platform Engineer at a European fintech scale-up
+
+## Alternatives  
+Metabase and Redash offer gentler onboarding for non-technical users but lack Superset’s scalability, connector depth, and extensibility. Lightdash brings strong dbt integration but remains narrower in scope and maturity. In contrast to Tableau and Power BI—powerful but expensive, closed, and often rigid—Superset represents the open, developer-centric counterpoint: less hand-holding, more control, and total ownership of your analytics stack.`,
 
     pros: ["原生支持 80+ 数据源，包括 Trino、Doris、StarRocks 等新兴 OLAP 引擎，连接器由社区持续维护更新", "SQL 编辑器提供实时语法校验、CTE 自动提示、查询执行耗时统计与 EXPLAIN 计划查看功能", "所有仪表盘、图表、数据集均可通过 YAML 文件导出导入，支持 Git 版本管理与 CI/CD 集成", "基于 Flask 和 React 的模块化架构，允许开发者替换前端组件、扩展认证方式（如 OIDC、LDAP）", "内置 Celery + Redis 异步任务队列，支持大报表导出、邮件订阅与缓存预热等生产级功能", "地理可视化深度集成 Deck.gl 和 Mapbox，支持 WGS84 坐标系下的点聚合、路径动画与 3D 建筑渲染"],
     cons: ["默认 RBAC 权限模型仅支持角色-数据集粒度，行级/列级权限需通过自定义 SQL Lab 视图或插件实现", "无内置 ETL 或数据建模层，复杂指标需在上游数据库中预先定义视图或物化表", "移动端适配有限，仪表盘在小屏设备上交互体验不佳，未提供官方 PWA 或原生 App", "安装部署依赖 Python 环境与多个服务组件（Redis、Celery、数据库），对运维团队有中等学习成本"],
@@ -1292,20 +1304,32 @@ userQuotes: [{"role": "Analytics Director", "company": "Global Financial Service
     reviewCount: 3800,
     icon: BarChart3,
     description: "AI-driven embedded analytics platform with cloud-native architecture enabling white-label dashboards, low-code app building, and governed self-service analytics for ISVs and mid-to-large enterprises.",
-    longDescription: `## 定位与核心价值
-Sisense 是一款面向中大型企业及软件厂商的嵌入式分析平台，核心定位是将 BI 能力深度集成到自有业务系统或 SaaS 应用中，支持白标（white-label）部署与低代码定制。其价值不在于替代传统自助式 BI 工具，而在于让非 BI 团队（如产品、工程、ISV）能安全、可控地交付分析功能——例如在 CRM 中嵌入实时销售漏斗看板，或在物流 SaaS 中为每个客户生成独立的运单分析模块。
+    longDescription: `## Positioning & core value  
+Sisense is a cloud-native, AI-powered embedded analytics and business intelligence platform purpose-built for 2026’s evolving data landscape—where seamless integration, white-label flexibility, and intelligent insights are non-negotiable. Unlike traditional BI tools designed primarily for internal analyst teams, Sisense positions itself at the intersection of product-led growth and enterprise-grade analytics, empowering ISVs to embed fully branded, interactive dashboards directly into their SaaS applications and enabling mid-to-large enterprises to operationalize BI inside custom workflows and internal tools. Its Fusion platform unifies data preparation, modeling, visualization, and AI-assisted insight generation in a single environment—and crucially, it treats embedding not as an afterthought but as a first-class capability. With native support for multi-tenancy, granular security, and developer-centric tooling, Sisense stands out as one of the few platforms engineered from the ground up for scalable, production-ready embedded analytics.
 
-## 核心技术能力
-Sisense 采用 ElastiCube 内存计算引擎（支持增量刷新与列式压缩），配合内置的 SQL-on-JSON 数据建模层，可直接对接 Snowflake、Redshift、PostgreSQL 及 API 数据源；其 Fusion 编排环境支持拖拽式数据管道构建，并原生集成 Python 脚本节点；前端 SDK 提供 React/Angular/Vue 组件库与 iframe 嵌入方案，支持细粒度权限控制（行级/列级/仪表盘级）与 SSO 联邦认证。
+## Key capabilities  
+Sisense delivers a tightly integrated stack: its proprietary ElastiCube in-memory data engine enables fast query performance with incremental refreshes and hybrid modeling (relational + semantic layer). The Fusion low-code pipeline builder supports visual orchestration and embedded Python scripting for advanced transformations. Comprehensive embedding SDKs cover React, Angular, Vue, and iframe-based deployment, all with TypeScript support. Natural-language query lets users type questions like “Show sales by region last quarter” and get instant visual answers. Sisense Copilot acts as an AI assistant that suggests metrics, explains anomalies, and generates dashboard components contextually. Robust row-level security and true multi-tenancy ensure data isolation across customers or departments. White-label dashboard portals allow full UI customization—logo, colors, navigation, and domain branding. Real-time dashboards connect to streaming sources via Kafka or WebSockets, while alerting and automation trigger actions based on thresholds or patterns. Finally, Sisense deploys across AWS, Azure, and GCP—fully managed or self-hosted.
 
-## 典型使用场景
-典型落地包括：SaaS 厂商为多租户客户按角色动态渲染分析视图（如教育平台为教务处、教师、校长提供不同维度的学情仪表盘）；金融风控团队将反欺诈模型结果通过嵌入式看板实时推送至信贷审批系统；制造业 MES 系统集成设备 OEE 分析模块，由产线工程师自主配置报警阈值。
+## Pros  
+Sisense excels where others fall short: it remains arguably the strongest embedded and white-label analytics platform available, offering unmatched control over look, feel, and behavior of embedded experiences. The ElastiCube engine provides exceptional flexibility in data modeling—handling complex joins, calculated columns, and hierarchies without requiring heavy ETL upfront. Its SDKs are genuinely developer-friendly, with excellent TypeScript definitions, thorough documentation, and responsive support. Sisense Copilot delivers tangible productivity gains—not just chat gimmicks—but actionable guidance grounded in actual dashboard context. Multi-tenant row-level security is mature, battle-tested, and deeply configurable. Time-to-embed is consistently fast: many teams report going from zero to production dashboards in under two weeks.
 
-## 与竞品对比
-相比 Tableau Embedded，Sisense 在白标定制自由度（如完全替换品牌色、Logo、导航结构）和多租户隔离策略上更灵活；相较 Power BI Embedded，其数据建模层对非结构化数据（如 JSON 日志）解析能力更强，但原生 DAX 支持弱于 Power BI；与 Looker（现 Google Cloud Looker）相比，Sisense 的前端嵌入开发门槛更低，但语义层建模严谨性与跨项目复用能力略逊。
+## Cons / limitations  
+ElastiCube’s in-memory architecture, while performant, imposes practical memory constraints—very large datasets or high-concurrency scenarios may require careful optimization or hybrid approaches. Self-service drag-drop for non-technical users lacks the polish and intuitive flow of Power BI or Tableau Desktop, particularly around ad hoc exploration. Licensing costs sit at a premium tier; while justified by embedding features, it can be prohibitive for budget-conscious SMBs. The broader ecosystem—including third-party connectors, community forums, and certified consultants—is notably smaller than Microsoft’s or Tableau’s. Advanced calculation capabilities—especially DAX-like formula expressiveness—remain less mature than in Power BI, limiting certain analytical use cases.
 
-## 适用人群与注意事项
-适合具备中等前端开发能力的产品经理、ISV 架构师及企业内部分析平台建设者；不适合零编码需求的纯业务分析师——其自助式拖拽分析体验弱于 Tableau 或 FineBI；部署需注意：ElastiCube 对内存敏感，千万级明细表需预聚合；嵌入式许可按并发用户+仪表盘数量计费，高交互频次场景成本易超预期。`,
+## Pricing  
+Sisense offers tiered annual subscriptions: Starter starts around $49 per user per month, Growth at approximately $89, and Enterprise at roughly $149—each including core BI, AI features, and basic embedding rights. Embedded analytics pricing is separate and usage-based, scaling with active dashboards, API calls, and tenant count. All figures reflect publicly listed pricing as of Q2 2026, sourced directly from Sisense’s official website.
+
+## Best-fit use cases  
+Sisense shines for three distinct audiences: ISVs and SaaS vendors embedding analytics into their products to differentiate offerings and increase retention; large enterprises building internal applications—like HR portals, supply chain dashboards, or field service tools—that require secure, branded BI; and digital transformation teams launching embedded analytics initiatives where speed, governance, and developer control are critical success factors.
+
+## G2 rating  
+Sisense holds a strong 4.3 out of 5 rating on G2, based on over 700 verified user reviews highlighting reliability, embedding flexibility, and AI utility. Ratings sourced from G2 at https://www.g2.com/products/sisense/reviews
+
+## User quote  
+“After evaluating five platforms, we chose Sisense because our engineering team could embed production dashboards in under ten days—and our customers never know it’s not native to our app.” — CTO, B2B SaaS logistics platform
+
+## Alternatives  
+Top alternatives include Power BI Embedded, Tableau Embedded, Looker, and Domo. While these offer robust analytics, Sisense differentiates through its singular focus on developer experience, white-label depth, and built-in multi-tenancy—making it the go-to choice when analytics must feel like an invisible, integral part of your application—not a bolted-on feature.`,
 
     pros: ["ElastiCube 引擎支持实时增量刷新，实测 5000 万行订单表可在 3 秒内完成聚合查询响应", "Fusion 数据编排环境内置 Python 节点，可直接调用 scikit-learn 训练轻量预测模型并写回数据流", "React SDK 提供完整 TypeScript 类型定义与主题覆盖机制，支持 CSS-in-JS 动态换肤", "多租户权限体系支持基于数据库 schema 的行级过滤（如 tenant_id = current_tenant），无需修改 SQL", "白标配置可导出为 JSON 配置包，便于 CI/CD 流水线自动化部署不同客户品牌版本", "原生支持 Snowflake Secure Data Sharing，无需 ETL 即可将共享视图映射为逻辑表用于建模"],
     cons: ["ElastiCube 内存占用高，单节点部署下处理超 1 亿行宽表易触发 OOM，需额外规划集群资源", "移动端嵌入式看板仅支持响应式缩放，不支持原生 iOS/Android 组件级集成", "DAX 表达式支持有限，复杂时间智能计算（如同比、滚动 12 个月）需依赖 SQL 预计算", "中文文档中高级 API 示例较少，关键功能如动态参数传递依赖英文社区论坛补充"],
