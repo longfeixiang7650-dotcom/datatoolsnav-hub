@@ -55,7 +55,8 @@ const BLOG_SLUGS = [
     "state-of-self-service-analytics-2026-data-report",
     "open-source-bi-embedded-analytics-tools-2026-selection-guide",
     "analytics-engineering-2026-dbt-semantic-layer",
-    "modern-data-stack-cost-optimization-2026-guide"
+    "modern-data-stack-cost-optimization-2026-guide",
+    "open-table-formats-iceberg-vs-delta-vs-hudi-2026"
 ] as const;
 
 const TOOL_SLUGS = [
