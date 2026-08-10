@@ -58,7 +58,8 @@ const BLOG_SLUGS = [
     "modern-data-stack-cost-optimization-2026-guide",
     "open-table-formats-iceberg-vs-delta-vs-hudi-2026",
     "semantic-layer-2026-dbt-cube-lookml-comparison",
-    "marketing-analytics-2026-attribution-mmm-data-stack"
+    "marketing-analytics-2026-attribution-mmm-data-stack",
+    "change-data-capture-cdc-2026-real-time-data-integration-guide"
 ] as const;
 
 const TOOL_SLUGS = [
