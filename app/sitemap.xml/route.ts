@@ -59,7 +59,10 @@ const BLOG_SLUGS = [
     "open-table-formats-iceberg-vs-delta-vs-hudi-2026",
     "semantic-layer-2026-dbt-cube-lookml-comparison",
     "marketing-analytics-2026-attribution-mmm-data-stack",
-    "change-data-capture-cdc-2026-real-time-data-integration-guide"
+    "change-data-capture-cdc-2026-real-time-data-integration-guide",
+    "feature-stores-2026-warehouse-native-ml-practical-guide",
+    "data-observability-in-2026-beyond-monitoring-to-full-stack-data-reliability",
+    "real-time-analytics-databases-2026-clickhouse-druid-pinot-materialize"
 ] as const;
 
 const TOOL_SLUGS = [
